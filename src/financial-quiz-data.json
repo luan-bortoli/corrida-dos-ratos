@@ -1,0 +1,332 @@
+{
+  "EF-001": {
+    "question": "Qual é a principal finalidade de uma reserva de emergência?",
+    "options": [
+      "Comprar produtos em promoção.",
+      "Cobrir despesas inesperadas sem depender imediatamente de crédito.",
+      "Garantir rendimentos elevados em aplicações arriscadas.",
+      "Substituir permanentemente a renda do trabalho."
+    ],
+    "correct": "B",
+    "reward": null
+  },
+  "EF-002": {
+    "question": "Qual prática ajuda mais a manter um orçamento equilibrado?",
+    "options": [
+      "Registrar receitas e despesas regularmente.",
+      "Comprar sempre que houver dinheiro na conta.",
+      "Ignorar pequenas despesas.",
+      "Usar todo o limite do cartão de crédito."
+    ],
+    "correct": "A",
+    "reward": null
+  },
+  "EF-003": {
+    "question": "Qual situação representa um ativo que pode produzir renda?",
+    "options": [
+      "Uma televisão usada para lazer.",
+      "Uma dívida de financiamento.",
+      "Uma máquina alugada a terceiros mediante pagamento.",
+      "Uma conta de energia a vencer."
+    ],
+    "correct": "C",
+    "reward": null
+  },
+  "EF-004": {
+    "question": "O que acontece quando uma pessoa contrata um empréstimo com juros?",
+    "options": [
+      "Ela devolve apenas o valor recebido.",
+      "O empréstimo não afeta despesas futuras.",
+      "Os juros são sempre uma recompensa ao devedor.",
+      "Ela assume o pagamento do principal acrescido dos encargos contratados."
+    ],
+    "correct": "D",
+    "reward": null
+  },
+  "EF-005": {
+    "question": "Qual exemplo pode representar renda passiva efetivamente recebida?",
+    "options": [
+      "Aumento do preço de uma ação ainda não vendida.",
+      "Aluguel líquido pago por um imóvel de investimento.",
+      "Salário recebido por horas de trabalho.",
+      "Dinheiro obtido por empréstimo."
+    ],
+    "correct": "B",
+    "reward": null
+  },
+  "EF-006": {
+    "question": "Antes de uma compra importante, qual atitude é mais adequada?",
+    "options": [
+      "Comparar necessidade, preço e impacto no orçamento.",
+      "Comprar rapidamente para evitar pensar demais.",
+      "Parcelar sem verificar o valor final.",
+      "Utilizar toda a reserva de emergência."
+    ],
+    "correct": "A",
+    "reward": null
+  },
+  "EF-007": {
+    "question": "Uma pequena loja vende R\\$ 2.000 e tem R\\$ 1.500 em custos. Qual é o lucro?",
+    "options": [
+      "R\\$ 3.500.",
+      "R\\$ 2.000.",
+      "R\\$ 500\\.",
+      "R\\$ 1.500."
+    ],
+    "correct": "C",
+    "reward": null
+  },
+  "EF-008": {
+    "question": "O que significa diversificar investimentos?",
+    "options": [
+      "Aplicar todo o dinheiro em uma única empresa.",
+      "Comprar apenas o investimento mais caro.",
+      "Escolher ativos sem avaliar riscos.",
+      "Distribuir recursos entre diferentes tipos de investimento."
+    ],
+    "correct": "D",
+    "reward": null
+  },
+  "EF-009": {
+    "question": "O que significa um investimento ter boa liquidez?",
+    "options": [
+      "Ele sempre apresentar lucro.",
+      "Poder ser convertido em dinheiro com relativa facilidade.",
+      "Seu preço nunca oscilar.",
+      "Ele não possuir qualquer risco."
+    ],
+    "correct": "B",
+    "reward": null
+  },
+  "EF-010": {
+    "question": "Qual informação é essencial antes de parcelar uma compra?",
+    "options": [
+      "O valor total, os juros e o impacto das parcelas no orçamento.",
+      "Somente o valor da primeira parcela.",
+      "A opinião dos amigos sobre o produto.",
+      "A quantidade de anúncios da loja."
+    ],
+    "correct": "A",
+    "reward": null
+  },
+  "EF-011": {
+    "question": "O que pode acontecer se os preços aumentarem, mas a renda permanecer igual?",
+    "options": [
+      "O poder de compra aumenta.",
+      "Todas as despesas desaparecem.",
+      "O dinheiro passa a comprar menos produtos e serviços.",
+      "Os investimentos deixam de ter riscos."
+    ],
+    "correct": "C",
+    "reward": null
+  },
+  "EF-012": {
+    "question": "Qual atitude costuma ajudar a recuperar o controle sobre dívidas?",
+    "options": [
+      "Contratar novos empréstimos sem analisar as parcelas.",
+      "Ignorar cobranças e vencimentos.",
+      "Deixar de registrar os gastos.",
+      "Organizar valores, prioridades e possibilidades de renegociação."
+    ],
+    "correct": "D",
+    "reward": null
+  },
+  "EF-013": {
+    "question": "Como podemos calcular o patrimônio líquido de uma pessoa?",
+    "options": [
+      "Somando apenas os salários recebidos.",
+      "Subtraindo as dívidas do valor dos bens e recursos financeiros.",
+      "Somando apenas as despesas mensais.",
+      "Multiplicando o salário pelas parcelas restantes."
+    ],
+    "correct": "B",
+    "reward": null
+  },
+  "EF-014": {
+    "question": "O que é custo de oportunidade em uma decisão financeira?",
+    "options": [
+      "O benefício de uma alternativa que foi deixada de lado.",
+      "O preço de todos os produtos de uma loja.",
+      "Um imposto obrigatório sobre investimentos.",
+      "Uma dívida que não precisa ser paga."
+    ],
+    "correct": "A",
+    "reward": null
+  },
+  "EF-015": {
+    "question": "No jogo, qual condição permite conquistar a independência financeira?",
+    "options": [
+      "Receber o maior salário entre os jogadores.",
+      "Comprar o maior número de ações.",
+      "Manter renda passiva recebida superior às despesas por três fechamentos consecutivos.",
+      "Concluir uma rodada sem despesas."
+    ],
+    "correct": "C",
+    "reward": null
+  },
+  "EF-016": {
+    "question": "Uma empresa vale R\\$ 50.000 e valoriza 10%. O que acontece imediatamente?",
+    "options": [
+      "O proprietário recebe R\\$ 5.000 em dinheiro.",
+      "O valor estimado da empresa passa a R\\$ 55.000, sem depósito automático no caixa.",
+      "A renda passiva aumenta obrigatoriamente R\\$ 5.000.",
+      "Todas as dívidas da empresa são quitadas."
+    ],
+    "correct": "B",
+    "reward": null
+  },
+  "EF-017": {
+    "question": "Uma empresa distribui R\\$ 2.000 de lucro e Ana possui 25% dela. Quanto Ana recebe?",
+    "options": [
+      "R\\$ 500\\.",
+      "R\\$ 250\\.",
+      "R\\$ 1.000.",
+      "R\\$ 2.000."
+    ],
+    "correct": "A",
+    "reward": null
+  },
+  "EF-018": {
+    "question": "Uma sociedade exige mais de 50% do capital total para aprovar uma decisão. Com 50% favoráveis, o que ocorre?",
+    "options": [
+      "A proposta é aprovada automaticamente.",
+      "O peso dos votos deixa de importar.",
+      "A proposta não atingiu a maioria exigida.",
+      "Os sócios ausentes são considerados favoráveis."
+    ],
+    "correct": "C",
+    "reward": null
+  },
+  "EF-019": {
+    "question": "Qual é um risco de comprar um imóvel financiado para receber aluguel?",
+    "options": [
+      "O aluguel elimina os juros do empréstimo.",
+      "O imóvel nunca pode ficar desocupado.",
+      "O financiamento não gera obrigação mensal.",
+      "As parcelas podem continuar mesmo quando não há inquilino."
+    ],
+    "correct": "D",
+    "reward": null
+  },
+  "EF-020": {
+    "question": "Uma empresa está avaliada em R\\$ 100.000. Por que seu proprietário pode não conseguir R\\$ 100.000 imediatamente?",
+    "options": [
+      "Porque a avaliação representa dinheiro depositado em conta.",
+      "Porque pode ser necessário encontrar comprador e negociar o preço.",
+      "Porque empresas não possuem valor econômico.",
+      "Porque todo ativo deve ser vendido por metade do preço."
+    ],
+    "correct": "B",
+    "reward": null
+  },
+  "EF-021": {
+    "question": "Uma empresa recebeu R\\$ 12.000 e pagou R\\$ 9.000 em custos operacionais no período. Qual foi o resultado operacional simplificado?",
+    "options": [
+      "R\\$ 3.000.",
+      "R\\$ 9.000.",
+      "R\\$ 12.000.",
+      "R\\$ 21.000."
+    ],
+    "correct": "A",
+    "reward": null
+  },
+  "EF-022": {
+    "question": "Qual situação representa melhor a diversificação do patrimônio?",
+    "options": [
+      "Investir tudo em uma única empresa de tecnologia.",
+      "Comprar várias participações da mesma empresa.",
+      "Distribuir recursos entre diferentes setores e tipos de ativos.",
+      "Ignorar riscos e escolher apenas maiores rendimentos."
+    ],
+    "correct": "C",
+    "reward": null
+  },
+  "EF-023": {
+    "question": "Um investimento anuncia um rendimento muito maior que outros semelhantes. Qual atitude é mais adequada?",
+    "options": [
+      "Investir imediatamente, pois retornos altos são garantidos.",
+      "Emprestar dinheiro para aumentar o investimento sem fazer cálculos.",
+      "Concluir que o investimento não possui custos.",
+      "Investigar os riscos, as condições e a possibilidade de perdas."
+    ],
+    "correct": "D",
+    "reward": null
+  },
+  "EF-024": {
+    "question": "Qual pode ser uma vantagem de antecipar o pagamento de um financiamento com juros?",
+    "options": [
+      "Aumentar automaticamente os juros futuros.",
+      "Reduzir juros futuros e o saldo devedor, conforme o contrato.",
+      "Transformar a dívida em renda passiva.",
+      "Eliminar a necessidade de reserva financeira."
+    ],
+    "correct": "B",
+    "reward": null
+  },
+  "EF-025": {
+    "question": "Em uma empresa com vários sócios, o que caracteriza uma decisão financeira responsável?",
+    "options": [
+      "Avaliar custos, riscos, caixa disponível e regras de votação.",
+      "Permitir que qualquer sócio retire todo o lucro sem consulta.",
+      "Ignorar obrigações já contratadas.",
+      "Aprovar qualquer expansão porque a receita pode crescer."
+    ],
+    "correct": "A",
+    "reward": null
+  },
+  "EF-026": {
+    "question": "Uma empresa decide reinvestir todo o lucro em sua expansão. Qual consequência é possível?",
+    "options": [
+      "Todos os sócios recebem o lucro reinvestido em dinheiro.",
+      "As despesas pessoais dos sócios desaparecem.",
+      "A empresa pode crescer, mas não distribuir aquele lucro aos sócios no período.",
+      "O valor investido passa a ser salário dos sócios."
+    ],
+    "correct": "C",
+    "reward": null
+  },
+  "EF-027": {
+    "question": "Por que depender de um único imóvel para toda a renda passiva pode ser arriscado?",
+    "options": [
+      "Porque o imóvel não pode valorizar.",
+      "Porque aluguéis são sempre ilegais.",
+      "Porque um imóvel alugado nunca gera despesas.",
+      "Porque vacância ou reparos podem comprometer grande parte da renda."
+    ],
+    "correct": "D",
+    "reward": null
+  },
+  "EF-028": {
+    "question": "Qual afirmação descreve corretamente a filantropia no jogo?",
+    "options": [
+      "Toda contribuição garante lucro futuro.",
+      "Doações geram impacto social simulado, mas não garantem retorno financeiro.",
+      "Doar elimina automaticamente as dívidas.",
+      "Filantropia substitui renda passiva no cálculo de independência."
+    ],
+    "correct": "B",
+    "reward": null
+  },
+  "EF-029": {
+    "question": "Depois de entrar na Pista de Alta Velocidade, qual cuidado financeiro continua importante?",
+    "options": [
+      "Acompanhar se renda passiva, despesas e dívidas permanecem equilibradas.",
+      "Parar de registrar despesas.",
+      "Considerar todas as valorizações como dinheiro disponível.",
+      "Contratar qualquer financiamento sem análise."
+    ],
+    "correct": "A",
+    "reward": null
+  },
+  "EF-030": {
+    "question": "Você investiu R\\$ 5.000 e recebeu R\\$ 250 líquidos em um período, sem mudança no valor do ativo. Qual foi o retorno do período?",
+    "options": [
+      "2%.",
+      "10%.",
+      "5%.",
+      "25%."
+    ],
+    "correct": "C",
+    "reward": null
+  }
+}

@@ -1,0 +1,10 @@
+import {test} from 'node:test';
+import assert from 'node:assert/strict';
+import {createCompanies} from '../src/companies.js';
+import {publishShareOffer,acceptShareOffer,expireShareOffers} from '../src/market.js';
+import {createGame,auditCash} from '../src/engine.js';
+function fixture(){const a=createGame(11,'TRAVEL'),b=createGame(11,'TRAVEL'),c=createGame(11,'TRAVEL');for(const g of [a,b,c]){g.cash=100000;g.initialCash=100000;}return {round:1,companies:createCompanies(),shareOffers:[],players:[{id:'a',game:a},{id:'b',game:b},{id:'c',game:c}]};}
+test('proposta transfere quotas e caixa uma única vez',()=>{const r=fixture();const co=r.companies[0];co.shares.origin=50;co.shares.a=25;co.shares.b=25;const o=publishShareOffer(r,'a',co.id,10,8500);assert.equal(o.eligible[0],'b');assert.throws(()=>acceptShareOffer(r,'c',o.id),/preferência/);acceptShareOffer(r,'b',o.id);assert.equal(co.shares.a,15);assert.equal(co.shares.b,35);assert.equal(r.players[0].game.cash,108500);assert.equal(r.players[1].game.cash,91500);assert(auditCash(r.players[0].game).ok);assert(auditCash(r.players[1].game).ok);assert.throws(()=>acceptShareOffer(r,'b',o.id));});
+test('preferência expira após duas rodadas e permite comprador externo',()=>{const r=fixture();const co=r.companies[0];co.shares.origin=50;co.shares.a=25;co.shares.b=25;const o=publishShareOffer(r,'a',co.id,10,8500);r.round=4;acceptShareOffer(r,'c',o.id);assert.equal(co.shares.c,10);});
+test('impede venda de cota inexistente e compra sem caixa',()=>{const r=fixture();assert.throws(()=>publishShareOffer(r,'a','GO-016',5,100));r.companies[0].shares.origin=75;r.companies[0].shares.a=25;const o=publishShareOffer(r,'a','GO-016',20,110000);assert.throws(()=>acceptShareOffer(r,'b',o.id),/Caixa/);assert.equal(r.companies[0].shares.a,25);});
+test('oferta vence sem alterar patrimônio',()=>{const r=fixture();r.companies[0].shares.origin=75;r.companies[0].shares.a=25;const o=publishShareOffer(r,'a','GO-016',5,1000);r.round=6;expireShareOffers(r);assert.equal(o.status,'expired');assert.equal(r.companies[0].shares.a,25);});

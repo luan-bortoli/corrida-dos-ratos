@@ -1,0 +1,15 @@
+import {test} from 'node:test';
+import assert from 'node:assert/strict';
+import {createGame,auditCash} from '../src/engine.js';
+import {createCompanies} from '../src/companies.js';
+import {publishShareOffer} from '../src/market.js';
+import {ensureNPC,quoteNPC,buyShareNPC,checkNPC} from '../src/npc-market.js';
+import {closeVerifiedPeriod} from '../src/distributions.js';
+function fixture(){const g=createGame(11,'TRAVEL');g.cash=50000;g.initialCash=50000;const r={round:1,players:[{id:'a',game:g}],companies:createCompanies(),shareOffers:[],externalSellerCash:0};const c=r.companies[0];c.shares.origin=75;c.shares.a=25;ensureNPC(r);return r;}
+test('carteiras fictícias iniciam com os três saldos aprovados',()=>{const r=fixture();assert.deepEqual(r.npcInvestors.map(n=>n.cash),[100000,250000,500000]);assert(checkNPC(r));});
+test('preferência bloqueia investidor fictício até expirar',()=>{const r=fixture();r.companies[0].shares.origin=50;r.companies[0].shares.b=25;r.players.push({id:'b',game:createGame(11,'TRAVEL')});const o=publishShareOffer(r,'a','GO-016',10,3000);assert.throws(()=>quoteNPC(r,o,'moderado'),/preferência/);r.round=4;assert.equal(quoteNPC(r,o,'moderado').canBuy,true);});
+test('investidor fictício compra com dinheiro existente e transfere quotas e caixa',()=>{const r=fixture(),o=publishShareOffer(r,'a','GO-016',10,3000);const prev=r.npcInvestors[1].cash;buyShareNPC(r,o.id,'moderado');assert.equal(r.npcInvestors[1].cash,prev-3000);assert.equal(r.players[0].game.cash,53000);assert.equal(r.companies[0].shares['npc:moderado'],10);assert.equal(r.companies[0].shares.a,15);assert.equal(Object.values(r.companies[0].shares).reduce((a,b)=>a+b,0),100);assert(auditCash(r.players[0].game).ok);assert.throws(()=>buyShareNPC(r,o.id,'moderado'))});
+test('preço superior ao teto não é executado como contraproposta automática',()=>{const r=fixture(),o=publishShareOffer(r,'a','GO-016',10,100000);assert.throws(()=>buyShareNPC(r,o.id,'arrojado'),/contraproposta/);assert.equal(r.players[0].game.cash,50000);});
+test('comprador fictício recebe dividendos sem duplicar caixa de estudantes',()=>{const r=fixture(),o=publishShareOffer(r,'a','GO-016',10,3000);buyShareNPC(r,o.id,'moderado');const c=r.companies[0];c.cash=5000;c.retainedProfit=4000;c.reserveRequired=1000;c.operatingLedger=[{round:9,type:'revenue',amount:4000}];const before=r.npcInvestors[1].cash;r.round=9;const results=closeVerifiedPeriod(r,9);assert.equal(results.length,5);assert(r.npcInvestors[1].cash>before);assert.equal(closeVerifiedPeriod(r,9).length,0);});
+
+test('contraproposta depende de aceite e paga preço efetivamente proposto',()=>{const r=fixture(),o=publishShareOffer(r,'a','GO-016',10,9999),q=quoteNPC(r,o,'moderado');assert(q.maxPrice<o.price);assert.throws(()=>buyShareNPC(r,o.id,'moderado'),/contraproposta/);const before=r.npcInvestors[1].cash;buyShareNPC(r,o.id,'moderado',true);assert.equal(r.npcInvestors[1].cash,before-q.maxPrice);assert.equal(o.executedPrice,q.maxPrice);assert.equal(o.counterAccepted,true);});

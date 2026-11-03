@@ -1,0 +1,9 @@
+import {test} from 'node:test';
+import assert from 'node:assert/strict';
+import {createCompanies,checkCompanies,purchaseCompanyShare,closeCompanies} from '../src/companies.js';
+import {createGame,auditCash} from '../src/engine.js';
+function room(){const game=createGame(11,'TRAVEL');game.cash=100000;game.initialCash=100000;game.pending=true;game.lastTile='GO';game.turn=1;return {round:1,companies:createCompanies(),players:[{id:'a',game}],externalSellerCash:0};}
+test('reservas são capital empresarial já existente, não dividendo',()=>{const c=createCompanies();assert.deepEqual(c.map(x=>x.reserveRequired),[1000,1560,1000,1200,2400]);assert(c.every(x=>x.cash===x.initialCapital&&x.retainedProfit===0));assert(checkCompanies(c));});
+test('compra de participação é secundária, transferência contabilizada e não duplicável',()=>{const r=room();const x=purchaseCompanyShare(r,'a','GO-016');assert.equal(x.percent,25);assert.equal(r.companies[0].shares.origin,75);assert.equal(r.companies[0].shares.a,25);assert.equal(r.externalSellerCash,10000);assert.equal(r.companies[0].cash,1000);assert.equal(r.players[0].game.cash,90000);assert(auditCash(r.players[0].game).ok);assert.throws(()=>purchaseCompanyShare(r,'a','GO-017'));assert(checkCompanies(r.companies));});
+test('aquisição exige casa GO, decisão pendente e caixa',()=>{const r=room();r.players[0].game.lastTile='PO';assert.throws(()=>purchaseCompanyShare(r,'a','GO-016'));r.players[0].game.lastTile='GO';r.players[0].game.cash=300;assert.throws(()=>purchaseCompanyShare(r,'a','GO-016'));});
+test('fechamento empresarial ocorre uma vez a cada nove rodadas sem lucro inventado',()=>{const r=room();assert.equal(closeCompanies(r,8).length,0);const x=closeCompanies(r,9);assert.equal(x.length,5);assert(x.every(y=>y.paid===0));assert.equal(closeCompanies(r,9).length,0);assert.equal(closeCompanies(r,18).length,5);assert.equal(r.companies[0].cash,1000);});

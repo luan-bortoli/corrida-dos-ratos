@@ -1,0 +1,1152 @@
+{
+  "PO-001": {
+    "id": "PO-001",
+    "original": "PO-001\n\nPequeno negócio\n\n## **Máquina de Lanches**\n\nVocê encontrou uma máquina automática instalada em um pequeno estabelecimento. O proprietário deseja vendê-la para investir em outro negócio.\n\nPreço\n\nR\\$ 3.000\n\nRendimento mensal\n\nR\\$ 75\n\nRequisito: possuir R\\$ 3.000 disponíveis.\n\nDecisão: comprar ou recusar.\n\nConsequência: a compra reduz o caixa em R\\$ 3.000 e acrescenta o equipamento ao patrimônio. O rendimento líquido inicial é de R\\$ 75 por fechamento, sujeito a mudanças.\n\nRisco e liquidez: manutenção extraordinária, redução nas vendas e necessidade de encontrar comprador para revenda.\n\nAprendizagem: um negócio pode gerar renda recorrente, mas exige capital, manutenção e acompanhamento.",
+    "source": "catalogo/Cartas.md"
+  },
+  "PO-002": {
+    "id": "PO-002",
+    "original": "PO-002\n\nPequeno negócio\n\n## **Carrinho de Café**\n\nUm vendedor está repassando um pequeno carrinho de café com clientela habitual perto de uma área comercial.\n\nInvestimento: R\\$ 2.200 · Renda líquida inicial: R\\$ 55 por mês.\n\nRequisito: caixa disponível de R\\$ 2.200. Decisão: comprar ou recusar.\n\nConsequência: registrar o carrinho como ativo e receber R\\$ 55 por fechamento enquanto o negócio continuar operando.\n\nRisco: diminuição do movimento, custos com equipamentos e concorrência. Liquidez: baixa.\n\nAprendizagem: localização, demanda e custos influenciam a rentabilidade de um empreendimento.",
+    "source": "catalogo/Cartas.md"
+  },
+  "PO-003": {
+    "id": "PO-003",
+    "original": "PO-003\n\nPequeno negócio\n\n## **Loja Virtual de Produtos Artesanais**\n\nUma pequena operação de comércio eletrônico está à venda, com fornecedores e pedidos recorrentes.\n\nInvestimento: R\\$ 1.800 · Renda líquida inicial: R\\$ 45 por mês.\n\nRequisito: possuir R\\$ 1.800. Decisão: adquirir ou recusar.\n\nConsequência: adicionar a operação digital ao patrimônio e receber o resultado líquido inicial a cada fechamento.\n\nRisco: devoluções, aumento do custo de frete, mudanças na procura e despesas com plataforma. Liquidez: baixa.\n\nAprendizagem: vendas não são sinônimo de lucro; é necessário descontar os custos da operação.",
+    "source": "catalogo/Cartas.md"
+  },
+  "PO-004": {
+    "id": "PO-004",
+    "original": "PO-004\n\nPequeno negócio\n\n## **Ponto de Recarga de Dispositivos**\n\nUm comércio oferece a venda de um pequeno ponto automatizado de recarga de celulares e dispositivos eletrônicos.\n\nInvestimento: R\\$ 2.800 · Renda líquida inicial: R\\$ 65 por mês.\n\nRequisito: caixa de R\\$ 2.800. Decisão: comprar ou recusar.\n\nConsequência: registrar o equipamento e sua renda mensal inicial.\n\nRisco: substituição tecnológica, defeitos e baixa procura. Liquidez: baixa.\n\nAprendizagem: negócios dependentes de tecnologia podem perder valor com o tempo.",
+    "source": "catalogo/Cartas.md"
+  },
+  "PO-005": {
+    "id": "PO-005",
+    "original": "PO-005\n\nPequeno negócio\n\n## **Serviço de Impressões**\n\nUm pequeno ponto de impressão e cópias próximo a uma escola está disponível para aquisição.\n\nInvestimento: R\\$ 4.000 · Renda líquida inicial: R\\$ 100 por mês.\n\nRequisito: possuir R\\$ 4.000. Decisão: adquirir ou recusar.\n\nConsequência: incorporar o negócio ao patrimônio e receber o rendimento líquido a cada fechamento.\n\nRisco: custos com tinta e papel, problemas nos equipamentos e queda na demanda. Liquidez: baixa.\n\nAprendizagem: equipamentos e insumos influenciam o fluxo de caixa de pequenos negócios.",
+    "source": "catalogo/Cartas.md"
+  },
+  "PO-006": {
+    "id": "PO-006",
+    "original": "PO-006\n\nPequeno negócio\n\n## **Quiosque de Acessórios**\n\nUm empreendedor decidiu vender um quiosque de acessórios situado em um centro comercial.\n\nInvestimento: R\\$ 5.000 · Renda líquida inicial: R\\$ 110 por mês.\n\nRequisito: caixa de R\\$ 5.000. Decisão: comprar ou recusar.\n\nConsequência: registrar o quiosque como ativo com rendimento mensal inicial.\n\nRisco: estoque sem saída, custos de ocupação e concorrência. Liquidez: baixa.\n\nAprendizagem: vender mais não significa necessariamente ter maior lucro.",
+    "source": "catalogo/Cartas.md"
+  },
+  "PO-007": {
+    "id": "PO-007",
+    "original": "PO-007\n\nPequeno negócio\n\n## **Pequena Lavanderia Automatizada**\n\nUma lavanderia de pequeno porte, com equipamentos automáticos, está sendo repassada.\n\nInvestimento: R\\$ 5.500 · Renda líquida inicial: R\\$ 125 por mês.\n\nRequisito: possuir R\\$ 5.500. Decisão: comprar ou recusar.\n\nConsequência: adquirir o negócio e receber inicialmente R\\$ 125 por fechamento financeiro.\n\nRisco: consumo de energia, reparos, concorrência e redução no número de clientes. Liquidez: baixa.\n\nAprendizagem: máquinas podem reduzir a necessidade de trabalho constante, mas não eliminam custos ou riscos.",
+    "source": "catalogo/Cartas.md"
+  },
+  "PO-008": {
+    "id": "PO-008",
+    "original": "| PO-008 — Aplicação de Liquidez Diária | Aplicar de R\\$ 300 a R\\$ 3.000, em incrementos de R\\$ 100\\. Rentabilidade fictícia de 0,5% ao fechamento. | O rendimento é incorporado ao saldo investido, sem renda passiva distribuída. Resgate permitido no próprio turno pelo saldo atualizado. Risco: variação de taxa em condições futuras. Conceito: liquidez e reserva de emergência. |",
+    "source": "catalogo/Cartas.md"
+  },
+  "PO-009": {
+    "id": "PO-009",
+    "original": "| PO-009 — Título de Renda Fixa de Prazo Curto | Aplicar de R\\$ 500 a R\\$ 4.000, em incrementos de R\\$ 100\\. Taxa contratada de 0,7% por fechamento, durante 6 fechamentos. | Juros acumulados e recebidos com o principal no vencimento; sem renda passiva mensal. Resgate antecipado sujeito a deságio de 2% sobre o saldo atualizado. Risco: imobilização do dinheiro. Conceito: prazo e liquidez. |",
+    "source": "catalogo/Cartas.md"
+  },
+  "PO-010": {
+    "id": "PO-010",
+    "original": "| PO-010 — Título com Pagamento de Juros | Aplicar de R\\$ 1.000 a R\\$ 5.000, em incrementos de R\\$ 500\\. Cupom de 0,55% do principal por fechamento durante 12 fechamentos. | Cupom efetivamente pago conta como renda passiva; principal devolvido no vencimento. Resgate antecipado somente se houver comprador, a valor de mercado. Risco: taxa e preço de revenda. Conceito: diferença entre juros distribuídos e valorização. |",
+    "source": "catalogo/Cartas.md"
+  },
+  "PO-011": {
+    "id": "PO-011",
+    "original": "| PO-011 — Aplicação com Prazo de 12 Meses | Aplicar de R\\$ 800 a R\\$ 4.800, em incrementos de R\\$ 400\\. Rentabilidade contratada de 0,8% por fechamento, durante 12 fechamentos. | Rendimentos acumulados até o vencimento, sem pagamentos intermediários. Sem resgate antecipado comum. Risco: falta de liquidez e condições do emissor. Conceito: relação entre prazo, rentabilidade e disponibilidade do dinheiro. |",
+    "source": "catalogo/Cartas.md"
+  },
+  "PO-012": {
+    "id": "PO-012",
+    "original": "| PO-012 — Título de Renda Fixa Negociável | Comprar uma unidade por R\\$ 2.000, com cupom de R\\$ 12 por fechamento e vencimento após 12 fechamentos. | Cupom conta como renda passiva; principal nominal de R\\$ 2.000 no vencimento. Venda antes do prazo dependerá do preço de mercado. Risco: desvalorização na venda antecipada. Conceito: renda contratada e oscilação de preço podem coexistir. |",
+    "source": "catalogo/Cartas.md"
+  },
+  "PO-013": {
+    "id": "PO-013",
+    "original": "PO-013\n\nAções\n\n## **Ações de Empresa de Energia**\n\nUma empresa do setor energético oferece ações negociadas no mercado fictício do jogo.\n\nPreço: R\\$ 50 por ação · Compra: de 1 a 50 ações.\n\nDistribuição inicial prevista: R\\$ 0,20 por ação a cada fechamento, desde que a empresa mantenha o pagamento.\n\nRequisitos e decisão: possuir o valor da quantidade escolhida; comprar ou recusar.\n\nConsequência: as ações passam a integrar o patrimônio. Dividendos efetivamente recebidos contam como renda passiva.\n\nRisco e liquidez: preço variável e possibilidade de redução ou suspensão dos dividendos. Venda no próprio turno pelo preço de mercado vigente.\n\nAprendizagem: ações oferecem participação em empresas, mas seus preços e dividendos não são garantidos.",
+    "source": "catalogo/Cartas.md"
+  },
+  "PO-014": {
+    "id": "PO-014",
+    "original": "PO-014\n\nFundos\n\n## **Fundo de Investimento Imobiliário**\n\nUm fundo fictício recebe aluguéis de imóveis comerciais e pode distribuir parte desses resultados aos investidores.\n\nPreço: R\\$ 100 por cota · Compra: de 1 a 30 cotas.\n\nDistribuição inicial prevista: R\\$ 0,60 por cota a cada fechamento.\n\nRequisito: possuir o valor das cotas. Decisão: comprar ou recusar.\n\nConsequência: registrar cotas e eventuais distribuições recebidas como renda passiva.\n\nRisco: vacância, despesas com imóveis e oscilação do preço das cotas. Liquidez: venda pelo preço vigente do mercado fictício.\n\nAprendizagem: fundos imobiliários podem gerar renda, mas dependem do desempenho dos imóveis.",
+    "source": "catalogo/Cartas.md"
+  },
+  "PO-015": {
+    "id": "PO-015",
+    "original": "PO-015\n\nAções\n\n## **Ações de Empresa de Tecnologia**\n\nUma empresa de tecnologia está crescendo, mas utiliza seus lucros para desenvolver novos produtos.\n\nPreço: R\\$ 40 por ação · Compra: de 1 a 60 ações.\n\nDistribuição inicial: R\\$ 0\\.\n\nRequisito: possuir o dinheiro necessário. Decisão: comprar ou recusar.\n\nConsequência: registrar a participação como investimento, sem acréscimo à renda passiva inicial.\n\nRisco: forte oscilação de preço e possibilidade de perda patrimonial. Liquidez: negociação pelo preço de mercado.\n\nAprendizagem: crescimento esperado não significa renda recebida; o investimento pode valorizar ou desvalorizar.",
+    "source": "catalogo/Cartas.md"
+  },
+  "PO-016": {
+    "id": "PO-016",
+    "original": "PO-016\n\nFundos\n\n## **Fundo de Empresas Diversificadas**\n\nUm fundo reúne participações em empresas de diferentes setores econômicos.\n\nPreço: R\\$ 80 por cota · Compra: de 1 a 40 cotas.\n\nDistribuição inicial prevista: R\\$ 0,24 por cota a cada fechamento.\n\nRequisito: possuir o valor escolhido. Decisão: comprar ou recusar.\n\nConsequência: registrar as cotas e eventuais distribuições efetivamente pagas.\n\nRisco: perdas por oscilações gerais do mercado. Liquidez: venda pelo preço vigente.\n\nAprendizagem: diversificação pode reduzir a concentração de riscos, mas não elimina a possibilidade de perdas.",
+    "source": "catalogo/Cartas.md"
+  },
+  "PO-017": {
+    "id": "PO-017",
+    "original": "PO-017\n\nAções\n\n## **Ações de Empresa de Comércio**\n\nUma rede fictícia de lojas oferece ações, mas seus resultados dependem do consumo e das condições econômicas.\n\nPreço: R\\$ 30 por ação · Compra: de 1 a 80 ações.\n\nDistribuição inicial prevista: R\\$ 0,10 por ação a cada fechamento.\n\nRequisito: possuir o valor escolhido. Decisão: comprar ou recusar.\n\nConsequência: registrar as ações e eventuais dividendos recebidos.\n\nRisco: queda nas vendas, concorrência e redução de dividendos. Liquidez: venda pelo preço de mercado.\n\nAprendizagem: os resultados de uma empresa estão ligados ao comportamento da economia e dos consumidores.",
+    "source": "catalogo/Cartas.md"
+  },
+  "PO-018": {
+    "id": "PO-018",
+    "original": "| PO-018 — Projetor para Eventos | Comprar um projetor por R\\$ 1.600, para locação em reuniões e pequenos eventos. | Renda líquida inicial de R\\$ 35 por fechamento. Risco de danos, obsolescência e falta de clientes. Revenda exige comprador. Conceito: receita de aluguel e depreciação de equipamentos. |",
+    "source": "catalogo/Cartas.md"
+  },
+  "PO-019": {
+    "id": "PO-019",
+    "original": "| PO-019 — Kit de Ferramentas Profissionais | Adquirir ferramentas para locação por R\\$ 2.000. | Renda líquida inicial de R\\$ 45 por fechamento. Risco de perda de peças, manutenção e baixa demanda. Revenda exige comprador. Conceito: controle dos custos e conservação de ativos. |",
+    "source": "catalogo/Cartas.md"
+  },
+  "PO-020": {
+    "id": "PO-020",
+    "original": "| PO-020 — Equipamentos para Festas | Comprar mesas, cadeiras e acessórios para locação por R\\$ 3.200. | Renda líquida inicial de R\\$ 70 por fechamento. Risco de avarias, sazonalidade e transporte. Revenda exige comprador. Conceito: demanda sazonal e custos operacionais. |",
+    "source": "catalogo/Cartas.md"
+  },
+  "PO-021": {
+    "id": "PO-021",
+    "original": "| PO-021 — Equipamento Fotográfico | Comprar um conjunto de equipamentos fotográficos por R\\$ 4.500. | Renda líquida inicial de R\\$ 90 por fechamento. Risco de danos, substituição tecnológica e baixa procura. Revenda exige comprador. Conceito: renda de locação, vida útil e desvalorização. |",
+    "source": "catalogo/Cartas.md"
+  },
+  "PO-022": {
+    "id": "PO-022",
+    "original": "PO-022\n\nCompra e revenda\n\n## **Lote de Livros Usados**\n\nUm sebo está vendendo um pequeno lote de livros em bom estado.\n\nCusto de compra: R\\$ 600 · Preço-alvo de revenda: R\\$ 780\\.\n\nRequisito: possuir R\\$ 600\\. Decisão: comprar ou recusar.\n\nConsequência: adquirir o estoque, sem renda passiva. Quando houver uma oportunidade de venda, o estudante poderá aceitar o preço oferecido.\n\nRisco: dificuldade para encontrar comprador, mercadorias sem saída e venda abaixo do preço esperado.\n\nAprendizagem: a margem esperada só se torna lucro quando a mercadoria é efetivamente vendida, considerados os custos.",
+    "source": "catalogo/Cartas.md"
+  },
+  "PO-023": {
+    "id": "PO-023",
+    "original": "PO-023\n\nCompra e revenda\n\n## **Bicicleta para Revenda**\n\nUma bicicleta usada, em boas condições, está disponível por um preço atrativo.\n\nCusto de compra: R\\$ 900 · Preço-alvo de revenda: R\\$ 1.200.\n\nRequisito: possuir R\\$ 900\\. Decisão: comprar ou recusar.\n\nConsequência: registrar a bicicleta como ativo destinado à revenda, sem rendimento recorrente.\n\nRisco: necessidade de reparos, queda na procura e negociação abaixo do preço-alvo.\n\nAprendizagem: o preço desejado pelo vendedor não garante que exista um comprador disposto a pagá-lo.",
+    "source": "catalogo/Cartas.md"
+  },
+  "PO-024": {
+    "id": "PO-024",
+    "original": "PO-024\n\nCompra e revenda\n\n## **Computador Recondicionado**\n\nUm computador usado foi restaurado e está à venda. Você acredita que poderá revendê-lo.\n\nCusto de compra: R\\$ 1.500 · Preço-alvo de revenda: R\\$ 1.950.\n\nRequisito: possuir R\\$ 1.500. Decisão: comprar ou recusar.\n\nConsequência: adicionar o computador ao estoque de revenda, sem geração de renda passiva.\n\nRisco: defeitos ocultos, necessidade de assistência e desvalorização tecnológica.\n\nAprendizagem: é importante avaliar a qualidade e os custos potenciais de um produto antes de revendê-lo.",
+    "source": "catalogo/Cartas.md"
+  },
+  "PO-025": {
+    "id": "PO-025",
+    "original": "PO-025\n\nCompra e revenda\n\n## **Lote de Móveis para Escritório**\n\nUma empresa está renovando suas instalações e colocou mesas e cadeiras usadas à venda.\n\nCusto de compra: R\\$ 2.400 · Preço-alvo de revenda: R\\$ 3.100.\n\nRequisito: possuir R\\$ 2.400. Decisão: comprar ou recusar.\n\nConsequência: registrar os móveis como estoque, aguardando uma oportunidade de negociação.\n\nRisco: armazenamento, transporte, desgaste dos móveis e ausência de compradores.\n\nAprendizagem: a rentabilidade de uma revenda depende também de custos adicionais, tempo e liquidez.",
+    "source": "catalogo/Cartas.md"
+  },
+  "GO-001": {
+    "id": "GO-001",
+    "original": "GO-001\n\nImóvel residencial\n\n## **Apartamento Compacto para Aluguel**\n\nUm apartamento próximo a uma instituição de ensino está disponível para investimento.\n\nPreço de aquisição\n\nR\\$ 35.000\n\nRenda líquida inicial\n\nR\\$ 350/mês\n\nRequisitos: possuir recursos para compra à vista ou obter aprovação de financiamento, com entrada mínima de 20%.\n\nDecisões: comprar à vista, financiar ou recusar.\n\nConsequência: registrar o imóvel como ativo. Receber inicialmente R\\$ 350 por fechamento elegível, enquanto estiver alugado. Em caso de financiamento, descontar a parcela contratada separadamente.\n\nRiscos: vacância, reparos e variação do preço do imóvel. Liquidez: baixa.\n\nAprendizagem: um imóvel alugado gera receita, mas financiamento, vacância e manutenção podem comprometer o fluxo de caixa.",
+    "source": "catalogo/Cartas.md"
+  },
+  "GO-002": {
+    "id": "GO-002",
+    "original": "GO-002\n\nImóvel comercial\n\n## **Sala Comercial**\n\nUma sala em um centro empresarial está à venda com possibilidade de locação para profissionais autônomos.\n\nPreço: R\\$ 48.000 · Renda líquida inicial: R\\$ 430/mês.\n\nRequisitos: pagamento à vista ou entrada de 25%, com financiamento aprovado.\n\nDecisões: comprar à vista, financiar ou recusar.\n\nConsequência: incorporar a sala ao patrimônio e registrar o aluguel recebido, além das parcelas financeiras, se houver.\n\nRiscos: desocupação prolongada, despesas condominiais extraordinárias e menor procura comercial. Liquidez: baixa.\n\nAprendizagem: imóveis comerciais podem ter receitas e riscos diferentes dos residenciais.",
+    "source": "catalogo/Cartas.md"
+  },
+  "GO-003": {
+    "id": "GO-003",
+    "original": "GO-003\n\nImóvel residencial\n\n## **Casa para Locação**\n\nUma pequena casa em bairro residencial pode ser adquirida para gerar aluguel.\n\nPreço: R\\$ 65.000 · Renda líquida inicial: R\\$ 520/mês.\n\nRequisitos: recursos à vista ou entrada mínima de 25% e financiamento aprovado.\n\nDecisões: comprar, financiar ou recusar.\n\nConsequência: registrar o imóvel e seus rendimentos, descontando obrigações de financiamento quando aplicável.\n\nRiscos: manutenção estrutural, vacância e desvalorização da região. Liquidez: baixa.\n\nAprendizagem: a rentabilidade deve considerar o custo total de possuir e manter um imóvel.",
+    "source": "catalogo/Cartas.md"
+  },
+  "GO-004": {
+    "id": "GO-004",
+    "original": "GO-004\n\nImóvel comercial\n\n## **Pequeno Galpão**\n\nUm imóvel pode ser utilizado por empresas para armazenar materiais e mercadorias.\n\nPreço: R\\$ 80.000 · Renda líquida inicial: R\\$ 680/mês.\n\nRequisitos: recursos à vista ou entrada de 30% com financiamento aprovado.\n\nDecisões: comprar à vista, financiar ou recusar.\n\nConsequência: adquirir o galpão e receber a receita líquida dos contratos ativos de locação.\n\nRiscos: custos de conservação, contratos encerrados e dependência de poucos inquilinos. Liquidez: baixa.\n\nAprendizagem: concentração de clientes pode aumentar o risco mesmo quando a receita parece elevada.",
+    "source": "catalogo/Cartas.md"
+  },
+  "GO-005": {
+    "id": "GO-005",
+    "original": "GO-005\n\nImóvel de temporada\n\n## **Chalé para Hospedagem**\n\nUm chalé em área turística pode ser alugado por temporada.\n\nPreço: R\\$ 42.000 · Renda líquida média inicial: R\\$ 380/mês.\n\nRequisitos: pagamento à vista ou entrada de 25%, com crédito aprovado.\n\nDecisões: comprar, financiar ou recusar.\n\nConsequência: registrar o imóvel e distribuir a renda líquida correspondente à ocupação de cada período.\n\nRiscos: sazonalidade, despesas com limpeza e períodos sem hóspedes. Liquidez: baixa.\n\nAprendizagem: uma receita média não significa receber a mesma quantia em todos os períodos.",
+    "source": "catalogo/Cartas.md"
+  },
+  "GO-006": {
+    "id": "GO-006",
+    "original": "GO-006\n\nImóvel sem renda\n\n## **Terreno em Área de Expansão**\n\nUm terreno está à venda em uma região com expectativa de desenvolvimento urbano.\n\nPreço: R\\$ 25.000 · Renda passiva inicial: R\\$ 0\\.\n\nRequisitos: compra à vista ou entrada de 30% com crédito aprovado.\n\nDecisões: comprar, financiar ou recusar.\n\nConsequência: registrar o terreno como ativo, sujeito às variações de valor do mercado. Não gerar renda passiva enquanto não houver exploração econômica efetiva.\n\nRiscos: desvalorização, custos extraordinários e dificuldade para vender. Liquidez: baixa.\n\nAprendizagem: esperar valorização é diferente de adquirir um ativo que já produz renda.",
+    "source": "catalogo/Cartas.md"
+  },
+  "GO-007": {
+    "id": "GO-007",
+    "original": "GO-007\n\nImóvel comercial\n\n## **Conjunto de Lojas**\n\nDuas pequenas lojas vizinhas estão sendo vendidas juntas.\n\nPreço: R\\$ 95.000 · Renda líquida inicial: R\\$ 820/mês.\n\nRequisitos: pagamento integral ou entrada de 30% e financiamento aprovado.\n\nDecisões: comprar à vista, financiar ou recusar.\n\nConsequência: registrar o conjunto como um ativo, com aluguéis sujeitos à ocupação das duas unidades.\n\nRiscos: desocupação simultânea, manutenção e queda no movimento comercial. Liquidez: baixa.\n\nAprendizagem: possuir mais unidades pode diversificar a receita, mas não elimina os riscos do setor.",
+    "source": "catalogo/Cartas.md"
+  },
+  "GO-008": {
+    "id": "GO-008",
+    "original": "GO-008\n\nImóvel residencial\n\n## **Prédio com Três Quitinetes**\n\nUm imóvel dividido em três unidades pequenas está disponível para locação.\n\nPreço: R\\$ 110.000 · Renda líquida inicial: R\\$ 950/mês.\n\nRequisitos: pagamento à vista ou entrada mínima de 30% e financiamento aprovado.\n\nDecisões: comprar, financiar ou recusar.\n\nConsequência: registrar o prédio e distribuir rendimentos conforme as unidades ocupadas.\n\nRiscos: inadimplência dos inquilinos, reformas e períodos de desocupação. Liquidez: baixa.\n\nAprendizagem: receitas distribuídas entre vários inquilinos ajudam a reduzir a dependência de um único aluguel.\n\n## **3\\. Categoria B — Aquisição de empresas**\n\n7 cartas · GO-009 a GO-015\n\nEssas oportunidades representam a aquisição de pequenos e médios negócios já existentes. A renda informada é o lucro líquido inicial destinado ao proprietário, sujeito ao desempenho da empresa.",
+    "source": "catalogo/Cartas.md"
+  },
+  "GO-009": {
+    "id": "GO-009",
+    "original": "GO-009\n\nEmpresa\n\n## **Minimercado de Bairro**\n\nUm minimercado com clientela regular está disponível para venda.\n\nPreço: R\\$ 28.000 · Lucro distribuído inicial: R\\$ 420/mês.\n\nRequisitos: recursos à vista ou entrada de 30% e financiamento aprovado.\n\nDecisões: adquirir à vista, financiar ou recusar.\n\nConsequência: assumir a propriedade e receber o lucro líquido distribuído enquanto o negócio apresentar resultados suficientes.\n\nRiscos: perdas de estoque, concorrência e aumento de custos. Liquidez: baixa.\n\nAprendizagem: um negócio pode faturar bastante e, mesmo assim, apresentar margens reduzidas.",
+    "source": "catalogo/Cartas.md"
+  },
+  "GO-010": {
+    "id": "GO-010",
+    "original": "GO-010\n\nEmpresa\n\n## **Lavanderia de Bairro**\n\nUma lavanderia estabelecida está à venda, incluindo máquinas e carteira de clientes.\n\nPreço: R\\$ 38.000 · Lucro distribuído inicial: R\\$ 520/mês.\n\nRequisitos: compra à vista ou entrada de 30% com financiamento aprovado.\n\nDecisões: comprar, financiar ou recusar.\n\nConsequência: incorporar a empresa ao patrimônio e registrar seus resultados distribuídos.\n\nRiscos: manutenção de máquinas, consumo de energia e perda de clientes. Liquidez: baixa.\n\nAprendizagem: equipamentos produtivos exigem reposição e manutenção ao longo do tempo.",
+    "source": "catalogo/Cartas.md"
+  },
+  "GO-011": {
+    "id": "GO-011",
+    "original": "GO-011\n\nEmpresa\n\n## **Pequena Padaria**\n\nUma padaria está disponível para aquisição com forno, mobiliário e fornecedores.\n\nPreço: R\\$ 55.000 · Lucro distribuído inicial: R\\$ 700/mês.\n\nRequisitos: recursos à vista ou entrada de 35% com financiamento aprovado.\n\nDecisões: comprar à vista, financiar ou recusar.\n\nConsequência: adquirir o estabelecimento e receber lucros conforme o resultado efetivamente distribuído.\n\nRiscos: desperdício, custos de ingredientes, concorrência e problemas nos equipamentos. Liquidez: baixa.\n\nAprendizagem: controle de desperdícios e custos é essencial para a saúde financeira de uma empresa.",
+    "source": "catalogo/Cartas.md"
+  },
+  "GO-012": {
+    "id": "GO-012",
+    "original": "GO-012\n\nEmpresa\n\n## **Agência de Serviços Digitais**\n\nUma agência atende empresas com manutenção de sites e serviços digitais recorrentes.\n\nPreço: R\\$ 45.000 · Lucro distribuído inicial: R\\$ 600/mês.\n\nRequisitos: pagamento à vista ou entrada de 30%, com crédito aprovado.\n\nDecisões: adquirir, financiar ou recusar.\n\nConsequência: registrar a agência e os lucros líquidos distribuídos dos contratos em vigor.\n\nRiscos: cancelamento de contratos, concorrência e atualização tecnológica. Liquidez: baixa.\n\nAprendizagem: receitas contratadas ajudam no planejamento, mas os clientes podem deixar de contratar os serviços.",
+    "source": "catalogo/Cartas.md"
+  },
+  "GO-013": {
+    "id": "GO-013",
+    "original": "GO-013\n\nEmpresa\n\n## **Oficina de Bicicletas**\n\nUma oficina especializada em reparos e manutenção está sendo vendida.\n\nPreço: R\\$ 32.000 · Lucro distribuído inicial: R\\$ 450/mês.\n\nRequisitos: compra à vista ou entrada de 25% com financiamento aprovado.\n\nDecisões: comprar, financiar ou recusar.\n\nConsequência: registrar a oficina como ativo e receber distribuições conforme os resultados.\n\nRiscos: demanda irregular, custos com peças e concorrência. Liquidez: baixa.\n\nAprendizagem: a qualidade do serviço e a fidelização de clientes influenciam a continuidade de um negócio.",
+    "source": "catalogo/Cartas.md"
+  },
+  "GO-014": {
+    "id": "GO-014",
+    "original": "GO-014\n\nEmpresa\n\n## **Empresa de Energia Solar**\n\nUma pequena empresa especializada em instalação e manutenção de sistemas solares está disponível.\n\nPreço: R\\$ 75.000 · Lucro distribuído inicial: R\\$ 900/mês.\n\nRequisitos: recursos à vista ou entrada de 35% com financiamento aprovado.\n\nDecisões: adquirir, financiar ou recusar.\n\nConsequência: registrar a empresa e receber os lucros efetivamente distribuídos.\n\nRiscos: custos dos equipamentos, alterações na demanda e atrasos de contratos. Liquidez: baixa.\n\nAprendizagem: empresas de setores promissores também estão sujeitas a riscos operacionais e financeiros.",
+    "source": "catalogo/Cartas.md"
+  },
+  "GO-015": {
+    "id": "GO-015",
+    "original": "GO-015\n\nEmpresa\n\n## **Distribuidora de Produtos**\n\nUma distribuidora regional atende pequenos comércios e está disponível para aquisição.\n\nPreço: R\\$ 90.000 · Lucro distribuído inicial: R\\$ 1.050/mês.\n\nRequisitos: pagamento integral ou entrada mínima de 35%, com financiamento aprovado.\n\nDecisões: comprar, financiar ou recusar.\n\nConsequência: assumir a empresa e seus resultados distribuídos, mantendo financiamento como obrigação separada quando contratado.\n\nRiscos: atraso de clientes, despesas de transporte, perdas de estoque e concorrência. Liquidez: baixa.\n\nAprendizagem: crescimento das vendas exige atenção ao capital de giro, ao estoque e aos recebimentos.\n\n## **4\\. Categoria C — Participações societárias**\n\n5 cartas · GO-016 a GO-020\n\nNesta categoria, o estudante poderá adquirir uma parte de uma empresa em vez de comprar o negócio inteiro.\n\nAs cartas permitirão formar sociedades com outros estudantes ou investidores fictícios, respeitando as regras aprovadas de negociação e votação.",
+    "source": "catalogo/Cartas.md"
+  },
+  "GO-016": {
+    "id": "GO-016",
+    "original": "GO-016\n\nParticipação societária\n\n## **Participação em Cafeteria**\n\nUma cafeteria em crescimento procura novos sócios para financiar a ampliação do espaço.\n\nValor total da empresa: R\\$ 40.000.\n\nParticipação oferecida: 25% por R\\$ 10.000.\n\nLucro líquido total distribuído inicialmente: R\\$ 500 por fechamento.\n\nRequisitos: possuir R\\$ 10.000 ou formar uma sociedade de aquisição, conforme as regras da oportunidade.\n\nDecisões: adquirir a participação integral oferecida, apresentar uma proposta conjunta com outros investidores ou recusar.\n\nConsequência: quem adquirir 25% terá direito inicialmente a R\\$ 125 por fechamento, caso a empresa distribua o lucro previsto.\n\nRiscos: redução do movimento, aumento nos custos e decisões coletivas que alterem a distribuição de lucros. Liquidez: baixa, com preferência dos demais sócios na venda.\n\nAprendizagem: possuir parte de uma empresa significa dividir tanto os resultados quanto as decisões empresariais.",
+    "source": "catalogo/Cartas.md"
+  },
+  "GO-017": {
+    "id": "GO-017",
+    "original": "GO-017\n\nParticipação societária\n\n## **Sócio de uma Academia**\n\nUma academia de pequeno porte está buscando capital para adquirir novos equipamentos.\n\nValor da empresa: R\\$ 60.000.\n\nParticipação oferecida: 30% por R\\$ 18.000.\n\nLucro total distribuído inicialmente: R\\$ 780 por fechamento.\n\nRequisitos: possuir os recursos ou estabelecer uma proposta conjunta de aquisição.\n\nDecisões: investir, propor a divisão da participação ou recusar.\n\nConsequência: a participação integral de 30% poderá distribuir inicialmente R\\$ 234 por fechamento, conforme o lucro efetivamente pago.\n\nRiscos: cancelamento de matrículas, manutenção dos equipamentos e sazonalidade. Liquidez: baixa.\n\nAprendizagem: o retorno de um sócio depende do desempenho da empresa e da parcela que ele possui.",
+    "source": "catalogo/Cartas.md"
+  },
+  "GO-018": {
+    "id": "GO-018",
+    "original": "GO-018\n\nParticipação societária\n\n## **Participação em Empresa de Aplicativos**\n\nUma pequena desenvolvedora de aplicativos procura investidores para lançar novos produtos.\n\nValor da empresa: R\\$ 80.000.\n\nParticipação oferecida: 20% por R\\$ 16.000.\n\nLucro distribuído inicialmente: R\\$ 0\\. A empresa reinveste seus resultados.\n\nRequisitos: possuir capital ou apresentar uma proposta conjunta com outros investidores.\n\nDecisões: adquirir a participação, negociar uma aquisição conjunta ou recusar.\n\nConsequência: registrar a participação patrimonial, inicialmente sem renda passiva. Distribuições futuras dependerão do desempenho e das decisões societárias.\n\nRiscos: dificuldades no lançamento dos produtos, concorrência e perda de valor. Liquidez: baixa.\n\nAprendizagem: uma empresa pode crescer sem distribuir lucros aos sócios, e seu potencial de valorização não constitui renda recebida.",
+    "source": "catalogo/Cartas.md"
+  },
+  "GO-019": {
+    "id": "GO-019",
+    "original": "GO-019\n\nParticipação societária\n\n## **Sócio de uma Empresa de Reciclagem**\n\nUma empresa de reciclagem deseja ampliar a coleta e o processamento de materiais.\n\nValor da empresa: R\\$ 50.000.\n\nParticipação oferecida: 40% por R\\$ 20.000.\n\nLucro total distribuído inicialmente: R\\$ 600 por fechamento.\n\nRequisitos: recursos suficientes ou proposta de aquisição conjunta.\n\nDecisões: comprar a participação, convidar outros investidores ou recusar.\n\nConsequência: a participação integral de 40% poderá receber inicialmente R\\$ 240 por fechamento.\n\nRiscos: oscilações nos preços dos materiais, custos logísticos e disponibilidade de fornecedores. Liquidez: baixa.\n\nAprendizagem: negócios com objetivos ambientais também precisam ser financeiramente sustentáveis.",
+    "source": "catalogo/Cartas.md"
+  },
+  "GO-020": {
+    "id": "GO-020",
+    "original": "GO-020\n\nParticipação societária\n\n## **Investimento em Empresa de Logística**\n\nUma transportadora regional busca novos sócios para ampliar suas operações.\n\nValor da empresa: R\\$ 120.000.\n\nParticipação oferecida: 25% por R\\$ 30.000.\n\nLucro total distribuído inicialmente: R\\$ 1.200 por fechamento.\n\nRequisitos: recursos suficientes ou aquisição conjunta com outros investidores.\n\nDecisões: investir individualmente, formar uma proposta de sociedade ou recusar.\n\nConsequência: a aquisição dos 25% poderá gerar inicialmente R\\$ 300 por fechamento, desde que o lucro seja distribuído.\n\nRiscos: aumento do combustível, manutenção de veículos, inadimplência de clientes e concorrência. Liquidez: baixa.\n\nAprendizagem: atividades com investimentos elevados em veículos e infraestrutura estão sujeitas a custos operacionais significativos.",
+    "source": "catalogo/Cartas.md"
+  },
+  "DI-001": {
+    "id": "DI-001",
+    "original": "DI-001\tConserto da Geladeira. Sua geladeira apresentou defeito e precisará de manutenção.\t10% do salário\tReserva de emergência",
+    "source": "catalogo/Cartas.md"
+  },
+  "DI-002": {
+    "id": "DI-002",
+    "original": "DI-002\tConsulta de Urgência. Uma necessidade de saúde gerou uma despesa não prevista.\t10%\tPlanejamento para imprevistos",
+    "source": "catalogo/Cartas.md"
+  },
+  "DI-003": {
+    "id": "DI-003",
+    "original": "DI-003\tProblema no Transporte. Você precisou pagar um reparo ou transporte alternativo.\t5%\tCustos de mobilidade",
+    "source": "catalogo/Cartas.md"
+  },
+  "DI-004": {
+    "id": "DI-004",
+    "original": "DI-004\tVazamento na Residência. Um encanamento exigiu reparo imediato.\t10%\tManutenção da moradia",
+    "source": "catalogo/Cartas.md"
+  },
+  "DI-005": {
+    "id": "DI-005",
+    "original": "DI-005\tEquipamento Eletrônico Danificado. Um aparelho importante deixou de funcionar.\t20%\tDepreciação e reposição",
+    "source": "catalogo/Cartas.md"
+  },
+  "DI-006": {
+    "id": "DI-006",
+    "original": "DI-006\tConta de Energia Acima do Previsto. O consumo aumentou inesperadamente neste período.\t5%\tControle do consumo",
+    "source": "catalogo/Cartas.md"
+  },
+  "DI-007": {
+    "id": "DI-007",
+    "original": "DI-007\tCompra por Impulso. Você realizou uma compra não planejada antes de avaliar o orçamento.\t10%\tConsumo consciente",
+    "source": "catalogo/Cartas.md"
+  },
+  "DI-008": {
+    "id": "DI-008",
+    "original": "DI-008\tReparo na Bicicleta. Sua bicicleta precisou de manutenção inesperada.\t5%\tCustos de conservação",
+    "source": "catalogo/Cartas.md"
+  },
+  "DI-009": {
+    "id": "DI-009",
+    "original": "DI-009\tMaterial de Estudo Extra. Você precisou adquirir materiais educacionais adicionais.\t5%\tPlanejamento educacional",
+    "source": "catalogo/Cartas.md"
+  },
+  "DI-010": {
+    "id": "DI-010",
+    "original": "DI-010\tServiço Doméstico Emergencial. Foi necessário contratar um reparo residencial.\t10%\tFormação de reservas",
+    "source": "catalogo/Cartas.md"
+  },
+  "DI-011": {
+    "id": "DI-011",
+    "original": "DI-011\tDeslocamento Inesperado. Uma situação familiar exigiu uma viagem curta.\t20%\tGastos de transporte",
+    "source": "catalogo/Cartas.md"
+  },
+  "DI-012": {
+    "id": "DI-012",
+    "original": "DI-012\tProblema com o Celular. O aparelho precisou de conserto.\t10%\tNecessidades e prioridades",
+    "source": "catalogo/Cartas.md"
+  },
+  "DI-013": {
+    "id": "DI-013",
+    "original": "DI-013\tDesperdício de Alimentos. Parte das compras estragou e precisou ser substituída.\t5%\tPlanejamento de compras",
+    "source": "catalogo/Cartas.md"
+  },
+  "DI-014": {
+    "id": "DI-014",
+    "original": "DI-014\tDespesa com Documentação. Você precisou atualizar documentos e pagar taxas.\t5%\tObrigações ocasionais",
+    "source": "catalogo/Cartas.md"
+  },
+  "DI-015": {
+    "id": "DI-015",
+    "original": "DI-015\tMudança de Residência. Uma situação imprevista exigiu gastos com transporte e organização.\t20%\tCustos de mudanças",
+    "source": "catalogo/Cartas.md"
+  },
+  "DI-016": {
+    "id": "DI-016",
+    "original": "DI-016\tManutenção de Equipamento de Trabalho. Uma ferramenta precisou de reparo ou substituição.\t10%\tCustos profissionais",
+    "source": "catalogo/Cartas.md"
+  },
+  "DI-017": {
+    "id": "DI-017",
+    "original": "DI-017\tTaxa de Serviço Inesperada. Uma cobrança contratual previamente prevista passou despercebida no orçamento.\t5%\tLeitura de contratos",
+    "source": "catalogo/Cartas.md"
+  },
+  "DI-018": {
+    "id": "DI-018",
+    "original": "DI-018\tTratamento Odontológico. Uma necessidade de atendimento gerou despesa extraordinária.\t20%\tProteção financeira",
+    "source": "catalogo/Cartas.md"
+  },
+  "DI-019": {
+    "id": "DI-019",
+    "original": "DI-019\tReparo Estrutural Urgente. Um problema significativo na moradia exigiu intervenção.\t30%\tRisco excepcional e reserva",
+    "source": "catalogo/Cartas.md"
+  },
+  "DI-020": {
+    "id": "DI-020",
+    "original": "DI-020\tSubstituição de Equipamento Essencial. Um equipamento de uso necessário sofreu perda irreparável.\t20%\tReserva e reposição de bens",
+    "source": "catalogo/Cartas.md"
+  },
+  "DI-021": {
+    "id": "DI-021",
+    "original": "DI-021\tManutenção Extraordinária de Imóvel. Um imóvel de investimento precisa de reparos não previstos.\tR\\$ 1.200, se possuir imóvel elegível\tReserva para manutenção",
+    "source": "catalogo/Cartas.md"
+  },
+  "DI-022": {
+    "id": "DI-022",
+    "original": "DI-022\tDespesa Jurídica Empresarial. Um negócio do qual você é proprietário ou sócio precisa de assessoria para resolver uma questão contratual.\tR\\$ 1.500 para a empresa elegível\tResponsabilidade empresarial",
+    "source": "catalogo/Cartas.md"
+  },
+  "DI-023": {
+    "id": "DI-023",
+    "original": "DI-023\tViagem Não Planejada. Uma situação pessoal exige deslocamento e hospedagem.\t10% do salário de referência\tLiquidez pessoal",
+    "source": "catalogo/Cartas.md"
+  },
+  "DI-024": {
+    "id": "DI-024",
+    "original": "DI-024\tReparo em Equipamento de Locação. Um equipamento alugado sofreu desgaste extraordinário.\tR\\$ 650, se possuir equipamento elegível\tDepreciação",
+    "source": "catalogo/Cartas.md"
+  },
+  "DI-025": {
+    "id": "DI-025",
+    "original": "DI-025\tDespesa Administrativa Extra. Um negócio precisa pagar serviços administrativos excepcionais.\tR\\$ 900 para a empresa elegível\tGestão de custos",
+    "source": "catalogo/Cartas.md"
+  },
+  "DI-026": {
+    "id": "DI-026",
+    "original": "DI-026\tDespesa Familiar Importante. Um acontecimento inesperado exige reorganizar o orçamento pessoal.\t20% do salário de referência\tPlanejamento financeiro",
+    "source": "catalogo/Cartas.md"
+  },
+  "DI-027": {
+    "id": "DI-027",
+    "original": "DI-027\tReforma Emergencial. Um imóvel de investimento necessita de intervenção urgente.\tR\\$ 2.000, se possuir imóvel elegível\tConservação patrimonial",
+    "source": "catalogo/Cartas.md"
+  },
+  "DI-028": {
+    "id": "DI-028",
+    "original": "DI-028\tCobrança Contratual Não Prevista no Orçamento. Uma obrigação contratual válida precisou ser paga fora do planejamento mensal.\t10% do salário de referência\tGestão de contratos",
+    "source": "catalogo/Cartas.md"
+  },
+  "DI-029": {
+    "id": "DI-029",
+    "original": "DI-029\tProblema com Fornecedor. Uma empresa enfrenta custos extraordinários para cumprir seus compromissos.\tR\\$ 1.800 para a empresa elegível\tRisco operacional",
+    "source": "catalogo/Cartas.md"
+  },
+  "DI-030": {
+    "id": "DI-030",
+    "original": "DI-030\tEmergência Pessoal Excepcional. Uma situação importante exige utilizar parte das reservas financeiras.\t30% do salário de referência\tResiliência financeira",
+    "source": "catalogo/Cartas.md"
+  },
+  "DI-031": {
+    "id": "DI-031",
+    "original": "DI-031\tManutenção de Equipamento Empresarial. Uma máquina essencial de um negócio precisa de reparo.\tR\\$ 1.100 para a empresa elegível\tCustos de produção",
+    "source": "catalogo/Cartas.md"
+  },
+  "DI-032": {
+    "id": "DI-032",
+    "original": "DI-032\tDespesa com Documentação Patrimonial. Você precisa regularizar documentos relacionados a seus investimentos.\t5% do salário de referência\tOrganização patrimonial",
+    "source": "catalogo/Cartas.md"
+  },
+  "DI-033": {
+    "id": "DI-033",
+    "original": "DI-033\tServiço de Segurança Emergencial. Uma situação exige medidas pontuais de proteção de bens pessoais.\t10% do salário de referência\tPrevenção de perdas",
+    "source": "catalogo/Cartas.md"
+  },
+  "DI-034": {
+    "id": "DI-034",
+    "original": "DI-034\tTransporte e Logística Extraordinários. Um negócio enfrenta uma despesa de transporte fora do previsto.\tR\\$ 1.000 para a empresa elegível\tCustos logísticos",
+    "source": "catalogo/Cartas.md"
+  },
+  "DI-035": {
+    "id": "DI-035",
+    "original": "DI-035\tDespesa Pessoal Inesperada. Um compromisso pessoal inadiável exige um pagamento adicional.\t20% do salário de referência\tProteção da reserva financeira",
+    "source": "catalogo/Cartas.md"
+  },
+  "MF-001": {
+    "id": "MF-001",
+    "original": "MF-001\tAlta nas Ações de Energia. A procura por ações do setor energético aumentou após a divulgação de resultados positivos.\tValorização de 8% das ações de energia.\tGlobal",
+    "source": "catalogo/Cartas.md"
+  },
+  "MF-002": {
+    "id": "MF-002",
+    "original": "MF-002\tQueda no Setor de Tecnologia. Investidores ficaram mais cautelosos com empresas de tecnologia.\tDesvalorização de 10% das ações de tecnologia.\tGlobal",
+    "source": "catalogo/Cartas.md"
+  },
+  "MF-003": {
+    "id": "MF-003",
+    "original": "MF-003\tMercado Imobiliário Aquecido. A demanda por imóveis aumentou.\tValorização de 6% dos imóveis de investimento.\tGlobal",
+    "source": "catalogo/Cartas.md"
+  },
+  "MF-004": {
+    "id": "MF-004",
+    "original": "MF-004\tRedução dos Dividendos. Uma empresa de comércio enfrenta diminuição de lucro.\tRedução de 20% dos dividendos das ações de comércio.\tGlobal",
+    "source": "catalogo/Cartas.md"
+  },
+  "MF-005": {
+    "id": "MF-005",
+    "original": "MF-005\tMelhora nos Fundos Imobiliários. O aumento da ocupação favorece a receita dos fundos.\tAumento de 10% na distribuição por cota de fundos imobiliários.\tGlobal",
+    "source": "catalogo/Cartas.md"
+  },
+  "MF-006": {
+    "id": "MF-006",
+    "original": "MF-006\tDemanda por Locações de Equipamentos. A procura por equipamentos alugados cresceu na região.\tAumento de 10% na renda dos equipamentos de locação do jogador.\tIndividual",
+    "source": "catalogo/Cartas.md"
+  },
+  "MF-007": {
+    "id": "MF-007",
+    "original": "MF-007\tOscilação Geral da Bolsa. O mercado de ações enfrenta um período de incerteza.\tDesvalorização de 5% das ações e fundos de ações.\tGlobal",
+    "source": "catalogo/Cartas.md"
+  },
+  "MF-008": {
+    "id": "MF-008",
+    "original": "MF-008\tRecuperação do Comércio. A melhora no consumo beneficia empresas comerciais.\tValorização de 7% das ações de comércio.\tGlobal",
+    "source": "catalogo/Cartas.md"
+  },
+  "MF-009": {
+    "id": "MF-009",
+    "original": "MF-009\tJuros de Novas Aplicações em Alta. Instituições passam a oferecer rendimentos maiores nos novos títulos.\tNovas aplicações elegíveis passam a oferecer 0,1 ponto percentual adicional por fechamento, enquanto durar a condição.\tGlobal",
+    "source": "catalogo/Cartas.md"
+  },
+  "MF-010": {
+    "id": "MF-010",
+    "original": "MF-010\tQueda nos Preços de Equipamentos. Novos modelos tornam equipamentos usados menos procurados.\tDesvalorização de 10% dos equipamentos para locação do jogador.\tIndividual",
+    "source": "catalogo/Cartas.md"
+  },
+  "MF-011": {
+    "id": "MF-011",
+    "original": "MF-011\tValorização de Fundos Diversificados. Resultados favoráveis elevam o preço das cotas.\tValorização de 6% das cotas de fundos diversificados.\tGlobal",
+    "source": "catalogo/Cartas.md"
+  },
+  "MF-012": {
+    "id": "MF-012",
+    "original": "MF-012\tDesocupação no Mercado de Aluguel. O aumento de imóveis disponíveis pressiona as receitas.\tRedução de 15% da renda de aluguel de imóveis elegíveis do jogador.\tIndividual",
+    "source": "catalogo/Cartas.md"
+  },
+  "MF-013": {
+    "id": "MF-013",
+    "original": "MF-013\tCrescimento do Setor Energético. Empresas de energia ampliaram a distribuição de resultados.\tAumento de 10% dos dividendos de ações de energia.\tGlobal",
+    "source": "catalogo/Cartas.md"
+  },
+  "MF-014": {
+    "id": "MF-014",
+    "original": "MF-014\tCrise de Confiança no Comércio. Expectativas de menor consumo reduzem o preço das ações comerciais.\tDesvalorização de 8% das ações de comércio.\tGlobal",
+    "source": "catalogo/Cartas.md"
+  },
+  "MF-015": {
+    "id": "MF-015",
+    "original": "MF-015\tRecuperação dos Fundos Imobiliários. A melhora nas expectativas aumenta o valor negociado das cotas.\tValorização de 5% das cotas de fundos imobiliários.\tGlobal",
+    "source": "catalogo/Cartas.md"
+  },
+  "MF-016": {
+    "id": "MF-016",
+    "original": "MF-016\tExpansão do Setor Imobiliário. A procura por imóveis de investimento cresce em diferentes regiões.\tValorização de 8% dos imóveis de investimento.\tGlobal",
+    "source": "catalogo/Cartas.md"
+  },
+  "MF-017": {
+    "id": "MF-017",
+    "original": "MF-017\tRetração Imobiliária. O mercado passa por redução na procura de compradores.\tDesvalorização de 12% dos imóveis de investimento.\tGlobal",
+    "source": "catalogo/Cartas.md"
+  },
+  "MF-018": {
+    "id": "MF-018",
+    "original": "MF-018\tCrescimento do Setor de Tecnologia. Novas oportunidades aumentam o interesse dos investidores por empresas tecnológicas.\tValorização de 15% das empresas e participações do setor tecnológico.\tGlobal",
+    "source": "catalogo/Cartas.md"
+  },
+  "MF-019": {
+    "id": "MF-019",
+    "original": "MF-019\tConcorrência no Comércio. Novos concorrentes pressionam as margens dos estabelecimentos comerciais.\tRedução de 15% do lucro distribuível das empresas comerciais elegíveis.\tGlobal",
+    "source": "catalogo/Cartas.md"
+  },
+  "MF-020": {
+    "id": "MF-020",
+    "original": "MF-020\tRecuperação da Logística. O aumento da demanda por transporte beneficia empresas de logística.\tAumento de 12% do lucro distribuível das empresas de logística.\tGlobal",
+    "source": "catalogo/Cartas.md"
+  },
+  "MF-021": {
+    "id": "MF-021",
+    "original": "MF-021\tIncerteza Econômica. Empresas e investidores tornam-se mais cautelosos diante de expectativas negativas.\tDesvalorização de 8% das ações e cotas de fundos negociados.\tGlobal",
+    "source": "catalogo/Cartas.md"
+  },
+  "MF-022": {
+    "id": "MF-022",
+    "original": "MF-022\tValorização de Imóveis Comerciais. A atividade empresarial amplia a procura por espaços comerciais.\tValorização de 10% dos imóveis comerciais de investimento.\tGlobal",
+    "source": "catalogo/Cartas.md"
+  },
+  "MF-023": {
+    "id": "MF-023",
+    "original": "MF-023\tRedução na Ocupação de Imóveis. A demanda por locações diminui temporariamente.\tRedução de 20% da renda distribuível de imóveis alugados elegíveis.\tGlobal",
+    "source": "catalogo/Cartas.md"
+  },
+  "MF-024": {
+    "id": "MF-024",
+    "original": "MF-024\tCrescimento dos Negócios Sustentáveis. Empresas ligadas à reciclagem e soluções ambientais atraem investidores.\tValorização de 12% dessas empresas e participações.\tGlobal",
+    "source": "catalogo/Cartas.md"
+  },
+  "MF-025": {
+    "id": "MF-025",
+    "original": "MF-025\tPressão sobre as Empresas de Alimentação. Alterações nos custos e na demanda reduzem os resultados do setor.\tRedução de 15% do lucro distribuível de negócios de alimentação.\tGlobal",
+    "source": "catalogo/Cartas.md"
+  },
+  "MF-026": {
+    "id": "MF-026",
+    "original": "MF-026\tMelhora na Demanda por Serviços. Empresas de prestação de serviços registram resultados mais favoráveis.\tAumento de 10% do lucro distribuível das empresas elegíveis de serviços.\tGlobal",
+    "source": "catalogo/Cartas.md"
+  },
+  "MF-027": {
+    "id": "MF-027",
+    "original": "MF-027\tQueda no Mercado de Equipamentos. Equipamentos usados perdem valor com a chegada de novas alternativas.\tDesvalorização de 15% dos equipamentos de locação e das máquinas de pequenos negócios do jogador.\tIndividual",
+    "source": "catalogo/Cartas.md"
+  },
+  "MF-028": {
+    "id": "MF-028",
+    "original": "MF-028\tRevalorização de Negócios Locais. Pequenos empreendimentos passam a atrair maior interesse de compradores.\tValorização de 10% dos pequenos negócios elegíveis.\tGlobal",
+    "source": "catalogo/Cartas.md"
+  },
+  "MF-029": {
+    "id": "MF-029",
+    "original": "MF-029\tExpansão do Turismo. A procura por hospedagens de temporada aumenta.\tAumento de 15% da renda distribuível de imóveis de temporada elegíveis.\tGlobal",
+    "source": "catalogo/Cartas.md"
+  },
+  "MF-030": {
+    "id": "MF-030",
+    "original": "MF-030\tRecessão Setorial na Tecnologia. O setor enfrenta uma redução significativa das expectativas de crescimento.\tDesvalorização de 18% das empresas e participações de tecnologia.\tGlobal",
+    "source": "catalogo/Cartas.md"
+  },
+  "EV-001": {
+    "id": "EV-001",
+    "original": "EV-001\tPromoção Profissional. Seu desempenho foi reconhecido e você recebeu uma proposta de promoção.\tAutomático: salário recorrente aumenta 8%. As despesas permanecem inicialmente inalteradas.\tAumento de renda não precisa provocar aumento imediato do padrão de vida.",
+    "source": "catalogo/Cartas.md"
+  },
+  "EV-002": {
+    "id": "EV-002",
+    "original": "EV-002\tCurso de Qualificação. Uma formação pode ampliar suas possibilidades profissionais.\tParticipar: pagar R\\$ 600 agora e receber aumento de 5% no salário a partir do segundo fechamento seguinte. Recusar: sem alteração.\tEducação pode representar investimento no desenvolvimento profissional.",
+    "source": "catalogo/Cartas.md"
+  },
+  "EV-003": {
+    "id": "EV-003",
+    "original": "EV-003\tReorganização do Orçamento. Você percebeu despesas de lazer que não utiliza plenamente.\tReduzir gastos: diminuir em 10% a categoria de lazer, sujeito a um mínimo de R\\$ 50 mensais. Manter: sem alteração.\tPequenos ajustes recorrentes podem liberar recursos para investir.",
+    "source": "catalogo/Cartas.md"
+  },
+  "EV-004": {
+    "id": "EV-004",
+    "original": "EV-004\tMudança para Moradia Econômica. Você encontrou uma opção de residência com despesas menores.\tMudar: pagar 10% do salário de referência como custo único e reduzir a moradia em 15%. Permanecer: manter as despesas atuais.\tEconomizar no longo prazo pode exigir gastos iniciais.",
+    "source": "catalogo/Cartas.md"
+  },
+  "EV-005": {
+    "id": "EV-005",
+    "original": "EV-005\tNova Responsabilidade Familiar. Sua família passa a ter uma necessidade financeira recorrente.\tAutomático: despesas mensais de alimentação aumentam 5% do salário de referência.\tMudanças familiares exigem revisão do orçamento.",
+    "source": "catalogo/Cartas.md"
+  },
+  "EV-006": {
+    "id": "EV-006",
+    "original": "EV-006\tTrabalho Temporário. Você recebeu uma oportunidade de prestar um serviço adicional.\tAceitar: receber uma única vez 15% do salário de referência. Recusar: sem efeito.\tRenda extraordinária não equivale a renda recorrente ou passiva.",
+    "source": "catalogo/Cartas.md"
+  },
+  "EV-007": {
+    "id": "EV-007",
+    "original": "EV-007\tTransporte Compartilhado. Você encontrou uma alternativa para reduzir deslocamentos.\tAdotar: reduzir despesas de transporte em 15%, sem custo inicial. Manter: sem alteração.\tPlanejar deslocamentos ajuda a reduzir despesas.",
+    "source": "catalogo/Cartas.md"
+  },
+  "EV-008": {
+    "id": "EV-008",
+    "original": "EV-008\tAumento do Custo de Vida. Alguns gastos domésticos se tornaram mais caros.\tAutomático: alimentação aumenta 5%, calculados sobre o valor vigente dessa categoria.\tA inflação pode reduzir o dinheiro disponível mesmo sem novas compras.",
+    "source": "catalogo/Cartas.md"
+  },
+  "EV-009": {
+    "id": "EV-009",
+    "original": "EV-009\tBolsa de Estudos. Você foi selecionado para receber apoio educacional.\tAutomático: reduzir as despesas recorrentes de educação em 50% durante três fechamentos financeiros.\tBenefícios temporários devem ser considerados no planejamento.",
+    "source": "catalogo/Cartas.md"
+  },
+  "EV-010": {
+    "id": "EV-010",
+    "original": "EV-010\tMudança de Jornada. Seu empregador oferece uma jornada diferente com remuneração maior e novos custos de transporte.\tAceitar: salário aumenta 10% e transporte aumenta 10%. Recusar: manter os valores.\tDecisões profissionais devem considerar renda e despesas.",
+    "source": "catalogo/Cartas.md"
+  },
+  "EV-011": {
+    "id": "EV-011",
+    "original": "EV-011\tCompra Planejada. Você deseja adquirir um bem de uso pessoal, mas também pode adiar a decisão.\tComprar: pagar 20% do salário de referência, sem geração de renda. Adiar: sem desembolso.\tDesejos de consumo precisam ser comparados com objetivos financeiros.",
+    "source": "catalogo/Cartas.md"
+  },
+  "EV-012": {
+    "id": "EV-012",
+    "original": "EV-012\tRevisão de Assinaturas. Você identificou serviços contratados que utiliza pouco.\tCancelar serviços: reduzir o lazer em 10%, respeitando o mínimo de R\\$ 50\\. Manter: sem mudança.\tAcompanhamento das assinaturas evita gastos desnecessários.",
+    "source": "catalogo/Cartas.md"
+  },
+  "EV-013": {
+    "id": "EV-013",
+    "original": "EV-013\tBonificação Profissional. Sua empresa alcançou uma meta e concedeu uma bonificação extraordinária.\tAutomático: receber 20% do salário de referência uma única vez.\tBônus ocasionais devem ser diferenciados da renda habitual.",
+    "source": "catalogo/Cartas.md"
+  },
+  "EV-014": {
+    "id": "EV-014",
+    "original": "EV-014\tOportunidade de Educação Complementar. Um curso oferece conhecimentos úteis para sua carreira.\tMatricular-se: pagar R\\$ 400 e reduzir temporariamente o lazer em 10% por dois fechamentos. Recusar: sem alteração.\tAprender envolve escolhas, custos e organização do tempo.",
+    "source": "catalogo/Cartas.md"
+  },
+  "EV-015": {
+    "id": "EV-015",
+    "original": "EV-015\tRevisão de Despesas Domésticas. Você identificou oportunidades de economizar energia e água.\tAdotar medidas: pagar R\\$ 200 e reduzir a despesa de moradia em 5%. Manter: sem alteração.\tInvestimentos em eficiência podem diminuir custos recorrentes.",
+    "source": "catalogo/Cartas.md"
+  },
+  "EV-016": {
+    "id": "EV-016",
+    "original": "EV-016\tNovo Estilo de Vida. Você considera aumentar seus gastos com conforto e lazer.\tAumentar: despesas de lazer sobem 15%. Manter: nenhuma alteração.\tIndependência financeira não significa ausência de limites orçamentários.",
+    "source": "catalogo/Cartas.md"
+  },
+  "EV-017": {
+    "id": "EV-017",
+    "original": "EV-017\tMudança de Residência. Você encontrou uma opção de moradia mais econômica.\tMudar: pagar R\\$ 3.000 e reduzir a despesa mensal de moradia em 15%. Permanecer: sem alteração.\tEconomias recorrentes podem compensar custos iniciais.",
+    "source": "catalogo/Cartas.md"
+  },
+  "EV-018": {
+    "id": "EV-018",
+    "original": "EV-018\tApoio a um Familiar. Um familiar necessita de ajuda financeira por um período limitado.\tAutomático: acrescentar R\\$ 500 às despesas mensais durante três fechamentos.\tResponsabilidades familiares podem mudar o orçamento.",
+    "source": "catalogo/Cartas.md"
+  },
+  "EV-019": {
+    "id": "EV-019",
+    "original": "EV-019\tProjeto Pessoal. Você deseja dedicar recursos a uma atividade de interesse pessoal.\tRealizar: pagar R\\$ 5.000 uma única vez. Adiar: manter o dinheiro disponível.\tEscolhas de consumo competem com outros objetivos.",
+    "source": "catalogo/Cartas.md"
+  },
+  "EV-020": {
+    "id": "EV-020",
+    "original": "EV-020\tRevisão Patrimonial. Você percebeu que está concentrando parte excessiva do patrimônio em um único tipo de ativo.\tReorganizar: abrir uma oportunidade de venda ou resgate conforme a liquidez dos ativos. Manter: nenhuma alteração.\tDiversificação e liquidez ajudam a administrar riscos.",
+    "source": "catalogo/Cartas.md"
+  },
+  "EV-021": {
+    "id": "EV-021",
+    "original": "EV-021\tApoio à Formação Profissional. Você deseja financiar a educação de um familiar.\tContribuir: pagar R\\$ 4.000. Não contribuir: sem desembolso.\tPlanejar despesas familiares sem comprometer a própria segurança financeira.",
+    "source": "catalogo/Cartas.md"
+  },
+  "EV-022": {
+    "id": "EV-022",
+    "original": "EV-022\tDespesas com Viagens. Você considera aumentar seu orçamento mensal de lazer e viagens.\tAumentar: despesas de lazer sobem R\\$ 300 por fechamento. Manter: nenhuma alteração.\tGastos recorrentes podem comprometer objetivos de longo prazo.",
+    "source": "catalogo/Cartas.md"
+  },
+  "EV-023": {
+    "id": "EV-023",
+    "original": "EV-023\tRedução de Custos Residenciais. Você identifica melhorias de eficiência na residência.\tInvestir: pagar R\\$ 2.000 e reduzir a despesa de moradia em R\\$ 100 por fechamento. Recusar: sem alteração.\tAvaliar o prazo de recuperação de um investimento em eficiência.",
+    "source": "catalogo/Cartas.md"
+  },
+  "EV-024": {
+    "id": "EV-024",
+    "original": "EV-024\tNovo Compromisso Familiar. Uma mudança familiar exige reorganização das despesas.\tAutomático: alimentação aumenta R\\$ 250 por fechamento durante quatro fechamentos.\tReservas e planejamento ajudam a lidar com mudanças temporárias.",
+    "source": "catalogo/Cartas.md"
+  },
+  "EV-025": {
+    "id": "EV-025",
+    "original": "EV-025\tReorganização de Investimentos. Você avalia vender um investimento que deixou de atender aos seus objetivos.\tReorganizar: acessar a venda de um ativo conforme as regras de liquidez. Manter: conservar a carteira.\tInvestimentos devem ser analisados conforme risco e objetivos, não apenas preço.",
+    "source": "catalogo/Cartas.md"
+  },
+  "EV-026": {
+    "id": "EV-026",
+    "original": "EV-026\tConvite para Mentoria. Você é convidado a orientar novos empreendedores.\tParticipar: receber reconhecimento educativo pela atividade, sem renda financeira. Recusar: sem efeito.\tConhecimento e experiência também podem gerar valor social.",
+    "source": "catalogo/Cartas.md"
+  },
+  "EV-027": {
+    "id": "EV-027",
+    "original": "EV-027\tReforma para Maior Conforto. Você deseja melhorar sua residência de uso pessoal.\tReformar: pagar R\\$ 8.000. Adiar: sem desembolso.\tDiferenciar melhorias de qualidade de vida de investimentos geradores de renda.",
+    "source": "catalogo/Cartas.md"
+  },
+  "EV-028": {
+    "id": "EV-028",
+    "original": "EV-028\tRevisão de Despesas Recorrentes. Você identificou contratos pessoais que podem ser renegociados.\tRenegociar: pagar R\\$ 500 de custo administrativo e reduzir despesas de lazer em R\\$ 150 mensais. Manter: sem alteração.\tPequenas economias acumuladas podem representar valores expressivos.",
+    "source": "catalogo/Cartas.md"
+  },
+  "EV-029": {
+    "id": "EV-029",
+    "original": "EV-029\tApoio Comunitário. Um projeto local precisa de voluntários para uma atividade educativa.\tParticipar: registrar uma ação social não financeira. Não participar: sem consequência financeira.\tContribuições sociais não precisam envolver doações de dinheiro.",
+    "source": "catalogo/Cartas.md"
+  },
+  "EV-030": {
+    "id": "EV-030",
+    "original": "EV-030\tPlanejamento do Futuro. Você pode contratar um serviço de organização patrimonial.\tContratar: pagar R\\$ 2.500 e receber um diagnóstico educativo de patrimônio, dívidas e liquidez. Recusar: sem alteração.\tPreservar a independência financeira exige acompanhamento constante.",
+    "source": "catalogo/Cartas.md"
+  },
+  "EF-001": {
+    "id": "EF-001",
+    "original": "EF-001  \nReserva de emergência\n\n5% do salário\n\nQual é a principal finalidade de uma reserva de emergência?\n\nA) Comprar produtos em promoção.\n\nB) Cobrir despesas inesperadas sem depender imediatamente de crédito.\n\nC) Garantir rendimentos elevados em aplicações arriscadas.\n\nD) Substituir permanentemente a renda do trabalho.",
+    "source": "catalogo/Cartas.md"
+  },
+  "EF-002": {
+    "id": "EF-002",
+    "original": "EF-002  \nOrçamento pessoal\n\n5% do salário\n\nQual prática ajuda mais a manter um orçamento equilibrado?\n\nA) Registrar receitas e despesas regularmente.\n\nB) Comprar sempre que houver dinheiro na conta.\n\nC) Ignorar pequenas despesas.\n\nD) Usar todo o limite do cartão de crédito.",
+    "source": "catalogo/Cartas.md"
+  },
+  "EF-003": {
+    "id": "EF-003",
+    "original": "EF-003  \nAtivos e passivos\n\n5% do salário\n\nQual situação representa um ativo que pode produzir renda?\n\nA) Uma televisão usada para lazer.\n\nB) Uma dívida de financiamento.\n\nC) Uma máquina alugada a terceiros mediante pagamento.\n\nD) Uma conta de energia a vencer.",
+    "source": "catalogo/Cartas.md"
+  },
+  "EF-004": {
+    "id": "EF-004",
+    "original": "EF-004  \nJuros de empréstimo\n\n5% do salário\n\nO que acontece quando uma pessoa contrata um empréstimo com juros?\n\nA) Ela devolve apenas o valor recebido.\n\nB) O empréstimo não afeta despesas futuras.\n\nC) Os juros são sempre uma recompensa ao devedor.\n\nD) Ela assume o pagamento do principal acrescido dos encargos contratados.",
+    "source": "catalogo/Cartas.md"
+  },
+  "EF-005": {
+    "id": "EF-005",
+    "original": "EF-005  \nRenda passiva\n\n5% do salário\n\nQual exemplo pode representar renda passiva efetivamente recebida?\n\nA) Aumento do preço de uma ação ainda não vendida.\n\nB) Aluguel líquido pago por um imóvel de investimento.\n\nC) Salário recebido por horas de trabalho.\n\nD) Dinheiro obtido por empréstimo.",
+    "source": "catalogo/Cartas.md"
+  },
+  "EF-006": {
+    "id": "EF-006",
+    "original": "EF-006  \nConsumo consciente\n\n5% do salário\n\nAntes de uma compra importante, qual atitude é mais adequada?\n\nA) Comparar necessidade, preço e impacto no orçamento.\n\nB) Comprar rapidamente para evitar pensar demais.\n\nC) Parcelar sem verificar o valor final.\n\nD) Utilizar toda a reserva de emergência.",
+    "source": "catalogo/Cartas.md"
+  },
+  "EF-007": {
+    "id": "EF-007",
+    "original": "EF-007  \nLucro de um negócio\n\n5% do salário\n\nUma pequena loja vende R\\$ 2.000 e tem R\\$ 1.500 em custos. Qual é o lucro?\n\nA) R\\$ 3.500.\n\nB) R\\$ 2.000.\n\nC) R\\$ 500\\.\n\nD) R\\$ 1.500.",
+    "source": "catalogo/Cartas.md"
+  },
+  "EF-008": {
+    "id": "EF-008",
+    "original": "EF-008  \nDiversificação\n\n5% do salário\n\nO que significa diversificar investimentos?\n\nA) Aplicar todo o dinheiro em uma única empresa.\n\nB) Comprar apenas o investimento mais caro.\n\nC) Escolher ativos sem avaliar riscos.\n\nD) Distribuir recursos entre diferentes tipos de investimento.",
+    "source": "catalogo/Cartas.md"
+  },
+  "EF-009": {
+    "id": "EF-009",
+    "original": "EF-009  \nLiquidez\n\n5% do salário\n\nO que significa um investimento ter boa liquidez?\n\nA) Ele sempre apresentar lucro.\n\nB) Poder ser convertido em dinheiro com relativa facilidade.\n\nC) Seu preço nunca oscilar.\n\nD) Ele não possuir qualquer risco.",
+    "source": "catalogo/Cartas.md"
+  },
+  "EF-010": {
+    "id": "EF-010",
+    "original": "EF-010  \nParcelamento\n\n5% do salário\n\nQual informação é essencial antes de parcelar uma compra?\n\nA) O valor total, os juros e o impacto das parcelas no orçamento.\n\nB) Somente o valor da primeira parcela.\n\nC) A opinião dos amigos sobre o produto.\n\nD) A quantidade de anúncios da loja.",
+    "source": "catalogo/Cartas.md"
+  },
+  "EF-011": {
+    "id": "EF-011",
+    "original": "EF-011  \nInflação\n\n5% do salário\n\nO que pode acontecer se os preços aumentarem, mas a renda permanecer igual?\n\nA) O poder de compra aumenta.\n\nB) Todas as despesas desaparecem.\n\nC) O dinheiro passa a comprar menos produtos e serviços.\n\nD) Os investimentos deixam de ter riscos.",
+    "source": "catalogo/Cartas.md"
+  },
+  "EF-012": {
+    "id": "EF-012",
+    "original": "EF-012  \nDívidas\n\n5% do salário\n\nQual atitude costuma ajudar a recuperar o controle sobre dívidas?\n\nA) Contratar novos empréstimos sem analisar as parcelas.\n\nB) Ignorar cobranças e vencimentos.\n\nC) Deixar de registrar os gastos.\n\nD) Organizar valores, prioridades e possibilidades de renegociação.",
+    "source": "catalogo/Cartas.md"
+  },
+  "EF-013": {
+    "id": "EF-013",
+    "original": "EF-013  \nPatrimônio líquido\n\n5% do salário\n\nComo podemos calcular o patrimônio líquido de uma pessoa?\n\nA) Somando apenas os salários recebidos.\n\nB) Subtraindo as dívidas do valor dos bens e recursos financeiros.\n\nC) Somando apenas as despesas mensais.\n\nD) Multiplicando o salário pelas parcelas restantes.",
+    "source": "catalogo/Cartas.md"
+  },
+  "EF-014": {
+    "id": "EF-014",
+    "original": "EF-014  \nCusto de oportunidade\n\n5% do salário\n\nO que é custo de oportunidade em uma decisão financeira?\n\nA) O benefício de uma alternativa que foi deixada de lado.\n\nB) O preço de todos os produtos de uma loja.\n\nC) Um imposto obrigatório sobre investimentos.\n\nD) Uma dívida que não precisa ser paga.",
+    "source": "catalogo/Cartas.md"
+  },
+  "EF-015": {
+    "id": "EF-015",
+    "original": "EF-015  \nIndependência financeira\n\n5% do salário\n\nNo jogo, qual condição permite conquistar a independência financeira?\n\nA) Receber o maior salário entre os jogadores.\n\nB) Comprar o maior número de ações.\n\nC) Manter renda passiva recebida superior às despesas por três fechamentos consecutivos.\n\nD) Concluir uma rodada sem despesas.\n\nAs 15 perguntas da Corrida dos Ratos abrangem orçamento, reservas, investimentos, dívidas, consumo, inflação, patrimônio e independência financeira. As respostas apresentadas acima são simuladas para revisão; durante uma partida, o gabarito aparecerá somente após a confirmação da resposta.  \n3\\. Pista de Alta Velocidade — 15 perguntas  \nEF-016 a EF-030 · Planejamento patrimonial, empresas, sociedades e investimentos avançados\n\nNesta etapa, as perguntas serão um pouco mais desafiadoras, mas continuarão adequadas a estudantes a partir de 13 anos. Elas utilizarão situações semelhantes às encontradas na Pista de Alta Velocidade.",
+    "source": "catalogo/Cartas.md"
+  },
+  "EF-016": {
+    "id": "EF-016",
+    "original": "EF-016  \nValorização e renda\n\nR\\$ 300\n\nUma empresa vale R\\$ 50.000 e valoriza 10%. O que acontece imediatamente?\n\nA) O proprietário recebe R\\$ 5.000 em dinheiro.\n\nB) O valor estimado da empresa passa a R\\$ 55.000, sem depósito automático no caixa.\n\nC) A renda passiva aumenta obrigatoriamente R\\$ 5.000.\n\nD) Todas as dívidas da empresa são quitadas.",
+    "source": "catalogo/Cartas.md"
+  },
+  "EF-017": {
+    "id": "EF-017",
+    "original": "EF-017  \nParticipação societária\n\nR\\$ 300\n\nUma empresa distribui R\\$ 2.000 de lucro e Ana possui 25% dela. Quanto Ana recebe?\n\nA) R\\$ 500\\.\n\nB) R\\$ 250\\.\n\nC) R\\$ 1.000.\n\nD) R\\$ 2.000.",
+    "source": "catalogo/Cartas.md"
+  },
+  "EF-018": {
+    "id": "EF-018",
+    "original": "EF-018  \nVotação empresarial\n\nR\\$ 300\n\nUma sociedade exige mais de 50% do capital total para aprovar uma decisão. Com 50% favoráveis, o que ocorre?\n\nA) A proposta é aprovada automaticamente.\n\nB) O peso dos votos deixa de importar.\n\nC) A proposta não atingiu a maioria exigida.\n\nD) Os sócios ausentes são considerados favoráveis.",
+    "source": "catalogo/Cartas.md"
+  },
+  "EF-019": {
+    "id": "EF-019",
+    "original": "EF-019  \nFinanciamento\n\nR\\$ 300\n\nQual é um risco de comprar um imóvel financiado para receber aluguel?\n\nA) O aluguel elimina os juros do empréstimo.\n\nB) O imóvel nunca pode ficar desocupado.\n\nC) O financiamento não gera obrigação mensal.\n\nD) As parcelas podem continuar mesmo quando não há inquilino.",
+    "source": "catalogo/Cartas.md"
+  },
+  "EF-020": {
+    "id": "EF-020",
+    "original": "EF-020  \nLiquidez patrimonial\n\nR\\$ 300\n\nUma empresa está avaliada em R\\$ 100.000. Por que seu proprietário pode não conseguir R\\$ 100.000 imediatamente?\n\nA) Porque a avaliação representa dinheiro depositado em conta.\n\nB) Porque pode ser necessário encontrar comprador e negociar o preço.\n\nC) Porque empresas não possuem valor econômico.\n\nD) Porque todo ativo deve ser vendido por metade do preço.",
+    "source": "catalogo/Cartas.md"
+  },
+  "EF-021": {
+    "id": "EF-021",
+    "original": "EF-021  \nFluxo de caixa\n\nR\\$ 300\n\nUma empresa recebeu R\\$ 12.000 e pagou R\\$ 9.000 em custos operacionais no período. Qual foi o resultado operacional simplificado?\n\nA) R\\$ 3.000.\n\nB) R\\$ 9.000.\n\nC) R\\$ 12.000.\n\nD) R\\$ 21.000.",
+    "source": "catalogo/Cartas.md"
+  },
+  "EF-022": {
+    "id": "EF-022",
+    "original": "EF-022  \nDiversificação patrimonial\n\nR\\$ 300\n\nQual situação representa melhor a diversificação do patrimônio?\n\nA) Investir tudo em uma única empresa de tecnologia.\n\nB) Comprar várias participações da mesma empresa.\n\nC) Distribuir recursos entre diferentes setores e tipos de ativos.\n\nD) Ignorar riscos e escolher apenas maiores rendimentos.",
+    "source": "catalogo/Cartas.md"
+  },
+  "EF-023": {
+    "id": "EF-023",
+    "original": "EF-023  \nRendimento versus risco\n\nR\\$ 300\n\nUm investimento anuncia um rendimento muito maior que outros semelhantes. Qual atitude é mais adequada?\n\nA) Investir imediatamente, pois retornos altos são garantidos.\n\nB) Emprestar dinheiro para aumentar o investimento sem fazer cálculos.\n\nC) Concluir que o investimento não possui custos.\n\nD) Investigar os riscos, as condições e a possibilidade de perdas.",
+    "source": "catalogo/Cartas.md"
+  },
+  "EF-024": {
+    "id": "EF-024",
+    "original": "EF-024  \nAmortização de dívidas\n\nR\\$ 300\n\nQual pode ser uma vantagem de antecipar o pagamento de um financiamento com juros?\n\nA) Aumentar automaticamente os juros futuros.\n\nB) Reduzir juros futuros e o saldo devedor, conforme o contrato.\n\nC) Transformar a dívida em renda passiva.\n\nD) Eliminar a necessidade de reserva financeira.",
+    "source": "catalogo/Cartas.md"
+  },
+  "EF-025": {
+    "id": "EF-025",
+    "original": "EF-025  \nDecisões societárias\n\nR\\$ 300\n\nEm uma empresa com vários sócios, o que caracteriza uma decisão financeira responsável?\n\nA) Avaliar custos, riscos, caixa disponível e regras de votação.\n\nB) Permitir que qualquer sócio retire todo o lucro sem consulta.\n\nC) Ignorar obrigações já contratadas.\n\nD) Aprovar qualquer expansão porque a receita pode crescer.",
+    "source": "catalogo/Cartas.md"
+  },
+  "EF-026": {
+    "id": "EF-026",
+    "original": "EF-026  \nReinvestimento\n\nR\\$ 300\n\nUma empresa decide reinvestir todo o lucro em sua expansão. Qual consequência é possível?\n\nA) Todos os sócios recebem o lucro reinvestido em dinheiro.\n\nB) As despesas pessoais dos sócios desaparecem.\n\nC) A empresa pode crescer, mas não distribuir aquele lucro aos sócios no período.\n\nD) O valor investido passa a ser salário dos sócios.",
+    "source": "catalogo/Cartas.md"
+  },
+  "EF-027": {
+    "id": "EF-027",
+    "original": "EF-027  \nRisco de concentração\n\nR\\$ 300\n\nPor que depender de um único imóvel para toda a renda passiva pode ser arriscado?\n\nA) Porque o imóvel não pode valorizar.\n\nB) Porque aluguéis são sempre ilegais.\n\nC) Porque um imóvel alugado nunca gera despesas.\n\nD) Porque vacância ou reparos podem comprometer grande parte da renda.",
+    "source": "catalogo/Cartas.md"
+  },
+  "EF-028": {
+    "id": "EF-028",
+    "original": "EF-028  \nFilantropia\n\nR\\$ 300\n\nQual afirmação descreve corretamente a filantropia no jogo?\n\nA) Toda contribuição garante lucro futuro.\n\nB) Doações geram impacto social simulado, mas não garantem retorno financeiro.\n\nC) Doar elimina automaticamente as dívidas.\n\nD) Filantropia substitui renda passiva no cálculo de independência.",
+    "source": "catalogo/Cartas.md"
+  },
+  "EF-029": {
+    "id": "EF-029",
+    "original": "EF-029  \nIndependência sustentável\n\nR\\$ 300\n\nDepois de entrar na Pista de Alta Velocidade, qual cuidado financeiro continua importante?\n\nA) Acompanhar se renda passiva, despesas e dívidas permanecem equilibradas.\n\nB) Parar de registrar despesas.\n\nC) Considerar todas as valorizações como dinheiro disponível.\n\nD) Contratar qualquer financiamento sem análise.",
+    "source": "catalogo/Cartas.md"
+  },
+  "EF-030": {
+    "id": "EF-030",
+    "original": "EF-030  \nRetorno sobre investimento\n\nR\\$ 300\n\nVocê investiu R\\$ 5.000 e recebeu R\\$ 250 líquidos em um período, sem mudança no valor do ativo. Qual foi o retorno do período?\n\nA) 2%.\n\nB) 10%.\n\nC) 5%.\n\nD) 25%.\n\nAs perguntas da Alta Velocidade trabalham conceitos de participações societárias, financiamento, liquidez, avaliação de empresas, amortização, diversificação e gestão do patrimônio.",
+    "source": "catalogo/Cartas.md"
+  },
+  "BE-001": {
+    "id": "BE-001",
+    "original": "BE-001  \nBonificação\n\nReconhecimento Profissional  \nSeu trabalho foi reconhecido e você recebeu uma bonificação extraordinária pelo desempenho.\n\nBenefício: receber 15% do salário de referência, uma única vez.\n\nRequisitos: nenhum adicional; o benefício é automático.\n\nConsequência: acrescentar o valor ao dinheiro disponível, sem alterar salário ou renda passiva.\n\nAprendizagem: ganhos extraordinários podem fortalecer as reservas ou financiar objetivos, mas não devem ser confundidos com renda recorrente.",
+    "source": "catalogo/Cartas.md"
+  },
+  "BE-002": {
+    "id": "BE-002",
+    "original": "BE-002  \nReembolso\n\nReembolso de uma Compra  \nUma compra anterior apresentou um problema e a empresa responsável realizou o reembolso.\n\nBenefício: receber 10% do salário de referência.\n\nRequisitos: nenhum adicional; o evento presume uma compra anterior já realizada, sem exigir localizar uma transação específica.\n\nConsequência: registrar um recebimento único no caixa.\n\nAprendizagem: conhecer os direitos do consumidor e acompanhar reembolsos ajuda no controle financeiro.",
+    "source": "catalogo/Cartas.md"
+  },
+  "BE-003": {
+    "id": "BE-003",
+    "original": "BE-003  \nEconomia temporária\n\nDesconto nas Compras do Mês  \nUm programa de vantagens oferece desconto nas compras essenciais durante dois períodos.\n\nBenefício: reduzir em 10% a despesa de alimentação durante os próximos dois fechamentos elegíveis.\n\nRequisitos: possuir despesa recorrente de alimentação.\n\nConsequência: aplicar o desconto temporariamente e restaurar o valor que estaria vigente sem ele ao término dos dois fechamentos.\n\nAprendizagem: descontos ajudam no orçamento, mas benefícios temporários não devem ser tratados como renda permanente.",
+    "source": "catalogo/Cartas.md"
+  },
+  "BE-004": {
+    "id": "BE-004",
+    "original": "BE-004  \nIncentivo educacional\n\nBolsa para Formação  \nVocê foi selecionado para receber um incentivo financeiro destinado a um curso.\n\nBenefício: receber R\\$ 400, uma única vez.\n\nRequisitos: nenhum adicional.\n\nConsequência: acrescentar R\\$ 400 ao caixa, identificando o valor no histórico como incentivo educacional. Não há obrigação de contratar um curso.\n\nAprendizagem: oportunidades de formação podem reduzir barreiras financeiras e contribuir para o desenvolvimento profissional.",
+    "source": "catalogo/Cartas.md"
+  },
+  "BE-005": {
+    "id": "BE-005",
+    "original": "BE-005  \nEconomia recorrente\n\nPlano de Transporte Mais Econômico  \nVocê descobriu um plano de deslocamento que oferece economia sem prejudicar suas necessidades de transporte.\n\nBenefício: reduzir permanentemente em 10% as despesas de transporte, preservando um mínimo de R\\$ 50 mensais.\n\nRequisitos: possuir despesa de transporte acima de R\\$ 50\\.\n\nConsequência: atualizar a despesa recorrente a partir do próximo fechamento elegível.\n\nAprendizagem: reduzir custos fixos pode melhorar o saldo mensal por vários períodos.",
+    "source": "catalogo/Cartas.md"
+  },
+  "BE-006": {
+    "id": "BE-006",
+    "original": "BE-006  \nBonificação\n\nPrêmio por Participação em Projeto  \nVocê colaborou em um projeto que alcançou bons resultados e recebeu uma recompensa extraordinária.\n\nBenefício: receber 20% do salário de referência, uma única vez.\n\nRequisitos: nenhum adicional.\n\nConsequência: aumentar o caixa pelo valor calculado, sem modificar as receitas mensais recorrentes.\n\nAprendizagem: ganhos ocasionais podem ser utilizados para criar reservas, quitar obrigações ou investir.",
+    "source": "catalogo/Cartas.md"
+  },
+  "BE-007": {
+    "id": "BE-007",
+    "original": "BE-007  \nEducação financeira\n\nConsultoria Financeira Gratuita  \nUma iniciativa educativa oferece uma orientação para organizar suas finanças pessoais.\n\nBenefício: desbloquear uma análise detalhada do orçamento, indicando despesas, dívidas e possibilidades de economia.\n\nRequisitos: nenhum adicional.\n\nConsequência: apresentar um diagnóstico personalizado, sem alterar automaticamente valores financeiros.\n\nDecisão: consultar o diagnóstico durante o turno ou acessá-lo depois no painel financeiro.\n\nAprendizagem: informações bem organizadas ajudam a tomar decisões financeiras conscientes.",
+    "source": "catalogo/Cartas.md"
+  },
+  "BE-008": {
+    "id": "BE-008",
+    "original": "BE-008  \nRecompensa\n\nDevolução de Valor Cobrado a Mais  \nUma cobrança incorreta foi identificada e você recebeu uma restituição.\n\nBenefício: receber 5% do salário de referência.\n\nRequisitos: nenhum adicional. Trata-se de um evento fictício independente de registros anteriores.\n\nConsequência: registrar a restituição uma única vez no caixa.\n\nAprendizagem: conferir extratos e cobranças pode ajudar a identificar valores indevidos.",
+    "source": "catalogo/Cartas.md"
+  },
+  "BE-009": {
+    "id": "BE-009",
+    "original": "BE-009  \nEconomia temporária\n\nDesconto em Serviços Residenciais  \nUma negociação oferece redução temporária dos custos associados à moradia.\n\nBenefício: diminuir em 10% a despesa de moradia durante dois fechamentos elegíveis.\n\nRequisitos: possuir despesa mensal de moradia.\n\nConsequência: aplicar a redução temporária, sem modificar definitivamente o valor-base da despesa.\n\nAprendizagem: negociar contratos e comparar serviços pode gerar economias no orçamento.",
+    "source": "catalogo/Cartas.md"
+  },
+  "BE-010": {
+    "id": "BE-010",
+    "original": "BE-010  \nIncentivo à organização\n\nRecompensa por Planejamento Financeiro  \nVocê participou de uma iniciativa de educação financeira e recebeu um incentivo simbólico.\n\nBenefício: receber 10% do salário de referência, uma única vez.\n\nRequisitos: nenhum adicional.\n\nConsequência: registrar o recebimento no caixa, sem alterar rendimentos de investimentos.\n\nAprendizagem: conhecimento e organização financeira ajudam a transformar recursos disponíveis em decisões melhores.",
+    "source": "catalogo/Cartas.md"
+  },
+  "GI-001": {
+    "id": "GI-001",
+    "original": "GI-001 — Edifício com Apartamentos. Um prédio residencial possui unidades alugadas.\tR\\$ 180.000\tR\\$ 1.500/mês\tÀ vista ou entrada de 30% com financiamento aprovado. Riscos de vacância e reparos. Conceito: diversificação entre inquilinos.",
+    "source": "catalogo/Cartas.md"
+  },
+  "GI-002": {
+    "id": "GI-002",
+    "original": "GI-002 — Centro Comercial de Bairro. Pequenos estabelecimentos ocupam um conjunto de lojas.\tR\\$ 250.000\tR\\$ 2.200/mês\tÀ vista ou entrada de 35% com crédito. Riscos de desocupação comercial e manutenção. Conceito: fluxo de aluguel e atividade econômica.",
+    "source": "catalogo/Cartas.md"
+  },
+  "GI-003": {
+    "id": "GI-003",
+    "original": "GI-003 — Galpão Logístico. Um imóvel está alugado para armazenamento de mercadorias.\tR\\$ 320.000\tR\\$ 2.800/mês\tÀ vista ou entrada de 40% com crédito. Risco de dependência de um locatário. Conceito: concentração de receitas.",
+    "source": "catalogo/Cartas.md"
+  },
+  "GI-004": {
+    "id": "GI-004",
+    "original": "GI-004 — Residencial para Estudantes. Um edifício oferece quartos e espaços compartilhados.\tR\\$ 210.000\tR\\$ 1.850/mês\tÀ vista ou entrada de 30% com crédito. Riscos de rotatividade e conservação. Conceito: ocupação e receita recorrente.",
+    "source": "catalogo/Cartas.md"
+  },
+  "GI-005": {
+    "id": "GI-005",
+    "original": "GI-005 — Pousada de Pequeno Porte. Um imóvel turístico tem gestão contratada e receitas de hospedagem.\tR\\$ 290.000\tR\\$ 2.400/mês\tÀ vista ou entrada de 35% com crédito. Riscos de sazonalidade e custos de operação. Conceito: renda variável de hospedagem.",
+    "source": "catalogo/Cartas.md"
+  },
+  "GI-006": {
+    "id": "GI-006",
+    "original": "GI-006 — Imóvel Comercial em Região Valorizada. Uma propriedade com contrato de locação está disponível.\tR\\$ 400.000\tR\\$ 3.100/mês\tÀ vista ou entrada de 40% com crédito. Riscos de vacância e desvalorização. Conceito: preço elevado não garante retorno proporcionalmente maior.",
+    "source": "catalogo/Cartas.md"
+  },
+  "GI-007": {
+    "id": "GI-007",
+    "original": "GI-007 — Conjunto de Casas para Aluguel. Quatro residências compõem um único investimento.\tR\\$ 240.000\tR\\$ 2.000/mês\tÀ vista ou entrada de 35% com crédito. Riscos de manutenção simultânea. Conceito: diversificação de contratos.",
+    "source": "catalogo/Cartas.md"
+  },
+  "GI-008": {
+    "id": "GI-008",
+    "original": "GI-008 — Terreno para Valorização. Área em expansão com expectativa de desenvolvimento.\tR\\$ 150.000\tR\\$ 0\tÀ vista ou entrada de 40% com crédito. Riscos de baixa liquidez e desvalorização. Conceito: valorização esperada não é renda passiva.",
+    "source": "catalogo/Cartas.md"
+  },
+  "GI-009": {
+    "id": "GI-009",
+    "original": "GI-009 — Centro de Armazenamento. Espaços individuais são alugados a clientes diferentes.\tR\\$ 350.000\tR\\$ 3.000/mês\tÀ vista ou entrada de 40% com crédito. Riscos de ocupação e segurança. Conceito: despesas operacionais e taxa de utilização.",
+    "source": "catalogo/Cartas.md"
+  },
+  "GI-010": {
+    "id": "GI-010",
+    "original": "GI-010 — Complexo de Salas Profissionais. Um conjunto atende profissionais e pequenas empresas.\tR\\$ 450.000\tR\\$ 3.600/mês\tÀ vista ou entrada de 40% com crédito. Riscos de inadimplência e conservação. Conceito: gestão de contratos e liquidez imobiliária.",
+    "source": "catalogo/Cartas.md"
+  },
+  "GI-011": {
+    "id": "GI-011",
+    "original": "GI-011 — Rede de Cafeterias. Três unidades operam com gestores contratados.\tR\\$ 160.000\tR\\$ 1.800/mês\tÀ vista ou entrada de 35% com crédito. Riscos de insumos, concorrência e demanda. Conceito: administrar unidades diferentes exige controle dos custos.",
+    "source": "catalogo/Cartas.md"
+  },
+  "GI-012": {
+    "id": "GI-012",
+    "original": "GI-012 — Empresa de Desenvolvimento de Software. Uma equipe mantém sistemas de clientes corporativos.\tR\\$ 280.000\tR\\$ 2.600/mês\tÀ vista ou entrada de 40% com crédito. Riscos de cancelamento de contratos e atualização tecnológica. Conceito: receita recorrente depende da permanência de clientes.",
+    "source": "catalogo/Cartas.md"
+  },
+  "GI-013": {
+    "id": "GI-013",
+    "original": "GI-013 — Indústria de Móveis. Uma fábrica produz móveis para estabelecimentos comerciais.\tR\\$ 350.000\tR\\$ 3.200/mês\tÀ vista ou entrada de 40% com crédito. Riscos de matéria-prima, manutenção e queda nos pedidos. Conceito: produção exige capital de giro.",
+    "source": "catalogo/Cartas.md"
+  },
+  "GI-014": {
+    "id": "GI-014",
+    "original": "GI-014 — Empresa de Energia Renovável. Um empreendimento possui contratos de geração de energia.\tR\\$ 420.000\tR\\$ 3.700/mês\tÀ vista ou entrada de 40% com crédito. Riscos de equipamentos, produção e mudanças contratuais. Conceito: ativos produtivos também exigem manutenção e reservas.",
+    "source": "catalogo/Cartas.md"
+  },
+  "GI-015": {
+    "id": "GI-015",
+    "original": "GI-015 — Rede de Lavanderias. Quatro unidades operam com equipamentos automatizados.\tR\\$ 230.000\tR\\$ 2.200/mês\tÀ vista ou entrada de 35% com crédito. Riscos de consumo energético e reposição de máquinas. Conceito: expansão pode aumentar receitas e despesas ao mesmo tempo.",
+    "source": "catalogo/Cartas.md"
+  },
+  "GI-016": {
+    "id": "GI-016",
+    "original": "GI-016 — Empresa de Logística Regional. Uma transportadora atende diversos clientes empresariais.\tR\\$ 380.000\tR\\$ 3.400/mês\tÀ vista ou entrada de 40% com crédito. Riscos de combustível, manutenção e inadimplência. Conceito: receitas devem sustentar custos operacionais elevados.",
+    "source": "catalogo/Cartas.md"
+  },
+  "GI-017": {
+    "id": "GI-017",
+    "original": "GI-017 — Plataforma de Ensino Digital. Uma empresa comercializa assinaturas educacionais.\tR\\$ 190.000\tR\\$ 1.500/mês\tÀ vista ou entrada de 35% com crédito. Riscos de cancelamento de assinaturas e concorrência. Conceito: assinantes não representam receita garantida.",
+    "source": "catalogo/Cartas.md"
+  },
+  "GI-018": {
+    "id": "GI-018",
+    "original": "GI-018 — Empresa de Reciclagem Industrial. Uma organização processa resíduos de empresas.\tR\\$ 310.000\tR\\$ 2.750/mês\tÀ vista ou entrada de 40% com crédito. Riscos de preços de materiais e logística. Conceito: sustentabilidade e viabilidade financeira precisam caminhar juntas.",
+    "source": "catalogo/Cartas.md"
+  },
+  "GI-019": {
+    "id": "GI-019",
+    "original": "GI-019  \nParticipação societária\n\nSócio de um Centro Médico  \nUm centro de atendimento médico, com administração própria, está buscando investidores para ampliar suas instalações.  \nValor da empresaR\\$ 500.000\n\nOferta20% por R\\$ 100.000\n\nLucro total inicialmente distribuído: R\\$ 4.500/mês.\n\nRendimento da participação oferecida: R\\$ 900/mês, se integralmente adquirida e o resultado for distribuído.\n\nRequisitos: possuir os recursos necessários, individualmente ou mediante proposta de aquisição conjunta.\n\nDecisões: comprar, convidar outros investidores para dividir os 20% oferecidos ou recusar.\n\nRiscos: custos operacionais, redução no número de pacientes e necessidade de novos equipamentos. Liquidez: baixa.\n\nAprendizagem: participar do capital de uma empresa não significa possuir a totalidade de seus resultados.",
+    "source": "catalogo/Cartas.md"
+  },
+  "GI-020": {
+    "id": "GI-020",
+    "original": "GI-020  \nParticipação societária\n\nParticipação em Empresa de Inteligência Artificial  \nUma desenvolvedora de soluções tecnológicas procura investidores para financiar novos produtos.\n\nAvaliação da empresa: R\\$ 800.000.\n\nOferta: 15% por R\\$ 120.000.\n\nLucro inicialmente distribuído: R\\$ 0, pois os resultados são reinvestidos.\n\nRequisito: capital para adquirir toda ou parte da oferta em conjunto com outros investidores.\n\nDecisões: investir individualmente, formar sociedade de aquisição ou recusar.\n\nConsequência: registrar a participação patrimonial, inicialmente sem renda passiva. Distribuições futuras dependerão do desempenho e das decisões societárias.\n\nRiscos: desenvolvimento sem sucesso comercial, concorrência e desvalorização da empresa. Liquidez: baixa.\n\nAprendizagem: empresas com expectativas de crescimento podem não distribuir lucros por longos períodos.",
+    "source": "catalogo/Cartas.md"
+  },
+  "GI-021": {
+    "id": "GI-021",
+    "original": "GI-021  \nParticipação societária\n\nInvestimento em Rede de Supermercados  \nUma rede regional busca capital para modernizar suas operações.\n\nAvaliação da empresa: R\\$ 600.000.\n\nOferta: 25% por R\\$ 150.000.\n\nLucro total inicialmente distribuído: R\\$ 5.200/mês.\n\nRendimento da oferta: R\\$ 1.300/mês, quando distribuído integralmente.\n\nRequisito: recursos individuais ou uma proposta conjunta que cubra o valor da participação oferecida.\n\nDecisões: adquirir, dividir a aquisição com investidores convidados ou recusar.\n\nRiscos: perdas de estoque, concorrência e aumento de custos. Liquidez: baixa.\n\nAprendizagem: o lucro de uma empresa depende do controle de custos, não apenas do volume de vendas.",
+    "source": "catalogo/Cartas.md"
+  },
+  "GI-022": {
+    "id": "GI-022",
+    "original": "GI-022  \nParticipação societária\n\nSócio de Complexo de Hospedagem  \nUm empreendimento turístico está ampliando sua capacidade de hospedagem.\n\nAvaliação da empresa: R\\$ 700.000.\n\nOferta: 30% por R\\$ 210.000.\n\nLucro total inicialmente distribuído: R\\$ 6.000/mês.\n\nRendimento da oferta: R\\$ 1.800/mês, quando efetivamente distribuído.\n\nRequisito: recursos suficientes ou aquisição conjunta permitida pela carta.\n\nDecisões: comprar individualmente, propor sociedade ou recusar.\n\nRiscos: sazonalidade, manutenção e baixa ocupação. Liquidez: baixa.\n\nAprendizagem: empreendimentos turísticos podem apresentar resultados diferentes conforme a época do ano.",
+    "source": "catalogo/Cartas.md"
+  },
+  "GI-023": {
+    "id": "GI-023",
+    "original": "GI-023  \nParticipação societária\n\nParticipação em Indústria Alimentícia  \nUma indústria de alimentos procura sócios para ampliar a distribuição de seus produtos.\n\nAvaliação da empresa: R\\$ 900.000.\n\nOferta: 20% por R\\$ 180.000.\n\nLucro total inicialmente distribuído: R\\$ 7.000/mês.\n\nRendimento da oferta: R\\$ 1.400/mês, conforme a distribuição realizada.\n\nRequisitos: capital individual ou aquisição conjunta integralmente financiada pelos compradores, com recursos próprios.\n\nDecisões: adquirir, propor divisão entre investidores ou recusar.\n\nRiscos: preço dos ingredientes, desperdícios e transporte. Liquidez: baixa.\n\nAprendizagem: expandir uma indústria exige atenção aos custos de produção e distribuição.",
+    "source": "catalogo/Cartas.md"
+  },
+  "GI-024": {
+    "id": "GI-024",
+    "original": "GI-024  \nParticipação societária\n\nSociedade em Empresa de Energia Solar  \nUma empresa de energia renovável busca novos investidores para desenvolver seus projetos.\n\nAvaliação da empresa: R\\$ 1.000.000.\n\nOferta: 20% por R\\$ 200.000.\n\nLucro total inicialmente distribuído: R\\$ 8.000/mês.\n\nRendimento da oferta: R\\$ 1.600/mês, se distribuído.\n\nRequisitos: recursos próprios individuais ou proposta conjunta de aquisição.\n\nDecisões: investir, convidar outros investidores ou recusar.\n\nRiscos: produção abaixo do esperado, manutenção e mudanças nas condições econômicas. Liquidez: baixa.\n\nAprendizagem: negócios de longo prazo precisam considerar custos, prazos e riscos operacionais.",
+    "source": "catalogo/Cartas.md"
+  },
+  "GI-025": {
+    "id": "GI-025",
+    "original": "GI-025  \nParticipação societária\n\nParticipação em Centro de Distribuição  \nUm grupo empresarial deseja ampliar sua estrutura de armazenagem e transporte.\n\nAvaliação da empresa: R\\$ 1.200.000.\n\nOferta: 25% por R\\$ 300.000.\n\nLucro total inicialmente distribuído: R\\$ 10.000/mês.\n\nRendimento da oferta: R\\$ 2.500/mês, quando efetivamente distribuído.\n\nRequisitos: possuir o capital necessário ou formar uma proposta conjunta que cubra o investimento.\n\nDecisões: adquirir, convidar outros investidores para compartilhar a oferta ou recusar.\n\nRiscos: combustível, manutenção, inadimplência de clientes e queda da demanda logística. Liquidez: baixa.\n\nAprendizagem: empresas com alto patrimônio também podem apresentar obrigações e riscos elevados.\n\nFuncionamento das participações  \nAs sete oportunidades acima obedecerão às seguintes condições:  \n\\- A participação total oferecida poderá ser dividida entre os compradores, mas nunca excedida.  \n\\- A proposta conjunta terá validade de duas rodadas completas, com aceites durante os turnos dos convidados.  \n\\- O dinheiro não será descontado enquanto a negociação estiver pendente.  \n\\- Antes da formalização, o sistema verificará novamente os recursos de todos os participantes.  \n\\- O lucro distribuído será proporcional à participação efetivamente adquirida.  \n\\- Decisões administrativas importantes dependerão de votação com mais de 50% do capital total com direito a voto.  \n\\- Na venda futura, os sócios atuais terão preferência por duas rodadas completas.  \nDiferença importante: as GI-019 a GI-025 propõem aquisição de participações com recursos próprios dos compradores. Não há financiamento automático dessas participações. Já as GI-001 a GI-018 admitem financiamento quando indicado e aprovado.",
+    "source": "catalogo/Cartas.md"
+  },
+  "OE-001": {
+    "id": "OE-001",
+    "original": "OE-001  \nExpansão\n\nAmpliação de uma Cafeteria  \nUma cafeteria da qual você participa tem a oportunidade de ampliar a área de atendimento e aumentar sua capacidade de vendas.\n\nInvestimento necessário: R\\$ 12.000.\n\nEfeito previsto: aumento de 20% no lucro líquido distribuível da cafeteria, a partir do próximo fechamento elegível.\n\nRequisito: possuir participação em uma cafeteria.\n\nDecisões: investir na expansão ou recusar. Se houver outros sócios, apresentar a proposta para votação.\n\nConsequência: o valor será pago pela empresa após aprovação e disponibilidade de recursos; o aumento previsto será aplicado ao resultado da empresa, sem ser multiplicado individualmente por sócio.\n\nRisco: a expansão poderá enfrentar redução de demanda e aumento de custos por eventos futuros.\n\nAprendizagem: expandir um negócio exige investimento e pode elevar o potencial de lucro, mas não elimina riscos.",
+    "source": "catalogo/Cartas.md"
+  },
+  "OE-002": {
+    "id": "OE-002",
+    "original": "OE-002  \nExpansão\n\nModernização de Equipamentos  \nUma empresa possui máquinas antigas e pode substituí-las por equipamentos mais eficientes.\n\nInvestimento necessário: R\\$ 18.000.\n\nEfeito previsto: aumento de 12% no lucro líquido distribuível da empresa.\n\nRequisito: possuir integralmente ou em sociedade uma empresa operacional.\n\nDecisões: modernizar ou recusar; havendo sociedade, submeter à votação.\n\nConsequência: registrar o investimento como melhoria da empresa e atualizar o resultado distribuível após a execução.\n\nRisco: manutenção, custos de instalação e novas tecnologias poderão afetar o retorno.\n\nAprendizagem: produtividade e eficiência podem melhorar resultados, mas é necessário analisar o custo da modernização.",
+    "source": "catalogo/Cartas.md"
+  },
+  "OE-003": {
+    "id": "OE-003",
+    "original": "OE-003  \nExpansão\n\nNova Unidade Comercial  \nUma empresa comercial tem condições de ampliar sua atuação com uma unidade adicional.\n\nInvestimento necessário: R\\$ 35.000.\n\nEfeito previsto: aumento de 25% no lucro líquido distribuível da empresa comercial.\n\nRequisito: possuir empresa classificada como comércio ou varejo.\n\nDecisões: expandir ou recusar, com votação quando houver sociedade.\n\nConsequência: o valor será utilizado pela empresa para a expansão, e o resultado previsto será atualizado a partir do fechamento seguinte à operação.\n\nRisco: custos de implantação, concorrência e demanda insuficiente.\n\nAprendizagem: crescer aumenta a escala de um negócio, mas também amplia sua exposição a custos e riscos.",
+    "source": "catalogo/Cartas.md"
+  },
+  "OE-004": {
+    "id": "OE-004",
+    "original": "OE-004  \nExpansão\n\nAmpliação de Imóvel para Locação  \nUm imóvel de investimento apresenta condições para uma reforma que poderá ampliar seu potencial de aluguel.\n\nInvestimento necessário: R\\$ 20.000.\n\nEfeito previsto: aumento de 15% no aluguel líquido distribuível do imóvel.\n\nRequisito: possuir imóvel de investimento elegível, diferente de terreno sem construção.\n\nDecisões: realizar a melhoria ou recusar; propriedade compartilhada exige aprovação societária conforme sua estrutura.\n\nConsequência: registrar a melhoria patrimonial e atualizar o rendimento previsto a partir do próximo fechamento elegível.\n\nRisco: reforma, desocupação e demanda menor que o esperado.\n\nAprendizagem: melhorias imobiliárias devem ser analisadas conforme seu custo e o retorno adicional esperado.",
+    "source": "catalogo/Cartas.md"
+  },
+  "OE-005": {
+    "id": "OE-005",
+    "original": "OE-005  \nExpansão\n\nAutomatização de Operações  \nUma empresa de serviços pode implantar sistemas para reduzir retrabalho e melhorar processos.\n\nInvestimento necessário: R\\$ 25.000.\n\nEfeito previsto: aumento de 15% no lucro líquido distribuível.\n\nRequisito: possuir participação em empresa de serviços elegível.\n\nDecisões: automatizar ou recusar, com votação quando aplicável.\n\nConsequência: a empresa assume o investimento e passa a ter a nova previsão de resultado após execução.\n\nRisco: dificuldades de implantação, treinamento e dependência dos sistemas.\n\nAprendizagem: tecnologia pode melhorar produtividade, mas requer planejamento e recursos.\n\n3\\. Parcerias estratégicas — 4 cartas  \nOE-006 a OE-009\n\nAs parcerias poderão envolver estudantes ou investidores fictícios e seguirão as regras societárias aprovadas, incluindo participações proporcionais, propostas pendentes e votação.\n\n\\| Código \\| Oportunidade \\| Requisitos, decisões e efeitos \\|  \n\\|---\\|---\\|---\\|  \n\\| OE-006 — Parceria de Distribuição. Uma empresa comercial pode estabelecer uma parceria com um negócio de logística. \\| Exige possuir participação em empresa comercial. Investimento: R\\$ 15.000 pela empresa comercial. Efeito: aumento de 12% no lucro distribuível após formalização. Pode convidar sócios reais ou fictícios para custear a expansão mediante participação negociada. Risco: dependência da parceria e custos de transporte. Aprendizagem: parcerias podem ampliar mercados, mas exigem contratos claros. \\|  \n\\| OE-007 — Sociedade em Projeto Imobiliário. Um grupo organiza uma aquisição conjunta de imóvel para locação. \\| Valor total: R\\$ 120.000. Renda líquida inicial: R\\$ 900 por fechamento. Exige dois ou mais investidores elegíveis, entre estudantes e investidores fictícios. Cada um contribui com capital e recebe participação proporcional ao aporte. Risco: vacância e baixa liquidez. Aprendizagem: investimentos compartilhados permitem dividir recursos, rendimentos e responsabilidades. \\|  \n\\| OE-008 — Aliança de Empresas de Tecnologia. Duas empresas podem colaborar no desenvolvimento de soluções digitais. \\| Exige possuir participação em empresa de tecnologia. Aporte conjunto necessário: R\\$ 30.000. Efeito previsto: aumento de 18% no lucro distribuível da empresa participante após aprovação. Outros investidores podem participar do financiamento conforme proposta societária. Risco: dificuldades de integração e demanda. Aprendizagem: colaboração estratégica pode criar oportunidades de crescimento. \\|  \n\\| OE-009 — Parceria em Energia Renovável. Uma oportunidade permite investir conjuntamente em uma pequena operação de geração de energia. \\| Valor total: R\\$ 180.000. Renda líquida inicial: R\\$ 1.500 por fechamento. Participações proporcionais aos aportes de investidores elegíveis. Risco: desempenho dos equipamentos e custos de manutenção. Aprendizagem: uma sociedade compartilha resultados, riscos e decisões. \\|\n\nCondições complementares: nas OE-007 e OE-009, o valor total precisa ser integralmente coberto pelos aportes confirmados antes da aquisição. Nas OE-006 e OE-008, a entrada de novos investidores exigirá uma definição explícita das participações cedidas; não haverá criação automática de novos percentuais sem ajustar a estrutura societária.\n\nUma proposta pendente não descontará dinheiro dos convidados até sua formalização, conforme já aprovado.  \n4\\. Aquisições com desconto — 4 cartas  \nOE-010 a OE-013\n\nEstas cartas oferecem compras abaixo de um valor de mercado estimado. O desconto representa uma oportunidade de negociação, não um lucro garantido.",
+    "source": "catalogo/Cartas.md"
+  },
+  "OE-006": {
+    "id": "OE-006",
+    "original": "Condições complementares: nas OE-007 e OE-009, o valor total precisa ser integralmente coberto pelos aportes confirmados antes da aquisição. Nas OE-006 e OE-008, a entrada de novos investidores exigirá uma definição explícita das participações cedidas; não haverá criação automática de novos percentuais sem ajustar a estrutura societária.",
+    "source": "catalogo/Cartas.md"
+  },
+  "OE-007": {
+    "id": "OE-007",
+    "original": "Condições complementares: nas OE-007 e OE-009, o valor total precisa ser integralmente coberto pelos aportes confirmados antes da aquisição. Nas OE-006 e OE-008, a entrada de novos investidores exigirá uma definição explícita das participações cedidas; não haverá criação automática de novos percentuais sem ajustar a estrutura societária.",
+    "source": "catalogo/Cartas.md"
+  },
+  "OE-008": {
+    "id": "OE-008",
+    "original": "Condições complementares: nas OE-007 e OE-009, o valor total precisa ser integralmente coberto pelos aportes confirmados antes da aquisição. Nas OE-006 e OE-008, a entrada de novos investidores exigirá uma definição explícita das participações cedidas; não haverá criação automática de novos percentuais sem ajustar a estrutura societária.",
+    "source": "catalogo/Cartas.md"
+  },
+  "OE-009": {
+    "id": "OE-009",
+    "original": "Condições complementares: nas OE-007 e OE-009, o valor total precisa ser integralmente coberto pelos aportes confirmados antes da aquisição. Nas OE-006 e OE-008, a entrada de novos investidores exigirá uma definição explícita das participações cedidas; não haverá criação automática de novos percentuais sem ajustar a estrutura societária.",
+    "source": "catalogo/Cartas.md"
+  },
+  "OE-010": {
+    "id": "OE-010",
+    "original": "OE-010  \nAquisição com desconto\n\nImóvel Comercial com Desconto  \nUm proprietário precisa vender um imóvel comercial e aceita negociar abaixo de sua avaliação atual.\n\nValor de referência: R\\$ 100.000.\n\nPreço oferecido: R\\$ 85.000 — desconto de 15%.\n\nRenda líquida inicial estimada: R\\$ 650 por fechamento.\n\nRequisito: possuir R\\$ 85.000 ou obter aprovação de financiamento com entrada mínima de 40%.\n\nDecisões: comprar à vista, solicitar financiamento ou recusar.\n\nConsequência: adquirir o imóvel pelo preço efetivamente pago. O valor patrimonial de referência poderá ser diferente do custo de aquisição, sujeito a avaliação de mercado.\n\nRisco: baixa liquidez, reparos e desvalorização posterior.\n\nAprendizagem: comprar abaixo de uma avaliação não significa obter lucro antes de uma venda efetiva.",
+    "source": "catalogo/Cartas.md"
+  },
+  "OE-011": {
+    "id": "OE-011",
+    "original": "OE-011  \nAquisição com desconto\n\nEquipamentos Empresariais Usados  \nUma empresa está renovando suas instalações e vende equipamentos em funcionamento.\n\nValor de referência: R\\$ 40.000.\n\nPreço oferecido: R\\$ 32.000 — desconto de 20%.\n\nRenda líquida inicial por locação: R\\$ 300 por fechamento.\n\nRequisito: possuir R\\$ 32.000; compra somente à vista.\n\nDecisões: adquirir ou recusar.\n\nConsequência: registrar o conjunto de equipamentos e começar a receber a renda de locação nos fechamentos elegíveis.\n\nRisco: desgaste, defeitos ocultos, falta de compradores e substituição tecnológica.\n\nAprendizagem: preço reduzido pode compensar alguns riscos, mas a condição do equipamento precisa ser considerada.",
+    "source": "catalogo/Cartas.md"
+  },
+  "OE-012": {
+    "id": "OE-012",
+    "original": "OE-012  \nAquisição com desconto\n\nParticipação Societária com Desconto  \nUm investidor deseja vender rapidamente uma participação em uma empresa.\n\nAvaliação total da empresa: R\\$ 300.000.\n\nParticipação oferecida: 20%, com valor proporcional de referência de R\\$ 60.000.\n\nPreço solicitado: R\\$ 51.000 — desconto de 15%.\n\nLucro total inicialmente distribuído: R\\$ 3.000 por fechamento.\n\nRenda correspondente aos 20%: R\\$ 600 por fechamento, quando distribuída.\n\nRequisito: possuir dinheiro disponível e aguardar o cumprimento do direito de preferência dos sócios atuais, quando aplicável.\n\nDecisões: apresentar proposta de compra ou recusar.\n\nConsequência: a transferência somente será concluída após o período de preferência e a validação de todas as condições financeiras.\n\nRisco: alteração no valor da empresa, decisões dos sócios e baixa liquidez.\n\nAprendizagem: participações societárias podem ser negociadas com desconto, mas sua venda envolve direitos e obrigações dos sócios.",
+    "source": "catalogo/Cartas.md"
+  },
+  "OE-013": {
+    "id": "OE-013",
+    "original": "OE-013  \nAquisição com desconto\n\nPequena Empresa em Recuperação  \nUm negócio com dificuldades recentes está disponível por um preço inferior à sua avaliação anterior.\n\nAvaliação anterior: R\\$ 90.000.\n\nPreço oferecido: R\\$ 63.000 — desconto de 30%.\n\nLucro distribuído inicial: R\\$ 0\\.\n\nRequisito: possuir R\\$ 63.000; compra à vista.\n\nDecisões: adquirir ou recusar.\n\nConsequência: assumir a propriedade de um negócio que ainda precisa se recuperar. Não haverá distribuição inicial de renda passiva.\n\nRisco: prejuízos futuros, necessidade de capital adicional e possibilidade de encerramento do negócio conforme eventos posteriores.\n\nAprendizagem: um grande desconto pode refletir problemas reais; preço baixo não significa investimento seguro.\n\n5\\. Reestruturação financeira — 3 cartas  \nOE-014 a OE-016\n\nEssas cartas não criam dinheiro nem apagam dívidas. Elas permitem reorganizar obrigações financeiras conforme regras contratuais e capacidade de pagamento.\n\n\\| Código \\| Situação e condições \\| Consequências, riscos e aprendizagem \\|  \n\\|---\\|---\\|---\\|  \n\\| OE-014 — Renegociação de Financiamento Pessoal. Uma instituição oferece revisar as parcelas de uma dívida existente. \\| Exige possuir financiamento ativo. Pode solicitar substituição do contrato pelo saldo devedor atualizado, à taxa de 1% por fechamento, escolhendo 6, 12 ou 24 parcelas. Sujeito a nova análise de crédito. Consequência: contrato antigo é substituído somente após aprovação; juros futuros são recalculados. Risco: prazo maior pode elevar o custo total. Aprendizagem: parcela menor não significa dívida mais barata. \\|  \n\\| OE-015 — Reorganização de Dívida Empresarial. Uma empresa pode renegociar obrigações financeiras para melhorar seu fluxo de caixa. \\| Exige participação em empresa com dívida ativa. A proposta utiliza o saldo devedor atual e taxa de 1% por fechamento, com até 24 parcelas. Se houver sociedade, exige votação e validação da capacidade de pagamento empresarial. Consequência: atualizar a obrigação da empresa, sem transferi-la automaticamente aos sócios. Risco: extensão de prazo e novos custos financeiros. Aprendizagem: fluxo de caixa empresarial e patrimônio pessoal precisam ser separados. \\|  \n\\| OE-016 — Amortização Extraordinária. Você pode utilizar recursos disponíveis para reduzir antecipadamente uma dívida. \\| Exige financiamento ativo e dinheiro disponível. O estudante escolhe um valor entre R\\$ 1.000 e o saldo devedor, respeitando o caixa. Consequência: o pagamento reduz o saldo devedor e recalcula os juros futuros. Risco: diminuir excessivamente a reserva de caixa. Aprendizagem: quitar dívidas pode economizar juros, mas a liquidez também importa. \\|  \nRegras de reestruturação  \nA renegociação não será aprovada apenas porque a carta foi sorteada. O sistema deverá reavaliar o crédito, registrar o contrato substituído e impedir qualquer cobrança duplicada.\n\nPara dívidas que já estejam em atraso, continuarão valendo as regras de inadimplência e renegociação aprovadas no Bloco 2\\.\n\nNas dívidas empresariais, somente recursos da empresa serão utilizados diretamente, salvo aporte societário formalmente autorizado.  \n6\\. Oportunidades extraordinárias — 4 cartas  \nOE-017 a OE-020\n\nEstas oportunidades serão menos comuns e poderão exigir patrimônio, experiência em investimentos ou capital significativo.",
+    "source": "catalogo/Cartas.md"
+  },
+  "OE-014": {
+    "id": "OE-014",
+    "original": "\\| OE-014 — Renegociação de Financiamento Pessoal. Uma instituição oferece revisar as parcelas de uma dívida existente. \\| Exige possuir financiamento ativo. Pode solicitar substituição do contrato pelo saldo devedor atualizado, à taxa de 1% por fechamento, escolhendo 6, 12 ou 24 parcelas. Sujeito a nova análise de crédito. Consequência: contrato antigo é substituído somente após aprovação; juros futuros são recalculados. Risco: prazo maior pode elevar o custo total. Aprendizagem: parcela menor não significa dívida mais barata. \\|",
+    "source": "catalogo/Cartas.md"
+  },
+  "OE-015": {
+    "id": "OE-015",
+    "original": "\\| OE-015 — Reorganização de Dívida Empresarial. Uma empresa pode renegociar obrigações financeiras para melhorar seu fluxo de caixa. \\| Exige participação em empresa com dívida ativa. A proposta utiliza o saldo devedor atual e taxa de 1% por fechamento, com até 24 parcelas. Se houver sociedade, exige votação e validação da capacidade de pagamento empresarial. Consequência: atualizar a obrigação da empresa, sem transferi-la automaticamente aos sócios. Risco: extensão de prazo e novos custos financeiros. Aprendizagem: fluxo de caixa empresarial e patrimônio pessoal precisam ser separados. \\|",
+    "source": "catalogo/Cartas.md"
+  },
+  "OE-016": {
+    "id": "OE-016",
+    "original": "\\| OE-016 — Amortização Extraordinária. Você pode utilizar recursos disponíveis para reduzir antecipadamente uma dívida. \\| Exige financiamento ativo e dinheiro disponível. O estudante escolhe um valor entre R\\$ 1.000 e o saldo devedor, respeitando o caixa. Consequência: o pagamento reduz o saldo devedor e recalcula os juros futuros. Risco: diminuir excessivamente a reserva de caixa. Aprendizagem: quitar dívidas pode economizar juros, mas a liquidez também importa. \\|",
+    "source": "catalogo/Cartas.md"
+  },
+  "OE-017": {
+    "id": "OE-017",
+    "original": "OE-017  \nExtraordinária\n\nConsórcio de Investimento Imobiliário  \nUm grupo de investidores oferece a oportunidade de participar de um empreendimento para locação.\n\nValor total do projeto: R\\$ 500.000.\n\nParticipação oferecida: 20% por R\\$ 100.000.\n\nRenda líquida total inicial: R\\$ 4.000 por fechamento.\n\nRenda da participação oferecida: R\\$ 800 por fechamento, quando distribuída.\n\nRequisitos: possuir recursos individualmente ou apresentar uma proposta conjunta que cubra o valor da oferta.\n\nDecisões: adquirir, convidar investidores ou recusar.\n\nConsequência: registrar participações proporcionais aos aportes, com rendimentos e votações segundo as regras de sociedade.\n\nRisco: atraso na ocupação, manutenção e dificuldades para revender a participação.\n\nAprendizagem: investimentos coletivos exigem regras claras de participação, receitas e saída.",
+    "source": "catalogo/Cartas.md"
+  },
+  "OE-018": {
+    "id": "OE-018",
+    "original": "OE-018  \nExtraordinária\n\nAquisição de Empresa Inovadora  \nUma empresa de tecnologia possui um produto promissor e procura um investidor para ampliar sua operação.\n\nValor de aquisição: R\\$ 140.000.\n\nLucro distribuído inicial: R\\$ 0\\.\n\nRequisito: possuir R\\$ 140.000 disponíveis. Aquisição à vista.\n\nDecisões: comprar ou recusar.\n\nConsequência: registrar a empresa no patrimônio, sem renda passiva inicial. O valor poderá variar segundo os eventos de mercado e o desenvolvimento do negócio.\n\nRisco: o produto pode não alcançar demanda suficiente, com possibilidade de prejuízos.\n\nAprendizagem: inovação oferece possibilidades de crescimento, mas não garante resultados financeiros.",
+    "source": "catalogo/Cartas.md"
+  },
+  "OE-019": {
+    "id": "OE-019",
+    "original": "OE-019  \nExtraordinária\n\nProjeto de Expansão Regional  \nUma empresa existente pode ampliar sua atuação para novas cidades.\n\nInvestimento necessário: R\\$ 80.000.\n\nEfeito previsto: aumento de 30% do lucro líquido distribuível da empresa após a expansão.\n\nRequisito: possuir participação em empresa operacional com lucro distribuível positivo.\n\nDecisões: apresentar proposta de expansão ou recusar. Havendo sociedade, submeter à votação.\n\nConsequência: realizar o investimento com recursos empresariais após aprovação; atualizar o resultado distribuível.\n\nRisco: custos de implantação, concorrência e dificuldade de expansão.\n\nAprendizagem: crescimento acelerado pode elevar resultados, mas exige recursos e planejamento.",
+    "source": "catalogo/Cartas.md"
+  },
+  "OE-020": {
+    "id": "OE-020",
+    "original": "OE-020  \nExtraordinária\n\nInvestimento em Infraestrutura  \nUm grupo empresarial oferece participação em uma operação de infraestrutura com contratos de longo prazo.\n\nValor total do empreendimento: R\\$ 1.000.000.\n\nParticipação oferecida: 15% por R\\$ 150.000.\n\nLucro total inicialmente distribuído: R\\$ 7.000 por fechamento.\n\nRenda da participação: R\\$ 1.050 por fechamento, quando distribuída.\n\nRequisitos: possuir os recursos necessários individualmente ou concluir aquisição conjunta.\n\nDecisões: adquirir, negociar participação compartilhada ou recusar.\n\nConsequência: registrar a participação no patrimônio e seus rendimentos efetivamente distribuídos.\n\nRisco: manutenção, mudanças contratuais, alterações econômicas e baixa liquidez.\n\nAprendizagem: contratos de longo prazo podem trazer previsibilidade, mas não eliminam riscos de execução e mercado.",
+    "source": "catalogo/Cartas.md"
+  },
+  "FI-001": {
+    "id": "FI-001",
+    "original": "FI-001\n\nEducação para Todos  \nUma organização comunitária está arrecadando recursos para oferecer materiais didáticos e atividades de aprendizagem a jovens que enfrentam dificuldades de acesso à educação.\n\nDecisão: contribuir com uma das faixas abaixo ou não participar.  \nContribuição\tImpacto simulado  \nR\\$ 500\t5 estudantes apoiados  \nR\\$ 1.000\t10 estudantes apoiados  \nR\\$ 2.000\t20 estudantes apoiados\n\nRequisito: possuir o valor escolhido em caixa disponível.\n\nConsequência: descontar a contribuição uma única vez e acrescentar o número estimado de estudantes apoiados ao registro de impacto educativo do jogador.\n\nBenefício estratégico: nenhum benefício financeiro.\n\nAprendizagem: investir socialmente em educação pode ampliar oportunidades, mesmo sem retorno financeiro para o doador.",
+    "source": "catalogo/Cartas.md"
+  },
+  "FI-002": {
+    "id": "FI-002",
+    "original": "FI-002\n\nSaúde na Comunidade  \nUm projeto comunitário busca adquirir materiais e apoiar ações educativas de prevenção e promoção da saúde.\n\nDecisão: contribuir ou recusar.  \nContribuição\tImpacto simulado  \nR\\$ 750\t5 atendimentos ou participações apoiados  \nR\\$ 1.500\t10 atendimentos ou participações apoiados  \nR\\$ 3.000\t20 atendimentos ou participações apoiados\n\nRequisito: possuir dinheiro disponível suficiente.\n\nConsequência: registrar a doação e os atendimentos ou participações estimados, sem alterar patrimônio investido ou rendimentos.\n\nBenefício estratégico: nenhum benefício financeiro.\n\nAprendizagem: iniciativas de saúde dependem de planejamento e recursos, e seus resultados sociais vão além do retorno econômico.",
+    "source": "catalogo/Cartas.md"
+  },
+  "FI-003": {
+    "id": "FI-003",
+    "original": "FI-003\n\nPreservação Ambiental  \nUma iniciativa ambiental precisa de recursos para plantar e manter árvores em áreas de recuperação.\n\nDecisão: escolher o valor da contribuição ou não participar.  \nContribuição\tImpacto simulado  \nR\\$ 400\t10 mudas apoiadas  \nR\\$ 800\t20 mudas apoiadas  \nR\\$ 1.600\t40 mudas apoiadas\n\nRequisito: caixa suficiente para o valor escolhido.\n\nConsequência: registrar o desembolso e a quantidade estimada de mudas apoiadas. O indicador não representa árvores necessariamente plantadas ou sobreviventes.\n\nBenefício estratégico: nenhum benefício financeiro.\n\nAprendizagem: ações ambientais exigem recursos, manutenção e acompanhamento para produzir resultados duradouros.",
+    "source": "catalogo/Cartas.md"
+  },
+  "FI-004": {
+    "id": "FI-004",
+    "original": "FI-004\n\nEmpreendedorismo Social  \nUm programa oferece oficinas de planejamento, organização financeira e desenvolvimento de pequenos negócios para jovens empreendedores.\n\nDecisão: apoiar o programa ou recusar.  \nContribuição\tImpacto simulado  \nR\\$ 1.000\t4 participantes apoiados  \nR\\$ 2.000\t8 participantes apoiados  \nR\\$ 4.000\t16 participantes apoiados\n\nRequisito: possuir o valor escolhido.\n\nConsequência: registrar a contribuição e o número estimado de participantes beneficiados pelo programa.\n\nBenefício estratégico opcional: disponibilizar um pequeno conteúdo educativo sobre empreendedorismo e impacto social no histórico do jogador, sem vantagens financeiras nem prioridade em investimentos.\n\nAprendizagem: negócios e projetos podem buscar resultados econômicos e sociais, mas uma doação não equivale à aquisição de participação societária.",
+    "source": "catalogo/Cartas.md"
+  },
+  "FI-005": {
+    "id": "FI-005",
+    "original": "FI-005\n\nCombate à Fome  \nUma organização local organiza a distribuição de refeições e kits alimentares para famílias em situação de necessidade.\n\nDecisão: contribuir com uma das quantias ou não participar.  \nContribuição\tImpacto simulado  \nR\\$ 500\t25 refeições apoiadas  \nR\\$ 1.000\t50 refeições apoiadas  \nR\\$ 2.000\t100 refeições apoiadas\n\nRequisito: dinheiro disponível suficiente.\n\nConsequência: registrar a doação e as refeições estimadas, sem criar renda passiva, patrimônio financeiro ou benefícios futuros garantidos.\n\nBenefício estratégico: nenhum benefício financeiro.\n\nAprendizagem: recursos financeiros também podem contribuir para atender necessidades imediatas de uma comunidade.\n\n3\\. Como o impacto social será registrado  \nProponho que o jogo mantenha um histórico separado dos investimentos e das despesas comuns.\n\nCada registro de filantropia conterá: código da carta, projeto apoiado, valor da contribuição, indicador de impacto simulado, data da rodada e estudante responsável.\n\nNo painel do professor, esses dados poderão ser apresentados individualmente e em um resumo da turma.  \nPrévia do registro de filantropia  \nProjetoEducação para Todos  \nValor da contribuição  \nR\\$ 500\n\nR\\$ 1.000\n\nR\\$ 2.000\n\nDoação escolhidaR\\$ 1.000\n\nImpacto simulado10  \nestudantes apoiados\n\nSimulação para revisar os indicadores. Não realiza doações reais, não altera nenhuma partida e não representa resultados sociais verificados.  \n4\\. Regras complementares de aplicação  \nPara que essas cartas sejam educativas e não se transformem em uma forma indireta de aumentar a pontuação financeira, proponho consolidar os seguintes comportamentos:  \nSituação\tRegra  \nEstudante não deseja contribuir\tPode recusar, sem penalidade  \nNão possui recursos suficientes\tApenas contribuições compatíveis com o caixa ficam disponíveis",
+    "source": "catalogo/Cartas.md"
+  }
+}
