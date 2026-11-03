@@ -1,6 +1,6 @@
 ## v2.0 RC4 — Baralho oficial automático
 
-Novas partidas usam automaticamente as 25 Pequenas Oportunidades oficiais; o botão de ativação foi removido das interfaces individual e multiplayer. Consulte `ALTERACAO-BARALHO-OFICIAL-RC4.md`. **478 testes aprovados**.
+Novas partidas usam automaticamente as 25 Pequenas Oportunidades oficiais; o botão de ativação foi removido das interfaces individual e multiplayer. Consulte `docs/correcoes/ALTERACAO-BARALHO-OFICIAL-RC4.md`. **478 testes aprovados**.
 
 ---
 
@@ -22,7 +22,7 @@ Esta versão ainda é candidata à publicação: testes com pessoas reais, carga
 
 **Candidata à homologação técnica, ainda não aprovada para publicação pública.**
 
-Veja `RELATORIO-HOMOLOGACAO-v2.0.md` e `IMPLANTACAO-v2.0.md` para critérios, limitações e execução.
+Veja `docs/homologacao/RELATORIO-HOMOLOGACAO-v2.0.md` e `docs/implantacao/IMPLANTACAO-v2.0.md` para critérios, limitações e execução.
 
 ## v1.43 — continuação integrada (em desenvolvimento)
 
@@ -429,7 +429,7 @@ Para executar: `npm test` e, com `ADMIN_PASSWORD` definido, `npm start`. Os 161 
 
 Foram acrescentadas 14 decisões de Eventos da Vida, quatro Eventos da Vida automáticos e quatro Benefícios, com controle das categorias pessoais de despesas, efeitos temporários por fechamento, alterações salariais programadas e rastreabilidade das decisões.
 
-Consulte `COBERTURA-v1.43.md` para a listagem dos identificadores implementados neste lote e para as pendências antes da conclusão da v1.43. A meta de três grandes entregas permanece; não iniciar v1.44 enquanto v1.43 não estiver completa.
+Consulte `docs/cobertura/COBERTURA-v1.43.md` para a listagem dos identificadores implementados neste lote e para as pendências antes da conclusão da v1.43. A meta de três grandes entregas permanece; não iniciar v1.44 enquanto v1.43 não estiver completa.
 
 Execute `npm test` para rodar os testes automatizados.
 
@@ -437,12 +437,12 @@ Execute `npm test` para rodar os testes automatizados.
 - Sete participações GI-019 a GI-025 adquiríveis individualmente com recursos próprios, sem financiamento ou dividendos automáticos. Compra conjunta pendente.
 - OE-011, OE-013 e OE-018 adquiríveis à vista, com registro de ativo e débito auditável; renda de referência de equipamentos somente onde prevista.
 - OE-016: amortização extraordinária da dívida inicial ou empréstimos, com mínimo R$ 1.000, limite de caixa e saldo devedor, no individual e multiplayer.
-- 346 testes passam. Demais cartas OE continuam pendentes. Consulte `COBERTURA-v1.43.md`.
+- 346 testes passam. Demais cartas OE continuam pendentes. Consulte `docs/cobertura/COBERTURA-v1.43.md`.
 
 
 ## Estado após esta continuação — 357 testes
 
-A v1.43 ainda não está concluída. Consulte `RELATORIO-CONCLUSAO-v1.43.md` e `COBERTURA-230-CARTAS.csv`. Foram adicionados os fluxos individuais OE-010, OE-017, OE-020 e a renegociação pessoal OE-014. Não confundir a existência de texto catalogado com efeito plenamente homologado.
+A v1.43 ainda não está concluída. Consulte `docs/relatorios/RELATORIO-CONCLUSAO-v1.43.md` e `docs/cobertura/COBERTURA-230-CARTAS.csv`. Foram adicionados os fluxos individuais OE-010, OE-017, OE-020 e a renegociação pessoal OE-014. Não confundir a existência de texto catalogado com efeito plenamente homologado.
 
 
 ## Continuação v1.43 — investimentos conjuntos GI (363 testes)
@@ -461,7 +461,7 @@ As oportunidades especiais OE-017 e OE-020 agora admitem compra coletiva no mult
 
 - OE-007 e OE-009 foram vinculadas a propostas coletivas, com confirmação de todos os aportes, pelo menos dois participantes e rendimentos iniciais proporcionais.
 - OE-001, 002, 003, 005, 006, 008 e 019 agora dispõem de uma ação de investimento empresarial no multiplayer. Desembolso no caixa da empresa; sócio único integral executa diretamente; empresa compartilhada exige proposta e aprovação por mais de 50% do capital. O resultado registrado é **previsão**, não lucro distribuível realizado.
-- Essas implementações não concluem a contabilidade operacional, o direito de preferência ou a homologação das 230 cartas. Consultar `RELATORIO-CONCLUSAO-v1.43.md`.
+- Essas implementações não concluem a contabilidade operacional, o direito de preferência ou a homologação das 230 cartas. Consultar `docs/relatorios/RELATORIO-CONCLUSAO-v1.43.md`.
 
 ### Integração adicional da v1.43 — OE-004
 A reforma de imóveis de locação próprios pode ser realizada na carta OE-004 por R$ 20.000, com seleção do imóvel elegível. O acréscimo de 15% no aluguel entra no próximo fechamento pessoal; terrenos, participações e empresas não são aceitos como imóveis próprios de locação nesta operação. O projeto possui 375 testes automatizados aprovados, mas a v1.43 **ainda não está completa** (OE-012, OE-015, contabilidade empresarial operacional e cobertura integral pendentes).
@@ -481,14 +481,14 @@ A OE-015 também possui fluxo de renegociação empresarial: parcela em 6/12/24 
 
 ## Auditoria funcional desta continuação
 A auditoria reproduzível encontra-se em `src/functional-coverage.js` e
-`RELATORIO-COBERTURA-PERCENTUAL-v1.43.md`, com CSV individual de 230 cartas.
+`docs/cobertura/RELATORIO-COBERTURA-PERCENTUAL-v1.43.md`, com CSV individual de 230 cartas.
 A API de auditoria do professor agora informa também a cobertura de rotas.
 **Percentual de rotas encontradas não é percentual de homologação**; a v1.43
 continua incompleta. Não foram criados efeitos fictícios para cartas ausentes.
 
 ## Continuação da auditoria v1.43 — 393 testes
 
-Foram acrescentadas rotas para GO-005, GO-018 a GO-020 e MF-018, MF-024, MF-029, MF-030. Foram executados 393 testes (393 aprovados). Consulte `RELATORIO-COBERTURA-PERCENTUAL-v1.43.md`. A v1.43 **não está concluída**.
+Foram acrescentadas rotas para GO-005, GO-018 a GO-020 e MF-018, MF-024, MF-029, MF-030. Foram executados 393 testes (393 aprovados). Consulte `docs/cobertura/RELATORIO-COBERTURA-PERCENTUAL-v1.43.md`. A v1.43 **não está concluída**.
 
 ## Continuação v1.43 — evento MF-009 e cobertura
 
@@ -525,15 +525,15 @@ A partir desta revisão, aquisições empresariais e participações das cartas 
 
 ## Continuação da v1.43 — auditoria empresarial GO-009 a GO-015
 
-Foram adicionados 14 testes de ponta a ponta de receitas e despesas documentadas, reserva mínima por empresa, dividendos sem rendimentos fictícios e prevenção de duplicação. Todos os 440 testes passaram. O inventário atualizado identifica **220/230 (95,65%)** cartas sem pendência conhecida e **10** parciais. O percentual **não** representa homologação completa da versão. Consulte `RELATORIO-CONCLUSAO-v1.43.md`.
+Foram adicionados 14 testes de ponta a ponta de receitas e despesas documentadas, reserva mínima por empresa, dividendos sem rendimentos fictícios e prevenção de duplicação. Todos os 440 testes passaram. O inventário atualizado identifica **220/230 (95,65%)** cartas sem pendência conhecida e **10** parciais. O percentual **não** representa homologação completa da versão. Consulte `docs/relatorios/RELATORIO-CONCLUSAO-v1.43.md`.
 
 ### Continuação v1.43 — GO-016 a GO-020
 
-Cinco testes integrados (`tests/final-go-share-cycles.test.mjs`) verificam compra, ausência de lucro presumido, lançamento de receita, distribuição após fechamento de nove rodadas, respeito à reserva e prevenção de fechamento duplicado. Inventário atualizado para 225/230 sem pendências conhecidas (97,83%), com cinco OE parciais. A homologação integral permanece pendente; consulte `RELATORIO-ENTREGA-FINALIZACAO-DEZ-CARTAS-v1.43.md`.
+Cinco testes integrados (`tests/final-go-share-cycles.test.mjs`) verificam compra, ausência de lucro presumido, lançamento de receita, distribuição após fechamento de nove rodadas, respeito à reserva e prevenção de fechamento duplicado. Inventário atualizado para 225/230 sem pendências conhecidas (97,83%), com cinco OE parciais. A homologação integral permanece pendente; consulte `docs/entregas/RELATORIO-ENTREGA-FINALIZACAO-DEZ-CARTAS-v1.43.md`.
 
 ### Validação integrada das cinco OE — 2026-11-01
 
-A suíte foi ampliada para 451 testes; os novos cenários validam OE-004, OE-012, OE-014, OE-015 e OE-016 conjuntamente, inclusive os invariantes financeiros, a proteção contra duplicações e os saldos fracionários. OE-012 passa a registrar `amountCents` no extrato. Consulte `RELATORIO-VALIDACAO-CINCO-OE-v1.43.md`. O resultado não equivale à homologação integral das 230 cartas.
+A suíte foi ampliada para 451 testes; os novos cenários validam OE-004, OE-012, OE-014, OE-015 e OE-016 conjuntamente, inclusive os invariantes financeiros, a proteção contra duplicações e os saldos fracionários. OE-012 passa a registrar `amountCents` no extrato. Consulte `docs/homologacao/RELATORIO-VALIDACAO-CINCO-OE-v1.43.md`. O resultado não equivale à homologação integral das 230 cartas.
 
 ### Continuação da v1.43 — OE-012 e OE-014
 
@@ -543,7 +543,7 @@ A suíte foi ampliada para 451 testes; os novos cenários validam OE-004, OE-012
 
 ## Fechamento funcional da v1.43 — 2026-11-01
 
-O inventário funcional chegou a **230/230 cartas com rota identificada e sem pendência conhecida (100%)**, com **457 testes automatizados aprovados**. Foram integrados testes adicionais de catálogo, existência dos textos aprovados e sorteabilidade por ciclo, e mantidos os testes financeiros integrados das cinco OE finais. **Este fechamento não equivale à homologação manual de todas as alternativas**, prevista para a v2.0. Ver `RELATORIO-ENCERRAMENTO-FUNCIONAL-v1.43.md` e `RELATORIO-COBERTURA-PERCENTUAL-v1.43.md`.
+O inventário funcional chegou a **230/230 cartas com rota identificada e sem pendência conhecida (100%)**, com **457 testes automatizados aprovados**. Foram integrados testes adicionais de catálogo, existência dos textos aprovados e sorteabilidade por ciclo, e mantidos os testes financeiros integrados das cinco OE finais. **Este fechamento não equivale à homologação manual de todas as alternativas**, prevista para a v2.0. Ver `docs/relatorios/RELATORIO-ENCERRAMENTO-FUNCIONAL-v1.43.md` e `docs/cobertura/RELATORIO-COBERTURA-PERCENTUAL-v1.43.md`.
 
 ## v1.44 — Integração de partida (primeiro bloco)
 - O servidor agora inclui `progress` nas consultas de sala, com participantes ativos, sonhos realizados, ordem de conclusão e indicação de encerramento manual.
@@ -565,8 +565,8 @@ O inventário funcional chegou a **230/230 cartas com rota identificada e sem pe
 
 ## v1.44 — Validação integrada de partida (continuação)
 
-A suíte cobre agora seis jogadores na mesma sala, limite de participantes, sequência de turnos e rodadas, pausa e retomada, persistência após reinício do servidor, os dois tabuleiros, transição por três fechamentos favoráveis e os seis sonhos com verificação de saldo. Consulte `RELATORIO-VALIDACAO-PARTIDA-v1.44.md`. A homologação manual de partidas completas e a v2.0 permanecem pendentes.
+A suíte cobre agora seis jogadores na mesma sala, limite de participantes, sequência de turnos e rodadas, pausa e retomada, persistência após reinício do servidor, os dois tabuleiros, transição por três fechamentos favoráveis e os seis sonhos com verificação de saldo. Consulte `docs/homologacao/RELATORIO-VALIDACAO-PARTIDA-v1.44.md`. A homologação manual de partidas completas e a v2.0 permanecem pendentes.
 
 
 ## Correção RC3 — turnos bloqueados em cartas MF
-Eventos globais de mercado, incluindo MF-005, agora são aceitos pela validação financeira depois da aplicação automática. Isso corrige a falha “Partida financeira inconsistente” ao encerrar o turno. Veja `CORRECAO-TURNO-RC3.md`.
+Eventos globais de mercado, incluindo MF-005, agora são aceitos pela validação financeira depois da aplicação automática. Isso corrige a falha “Partida financeira inconsistente” ao encerrar o turno. Veja `docs/correcoes/CORRECAO-TURNO-RC3.md`.

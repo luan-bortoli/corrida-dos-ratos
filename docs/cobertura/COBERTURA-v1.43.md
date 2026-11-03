@@ -44,7 +44,7 @@ A presença do texto aprovado no catálogo **não** significa que a carta já po
 ## Continuação 5 — investimentos conjuntos GI (363 testes)
 - GI-019 a GI-025: compra individual já existente e **compra conjunta multiplayer** por proposta de até duas rodadas, aceites, recusas, revalidação de caixa e participações proporcionais sem juros/dividendos inventados.
 - Negociação conjunta em partida individual não se aplica (apenas um jogador).
-- Este avanço não homologa os demais efeitos das 230 cartas; consultar `RELATORIO-CONCLUSAO-v1.43.md`.
+- Este avanço não homologa os demais efeitos das 230 cartas; consultar `../relatorios/RELATORIO-CONCLUSAO-v1.43.md`.
 
 ## Continuação: OE-017 e OE-020
 Ambas as participações agora têm proposta conjunta no multiplayer, com convites, aporte proporcional, confirmação, recusa, expiração em duas rodadas e liquidação com saldos revalidados; validadas em 366 testes. Governança e apuração operacional das demais oportunidades permanecem pendentes.
