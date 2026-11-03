@@ -7,10 +7,10 @@ test('official unresolved card receives nonfinancial acknowledgment',()=>{
  let s=createGame(0);s.position=2;s=rollTurn(s,1);assert.equal(s.cardEvents.length,1);assert.equal(s.cardEvents[0].status,'text_available');assert.deepEqual(cardAvailability(s.currentCard).actions,['acknowledge']);const cash=s.cash;s=finishTurn(s);assert.equal(s.cardEvents[0].resolution,'acknowledge');assert.equal(s.cash,cash);assert.equal(auditCash(s).ok,true);
 });
 test('verified offer creates an auditable purchase resolution',()=>{
- let s=createGame(11);s.position=1;s=rollTurn(s,1);const a=VERIFIED_ASSETS.find(x=>x.id===s.currentOffer);assert.ok(a);s=buyVerifiedAsset(s,a.id);assert.equal(s.cardEvents.at(-1).resolution,'purchase');assert.equal(s.cardEvents.at(-1).financialEffect,true);assert.equal(auditCash(s).ok,true);assert.throws(()=>buyVerifiedAsset(s,a.id));s=finishTurn(s);assert.equal(validateState(s),true);
+ let s=createGame(11);s.officialPOEnabled=false;s.position=1;s=rollTurn(s,1);const a=VERIFIED_ASSETS.find(x=>x.id===s.currentOffer);assert.ok(a);s=buyVerifiedAsset(s,a.id);assert.equal(s.cardEvents.at(-1).resolution,'purchase');assert.equal(s.cardEvents.at(-1).financialEffect,true);assert.equal(auditCash(s).ok,true);assert.throws(()=>buyVerifiedAsset(s,a.id));s=finishTurn(s);assert.equal(validateState(s),true);
 });
 test('declining a verified card adds no financial event',()=>{
- let s=createGame(0);s=rollTurn(s,1);const start=s.cash;s=finishTurn(s);assert.equal(s.cardEvents[0].resolution,'decline');assert.equal(s.cardEvents[0].financialEffect,false);assert.equal(s.cash,start);
+ let s=createGame(0);s.officialPOEnabled=false;s=rollTurn(s,1);const start=s.cash;s=finishTurn(s);assert.equal(s.cardEvents[0].resolution,'decline');assert.equal(s.cardEvents[0].financialEffect,false);assert.equal(s.cash,start);
 });
 test('tampered event journal is rejected',()=>{
  let s=createGame(0);s=rollTurn(s,1);s=finishTurn(s);s.cardEvents[0].financialEffect=true;assert.equal(validateCardEvents(s.cardEvents),false);assert.equal(validateState(s),false);

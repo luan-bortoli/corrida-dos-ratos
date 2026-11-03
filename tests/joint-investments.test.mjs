@@ -2,6 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {createGame,validateState,auditCash} from '../src/engine.js';
 import {openJointInvestment,acceptJointInvestment,declineJointInvestment,expireJointInvestments} from '../src/joint-investments.js';
+import {createCompanies,purchaseCompanyShare} from '../src/companies.js';
 import {GRAND_PARTICIPATIONS} from '../src/grand-investments.js';
 function room(){const players=['a','b','c'].map(id=>{const game=createGame(1);game.cash=250000;game.initialCash=250000;game.secondaryCashCents=0;game.circuit='outer';game.pending=false;return {id,game};});const g=players[0].game;g.pending=true;g.lastTile='GI';g.currentCard={id:'GI-019',category:'GI'};g.cardEvents=[{id:'GI-019',turn:1,circuit:'outer',position:1,status:'text_available',resolution:'pending',financialEffect:false}];return {round:1,players,jointInvestments:[]};}
 test('proposta em GI: cartão, convites e aceite até total; compra conjunta sem dividendos fictícios',()=>{const r=room(),p=openJointInvestment(r,'a',40000,['b','c']);assert.equal(p.status,'open');assert.equal(r.players[0].game.cash,250000);acceptJointInvestment(r,'b',p.id,60000);assert.equal(p.status,'settled');assert.deepEqual(r.players.slice(0,2).map(x=>x.game.cash),[210000,190000]);assert.deepEqual(r.players.slice(0,2).map(x=>x.game.assets.at(-1).percent),[8,12]);assert.equal(r.players[0].game.cardEvents[0].resolution,'joint_purchase');for(const x of r.players){assert.ok(validateState(x.game));assert.ok(auditCash(x.game).ok);}});
@@ -39,3 +40,23 @@ for(const [id,cost,income] of [['OE-007',120000,900],['OE-009',180000,1500]]){
   for(const player of r.players){assert.ok(validateState(player.game));assert.ok(auditCash(player.game).ok);}
  });
 }
+
+test('GO-016: proposta conjunta transfere 25% por R$ 10.000 sem duplicar lucros ou quotas',()=>{
+ const r=room();r.companies=createCompanies();const g=r.players[0].game;
+ g.circuit='inner';g.lastTile='GO';g.currentCard={id:'GO-016',category:'GO'};g.cardEvents=[{id:'GO-016',turn:1,circuit:'inner',position:1,status:'text_available',resolution:'pending',financialEffect:false}];
+ const proposal=openJointInvestment(r,'a',4000,['b']);
+ assert.equal(proposal.offerCost,10000);assert.equal(proposal.percent,25);assert.equal(g.cardEvents[0].resolution,'joint_proposal');
+ assert.throws(()=>purchaseCompanyShare(r,'a','GO-016'));
+ acceptJointInvestment(r,'b',proposal.id,6000);
+ assert.equal(proposal.status,'settled');assert.deepEqual([r.companies[0].shares.a,r.companies[0].shares.b,r.companies[0].shares.origin],[10,15,75]);
+ assert.equal(r.externalSellerCash,10000);assert.deepEqual([r.players[0].game.cash,r.players[1].game.cash],[246000,244000]);
+ assert.equal(g.cardEvents[0].resolution,'joint_purchase');assert.equal(g.offerResolved,true);
+ for(const player of r.players){assert.ok(validateState(player.game));assert.ok(auditCash(player.game).ok);}
+});
+test('GO-016: liquidação de aportes insuficientes não mexe em quota nem saldo',()=>{
+ const r=room();r.companies=createCompanies();const g=r.players[0].game;
+ g.circuit='inner';g.lastTile='GO';g.currentCard={id:'GO-016',category:'GO'};g.cardEvents=[{id:'GO-016',turn:1,circuit:'inner',position:1,status:'text_available',resolution:'pending',financialEffect:false}];
+ const proposal=openJointInvestment(r,'a',3000,['b']);r.players[1].game.cash=100;
+ assert.throws(()=>acceptJointInvestment(r,'b',proposal.id,7000),/insuficiente/);
+ assert.equal(proposal.status,'open');assert.equal(g.cash,250000);assert.equal(r.companies[0].shares.origin,100);assert.equal(r.externalSellerCash??0,0);
+});

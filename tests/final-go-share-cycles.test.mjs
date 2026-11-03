@@ -9,7 +9,7 @@ import {cashBalanceCents} from '../src/money-balance.js';
 // Testa, individualmente, o ciclo econômico das cinco participações GO.
 for(const template of createCompanies()){
  test(`${template.id}: aquisição, resultado comprovado, reserva, dividendos e fechamento idempotente`,()=>{
-  const g=createGame(11,'TRAVEL');g.cash=100000;g.initialCash=100000;g.secondaryCashCents=73;g.pending=true;g.lastTile='GO';g.turn=1;
+  const g=createGame(11,'TRAVEL');g.cash=100000;g.initialCash=100000;g.secondaryCashCents=73;g.pending=true;g.lastTile='GO';g.turn=1;g.currentCard={id:template.id,category:'GO'};g.cardEvents=[{id:template.id,turn:1,circuit:'inner',position:1,status:'text_available',resolution:'pending',financialEffect:false}];
   const r={round:1,players:[{id:'aluno',game:g}],companies:createCompanies(),externalSellerCash:0};
   const initial=cashBalanceCents(g);
   const purchase=purchaseCompanyShare(r,'aluno',template.id);

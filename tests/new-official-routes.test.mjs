@@ -11,7 +11,7 @@ test('GO-018 a GO-020 incluem três participações com preços oficiais e lucro
  const c=createCompanies();assert.deepEqual(c.slice(-3).map(x=>[x.id,x.valuation,x.offer.percent,x.offer.price,x.referenceDistribution]),[
  ['GO-018',80000,20,16000,0],['GO-019',50000,40,20000,600],['GO-020',120000,25,30000,1200]
  ]);
- const r={companies:c,round:1,players:[{id:'p',game:{pending:true,lastTile:'GO',offerResolved:false,cash:35000,ledger:[],closures:0,turn:1,history:[]}}]};
+ const r={companies:c,round:1,players:[{id:'p',game:{pending:true,lastTile:'GO',currentCard:{id:'GO-018',category:'GO'},cardEvents:[{id:'GO-018',turn:1,circuit:'inner',position:1,status:'text_available',resolution:'pending',financialEffect:false}],offerResolved:false,cash:35000,ledger:[],closures:0,turn:1,history:[]}}]};
  const result=purchaseCompanyShare(r,'p','GO-018');assert.equal(result.percent,20);assert.equal(r.players[0].game.cash,19000);assert.equal(r.companies[2].shares.p,20);assert.equal(r.companies[2].retainedProfit,0);
 });
 test('MF-018 e MF-030 valorizam e desvalorizam somente empresas tecnológicas',()=>{

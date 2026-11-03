@@ -40,8 +40,7 @@ function render(){ $('setup').hidden=!!state;$('game').hidden=!state;if(!state)r
  const lifeArea=$('soloLife');lifeArea.replaceChildren();
  if(s.pending&&s.currentCard?.category==='EV'){const d=lifeDecision(s.currentCard.id,s.circuit);const ev=s.cardEvents?.at(-1);if(d&&ev?.resolution==='pending'){for(const [value,label] of [['accept',d.accept],['reject',d.reject]]){const b=document.createElement('button');b.textContent=label;b.onclick=()=>act(x=>chooseLifeEvent(x,value));lifeArea.append(b);}}else if(s.currentCard.lifeDecision){const p=document.createElement('p');p.textContent='Decisão registrada: '+s.currentCard.lifeDecision.choice;lifeArea.append(p);}}
  const coArea=$('companyOffer');coArea.replaceChildren();
- if(!s.pending&&!s.won&&!s.officialPOEnabled){const b=document.createElement('button');b.textContent='Ativar baralho oficial de Pequenas Oportunidades';b.onclick=()=>act(enableOfficialPO);coArea.append(b);}
- if(s.pending){const philanthropy=philanthropyOffer(s.currentCard,s.circuit);if(philanthropy){const pending=s.cardEvents?.at(-1)?.resolution==='pending';const p=document.createElement('p');p.textContent=`${philanthropy.project} — contribuição voluntária; impacto social simulado, sem retorno financeiro.`;coArea.append(p);if(pending){for(const [amount,impact] of philanthropy.options){const b=document.createElement('button');b.textContent=`Contribuir ${money(amount)} — ${impact} ${philanthropy.unit}`;b.disabled=amount*100>s.cash*100+(s.secondaryCashCents??0);b.onclick=()=>act(x=>resolvePhilanthropy(x,amount));coArea.append(b);}const no=document.createElement('button');no.textContent='Não contribuir';no.onclick=()=>act(x=>resolvePhilanthropy(x,0));coArea.append(no);}}}
+  if(s.pending){const philanthropy=philanthropyOffer(s.currentCard,s.circuit);if(philanthropy){const pending=s.cardEvents?.at(-1)?.resolution==='pending';const p=document.createElement('p');p.textContent=`${philanthropy.project} — contribuição voluntária; impacto social simulado, sem retorno financeiro.`;coArea.append(p);if(pending){for(const [amount,impact] of philanthropy.options){const b=document.createElement('button');b.textContent=`Contribuir ${money(amount)} — ${impact} ${philanthropy.unit}`;b.disabled=amount*100>s.cash*100+(s.secondaryCashCents??0);b.onclick=()=>act(x=>resolvePhilanthropy(x,amount));coArea.append(b);}const no=document.createElement('button');no.textContent='Não contribuir';no.onclick=()=>act(x=>resolvePhilanthropy(x,0));coArea.append(no);}}}
  if(s.pending&&s.currentCard?.id==='OE-004'&&s.cardEvents?.at(-1)?.resolution==='pending'){
   const label=document.createElement('p');label.textContent='OE-004 — Reforma R$ 20.000; renda de aluguel +15% a partir do próximo fechamento.';coArea.append(label);
   for(const a of eligibleRentalImprovements(s)){const b=document.createElement('button');b.textContent=`Reformar ${a.name}`;b.disabled=s.cash*100+(s.secondaryCashCents??0)<2000000;b.onclick=()=>act(x=>improveRentalProperty(x,a.ownershipId));coArea.append(b);}
@@ -81,11 +80,11 @@ function render(){ $('setup').hidden=!!state;$('game').hidden=!state;if(!state)r
 function act(fn){try{put(fn(state));}catch(e){alert(e.message);}}
 opts();$('profession').addEventListener('change',professionPreview);professionPreview();
 $('start').addEventListener('click',()=>put(createGame($('profession').value,$('dream').value)));
-$('roll').addEventListener('click',()=>act(s=>rollTurn(s,Math.floor(Math.random()*6)+1)));
+$('roll').addEventListener('click',()=>act(s=>rollTurn({...s,officialPOEnabled:true},Math.floor(Math.random()*6)+1)));
 $('end').addEventListener('click',()=>act(finishTurn));
 $('verifiedOffers').addEventListener('click',e=>{const b=e.target.closest('[data-buy]');if(b)act(s=>buyVerifiedAsset(s,b.dataset.buy));});
 $('reset').addEventListener('click',()=>{if(confirm('Apagar a demonstração salva neste navegador e iniciar outra partida?')){state=null;localStorage.removeItem(KEY);render();}});
-try{const saved=JSON.parse(localStorage.getItem(KEY));if(validateState(saved))state=saved;}catch{}render();
+try{const saved=JSON.parse(localStorage.getItem(KEY));if(validateState(saved))state=saved.pending?saved:{...saved,officialPOEnabled:true};}catch{}render();
 
 $('creditAmount').addEventListener('input',render);$('creditTerm').addEventListener('change',render);
 $('contractCredit').addEventListener('click',()=>act(s=>contractCredit(s,Number($('creditAmount').value),Number($('creditTerm').value))));
@@ -94,4 +93,4 @@ $('exportCSV').addEventListener('click',()=>{if(!state)return;const blob=new Blo
 
 function saveFile(contents,name,type){const blob=new Blob([contents],{type});const url=URL.createObjectURL(blob);const link=document.createElement('a');link.href=url;link.download=name;link.click();setTimeout(()=>URL.revokeObjectURL(url),1000);}
 $('saveGame').addEventListener('click',()=>{if(state)try{saveFile(serializeGame(state),'corrida-dos-ratos-partida.json','application/json');}catch(e){alert(e.message);}});
-$('loadGame').addEventListener('change',async e=>{const file=e.target.files?.[0];if(!file)return;try{if(file.size>2000000)throw Error('Arquivo muito grande.');const newState=deserializeGame(await file.text());if(confirm('Substituir a partida local atual pela partida importada?'))put(newState);}catch(err){alert(err.message);}finally{e.target.value='';}});
+$('loadGame').addEventListener('change',async e=>{const file=e.target.files?.[0];if(!file)return;try{if(file.size>2000000)throw Error('Arquivo muito grande.');const newState=deserializeGame(await file.text());if(confirm('Substituir a partida local atual pela partida importada?'))put(newState.pending?newState:{...newState,officialPOEnabled:true});}catch(err){alert(err.message);}finally{e.target.value='';}});

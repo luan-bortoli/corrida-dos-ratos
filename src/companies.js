@@ -14,7 +14,8 @@ export function checkCompanies(companies){if(!Array.isArray(companies))return fa
 export function purchaseCompanyShare(room,playerId,companyId){
  const company=room.companies?.find(c=>c.id===companyId);const p=room.players.find(x=>x.id===playerId);
  if(!company||!p)throw Error('Empresa ou estudante não encontrado');
- if(!p.game.pending||p.game.lastTile!=='GO'||p.game.offerResolved)throw Error('Aquisição somente após parar numa Grande Oportunidade ainda não resolvida');
+ if(!p.game.pending||p.game.lastTile!=='GO'||p.game.currentCard?.id!==companyId||p.game.cardEvents?.at(-1)?.resolution!=='pending'||p.game.offerResolved)throw Error('Aquisição somente da participação da carta GO sorteada e pendente');
+ if(room.jointInvestments?.some(x=>x.cardId===companyId&&x.status==='open'))throw Error('Participação reservada para proposta conjunta pendente');
  if(company.shares.origin<company.offer.percent)throw Error('Participação indisponível');
  if(cashBalanceCents(p.game)<company.offer.price*100)throw Error('Caixa insuficiente');
  const percent=company.offer.percent,price=company.offer.price;
@@ -25,6 +26,8 @@ export function purchaseCompanyShare(room,playerId,companyId){
  p.game.ledger??=[];
  p.game.ledger.push({id:crypto.randomUUID(),turn:p.game.turn,closure:p.game.closures,kind:'share_purchase',amount:p.game.cash-cashBefore,amountCents:-price*100,description:`Participação ${percent}%: ${company.name}`,companyId});
  p.game.offerResolved=true;p.game.currentOffer=null;
+ p.game.cardEvents.at(-1).resolution='share_purchase';p.game.cardEvents.at(-1).financialEffect=true;
+ p.game.currentCard.effectExecuted=true;
  p.game.history.unshift({id:crypto.randomUUID(),text:`Participação de ${percent}% em ${company.name} adquirida por R$ ${price} (oferta demonstrativa).`,type:'asset'});
  company.shares.origin-=percent;
  company.shares[playerId]=(company.shares[playerId]||0)+percent;

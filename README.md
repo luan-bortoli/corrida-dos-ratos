@@ -1,3 +1,9 @@
+## v2.0 RC4 — Baralho oficial automático
+
+Novas partidas usam automaticamente as 25 Pequenas Oportunidades oficiais; o botão de ativação foi removido das interfaces individual e multiplayer. Consulte `ALTERACAO-BARALHO-OFICIAL-RC4.md`. **478 testes aprovados**.
+
+---
+
 ## v2.0 RC2 — correção crítica de início de partida e pacote cumulativo (02/11/2026)
 
 Esta é uma **entrega completa e cumulativa**: contém o projeto inteiro e todas as implementações anteriores (cartas, modo individual, multiplayer, financiamentos, empresas, tabuleiros, relatórios e segurança); não é um patch de arquivos avulsos.

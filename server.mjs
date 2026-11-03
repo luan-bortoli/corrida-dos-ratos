@@ -26,7 +26,7 @@ import {fileURLToPath} from 'node:url';
 import {ensureMarket,publishShareOffer,acceptShareOffer,expireShareOffers,publicShareOffers} from './src/market.js';
 import {ensureGovernance,openProposal,castVote,expireProposals,publicProposals} from './src/governance.js';
 import {createCompanies,checkCompanies,purchaseCompanyShare,closeCompanies,publicCompanies} from './src/companies.js';
-import {createGame,rollTurn,finishTurn,buyVerifiedAsset,purchaseRealEstate,purchaseOfficialCompany,purchaseOfficialSmallBusiness,purchaseOfficialPOAsset,subscribeFixedIncome,redeemFixedIncome,purchaseOfficialSecurity,enableOfficialPO,financeRealEstate,answerEducationCard,chooseLifeEvent,resolvePhilanthropy,purchaseGrandInvestment,purchaseSpecialOpportunity,resolveExtraordinaryAmortization,resolveSpecialRefinancing,improveRentalProperty,contractCredit,prepayLoan,validateState,auditCash,quoteCredit} from './src/engine.js';
+import {createGame,rollTurn,finishTurn,buyVerifiedAsset,purchaseRealEstate,purchaseOfficialCompany,purchaseOfficialSmallBusiness,purchaseOfficialPOAsset,subscribeFixedIncome,redeemFixedIncome,purchaseOfficialSecurity,financeRealEstate,answerEducationCard,chooseLifeEvent,resolvePhilanthropy,purchaseGrandInvestment,purchaseSpecialOpportunity,resolveExtraordinaryAmortization,resolveSpecialRefinancing,improveRentalProperty,contractCredit,prepayLoan,validateState,auditCash,quoteCredit} from './src/engine.js';
 const root=fileURLToPath(new URL('.',import.meta.url));
 const port=Number(process.env.PORT||3000);
 const password=process.env.ADMIN_PASSWORD;
@@ -123,7 +123,7 @@ async function api(req,res,url){const parts=url.pathname.split('/').filter(Boole
   if(action==='start'){if(r.status!=='lobby'||r.players.length<2)fail(409,'É necessário ter de 2 a 6 participantes na sala');r.status='playing';r.order=r.players.map(p=>p.id);r.turnIndex=0;r.round=1;r.turnDeadline=Date.now()+TURN_MS;}
   if(action==='pause'){if(r.status!=='playing')fail(409,'Sala não está em andamento');r.pausedRemaining=Math.max(0,(r.turnDeadline??Date.now())-Date.now());r.turnDeadline=null;r.status='paused';}
   if(action==='resume'){if(r.status!=='paused')fail(409,'Sala não está pausada');r.status='playing';r.turnDeadline=Date.now()+(r.pausedRemaining??TURN_MS);r.pausedRemaining=null;}
-  if(action==='advance'){if(r.status!=='playing')fail(409,'Sala não está em andamento');if(Date.now()<(r.turnDeadline??Infinity))fail(409,'O turno ainda está dentro do prazo');const id=r.order[r.turnIndex];const p=r.players.find(x=>x.id===id);if(p?.game.pending){if(p.game.currentCard?.corporateExpense?.requiresCompanySelection)throw Error('Selecione a empresa antes de avançar o turno');p.game=finishTurn(p.game);}if(p){r.turnIndex=(r.turnIndex+1)%r.order.length;if(r.turnIndex===0){closeCompanies(r,r.round??1);r.round=(r.round??1)+1;expireShareOffers(r);expireProposals(r);expireJointInvestments(r);expireDiscountOffers(r);}turnAdvance(r);}r.turnDeadline=r.status==='playing'?Date.now()+TURN_MS:null;}
+  if(action==='advance'){if(r.status!=='playing')fail(409,'Sala não está em andamento');if(Date.now()<(r.turnDeadline??Infinity))fail(409,'O turno ainda está dentro do prazo');const id=r.order[r.turnIndex];const p=r.players.find(x=>x.id===id);if(p?.game.pending){if(p.game.currentCard?.corporateExpense?.requiresCompanySelection)throw Error('Selecione a empresa antes de avançar o turno');p.game=finishTurn(p.game);p.game.officialPOEnabled=true;}if(p){r.turnIndex=(r.turnIndex+1)%r.order.length;if(r.turnIndex===0){closeCompanies(r,r.round??1);r.round=(r.round??1)+1;expireShareOffers(r);expireProposals(r);expireJointInvestments(r);expireDiscountOffers(r);}turnAdvance(r);}r.turnDeadline=r.status==='playing'?Date.now()+TURN_MS:null;}
   if(action==='finish'){if(r.status==='finished')fail(409,'Sala já encerrada');r.status='finished';r.turnDeadline=null;}
  }else{
   const p=current(r,who);if(!validateState(p.game)||!auditCash(p.game).ok)fail(409,'Partida financeira inconsistente');
@@ -137,7 +137,7 @@ async function api(req,res,url){const parts=url.pathname.split('/').filter(Boole
    case 'share-offer':publishShareOffer(r,p.id,String(data.companyId||''),Number(data.percent),Number(data.price));break;
    case 'share-accept':acceptShareOffer(r,p.id,String(data.offerId||''));break;
    case 'npc-buy':{const offer=r.shareOffers?.find(o=>o.id===String(data.offerId||''));if(!offer||offer.sellerId!==p.id)fail(403,'Apenas o vendedor pode confirmar a venda');buyShareNPC(r,offer.id,String(data.investorId||''),data.acceptCounter===true);break;}
-   case 'roll':{p.game=rollTurn(p.game,randomInt(1,7));if(p.game.currentCard?.category==='MF')applyGlobalMarketEvent(r,p.game.currentCard.id);
+   case 'roll':{p.game=rollTurn({...p.game,officialPOEnabled:true},randomInt(1,7));if(p.game.currentCard?.category==='MF')applyGlobalMarketEvent(r,p.game.currentCard.id);
     if(p.game.currentCard?.category==='DI'&&p.game.circuit==='outer'){
      const card=p.game.currentCard;
      const occurrence=p.game.cardEvents?.at(-1);
@@ -164,7 +164,6 @@ async function api(req,res,url){const parts=url.pathname.split('/').filter(Boole
    case 'special-amortize':p.game=resolveExtraordinaryAmortization(p.game,String(data.loanId),Number(data.amount));break;
    case 'special-acquisition-buy':p.game=purchaseSpecialOpportunity(p.game,data.term===undefined?{}:{term:Number(data.term),downPayment:Number(data.downPayment)});registerAcquiredCompanyLedgers(r);break;
    case 'grand-investment-buy':p.game=purchaseGrandInvestment(p.game,data.term===undefined?{}:{term:Number(data.term),downPayment:Number(data.downPayment)});registerAcquiredCompanyLedgers(r);break;
-   case 'official-po-enable':p.game=enableOfficialPO(p.game);break;
    case 'official-po-buy':p.game=purchaseOfficialSmallBusiness(p.game);break;
    case 'official-security-buy':{const id=p.game.currentCard?.id;const total=r.players.reduce((sum,player)=>sum+(player.game?.officialSecurities?.[id]??0),0);if(!Number.isSafeInteger(total)||total+Number(data.quantity)>ISSUE_UNITS)throw Error('Emissão oficial esgotada nesta sala.');p.game=purchaseOfficialSecurity(p.game,Number(data.quantity));synchronizeOfficialPosition(r,p.game,id);break;}
    case 'secondary-list':listSecondary(r,p.id,String(data.securityId||''),Number(data.units));break;
@@ -179,7 +178,7 @@ async function api(req,res,url){const parts=url.pathname.split('/').filter(Boole
    case 'buy':p.game=buyVerifiedAsset(p.game,String(data.assetId||''));break;
    case 'credit':p.game=contractCredit(p.game,Number(data.amount),Number(data.term));break;
    case 'prepay':p.game=prepayLoan(p.game,String(data.loanId),Number(data.amount));break;
-   case 'end':if(p.game.currentCard?.corporateExpense?.requiresCompanySelection)throw Error('Selecione a empresa antes de encerrar o turno');p.game=finishTurn(p.game);r.turnIndex=(r.turnIndex+1)%r.order.length;if(r.turnIndex===0){closeCompanies(r,r.round??1);r.round=(r.round??1)+1;expireShareOffers(r);expireProposals(r);expireJointInvestments(r);expireDiscountOffers(r);}turnAdvance(r);r.turnDeadline=r.status==='playing'?Date.now()+TURN_MS:null;break;
+   case 'end':if(p.game.currentCard?.corporateExpense?.requiresCompanySelection)throw Error('Selecione a empresa antes de encerrar o turno');p.game=finishTurn(p.game);p.game.officialPOEnabled=true;r.turnIndex=(r.turnIndex+1)%r.order.length;if(r.turnIndex===0){closeCompanies(r,r.round??1);r.round=(r.round??1)+1;expireShareOffers(r);expireProposals(r);expireJointInvestments(r);expireDiscountOffers(r);}turnAdvance(r);r.turnDeadline=r.status==='playing'?Date.now()+TURN_MS:null;break;
    default:fail(404,'Ação inexistente');
   }}catch(e){if(!e.status)e.status=409;throw e;}
   if(p.game.won) {r.winnerOrder??=[];if(!r.winnerOrder.includes(p.id))r.winnerOrder.push(p.id);const idx=r.order.indexOf(p.id);r.order.splice(idx,1);if(idx<r.turnIndex)r.turnIndex--;turnAdvance(r);r.turnDeadline=r.status==='playing'?Date.now()+TURN_MS:null;}

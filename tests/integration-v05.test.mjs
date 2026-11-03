@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {createGame,rollTurn,buyVerifiedAsset,finishTurn,auditCash,serializeGame,deserializeGame,financialSnapshot,contractCredit} from '../src/engine.js';
-function ready(){return Object.assign(createGame(8),{demoDeck:['PO-001','PO-002','PO-007']});}
+function ready(){return Object.assign(createGame(8),{officialPOEnabled:false,demoDeck:['PO-001','PO-002','PO-007']});}
 test('primeira casa PO sorteia uma carta do baralho reduzido',()=>{const s=rollTurn(ready(),1);assert.equal(s.currentOffer,'PO-001');assert.equal(s.demoDeck.length,2);});
 test('não permite comprar carta diferente da sorteada',()=>{const s=rollTurn(ready(),1);assert.throws(()=>buyVerifiedAsset(s,'PO-002'),/não foi a sorteada/);assert.equal(s.cash,5000);});
 test('compra efetiva consome oferta e concilia o caixa',()=>{let s=rollTurn(ready(),1);s=buyVerifiedAsset(s,'PO-001');assert.equal(s.currentOffer,null);assert.equal(s.assets.length,1);assert.equal(auditCash(s).ok,true);});
