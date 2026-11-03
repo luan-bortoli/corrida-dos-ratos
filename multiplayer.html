@@ -1,1 +1,337 @@
-<!doctype html><html lang="pt-BR"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Corrida dos Ratos | Salas</title><link rel="stylesheet" href="/styles.css"></head><body><header class="topbar"><div class="brand"><div class="brandmark">CR</div><div><strong>CORRIDA DOS RATOS</strong><span>Salas e painel do professor · v2.0 RC4 · homologação visual</span></div></div><a href="/">Jogo individual</a></header><main><section class="setup"><div class="hero"><div class="eyebrow">MULTIPLAYER</div><h1>Uma sala.<br><em>Várias decisões.</em></h1><p>De 2 a 6 estudantes. Professor controla início, pausa e encerramento. O catálogo oficial tem 230 cartas; 230 cartas com rotas funcionais e 30 questões de educação financeira interativas.</p></div><div class="setup-card"><h2>Professor</h2><label>Senha do administrador</label><input type="password" id="password" autocomplete="off"><button class="primary full" id="create">Criar sala</button><h3>Recuperar acesso do professor</h3><p>Informe o código da sala no campo abaixo e o código de recuperação recebido na criação. O acesso anterior será invalidado.</p><label>Código de recuperação do professor</label><input id="teacherRecoveryCode" maxlength="24" autocomplete="off"><button class="outline full" id="recoverTeacher">Recuperar professor</button><h2>Estudante</h2><label>Código da sala</label><input id="code" maxlength="8" placeholder="Código de 8 caracteres"><label>Seu nome</label><input id="name" maxlength="40"><label>Profissão</label><select id="profession"></select><label>Sonho</label><select id="dream"></select><button class="outline full" id="join">Entrar na sala</button><h2>Recuperar sessão</h2><p>Use o nome e o código pessoal exibido ao entrar. A sessão anterior será invalidada.</p><label>Código pessoal de recuperação</label><input id="recoveryCode" maxlength="16" autocomplete="off"><button class="outline full" id="recover">Recuperar acesso</button></div></section><section id="room" hidden><div class="game-heading"><div><div class="eyebrow">SALA MULTIPLAYER</div><h1 id="roomTitle"></h1><p id="statusText"></p></div><div class="goal"><span>SUA SESSÃO</span><strong id="roleText"></strong><small id="roomCode"></small></div></div><div class="game-grid"><div class="main-panel"><div class="panel board-panel"><div class="section-title"><div><span class="section-kicker">PARTIDA EM ANDAMENTO</span><h2>Tabuleiro</h2></div><span id="boardCircuit" class="board-chip">Corrida dos Ratos</span></div><div id="boardVisual" class="board-visual" aria-label="Posições dos participantes no tabuleiro"></div><p class="helper-text" id="boardHelp">As casas numeradas mostram as posições. Os círculos identificam os jogadores.</p></div><div class="panel turn-panel"><div class="section-title"><div><span class="section-kicker">SUA PRÓXIMA AÇÃO</span><h2>Turno atual</h2></div><span id="turnStage" class="stage-chip">Aguardando</span></div><p id="turnInfo" class="turn-person"></p><p id="timerInfo" class="muted" aria-live="off"></p><div id="moveSummary" class="movement-summary" aria-live="polite"></div><div id="playerActions" hidden><div class="primary-actions"><button id="roll" class="primary">Lançar dado</button><button id="buy" class="outline">Comprar oportunidade demonstrativa</button><button id="end" class="outline">Encerrar turno</button></div><div id="educationQuestion" hidden></div><div id="lifeDecision" hidden></div><div id="companyOffer"></div><div id="realEstateOffer"></div></div><div id="actionHint" class="action-hint" role="status"></div></div><div id="currentCardPanel" class="panel card-panel" hidden><div class="card-topline"><span id="cardCategory" class="category-chip"></span><span id="cardIdentifier" class="card-id"></span></div><h2 id="cardTitle" class="card-title"></h2><p id="cardDescription" class="card-description"></p><div id="cardMetrics" class="card-metrics"></div><div id="cardSections" class="card-sections"></div><div id="cardEligibility" class="eligibility-hint"></div><div class="card-learning" id="cardLearning" hidden></div></div><div class="panel players-panel"><h2>Participantes</h2><div id="progressSummary" class="event" aria-live="polite"></div><div id="players"></div></div><div class="panel teacher-panel" id="teacherPanel" hidden><h2>Controles do professor</h2><p class="helper-text">Gerencie a sala, acompanhe a turma e exporte os resultados.</p><div id="teacherActions" hidden><button id="start" class="primary">Iniciar</button><button id="pause" class="outline">Pausar</button><button id="resume" class="outline">Retomar</button><button id="finish" class="outline">Encerrar sala</button><button id="advance" class="outline">Autorizar encerramento após 120s</button><button id="reportJson" class="outline">Relatório JSON</button><button id="reportCsv" class="outline">Relatório CSV</button><button id="reportPrint" class="outline">Relatório para imprimir / PDF</button><button id="cardAudit" class="outline">Auditoria das cartas</button><button id="corporateOperation" class="outline">Registrar operação empresarial comprovada</button></div></div></div><aside class="side-panel"><p id="offerInfo" hidden></p><div class="panel"><h2 id="financeHeading">Minhas finanças</h2><div id="personal"></div><div id="dreamSummary" class="dream-summary"></div><p id="recoveryInfo"></p><p class="notice">Os dados financeiros privados são acessíveis apenas ao próprio estudante. O professor acompanha indicadores resumidos nesta versão.</p></div><details class="panel business-details"><summary>Ativos, empresas e mercado secundário</summary><div class="business-content"><h2>Empresas compartilhadas</h2><p>Ofertas demonstrativas GO-016 e GO-017: somente em casa Grande Oportunidade. As empresas ainda não geram resultados operacionais automaticamente.</p><div id="companies"></div><h3>Ofertas entre estudantes</h3><div id="shareOffers"></div><h3>Investidores fictícios</h3><div id="npcInvestors"></div><h3>Minhas ofertas a investidores fictícios</h3><p>O vendedor pode confirmar uma venda após o prazo de preferência. A avaliação limita o preço máximo do comprador; nenhuma contraproposta é aceita automaticamente.</p><div id="npcOffers"></div><h3>Governança: propostas e votações</h3><p>As propostas registram decisões; não movimentam caixa sem operação empresarial validada.</p><div id="proposals"></div></div></details><div class="panel warning"><h3>Limites desta versão</h3><p>Salas com armazenamento em arquivo, consulta periódica e uma única instância de servidor. Não há implantação segura pública nem autenticação docente multiusuário. O cronômetro de 120 segundos está disponível.</p></div></aside></div></section><div id="message" class="notice" role="status"></div></main><script type="module" src="/multiplayer.js"></script></body></html>
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Corrida dos Ratos | Salas</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="brand">
+        <div class="brandmark">CR</div>
+        <div><strong>CORRIDA DOS RATOS</strong><span>Educação financeira em jogo</span></div>
+      </div>
+      <div id="topbarRoomMeta" class="topbar-room-meta" hidden>
+        <span id="roomHeaderCode" class="header-room-code" hidden></span
+        ><span id="statusText" class="header-status" hidden></span>
+        <div id="roomMenu" class="room-menu" hidden>
+          <button
+            id="roomOptions"
+            class="outline"
+            type="button"
+            aria-expanded="false"
+            aria-controls="roomOptionsList"
+          >
+            Opções ▾
+          </button>
+          <div id="roomOptionsList" class="room-menu-content" hidden>
+            <button id="leaveRoom" type="button" class="outline">Sair da sala</button
+            ><button id="quitRoom" type="button" class="outline danger-action">
+              Desistir da partida
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main>
+      <section class="setup login-setup" aria-label="Acesso à Corrida dos Ratos">
+        <div class="login-intro">
+          <div class="eyebrow">CORRIDA DOS RATOS</div>
+          <h1>Uma sala.<br /><em>Várias decisões.</em></h1>
+          <p>Crie uma partida ou participe com seus colegas.</p>
+        </div>
+        <div class="setup-card login-card">
+          <h2>Bem-vindo ao jogo</h2>
+          <p class="login-subtitle">Escolha como deseja participar.</p>
+          <div class="login-roles" role="group" aria-label="Tipo de acesso">
+            <button type="button" id="roleAdmin" class="login-role" aria-pressed="false">
+              Sou Administrador</button
+            ><button type="button" id="rolePlayer" class="login-role selected" aria-pressed="true">
+              Sou Jogador
+            </button>
+          </div>
+          <div id="adminLogin" hidden>
+            <div class="login-modes" role="group" aria-label="Acesso do administrador">
+              <button id="adminCreateMode" type="button" class="selected">Criar sala</button
+              ><button id="adminAccessMode" type="button">Acessar sala</button>
+            </div>
+            <div id="adminCodeField" hidden>
+              <label for="adminRoomCode">Código da sala</label
+              ><input
+                id="adminRoomCode"
+                maxlength="8"
+                placeholder="Ex.: 08BB4AFA"
+                autocomplete="off"
+              />
+            </div>
+            <label for="password">Senha do administrador</label
+            ><input type="password" id="password" autocomplete="current-password" /><button
+              class="primary full login-submit"
+              id="create"
+            >
+              Criar sala</button
+            ><button class="primary full login-submit" id="adminLoginButton" hidden>
+              Acessar sala
+            </button>
+          </div>
+          <div id="playerLogin">
+            <label for="code">Código da sala</label
+            ><input
+              id="code"
+              maxlength="8"
+              placeholder="Código de 8 caracteres"
+              autocomplete="off"
+            /><label for="name">Seu nome</label
+            ><input id="name" maxlength="40" autocomplete="name" />
+            <div id="newPlayerFields">
+              <label for="profession">Profissão</label
+              ><select id="profession"></select
+              ><label for="dream">Sonho</label
+              ><select id="dream"></select>
+            </div>
+            <button class="primary full login-submit" id="join">Entrar na sala</button>
+            <p class="login-note">
+              Quem já participou pode retornar com o mesmo código e nome. Em outro dispositivo, o
+              administrador deverá autorizar o retorno.
+            </p>
+            <div id="pendingReconnect" class="login-pending" hidden role="status">
+              Solicitação de retorno enviada. Aguarde a autorização do administrador nesta página.
+            </div>
+          </div>
+        </div>
+        <button id="rejoinRoom" hidden type="button">Retornar à minha partida</button
+        ><input id="teacherRecoveryCode" hidden /><input id="recoveryCode" hidden /><button
+          id="recoverTeacher"
+          hidden
+        ></button
+        ><button id="recover" hidden></button>
+      </section>
+      <section id="room" hidden>
+        <h1 id="roomTitle" hidden>Corrida dos Ratos</h1>
+        <div class="game-grid">
+          <div class="main-panel">
+            <div class="panel board-panel">
+              <span id="boardCircuit" hidden></span>
+              <div
+                id="boardVisual"
+                class="board-visual"
+                aria-label="Posições dos participantes no tabuleiro"
+              ></div>
+              <p class="helper-text" id="boardHelp">
+                As casas numeradas mostram as posições. Os círculos identificam os jogadores.
+              </p>
+            </div>
+            <div class="panel turn-panel" id="turnPanel">
+              <div class="section-title">
+                <div>
+                  <span class="section-kicker">SUA PRÓXIMA AÇÃO</span>
+                  <h2>Turno atual</h2>
+                </div>
+                <span id="turnStage" class="stage-chip">Aguardando</span>
+              </div>
+              <p id="turnInfo" class="turn-person"></p>
+              <p id="timerInfo" class="muted" aria-live="off" hidden></p>
+              <div id="moveSummary" class="movement-summary" aria-live="polite" hidden></div>
+              <div id="playerActions" hidden>
+                <div class="primary-actions">
+                  <button id="roll" class="primary" hidden>Lançar dado</button
+                  ><button id="buy" class="outline">Comprar oportunidade demonstrativa</button
+                  ><button id="end" class="outline" hidden>Encerrar turno</button>
+                </div>
+                <div id="educationQuestion" hidden></div>
+                <div id="lifeDecision" hidden></div>
+                <div id="companyOffer"></div>
+                <div id="realEstateOffer"></div>
+              </div>
+              <div id="actionHint" class="action-hint" role="status"></div>
+            </div>
+            <div id="currentCardPanel" class="panel card-panel" hidden>
+              <div class="card-topline">
+                <span id="cardCategory" class="category-chip"></span
+                ><span id="cardIdentifier" class="card-id"></span>
+              </div>
+              <h2 id="cardTitle" class="card-title"></h2>
+              <p id="cardDescription" class="card-description"></p>
+              <div id="cardMetrics" class="card-metrics"></div>
+              <div id="cardSections" class="card-sections"></div>
+              <div id="cardEligibility" class="eligibility-hint"></div>
+              <div class="card-learning" id="cardLearning" hidden></div>
+            </div>
+            <details class="panel players-panel" id="playersPanel">
+              <summary>Participantes da sala</summary>
+              <div id="progressSummary" class="event" aria-live="polite"></div>
+              <div id="players"></div>
+            </details>
+            <div class="panel teacher-panel" id="teacherPanel" hidden>
+              <h2>Controles do professor</h2>
+              <p class="helper-text">Gerencie a sala, acompanhe a turma e exporte os resultados.</p>
+              <div id="teacherReconnectPanel" class="teacher-reconnect-panel" hidden>
+                <h3>Solicitações de retorno</h3>
+                <div id="teacherReconnectRequests"></div>
+              </div>
+              <div id="teacherActions" hidden>
+                <button id="start" class="primary">Iniciar</button
+                ><button id="pause" class="outline">Pausar</button
+                ><button id="resume" class="outline">Retomar</button
+                ><button id="finish" class="outline">Encerrar sala</button
+                ><button id="advance" class="outline">Autorizar encerramento após 120s</button
+                ><button id="reportJson" class="outline">Relatório JSON</button
+                ><button id="reportCsv" class="outline">Relatório CSV</button
+                ><button id="reportPrint" class="outline">Relatório para imprimir / PDF</button
+                ><button id="cardAudit" class="outline">Auditoria das cartas</button
+                ><button id="corporateOperation" class="outline">
+                  Registrar operação empresarial comprovada
+                </button>
+              </div>
+            </div>
+          </div>
+          <aside class="side-panel">
+            <p id="offerInfo" hidden></p>
+            <div class="panel" id="financePanel">
+              <h2 id="financeHeading">Minhas finanças</h2>
+              <div id="personal"></div>
+              <div id="dreamSummary" class="dream-summary"></div>
+              <p id="recoveryInfo"></p>
+              <p class="notice">
+                Os dados financeiros privados são acessíveis apenas ao próprio estudante. O
+                professor acompanha indicadores resumidos nesta versão.
+              </p>
+            </div>
+            <details class="panel business-details" id="businessPanel">
+              <summary>Ativos, empresas e mercado secundário</summary>
+              <div class="business-content">
+                <h2>Empresas compartilhadas</h2>
+                <p>
+                  Ofertas demonstrativas GO-016 e GO-017: somente em casa Grande Oportunidade. As
+                  empresas ainda não geram resultados operacionais automaticamente.
+                </p>
+                <div id="companies"></div>
+                <h3>Ofertas entre estudantes</h3>
+                <div id="shareOffers"></div>
+                <h3>Investidores fictícios</h3>
+                <div id="npcInvestors"></div>
+                <h3>Minhas ofertas a investidores fictícios</h3>
+                <p>
+                  O vendedor pode confirmar uma venda após o prazo de preferência. A avaliação
+                  limita o preço máximo do comprador; nenhuma contraproposta é aceita
+                  automaticamente.
+                </p>
+                <div id="npcOffers"></div>
+                <h3>Governança: propostas e votações</h3>
+                <p>
+                  As propostas registram decisões; não movimentam caixa sem operação empresarial
+                  validada.
+                </p>
+                <div id="proposals"></div>
+              </div>
+            </details>
+            <div class="panel warning" id="limitsPanel">
+              <h3>Limites desta versão</h3>
+              <p>
+                Salas com armazenamento em arquivo, consulta periódica e uma única instância de
+                servidor. Não há implantação segura pública nem autenticação docente multiusuário. O
+                cronômetro de 120 segundos está disponível.
+              </p>
+            </div>
+          </aside>
+        </div>
+      </section>
+      <dialog id="quitDialog" class="game-card-dialog" aria-label="Confirmar desistência">
+        <div class="dialog-shell">
+          <h2>Desistir da partida?</h2>
+          <p>
+            Você deixará de receber turnos. Seu histórico será preservado. Esta ação não pode ser
+            desfeita pelo jogador.
+          </p>
+          <div class="confirmation-actions">
+            <button id="cancelQuit" class="outline" type="button">Continuar jogando</button
+            ><button id="confirmQuit" class="primary" type="button">Confirmar desistência</button>
+          </div>
+        </div>
+      </dialog>
+      <dialog id="marketDialog" class="market-dialog" aria-label="Mercado de investimentos">
+        <div class="market-shell">
+          <div class="market-heading">
+            <div class="market-heading-icon" aria-hidden="true">▣</div>
+            <div>
+              <h2>Mercado</h2>
+              <p>Investimentos, anúncios e ofertas da sala</p>
+            </div>
+            <button
+              id="closeMarket"
+              class="outline market-close"
+              type="button"
+              aria-label="Fechar mercado"
+            >
+              Fechar ×
+            </button>
+          </div>
+          <div class="market-tabs" role="tablist" aria-label="Seções do mercado">
+            <button
+              type="button"
+              id="marketTabAssets"
+              data-market-tab="assets"
+              role="tab"
+              aria-selected="true"
+            >
+              Meus investimentos <span id="marketTabAssetsCount">0</span></button
+            ><button
+              type="button"
+              id="marketTabAds"
+              data-market-tab="ads"
+              role="tab"
+              aria-selected="false"
+            >
+              Meus anúncios <span id="marketTabAdsCount">0</span></button
+            ><button
+              type="button"
+              id="marketTabOffers"
+              data-market-tab="offers"
+              role="tab"
+              aria-selected="false"
+            >
+              Ofertas disponíveis <span id="marketTabOffersCount">0</span>
+            </button>
+          </div>
+          <div class="market-layout">
+            <section class="market-content">
+              <h3 id="marketSectionTitle">Meus investimentos</h3>
+              <p id="marketSectionHelp" class="market-intro"></p>
+              <div id="marketSectionBody" class="market-cards" role="tabpanel"></div>
+            </section>
+            <aside class="market-summary">
+              <h3>Resumo do mercado</h3>
+              <div class="market-summary-item">
+                <span>Meus ativos</span><strong id="marketTotalAssets">0</strong>
+              </div>
+              <div class="market-summary-item">
+                <span>Meus anúncios</span><strong id="marketTotalAds">0</strong>
+              </div>
+              <div class="market-summary-item">
+                <span>Ofertas disponíveis</span><strong id="marketTotalOffers">0</strong>
+              </div>
+              <div class="market-summary-item">
+                <span>Dividendos na janela atual</span
+                ><strong id="marketTotalDividends">R$ 0,00</strong>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </dialog>
+      <dialog id="gameCardDialog" class="game-card-dialog" aria-label="Carta e decisões da partida">
+        <div class="dialog-shell">
+          <div class="dialog-heading">
+            <strong>Carta da jogada</strong
+            ><button id="closeGameCard" type="button" class="outline" aria-label="Fechar carta">
+              Fechar ×
+            </button>
+          </div>
+          <div id="gameCardBody"></div>
+        </div>
+      </dialog>
+      <div id="message" class="notice" role="status"></div>
+    </main>
+    <script type="module" src="/multiplayer.js"></script>
+  </body>
+</html>

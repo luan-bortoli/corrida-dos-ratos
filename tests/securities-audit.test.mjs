@@ -1,10 +1,65 @@
-import {test} from 'node:test';
-import assert from 'node:assert/strict';
-import {registerSecurity,tradeSecurity,auditSecurities} from '../src/securities.js';
-import {buildTeacherReport} from '../src/reports.js';
-const room=()=>{const r={code:'DEMO',round:1,players:[{id:'a',name:'A',game:{cash:100.01,ledger:[]}},{id:'b',name:'B',game:{cash:50.02,ledger:[]}}],securities:[]};registerSecurity(r,{id:'S',kind:'stock',totalUnits:100,priceCents:101,initialHolders:{a:50,b:50}});return r;};
-test('negociação liquida valores exatos em centavos, sem perda de saldo',()=>{const r=room();tradeSecurity(r,{securityId:'S',sellerId:'a',buyerId:'b',units:7});assert.equal(r.players[0].game.cash,107.08);assert.equal(r.players[1].game.cash,42.95);assert.equal(r.players[0].game.cash+r.players[1].game.cash,150.03);});
-test('rejeita dinheiro inválido sem modificar estado',()=>{const r=room();r.players[1].game.cash=NaN;const before=structuredClone(r);assert.throws(()=>tradeSecurity(r,{securityId:'S',sellerId:'a',buyerId:'b',units:1}),/Caixa/);assert.deepEqual(r,before);});
-test('auditoria do mercado não altera a partida',()=>{const r=room();tradeSecurity(r,{securityId:'S',sellerId:'a',buyerId:'b',units:2});const before=structuredClone(r);const result=auditSecurities(r);assert.equal(result.balanced,true);assert.equal(result.tradeCount,1);assert.equal(result.negotiatedCents,202);assert.deepEqual(r,before);});
-test('auditoria identifica estoque inconsistente',()=>{const r=room();r.securities[0].holders.a++;const result=auditSecurities(r);assert.equal(result.balanced,false);assert.match(result.issues[0].issue,/Estoque/);});
-test('relatório do professor inclui auditoria do mercado',()=>{const r=room();r.status='playing';r.companies=[];const report=buildTeacherReport(r);assert.equal(report.securitiesAudit.securityCount,1);assert.equal(report.securitiesAudit.balanced,true);});
+import { test } from "node:test";
+import assert from "node:assert/strict";
+import { registerSecurity, tradeSecurity, auditSecurities } from "../src/securities.js";
+import { buildTeacherReport } from "../src/reports.js";
+const room = () => {
+  const r = {
+    code: "DEMO",
+    round: 1,
+    players: [
+      { id: "a", name: "A", game: { cash: 100.01, ledger: [] } },
+      { id: "b", name: "B", game: { cash: 50.02, ledger: [] } },
+    ],
+    securities: [],
+  };
+  registerSecurity(r, {
+    id: "S",
+    kind: "stock",
+    totalUnits: 100,
+    priceCents: 101,
+    initialHolders: { a: 50, b: 50 },
+  });
+  return r;
+};
+test("negociação liquida valores exatos em centavos, sem perda de saldo", () => {
+  const r = room();
+  tradeSecurity(r, { securityId: "S", sellerId: "a", buyerId: "b", units: 7 });
+  assert.equal(r.players[0].game.cash, 107.08);
+  assert.equal(r.players[1].game.cash, 42.95);
+  assert.equal(r.players[0].game.cash + r.players[1].game.cash, 150.03);
+});
+test("rejeita dinheiro inválido sem modificar estado", () => {
+  const r = room();
+  r.players[1].game.cash = NaN;
+  const before = structuredClone(r);
+  assert.throws(
+    () => tradeSecurity(r, { securityId: "S", sellerId: "a", buyerId: "b", units: 1 }),
+    /Caixa/,
+  );
+  assert.deepEqual(r, before);
+});
+test("auditoria do mercado não altera a partida", () => {
+  const r = room();
+  tradeSecurity(r, { securityId: "S", sellerId: "a", buyerId: "b", units: 2 });
+  const before = structuredClone(r);
+  const result = auditSecurities(r);
+  assert.equal(result.balanced, true);
+  assert.equal(result.tradeCount, 1);
+  assert.equal(result.negotiatedCents, 202);
+  assert.deepEqual(r, before);
+});
+test("auditoria identifica estoque inconsistente", () => {
+  const r = room();
+  r.securities[0].holders.a++;
+  const result = auditSecurities(r);
+  assert.equal(result.balanced, false);
+  assert.match(result.issues[0].issue, /Estoque/);
+});
+test("relatório do professor inclui auditoria do mercado", () => {
+  const r = room();
+  r.status = "playing";
+  r.companies = [];
+  const report = buildTeacherReport(r);
+  assert.equal(report.securitiesAudit.securityCount, 1);
+  assert.equal(report.securitiesAudit.balanced, true);
+});

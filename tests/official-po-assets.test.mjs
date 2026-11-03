@@ -1,10 +1,85 @@
-import test from 'node:test';
-import assert from 'node:assert/strict';
-import {createGame,enableOfficialPO,purchaseOfficialPOAsset,auditCash,validateState,passiveIncome} from '../src/engine.js';
-import {OFFICIAL_PO_RENTALS,OFFICIAL_PO_RESALE,officialPOAssetOffer} from '../src/official-small-businesses.js';
-function pending(id,cash=10000){let s=enableOfficialPO(createGame(8));s.cash=cash;s.initialCash=cash;s.turn=1;s.pending=true;s.lastTile='PO';s.currentCard={id,category:'PO',status:'text_available',effectExecuted:false};s.cardEvents=[{id,turn:1,circuit:'inner',position:s.position,status:'text_available',resolution:'pending',financialEffect:false}];return s;}
-test('quatro equipamentos de locação preservam valores e rendas oficiais',()=>{assert.deepEqual(OFFICIAL_PO_RENTALS.map(x=>[x.cost,x.passive]),[[1600,35],[2000,45],[3200,70],[4500,90]]);});
-test('quatro estoques preservam custos e preços-alvo sem renda',()=>{assert.deepEqual(OFFICIAL_PO_RESALE.map(x=>[x.cost,x.targetPrice,x.passive]),[[600,780,0],[900,1200,0],[1500,1950,0],[2400,3100,0]]);});
-test('compra locação confere caixa, renda e integridade de evento',()=>{const before=pending('PO-018');const s=purchaseOfficialPOAsset(before);assert.equal(s.cash,8400);assert.equal(s.assets[0].passive,35);assert.equal(passiveIncome(s),passiveIncome(before)+35);assert.equal(s.cardEvents[0].resolution,'purchase');assert.equal(auditCash(s).ok,true);assert.equal(validateState(s),true);});
-test('compra estoque não cria renda nem realiza preço-alvo',()=>{const before=pending('PO-025');const s=purchaseOfficialPOAsset(before);assert.equal(s.cash,7600);assert.equal(s.assets[0].targetPrice,3100);assert.equal(s.assets[0].passive,0);assert.equal(passiveIncome(s),passiveIncome(before));assert.equal(auditCash(s).ok,true);assert.equal(validateState(s),true);});
-test('rejeita falta de saldo, compra duplicada e oferta indevida',()=>{assert.throws(()=>purchaseOfficialPOAsset(pending('PO-021',50)),/Caixa insuficiente/);const s=purchaseOfficialPOAsset(pending('PO-023'));assert.throws(()=>purchaseOfficialPOAsset(s),/pendente/);assert.equal(officialPOAssetOffer({id:'GO-001',category:'GO'},'inner'),null);assert.equal(officialPOAssetOffer({id:'PO-018',category:'PO'},'outer'),null);});
+import test from "node:test";
+import assert from "node:assert/strict";
+import {
+  createGame,
+  enableOfficialPO,
+  purchaseOfficialPOAsset,
+  auditCash,
+  validateState,
+  passiveIncome,
+} from "../src/engine.js";
+import {
+  OFFICIAL_PO_RENTALS,
+  OFFICIAL_PO_RESALE,
+  officialPOAssetOffer,
+} from "../src/official-small-businesses.js";
+function pending(id, cash = 10000) {
+  let s = enableOfficialPO(createGame(8));
+  s.cash = cash;
+  s.initialCash = cash;
+  s.turn = 1;
+  s.pending = true;
+  s.lastTile = "PO";
+  s.currentCard = { id, category: "PO", status: "text_available", effectExecuted: false };
+  s.cardEvents = [
+    {
+      id,
+      turn: 1,
+      circuit: "inner",
+      position: s.position,
+      status: "text_available",
+      resolution: "pending",
+      financialEffect: false,
+    },
+  ];
+  return s;
+}
+test("quatro equipamentos de locação preservam valores e rendas oficiais", () => {
+  assert.deepEqual(
+    OFFICIAL_PO_RENTALS.map((x) => [x.cost, x.passive]),
+    [
+      [1600, 35],
+      [2000, 45],
+      [3200, 70],
+      [4500, 90],
+    ],
+  );
+});
+test("quatro estoques preservam custos e preços-alvo sem renda", () => {
+  assert.deepEqual(
+    OFFICIAL_PO_RESALE.map((x) => [x.cost, x.targetPrice, x.passive]),
+    [
+      [600, 780, 0],
+      [900, 1200, 0],
+      [1500, 1950, 0],
+      [2400, 3100, 0],
+    ],
+  );
+});
+test("compra locação confere caixa, renda e integridade de evento", () => {
+  const before = pending("PO-018");
+  const s = purchaseOfficialPOAsset(before);
+  assert.equal(s.cash, 8400);
+  assert.equal(s.assets[0].passive, 35);
+  assert.equal(passiveIncome(s), passiveIncome(before) + 35);
+  assert.equal(s.cardEvents[0].resolution, "purchase");
+  assert.equal(auditCash(s).ok, true);
+  assert.equal(validateState(s), true);
+});
+test("compra estoque não cria renda nem realiza preço-alvo", () => {
+  const before = pending("PO-025");
+  const s = purchaseOfficialPOAsset(before);
+  assert.equal(s.cash, 7600);
+  assert.equal(s.assets[0].targetPrice, 3100);
+  assert.equal(s.assets[0].passive, 0);
+  assert.equal(passiveIncome(s), passiveIncome(before));
+  assert.equal(auditCash(s).ok, true);
+  assert.equal(validateState(s), true);
+});
+test("rejeita falta de saldo, compra duplicada e oferta indevida", () => {
+  assert.throws(() => purchaseOfficialPOAsset(pending("PO-021", 50)), /Caixa insuficiente/);
+  const s = purchaseOfficialPOAsset(pending("PO-023"));
+  assert.throws(() => purchaseOfficialPOAsset(s), /pendente/);
+  assert.equal(officialPOAssetOffer({ id: "GO-001", category: "GO" }, "inner"), null);
+  assert.equal(officialPOAssetOffer({ id: "PO-018", category: "PO" }, "outer"), null);
+});

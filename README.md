@@ -1,3 +1,5 @@
+> **Versão atual de homologação: v2.0 RC5.** Consulte `docs/entregas/RC5-CONSOLIDACAO-LAYOUT-E-PARTICIPACAO.md` para ajustes da interface do jogador, abertura manual das cartas, saída/desistência e continuidade automática quando ausente.
+
 ## v2.0 RC4 — Baralho oficial automático
 
 Novas partidas usam automaticamente as 25 Pequenas Oportunidades oficiais; o botão de ativação foi removido das interfaces individual e multiplayer. Consulte `docs/correcoes/ALTERACAO-BARALHO-OFICIAL-RC4.md`. **478 testes aprovados**.
@@ -27,7 +29,7 @@ Veja `docs/homologacao/RELATORIO-HOMOLOGACAO-v2.0.md` e `docs/implantacao/IMPLAN
 ## v1.43 — continuação integrada (em desenvolvimento)
 
 - **GI-001–GI-018:** ofertas oficiais de Grandes Investimentos com aquisição à vista, análise de financiamento conforme entrada mínima aprovada, registro de ativos e contratos em centavos. As dez primeiras cartas representam imóveis ou propriedade; as oito últimas representam empresas. Os lucros indicados para empresas são de referência e **não** geram dividendos automáticos enquanto não houver resultado operacional apurado.
-- **FI-001–FI-005:** três faixas por projeto e recusa voluntária. Validação de saldo, débito único, histórico separado de impacto social *simulado*, sem aumento de renda, patrimônio ou pontos financeiros. Fluxos nos modos individual e multiplayer.
+- **FI-001–FI-005:** três faixas por projeto e recusa voluntária. Validação de saldo, débito único, histórico separado de impacto social _simulado_, sem aumento de renda, patrimônio ou pontos financeiros. Fluxos nos modos individual e multiplayer.
 - **Validação:** 327 testes automatizados passaram; a auditoria completa das 230 cartas permanece pendente.
 
 **Limitações importantes:** GI-019–GI-025, OE-001–OE-020 e demais cartas pendentes não foram concluídas; a integração operacional das empresas GI-011–GI-018 ao livro empresarial também permanece para a v1.43. Não divulgar esta versão parcial como todas as 230 cartas implementadas.
@@ -152,12 +154,12 @@ Esta versão preserva integralmente os textos de `catalogo/Cartas.md` e os módu
 
 ## Eventos individuais agora executáveis
 
-| Carta | Regra oficial | Implementação |
-| --- | --- | --- |
-| MF-006 | +10% na renda dos equipamentos de locação do jogador | Altera `passive` do ativo elegível; próximo fechamento usa o novo valor |
-| MF-010 | -10% no preço de equipamentos para locação do jogador | Altera `marketValue` sem movimentar caixa nem renda |
-| MF-012 | -15% na renda de aluguel de imóveis elegíveis do jogador | Altera `passive` de imóveis alugados do catálogo já implementados |
-| MF-027 | -15% no valor de equipamentos de locação e máquinas de pequenos negócios do jogador | Altera `marketValue` dos ativos elegíveis conhecidos |
+| Carta  | Regra oficial                                                                       | Implementação                                                           |
+| ------ | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------- |
+| MF-006 | +10% na renda dos equipamentos de locação do jogador                                | Altera `passive` do ativo elegível; próximo fechamento usa o novo valor |
+| MF-010 | -10% no preço de equipamentos para locação do jogador                               | Altera `marketValue` sem movimentar caixa nem renda                     |
+| MF-012 | -15% na renda de aluguel de imóveis elegíveis do jogador                            | Altera `passive` de imóveis alugados do catálogo já implementados       |
+| MF-027 | -15% no valor de equipamentos de locação e máquinas de pequenos negócios do jogador | Altera `marketValue` dos ativos elegíveis conhecidos                    |
 
 Aplicação automática no sorteio da carta MF, com registro no histórico e resolução. Se não houver ativo elegível, a ocorrência é concluída como não aplicável, sem novo sorteio. Múltiplos eventos incidem sobre os valores correntes. Preços patrimoniais não são receitas nem renda passiva. Nenhuma venda ou crédito automático é criado.
 
@@ -192,15 +194,15 @@ Node.js >= 20: `npm test` e `ADMIN_PASSWORD=uma-senha-de-teste-segura npm start`
 
 A v1.15 adiciona a compra **à vista** das sete empresas integrais previstas no catálogo consolidado, com oferta contextual nas interfaces individual e multiplayer, confirmação do estudante, débito do caixa, patrimônio com titularidade e registro no extrato financeiro.
 
-| Carta | Empresa | Valor à vista | Distribuição inicial de referência |
-| --- | --- | ---: | ---: |
-| GO-009 | Minimercado de Bairro | R$ 28.000 | R$ 420 |
-| GO-010 | Lavanderia de Bairro | R$ 38.000 | R$ 520 |
-| GO-011 | Pequena Padaria | R$ 55.000 | R$ 700 |
-| GO-012 | Agência de Serviços Digitais | R$ 45.000 | R$ 600 |
-| GO-013 | Oficina de Bicicletas | R$ 32.000 | R$ 450 |
-| GO-014 | Empresa de Energia Solar | R$ 75.000 | R$ 900 |
-| GO-015 | Distribuidora de Produtos | R$ 90.000 | R$ 1.050 |
+| Carta  | Empresa                      | Valor à vista | Distribuição inicial de referência |
+| ------ | ---------------------------- | ------------: | ---------------------------------: |
+| GO-009 | Minimercado de Bairro        |     R$ 28.000 |                             R$ 420 |
+| GO-010 | Lavanderia de Bairro         |     R$ 38.000 |                             R$ 520 |
+| GO-011 | Pequena Padaria              |     R$ 55.000 |                             R$ 700 |
+| GO-012 | Agência de Serviços Digitais |     R$ 45.000 |                             R$ 600 |
+| GO-013 | Oficina de Bicicletas        |     R$ 32.000 |                             R$ 450 |
+| GO-014 | Empresa de Energia Solar     |     R$ 75.000 |                             R$ 900 |
+| GO-015 | Distribuidora de Produtos    |     R$ 90.000 |                           R$ 1.050 |
 
 **Limitações:** a renda inicial é processada como renda passiva de referência pelo motor pessoal legado, sem apuração de receitas e despesas operacionais reais. Portanto, não representa ainda o modelo empresarial definitivo, com reserva, distribuição apenas após lucro realizado e risco de redução de lucros. Financiamento empresarial, manutenção, negociação de empresas, ativos de PO e renda fixa oficiais ainda não estão implementados nesta entrega. O catálogo textual original permanece preservado. A compra de uma carta oficial só acontece na casa GO correspondente e com uma decisão explícita, sem débitos automáticos. A base e os testes de versões anteriores foram mantidos.
 
@@ -255,8 +257,8 @@ Node.js 20+: `ADMIN_PASSWORD='senha-forte-aqui' npm start` (PowerShell: `$env:AD
 
 **Limitações:** servidor para laboratório, não publicar diretamente na Internet; persistência em arquivo; saldo-base pessoal ainda em reais inteiros, com arredondamento de bonificações. O jogo não inclui todas as cartas executáveis.
 
-
 ## v1.12 — Decisões de Eventos da Vida
+
 Nove cartas adicionais de decisão: EV-006, EV-011, EV-019, EV-021, EV-022, EV-026, EV-027, EV-029 e EV-030. Confirmação individual na interface local e multiplayer; registro de caixa ou orçamento recorrente somente após escolha; recusa sem efeitos; impede reaplicação da mesma ocorrência. Compras pessoais exigem recursos integrais, sem criar financiamento não previsto. Eventos ainda não modelados permanecem como reconhecimento sem efeito automático. Para as cartas de despesas recorrentes, a v1.12 utiliza o agregado de despesas pessoais; categorias detalhadas de lazer/moradia não foram implantadas.
 
 ## v1.13 — Aquisição de imóveis oficiais à vista
@@ -266,7 +268,6 @@ Implementado o fluxo de aquisição **à vista** para GO-001, GO-002, GO-003, GO
 **Limitações deliberadas:** GO-005 (chalé de temporada) não tem distribuição automática porque a ocupação varia; financiamento de aquisição, análise de crédito vinculada ao imóvel, vacância, efeitos globais de mercado, custos extraordinários, revenda e rendimentos variáveis ainda não estão concluídos. Os valores de rendimentos representam a condição inicial do catálogo e não garantem continuidade sob eventos futuros. As empresas e demais oportunidades não são tratadas como se gerassem lucro automático. A parte financeira pessoal existente usa reais inteiros.
 
 Para executar: `npm test` (127 testes automatizados) e `ADMIN_PASSWORD=senha-segura-com-mais-de-10-caracteres npm start`. A senha deve ser definida em variável de ambiente, não incluída em arquivos versionados. Não publicar esse protótipo como serviço aberto na internet.
-
 
 ## Versão 1.16 — Pequenos negócios oficiais
 
@@ -311,7 +312,6 @@ Para executar: `npm test` e, com `ADMIN_PASSWORD` definido, `npm start`. Os 161 
 
 **Limitação importante:** a compra primária segue o preço contratual original da carta; a referência global ainda não determina seu preço de liquidação. A negociação secundária, a reconciliação em centavos de todo o caixa e os demais eventos MF permanecem pendentes. O catálogo oficial foi preservado integralmente.
 
-
 ## v1.25 — Negociação secundária oficial
 
 - As posições oficiais PO-013 a PO-017 podem ser anunciadas e negociadas entre estudantes da mesma sala durante o turno do participante que realiza a operação.
@@ -348,7 +348,6 @@ Para executar: `npm test` e, com `ADMIN_PASSWORD` definido, `npm start`. Os 161 
 - Limitação: esta **não é a migração integral da contabilidade**. O motor pessoal, o financiamento, os recebimentos recorrentes e parte das interfaces continuam utilizando inteiros em reais. O saldo complementar é conservado pelo mercado secundário, não disponibilizado automaticamente para outras operações.
 - Testes: `npm test` — 216 testes passando.
 
-
 ## Entrega v1.30 — carteira monetária compartilhada
 
 - `src/money-balance.js` agora centraliza débito, crédito, transferência e persistência de saldos em centavos, preservando os campos legados `cash` e `secondaryCashCents`.
@@ -366,7 +365,6 @@ Para executar: `npm test` e, com `ADMIN_PASSWORD` definido, `npm start`. Os 161 
 - Não foi feita migração de schema de persistência: continuam os campos `cash` e `secondaryCashCents`; partidas antigas continuam compatíveis.
 - O objetivo desta versão é **conservação monetária no fechamento**, não migração de todos os cálculos econômicos para centavos. Empresas, regras de financiamento, determinadas ações fora do fechamento e ajustes de mercado permanecem em revisão.
 - Execute `npm test` para validar a suíte completa, incluindo `tests/closing-wallet.test.mjs`.
-
 
 ## v1.34 — Cobrança operacional de novos créditos em centavos
 
@@ -388,7 +386,6 @@ Para executar: `npm test` e, com `ADMIN_PASSWORD` definido, `npm start`. Os 161 
 ### Pendências financeiras não encerradas
 
 **Esta versão não conclui a migração financeira integral.** Dívida inicial das profissões, parcelas/juros legados, obrigações de despesas recorrentes e determinadas operações e apurações empresariais ainda usam o modelo em reais inteiros. A contabilidade e os registros financeiros precisam ser reconciliados de ponta a ponta antes de considerar a migração concluída. As 230 cartas permanecem no catálogo; seus efeitos não estão todos implementados.
-
 
 ## Entrega v1.37 — integração monetária de eventos
 
@@ -434,16 +431,15 @@ Consulte `docs/cobertura/COBERTURA-v1.43.md` para a listagem dos identificadores
 Execute `npm test` para rodar os testes automatizados.
 
 ### Integração adicional v1.43 — participações e oportunidades
+
 - Sete participações GI-019 a GI-025 adquiríveis individualmente com recursos próprios, sem financiamento ou dividendos automáticos. Compra conjunta pendente.
 - OE-011, OE-013 e OE-018 adquiríveis à vista, com registro de ativo e débito auditável; renda de referência de equipamentos somente onde prevista.
 - OE-016: amortização extraordinária da dívida inicial ou empréstimos, com mínimo R$ 1.000, limite de caixa e saldo devedor, no individual e multiplayer.
 - 346 testes passam. Demais cartas OE continuam pendentes. Consulte `docs/cobertura/COBERTURA-v1.43.md`.
 
-
 ## Estado após esta continuação — 357 testes
 
 A v1.43 ainda não está concluída. Consulte `docs/relatorios/RELATORIO-CONCLUSAO-v1.43.md` e `docs/cobertura/COBERTURA-230-CARTAS.csv`. Foram adicionados os fluxos individuais OE-010, OE-017, OE-020 e a renegociação pessoal OE-014. Não confundir a existência de texto catalogado com efeito plenamente homologado.
-
 
 ## Continuação v1.43 — investimentos conjuntos GI (363 testes)
 
@@ -451,7 +447,6 @@ A v1.43 ainda não está concluída. Consulte `docs/relatorios/RELATORIO-CONCLUS
 - O preço total da participação precisa ser coberto pela soma dos compromissos de pelo menos dois participantes. Nenhuma carteira é debitada até a liquidação; no momento da compra, todos os saldos são revalidados. A participação de cada jogador é proporcional ao aporte realizado.
 - A proposta expira após as duas rodadas previstas; recusa e expiração não debitam caixa. Compra e percentuais ficam registrados por jogador; **não** são pagos dividendos empresariais presumidos.
 - Testes: 363/363 (`npm test`). A v1.43 permanece incompleta quanto a oportunidades empresariais e auditoria funcional das 230 cartas.
-
 
 ## v1.43 — continuação: consórcio de OE-017/OE-020
 
@@ -464,6 +459,7 @@ As oportunidades especiais OE-017 e OE-020 agora admitem compra coletiva no mult
 - Essas implementações não concluem a contabilidade operacional, o direito de preferência ou a homologação das 230 cartas. Consultar `docs/relatorios/RELATORIO-CONCLUSAO-v1.43.md`.
 
 ### Integração adicional da v1.43 — OE-004
+
 A reforma de imóveis de locação próprios pode ser realizada na carta OE-004 por R$ 20.000, com seleção do imóvel elegível. O acréscimo de 15% no aluguel entra no próximo fechamento pessoal; terrenos, participações e empresas não são aceitos como imóveis próprios de locação nesta operação. O projeto possui 375 testes automatizados aprovados, mas a v1.43 **ainda não está completa** (OE-012, OE-015, contabilidade empresarial operacional e cobertura integral pendentes).
 
 A OE-015 também possui fluxo de renegociação empresarial: parcela em 6/12/24 fechamentos, 1% de juros por fechamento, revalidação de capacidade da empresa, votação quando existir sociedade e pagamento pelo caixa da pessoa jurídica. Novos testes foram incluídos; total de **379 aprovados**. O direito de preferência OE-012 ainda é uma pendência, assim como a homologação completa do catálogo.
@@ -480,6 +476,7 @@ A OE-015 também possui fluxo de renegociação empresarial: parcela em 6/12/24 
 **Limitações:** o motor da OE-012 modela a oferta demonstrativa de investidor externo como uma empresa própria da carta; não representa negociação universal de participações em qualquer sociedade preexistente. Não há dividendos fictícios. A auditoria funcional de todas as 230 cartas e a apuração operacional geral continuam pendentes, portanto a v1.43 não está encerrada.
 
 ## Auditoria funcional desta continuação
+
 A auditoria reproduzível encontra-se em `src/functional-coverage.js` e
 `docs/cobertura/RELATORIO-COBERTURA-PERCENTUAL-v1.43.md`, com CSV individual de 230 cartas.
 A API de auditoria do professor agora informa também a cobertura de rotas.
@@ -514,7 +511,6 @@ Indicadores de auditoria mantidos: 230/230 rotas (100%); 194/230 sem pendências
 
 A partir desta revisão, aquisições empresariais e participações das cartas GI-011 a GI-025, OE-013, OE-017, OE-018 e OE-020 passam a registrar empresas no mesmo livro operacional do multiplayer. A integralização é idempotente, mantém acionistas externos e calcula a participação de cada consorciado. Não há lucro automático: só operações documentadas pelo professor podem produzir resultado distribuível. Executar `npm test` para a bateria completa. **A v1.43 continua pendente de homologação integral.**
 
-
 ## Continuação da v1.43 — carteira monetária das participações GO
 
 - As compras secundárias GO-016 a GO-020 agora debitam a carteira consolidada, preservando centavos.
@@ -546,13 +542,13 @@ A suíte foi ampliada para 451 testes; os novos cenários validam OE-004, OE-012
 O inventário funcional chegou a **230/230 cartas com rota identificada e sem pendência conhecida (100%)**, com **457 testes automatizados aprovados**. Foram integrados testes adicionais de catálogo, existência dos textos aprovados e sorteabilidade por ciclo, e mantidos os testes financeiros integrados das cinco OE finais. **Este fechamento não equivale à homologação manual de todas as alternativas**, prevista para a v2.0. Ver `docs/relatorios/RELATORIO-ENCERRAMENTO-FUNCIONAL-v1.43.md` e `docs/cobertura/RELATORIO-COBERTURA-PERCENTUAL-v1.43.md`.
 
 ## v1.44 — Integração de partida (primeiro bloco)
+
 - O servidor agora inclui `progress` nas consultas de sala, com participantes ativos, sonhos realizados, ordem de conclusão e indicação de encerramento manual.
 - O painel multiplayer apresenta o resumo de progresso e a posição de quem realizou o sonho.
 - O relatório docente (schemaVersion 4) reúne a ordem de conclusão e indicadores de cartas sorteadas, decisões e respostas à educação financeira; exportação CSV expandida.
 - Os indicadores pedagógicos são baseados nos eventos registrados, não representam notas ou conclusão de objetivos não verificados.
 - Compatibilidade de leitura das salas de desenvolvimento: `winnerOrder` inicializado na recuperação quando ausente; não existem partidas reais a preservar.
 - **A v1.44 não está concluída:** faltam testes de jornada completa no navegador, validação de pausas e reconexões sob concorrência, conferência visual dos dois tabuleiros, relatórios finais pedagógicos em PDF e demais itens previstos para jogo completo. Homologação geral e implantação pública permanecem para v2.0.
-
 
 ## v1.44 — Integração ampliada de continuidade de sala
 
@@ -567,6 +563,18 @@ O inventário funcional chegou a **230/230 cartas com rota identificada e sem pe
 
 A suíte cobre agora seis jogadores na mesma sala, limite de participantes, sequência de turnos e rodadas, pausa e retomada, persistência após reinício do servidor, os dois tabuleiros, transição por três fechamentos favoráveis e os seis sonhos com verificação de saldo. Consulte `docs/homologacao/RELATORIO-VALIDACAO-PARTIDA-v1.44.md`. A homologação manual de partidas completas e a v2.0 permanecem pendentes.
 
-
 ## Correção RC3 — turnos bloqueados em cartas MF
+
 Eventos globais de mercado, incluindo MF-005, agora são aceitos pela validação financeira depois da aplicação automática. Isso corrige a falha “Partida financeira inconsistente” ao encerrar o turno. Veja `docs/correcoes/CORRECAO-TURNO-RC3.md`.
+
+## Revisão de interface — tabuleiro central e modal
+
+A revisão atual de layout do estudante mantém finanças pessoais no centro do tabuleiro e concentra as cartas, questões e decisões em janela modal. Consulte `docs/correcoes/LAYOUT-MODAL-CARTAS-RC4.md` para o registro da alteração. A lógica de jogo e o motor de despesas foram preservados.
+
+## RC5 — Mercado integrado ao tabuleiro
+
+O acesso ao mercado para estudantes está no centro do tabuleiro, com modal de três abas (investimentos, anúncios e ofertas). Consulte `docs/entregas/RC5-MERCADO-INTEGRADO.md` para escopo, regras preservadas e homologação.
+
+## Ajuste visual RC5 — Mercado na terceira coluna
+
+O Mercado fica exclusivamente abaixo dos indicadores financeiros no tabuleiro 13 × 5, sem aumentar o centro. Os marcadores dos jogadores nas casas foram ampliados. Detalhes: `docs/correcoes/MERCADO-TERCEIRA-COLUNA-E-MARCADORES-RC5.md`.

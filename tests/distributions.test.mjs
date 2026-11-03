@@ -1,11 +1,94 @@
-import {test} from 'node:test';
-import assert from 'node:assert/strict';
-import {createCompanies,closeCompanies} from '../src/companies.js';
-import {recordVerifiedOperatingEvent} from '../src/governance.js';
-import {createGame,auditCash,rollTurn} from '../src/engine.js';
-function sample(){const a=createGame(11,'TRAVEL'),b=createGame(10,'TRAVEL');return {round:9,companies:createCompanies(),players:[{id:'alice',game:a},{id:'bob',game:b}],externalSellerCash:0};}
-test('não existe dividendo sem receita operacional verificada',()=>{const r=sample();const res=closeCompanies(r,9);assert.equal(res[0].paid,0);assert.equal(r.players[0].game.cash,r.players[0].game.initialCash);});
-test('lucro confirmado preserva reservas e paga a titulares com fonte contabilizada',()=>{const r=sample(),c=r.companies[0];c.shares={origin:75,alice:25};c.history.push({type:'share_transfer',playerId:'alice',percent:25,round:0});recordVerifiedOperatingEvent(c,{sourceId:'EVENT:TRUST:1',type:'revenue',amount:1000,round:1});const before=r.players[0].game.cash;const res=closeCompanies(r,9);assert.equal(res[0].paid,1000);assert.equal(r.players[0].game.cash-before,250);assert.equal(c.cash,c.reserveRequired);assert.equal(c.retainedProfit,0);assert(auditCash(r.players[0].game).ok);assert.deepEqual(closeCompanies(r,9),[]);});
-test('titularidade alterada durante o período distribui proporcionalmente ao tempo',()=>{const r=sample(),c=r.companies[0];c.history.push({type:'share_transfer',playerId:'alice',percent:90,round:3});c.shares={origin:10,alice:90};recordVerifiedOperatingEvent(c,{sourceId:'EVENT:TRUST:2',type:'revenue',amount:900,round:3});const x=closeCompanies(r,9)[0];assert.equal(x.allocations.alice,540);assert.equal(x.allocations.origin,360);});
-test('caixa abaixo da reserva impede distribuição mesmo com lucro acumulado',()=>{const r=sample(),c=r.companies[0];recordVerifiedOperatingEvent(c,{sourceId:'EVENT:TRUST:3',type:'revenue',amount:900,round:1});c.cash=c.reserveRequired;assert.equal(closeCompanies(r,9)[0].paid,0);});
-test('dividendo já creditado é contado no próximo fechamento sem crédito duplicado',()=>{const r=sample(),c=r.companies[0];c.history.push({type:'share_transfer',playerId:'alice',percent:100,round:0});c.shares={origin:0,alice:100};recordVerifiedOperatingEvent(c,{sourceId:'EVENT:TRUST:4',type:'revenue',amount:1000,round:1});closeCompanies(r,9);const g=r.players[0].game;assert.equal(g.pendingCorporatePassive,1000);assert(auditCash(g).ok);g.position=31;const before=g.cash;const next=rollTurn(g,2);assert.equal(next.pendingCorporatePassive,0);assert.equal(next.ledger.filter(x=>x.kind==='company_dividend').length,1);assert(auditCash(next).ok);assert(next.closures>=1);});
+import { test } from "node:test";
+import assert from "node:assert/strict";
+import { createCompanies, closeCompanies } from "../src/companies.js";
+import { recordVerifiedOperatingEvent } from "../src/governance.js";
+import { createGame, auditCash, rollTurn } from "../src/engine.js";
+function sample() {
+  const a = createGame(11, "TRAVEL"),
+    b = createGame(10, "TRAVEL");
+  return {
+    round: 9,
+    companies: createCompanies(),
+    players: [
+      { id: "alice", game: a },
+      { id: "bob", game: b },
+    ],
+    externalSellerCash: 0,
+  };
+}
+test("não existe dividendo sem receita operacional verificada", () => {
+  const r = sample();
+  const res = closeCompanies(r, 9);
+  assert.equal(res[0].paid, 0);
+  assert.equal(r.players[0].game.cash, r.players[0].game.initialCash);
+});
+test("lucro confirmado preserva reservas e paga a titulares com fonte contabilizada", () => {
+  const r = sample(),
+    c = r.companies[0];
+  c.shares = { origin: 75, alice: 25 };
+  c.history.push({ type: "share_transfer", playerId: "alice", percent: 25, round: 0 });
+  recordVerifiedOperatingEvent(c, {
+    sourceId: "EVENT:TRUST:1",
+    type: "revenue",
+    amount: 1000,
+    round: 1,
+  });
+  const before = r.players[0].game.cash;
+  const res = closeCompanies(r, 9);
+  assert.equal(res[0].paid, 1000);
+  assert.equal(r.players[0].game.cash - before, 250);
+  assert.equal(c.cash, c.reserveRequired);
+  assert.equal(c.retainedProfit, 0);
+  assert(auditCash(r.players[0].game).ok);
+  assert.deepEqual(closeCompanies(r, 9), []);
+});
+test("titularidade alterada durante o período distribui proporcionalmente ao tempo", () => {
+  const r = sample(),
+    c = r.companies[0];
+  c.history.push({ type: "share_transfer", playerId: "alice", percent: 90, round: 3 });
+  c.shares = { origin: 10, alice: 90 };
+  recordVerifiedOperatingEvent(c, {
+    sourceId: "EVENT:TRUST:2",
+    type: "revenue",
+    amount: 900,
+    round: 3,
+  });
+  const x = closeCompanies(r, 9)[0];
+  assert.equal(x.allocations.alice, 540);
+  assert.equal(x.allocations.origin, 360);
+});
+test("caixa abaixo da reserva impede distribuição mesmo com lucro acumulado", () => {
+  const r = sample(),
+    c = r.companies[0];
+  recordVerifiedOperatingEvent(c, {
+    sourceId: "EVENT:TRUST:3",
+    type: "revenue",
+    amount: 900,
+    round: 1,
+  });
+  c.cash = c.reserveRequired;
+  assert.equal(closeCompanies(r, 9)[0].paid, 0);
+});
+test("dividendo já creditado é contado no próximo fechamento sem crédito duplicado", () => {
+  const r = sample(),
+    c = r.companies[0];
+  c.history.push({ type: "share_transfer", playerId: "alice", percent: 100, round: 0 });
+  c.shares = { origin: 0, alice: 100 };
+  recordVerifiedOperatingEvent(c, {
+    sourceId: "EVENT:TRUST:4",
+    type: "revenue",
+    amount: 1000,
+    round: 1,
+  });
+  closeCompanies(r, 9);
+  const g = r.players[0].game;
+  assert.equal(g.pendingCorporatePassive, 1000);
+  assert(auditCash(g).ok);
+  g.position = 31;
+  const before = g.cash;
+  const next = rollTurn(g, 2);
+  assert.equal(next.pendingCorporatePassive, 0);
+  assert.equal(next.ledger.filter((x) => x.kind === "company_dividend").length, 1);
+  assert(auditCash(next).ok);
+  assert(next.closures >= 1);
+});

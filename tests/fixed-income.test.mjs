@@ -1,12 +1,103 @@
-import test from 'node:test';
-import assert from 'node:assert/strict';
-import {createGame,enableOfficialPO,subscribeFixedIncome,redeemFixedIncome,finishTurn,rollTurn,auditCash,validateState} from '../src/engine.js';
-import {FIXED_INCOME,fixedIncomeOffer} from '../src/fixed-income.js';
-function pending(id,amount=10000){let s=enableOfficialPO(createGame(8));s.cash=amount;s.initialCash=amount;s.turn=1;s.pending=true;s.lastTile='PO';s.currentCard={id,category:'PO',status:'text_available',effectExecuted:false};s.cardEvents=[{id,turn:1,circuit:'inner',position:s.position,status:'text_available',resolution:'pending',financialEffect:false}];return s;}
-function close(s){s=finishTurn(s);s.position=32;return rollTurn(s,1);}
-test('cinco contratos reproduzem regras de prazo, valor e distribuição',()=>{assert.equal(FIXED_INCOME.length,5);assert.deepEqual(FIXED_INCOME.map(x=>[x.id,x.min,x.max,x.step,x.term]),[['PO-008',300,3000,100,null],['PO-009',500,4000,100,6],['PO-010',1000,5000,500,12],['PO-011',800,4800,400,12],['PO-012',2000,2000,2000,12]]);assert.equal(fixedIncomeOffer({id:'PO-008',category:'PO'},'outer'),null);});
-test('aplicação diária acumula saldo, não registra cupom e permite resgate',()=>{const s=subscribeFixedIncome(pending('PO-008'),1000);assert.equal(s.cash,9000);let next=close(s);assert.equal(next.fixedIncome[0].balance,1005);assert.equal(next.ledger.some(x=>x.kind==='fixed_coupon'),false);next=finishTurn(next);const redeemed=redeemFixedIncome(next,next.fixedIncome[0].id);assert.equal(redeemed.cash,next.cash+1005);assert.equal(auditCash(redeemed).ok,true);assert.equal(validateState(redeemed),true);});
-test('título curto vence em seis fechamentos e paga juros somente no fim',()=>{let s=subscribeFixedIncome(pending('PO-009'),1000);for(let i=0;i<6;i++)s=close(s);assert.equal(s.fixedIncome[0].status,'matured');assert.equal(s.ledger.filter(x=>x.kind==='fixed_maturity').length,1);assert.equal(s.ledger.filter(x=>x.kind==='fixed_coupon').length,0);assert.equal(auditCash(s).ok,true);});
-test('cupom de PO-012 paga doze por período e devolve principal no vencimento',()=>{let s=subscribeFixedIncome(pending('PO-012'),2000);s=close(s);assert.equal(s.ledger.filter(x=>x.kind==='fixed_coupon').at(-1).amount,12);assert.equal(s.ledger.filter(x=>x.kind==='fixed_maturity').length,0);assert.equal(auditCash(s).ok,true);});
-test('PO-010 paga cupom de juros e PO-011 bloqueia resgate antecipado',()=>{const a=close(subscribeFixedIncome(pending('PO-010'),2000));assert.equal(a.ledger.filter(x=>x.kind==='fixed_coupon').at(-1).amount,11);let b=subscribeFixedIncome(pending('PO-011'),800);b=finishTurn(b);assert.throws(()=>redeemFixedIncome(b,b.fixedIncome[0].id),/Resgate indisponível/);});
-test('resgate antecipado aplica deságio somente a PO-009 e valida valores',()=>{let s=subscribeFixedIncome(pending('PO-009'),1000);s=finishTurn(s);const r=redeemFixedIncome(s,s.fixedIncome[0].id);assert.equal(r.cash,s.cash+980);assert.equal(auditCash(r).ok,true);assert.throws(()=>subscribeFixedIncome(pending('PO-009'),550),/Valor não permitido/);assert.throws(()=>subscribeFixedIncome(pending('PO-010',100),1000),/Caixa insuficiente/);assert.throws(()=>subscribeFixedIncome(subscribeFixedIncome(pending('PO-008'),300),300),/pendente/);});
+import test from "node:test";
+import assert from "node:assert/strict";
+import {
+  createGame,
+  enableOfficialPO,
+  subscribeFixedIncome,
+  redeemFixedIncome,
+  finishTurn,
+  rollTurn,
+  auditCash,
+  validateState,
+} from "../src/engine.js";
+import { FIXED_INCOME, fixedIncomeOffer } from "../src/fixed-income.js";
+function pending(id, amount = 10000) {
+  let s = enableOfficialPO(createGame(8));
+  s.cash = amount;
+  s.initialCash = amount;
+  s.turn = 1;
+  s.pending = true;
+  s.lastTile = "PO";
+  s.currentCard = { id, category: "PO", status: "text_available", effectExecuted: false };
+  s.cardEvents = [
+    {
+      id,
+      turn: 1,
+      circuit: "inner",
+      position: s.position,
+      status: "text_available",
+      resolution: "pending",
+      financialEffect: false,
+    },
+  ];
+  return s;
+}
+function close(s) {
+  s = finishTurn(s);
+  s.position = 32;
+  return rollTurn(s, 1);
+}
+test("cinco contratos reproduzem regras de prazo, valor e distribuição", () => {
+  assert.equal(FIXED_INCOME.length, 5);
+  assert.deepEqual(
+    FIXED_INCOME.map((x) => [x.id, x.min, x.max, x.step, x.term]),
+    [
+      ["PO-008", 300, 3000, 100, null],
+      ["PO-009", 500, 4000, 100, 6],
+      ["PO-010", 1000, 5000, 500, 12],
+      ["PO-011", 800, 4800, 400, 12],
+      ["PO-012", 2000, 2000, 2000, 12],
+    ],
+  );
+  assert.equal(fixedIncomeOffer({ id: "PO-008", category: "PO" }, "outer"), null);
+});
+test("aplicação diária acumula saldo, não registra cupom e permite resgate", () => {
+  const s = subscribeFixedIncome(pending("PO-008"), 1000);
+  assert.equal(s.cash, 9000);
+  let next = close(s);
+  assert.equal(next.fixedIncome[0].balance, 1005);
+  assert.equal(
+    next.ledger.some((x) => x.kind === "fixed_coupon"),
+    false,
+  );
+  next = finishTurn(next);
+  const redeemed = redeemFixedIncome(next, next.fixedIncome[0].id);
+  assert.equal(redeemed.cash, next.cash + 1005);
+  assert.equal(auditCash(redeemed).ok, true);
+  assert.equal(validateState(redeemed), true);
+});
+test("título curto vence em seis fechamentos e paga juros somente no fim", () => {
+  let s = subscribeFixedIncome(pending("PO-009"), 1000);
+  for (let i = 0; i < 6; i++) s = close(s);
+  assert.equal(s.fixedIncome[0].status, "matured");
+  assert.equal(s.ledger.filter((x) => x.kind === "fixed_maturity").length, 1);
+  assert.equal(s.ledger.filter((x) => x.kind === "fixed_coupon").length, 0);
+  assert.equal(auditCash(s).ok, true);
+});
+test("cupom de PO-012 paga doze por período e devolve principal no vencimento", () => {
+  let s = subscribeFixedIncome(pending("PO-012"), 2000);
+  s = close(s);
+  assert.equal(s.ledger.filter((x) => x.kind === "fixed_coupon").at(-1).amount, 12);
+  assert.equal(s.ledger.filter((x) => x.kind === "fixed_maturity").length, 0);
+  assert.equal(auditCash(s).ok, true);
+});
+test("PO-010 paga cupom de juros e PO-011 bloqueia resgate antecipado", () => {
+  const a = close(subscribeFixedIncome(pending("PO-010"), 2000));
+  assert.equal(a.ledger.filter((x) => x.kind === "fixed_coupon").at(-1).amount, 11);
+  let b = subscribeFixedIncome(pending("PO-011"), 800);
+  b = finishTurn(b);
+  assert.throws(() => redeemFixedIncome(b, b.fixedIncome[0].id), /Resgate indisponível/);
+});
+test("resgate antecipado aplica deságio somente a PO-009 e valida valores", () => {
+  let s = subscribeFixedIncome(pending("PO-009"), 1000);
+  s = finishTurn(s);
+  const r = redeemFixedIncome(s, s.fixedIncome[0].id);
+  assert.equal(r.cash, s.cash + 980);
+  assert.equal(auditCash(r).ok, true);
+  assert.throws(() => subscribeFixedIncome(pending("PO-009"), 550), /Valor não permitido/);
+  assert.throws(() => subscribeFixedIncome(pending("PO-010", 100), 1000), /Caixa insuficiente/);
+  assert.throws(
+    () => subscribeFixedIncome(subscribeFixedIncome(pending("PO-008"), 300), 300),
+    /pendente/,
+  );
+});

@@ -33,6 +33,7 @@ A despesa é dividida em categorias existentes das 12 profissões: moradia, alim
 A presença do texto aprovado no catálogo **não** significa que a carta já pode executar todos os seus efeitos. Este relatório não atribui porcentagem geral sem auditoria funcional por identificador.
 
 ## Continuação 3 — aquisições e amortização (346 testes)
+
 - GI-019 a GI-025: as sete ofertas de participação podem ser adquiridas **integralmente por um jogador com dinheiro próprio**, registrando preço, percentual, avaliação de referência e sem rendimentos fictícios. Financiamento automático bloqueado. **Aquisição conjunta, direito de preferência e votação ficam pendentes**.
 - OE-011, OE-013 e OE-018: aquisições à vista integradas no jogo individual e multiplayer, com custos oficiais e distinção entre aluguel de equipamento e lucros empresariais não comprovados.
 - OE-016: amortização extraordinária de dívida própria, mínimo de R$ 1.000, limitada ao caixa e saldo devedor; funciona nos dois modos.
@@ -40,16 +41,18 @@ A presença do texto aprovado no catálogo **não** significa que a carta já po
 - A aquisição GI individual **não representa o fluxo coletivo de proposta de duas rodadas**. Empresas GI-011–GI-025 ainda carecem de apuração operacional integrada; não foram criados dividendos artificiais.
 - Esta integração **não conclui as 230 cartas**. A versão continua em desenvolvimento, sem liberar rótulo de finalização funcional.
 
-
 ## Continuação 5 — investimentos conjuntos GI (363 testes)
+
 - GI-019 a GI-025: compra individual já existente e **compra conjunta multiplayer** por proposta de até duas rodadas, aceites, recusas, revalidação de caixa e participações proporcionais sem juros/dividendos inventados.
 - Negociação conjunta em partida individual não se aplica (apenas um jogador).
 - Este avanço não homologa os demais efeitos das 230 cartas; consultar `../relatorios/RELATORIO-CONCLUSAO-v1.43.md`.
 
 ## Continuação: OE-017 e OE-020
+
 Ambas as participações agora têm proposta conjunta no multiplayer, com convites, aporte proporcional, confirmação, recusa, expiração em duas rodadas e liquidação com saldos revalidados; validadas em 366 testes. Governança e apuração operacional das demais oportunidades permanecem pendentes.
 
 ## Continuação: OE-004 e OE-015 (379 testes)
+
 - OE-004: reforma de imóvel próprio de locação por R$ 20.000, com aluguel +15% no fechamento seguinte, integrada ao individual e multiplayer. Propriedades societárias compartilhadas não são reformadas por esse fluxo individual.
 - OE-015: substituição de obrigação empresarial vencida por financiamento de 6/12/24 fechamentos a 1% por período. Sociedade exige votação >50%; capacidade de pagamento verificada antes da contratação; sem dinheiro novo ou movimentação pessoal.
 - OE-012 ainda pendente: transferência societária com direito de preferência.

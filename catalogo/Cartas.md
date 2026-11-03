@@ -142,13 +142,13 @@ Aprendizagem: máquinas podem reduzir a necessidade de trabalho constante, mas n
 
 Nesta categoria, precisamos distinguir rendimentos acumulados de rendimentos distribuídos. Uma aplicação que apenas aumenta seu valor não contribuirá diretamente para a independência financeira.
 
-| Carta | Situação e condições | Consequência, risco e aprendizagem |
-| ----- | ----- | ----- |
-| PO-008 — Aplicação de Liquidez Diária | Aplicar de R\$ 300 a R\$ 3.000, em incrementos de R\$ 100\. Rentabilidade fictícia de 0,5% ao fechamento. | O rendimento é incorporado ao saldo investido, sem renda passiva distribuída. Resgate permitido no próprio turno pelo saldo atualizado. Risco: variação de taxa em condições futuras. Conceito: liquidez e reserva de emergência. |
-| PO-009 — Título de Renda Fixa de Prazo Curto | Aplicar de R\$ 500 a R\$ 4.000, em incrementos de R\$ 100\. Taxa contratada de 0,7% por fechamento, durante 6 fechamentos. | Juros acumulados e recebidos com o principal no vencimento; sem renda passiva mensal. Resgate antecipado sujeito a deságio de 2% sobre o saldo atualizado. Risco: imobilização do dinheiro. Conceito: prazo e liquidez. |
-| PO-010 — Título com Pagamento de Juros | Aplicar de R\$ 1.000 a R\$ 5.000, em incrementos de R\$ 500\. Cupom de 0,55% do principal por fechamento durante 12 fechamentos. | Cupom efetivamente pago conta como renda passiva; principal devolvido no vencimento. Resgate antecipado somente se houver comprador, a valor de mercado. Risco: taxa e preço de revenda. Conceito: diferença entre juros distribuídos e valorização. |
-| PO-011 — Aplicação com Prazo de 12 Meses | Aplicar de R\$ 800 a R\$ 4.800, em incrementos de R\$ 400\. Rentabilidade contratada de 0,8% por fechamento, durante 12 fechamentos. | Rendimentos acumulados até o vencimento, sem pagamentos intermediários. Sem resgate antecipado comum. Risco: falta de liquidez e condições do emissor. Conceito: relação entre prazo, rentabilidade e disponibilidade do dinheiro. |
-| PO-012 — Título de Renda Fixa Negociável | Comprar uma unidade por R\$ 2.000, com cupom de R\$ 12 por fechamento e vencimento após 12 fechamentos. | Cupom conta como renda passiva; principal nominal de R\$ 2.000 no vencimento. Venda antes do prazo dependerá do preço de mercado. Risco: desvalorização na venda antecipada. Conceito: renda contratada e oscilação de preço podem coexistir. |
+| Carta                                        | Situação e condições                                                                                                                 | Consequência, risco e aprendizagem                                                                                                                                                                                                                   |
+| -------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| PO-008 — Aplicação de Liquidez Diária        | Aplicar de R\$ 300 a R\$ 3.000, em incrementos de R\$ 100\. Rentabilidade fictícia de 0,5% ao fechamento.                            | O rendimento é incorporado ao saldo investido, sem renda passiva distribuída. Resgate permitido no próprio turno pelo saldo atualizado. Risco: variação de taxa em condições futuras. Conceito: liquidez e reserva de emergência.                    |
+| PO-009 — Título de Renda Fixa de Prazo Curto | Aplicar de R\$ 500 a R\$ 4.000, em incrementos de R\$ 100\. Taxa contratada de 0,7% por fechamento, durante 6 fechamentos.           | Juros acumulados e recebidos com o principal no vencimento; sem renda passiva mensal. Resgate antecipado sujeito a deságio de 2% sobre o saldo atualizado. Risco: imobilização do dinheiro. Conceito: prazo e liquidez.                              |
+| PO-010 — Título com Pagamento de Juros       | Aplicar de R\$ 1.000 a R\$ 5.000, em incrementos de R\$ 500\. Cupom de 0,55% do principal por fechamento durante 12 fechamentos.     | Cupom efetivamente pago conta como renda passiva; principal devolvido no vencimento. Resgate antecipado somente se houver comprador, a valor de mercado. Risco: taxa e preço de revenda. Conceito: diferença entre juros distribuídos e valorização. |
+| PO-011 — Aplicação com Prazo de 12 Meses     | Aplicar de R\$ 800 a R\$ 4.800, em incrementos de R\$ 400\. Rentabilidade contratada de 0,8% por fechamento, durante 12 fechamentos. | Rendimentos acumulados até o vencimento, sem pagamentos intermediários. Sem resgate antecipado comum. Risco: falta de liquidez e condições do emissor. Conceito: relação entre prazo, rentabilidade e disponibilidade do dinheiro.                   |
+| PO-012 — Título de Renda Fixa Negociável     | Comprar uma unidade por R\$ 2.000, com cupom de R\$ 12 por fechamento e vencimento após 12 fechamentos.                              | Cupom conta como renda passiva; principal nominal de R\$ 2.000 no vencimento. Venda antes do prazo dependerá do preço de mercado. Risco: desvalorização na venda antecipada. Conceito: renda contratada e oscilação de preço podem coexistir.        |
 
 Decisão em todas as cinco cartas: investir o valor permitido ou recusar. O sistema verificará o caixa, registrará a aplicação individualmente e mostrará suas condições antes da confirmação.
 
@@ -266,12 +266,12 @@ Aprendizagem: os resultados de uma empresa estão ligados ao comportamento da ec
 
 Essas cartas representam a compra de equipamentos que podem produzir renda com aluguel. Os rendimentos indicados são líquidos dos custos ordinários previstos, mas não incluem imprevistos extraordinários.
 
-| Carta | Situação e investimento | Consequência, riscos e aprendizagem |
-| ----- | ----- | ----- |
-| PO-018 — Projetor para Eventos | Comprar um projetor por R\$ 1.600, para locação em reuniões e pequenos eventos. | Renda líquida inicial de R\$ 35 por fechamento. Risco de danos, obsolescência e falta de clientes. Revenda exige comprador. Conceito: receita de aluguel e depreciação de equipamentos. |
-| PO-019 — Kit de Ferramentas Profissionais | Adquirir ferramentas para locação por R\$ 2.000. | Renda líquida inicial de R\$ 45 por fechamento. Risco de perda de peças, manutenção e baixa demanda. Revenda exige comprador. Conceito: controle dos custos e conservação de ativos. |
-| PO-020 — Equipamentos para Festas | Comprar mesas, cadeiras e acessórios para locação por R\$ 3.200. | Renda líquida inicial de R\$ 70 por fechamento. Risco de avarias, sazonalidade e transporte. Revenda exige comprador. Conceito: demanda sazonal e custos operacionais. |
-| PO-021 — Equipamento Fotográfico | Comprar um conjunto de equipamentos fotográficos por R\$ 4.500. | Renda líquida inicial de R\$ 90 por fechamento. Risco de danos, substituição tecnológica e baixa procura. Revenda exige comprador. Conceito: renda de locação, vida útil e desvalorização. |
+| Carta                                     | Situação e investimento                                                         | Consequência, riscos e aprendizagem                                                                                                                                                        |
+| ----------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| PO-018 — Projetor para Eventos            | Comprar um projetor por R\$ 1.600, para locação em reuniões e pequenos eventos. | Renda líquida inicial de R\$ 35 por fechamento. Risco de danos, obsolescência e falta de clientes. Revenda exige comprador. Conceito: receita de aluguel e depreciação de equipamentos.    |
+| PO-019 — Kit de Ferramentas Profissionais | Adquirir ferramentas para locação por R\$ 2.000.                                | Renda líquida inicial de R\$ 45 por fechamento. Risco de perda de peças, manutenção e baixa demanda. Revenda exige comprador. Conceito: controle dos custos e conservação de ativos.       |
+| PO-020 — Equipamentos para Festas         | Comprar mesas, cadeiras e acessórios para locação por R\$ 3.200.                | Renda líquida inicial de R\$ 70 por fechamento. Risco de avarias, sazonalidade e transporte. Revenda exige comprador. Conceito: demanda sazonal e custos operacionais.                     |
+| PO-021 — Equipamento Fotográfico          | Comprar um conjunto de equipamentos fotográficos por R\$ 4.500.                 | Renda líquida inicial de R\$ 90 por fechamento. Risco de danos, substituição tecnológica e baixa procura. Revenda exige comprador. Conceito: renda de locação, vida útil e desvalorização. |
 
 Requisitos das quatro cartas: possuir integralmente o valor de aquisição em dinheiro disponível.
 
@@ -384,12 +384,12 @@ Diferentemente das Pequenas Oportunidades, as Grandes Oportunidades poderão env
 
 As cartas seguirão estes critérios:
 
-* Compra à vista: exige dinheiro disponível suficiente.  
-* Compra financiada: disponível apenas quando a carta permitir, após análise de crédito com taxa de 1% por fechamento mensal e prazos de 6, 12 ou 24 fechamentos.  
-* Compra em sociedade: disponível quando indicada na carta, respeitando propostas, aceites, participações e votações.  
-* Renda passiva: apenas o rendimento líquido efetivamente distribuído conta para a independência financeira. As parcelas de financiamento continuam sendo despesas.  
-* Riscos: vacância, manutenção, perdas, mercado, concorrência e outros eventos podem reduzir o retorno ou o valor do ativo.  
-* Revenda: imóveis e empresas não possuem venda imediata garantida; dependerão de oportunidades e compradores.
+- Compra à vista: exige dinheiro disponível suficiente.
+- Compra financiada: disponível apenas quando a carta permitir, após análise de crédito com taxa de 1% por fechamento mensal e prazos de 6, 12 ou 24 fechamentos.
+- Compra em sociedade: disponível quando indicada na carta, respeitando propostas, aceites, participações e votações.
+- Renda passiva: apenas o rendimento líquido efetivamente distribuído conta para a independência financeira. As parcelas de financiamento continuam sendo despesas.
+- Riscos: vacância, manutenção, perdas, mercado, concorrência e outros eventos podem reduzir o retorno ou o valor do ativo.
+- Revenda: imóveis e empresas não possuem venda imediata garantida; dependerão de oportunidades e compradores.
 
 Os rendimentos apresentados serão condições iniciais fictícias, não garantias de retorno.
 
@@ -856,11 +856,11 @@ Cartas acumuladas\*
 As despesas inesperadas representam imprevistos que afetam o planejamento financeiro, sem eliminar os jogadores.
 
 Manteremos as quatro intensidades de impacto já aprovadas:  
-Intensidade	Valor  
-Baixa	5% do salário de referência  
-Moderada	10% do salário de referência  
-Alta	20% do salário de referência  
-Excepcional	30% do salário de referência
+Intensidade Valor  
+Baixa 5% do salário de referência  
+Moderada 10% do salário de referência  
+Alta 20% do salário de referência  
+Excepcional 30% do salário de referência
 
 Esses percentuais serão utilizados apenas nas cartas identificadas como proporcionais. Algumas despesas relacionadas a ativos terão valores fixos e só ocorrerão quando o jogador possuir o bem correspondente.
 
@@ -877,27 +877,27 @@ Simulação de impacto proporcional. O valor será registrado como obrigação, 
 Estas cartas envolvem situações cotidianas, consumo, manutenção e pequenos imprevistos financeiros.
 
 Identificadores: DI-001 a DI-020  
-Código	Carta e situação	Impacto	Conceito educativo  
-DI-001	Conserto da Geladeira. Sua geladeira apresentou defeito e precisará de manutenção.	10% do salário	Reserva de emergência  
-DI-002	Consulta de Urgência. Uma necessidade de saúde gerou uma despesa não prevista.	10%	Planejamento para imprevistos  
-DI-003	Problema no Transporte. Você precisou pagar um reparo ou transporte alternativo.	5%	Custos de mobilidade  
-DI-004	Vazamento na Residência. Um encanamento exigiu reparo imediato.	10%	Manutenção da moradia  
-DI-005	Equipamento Eletrônico Danificado. Um aparelho importante deixou de funcionar.	20%	Depreciação e reposição  
-DI-006	Conta de Energia Acima do Previsto. O consumo aumentou inesperadamente neste período.	5%	Controle do consumo  
-DI-007	Compra por Impulso. Você realizou uma compra não planejada antes de avaliar o orçamento.	10%	Consumo consciente  
-DI-008	Reparo na Bicicleta. Sua bicicleta precisou de manutenção inesperada.	5%	Custos de conservação  
-DI-009	Material de Estudo Extra. Você precisou adquirir materiais educacionais adicionais.	5%	Planejamento educacional  
-DI-010	Serviço Doméstico Emergencial. Foi necessário contratar um reparo residencial.	10%	Formação de reservas  
-DI-011	Deslocamento Inesperado. Uma situação familiar exigiu uma viagem curta.	20%	Gastos de transporte  
-DI-012	Problema com o Celular. O aparelho precisou de conserto.	10%	Necessidades e prioridades  
-DI-013	Desperdício de Alimentos. Parte das compras estragou e precisou ser substituída.	5%	Planejamento de compras  
-DI-014	Despesa com Documentação. Você precisou atualizar documentos e pagar taxas.	5%	Obrigações ocasionais  
-DI-015	Mudança de Residência. Uma situação imprevista exigiu gastos com transporte e organização.	20%	Custos de mudanças  
-DI-016	Manutenção de Equipamento de Trabalho. Uma ferramenta precisou de reparo ou substituição.	10%	Custos profissionais  
-DI-017	Taxa de Serviço Inesperada. Uma cobrança contratual previamente prevista passou despercebida no orçamento.	5%	Leitura de contratos  
-DI-018	Tratamento Odontológico. Uma necessidade de atendimento gerou despesa extraordinária.	20%	Proteção financeira  
-DI-019	Reparo Estrutural Urgente. Um problema significativo na moradia exigiu intervenção.	30%	Risco excepcional e reserva  
-DI-020	Substituição de Equipamento Essencial. Um equipamento de uso necessário sofreu perda irreparável.	20%	Reserva e reposição de bens
+Código Carta e situação Impacto Conceito educativo  
+DI-001 Conserto da Geladeira. Sua geladeira apresentou defeito e precisará de manutenção. 10% do salário Reserva de emergência  
+DI-002 Consulta de Urgência. Uma necessidade de saúde gerou uma despesa não prevista. 10% Planejamento para imprevistos  
+DI-003 Problema no Transporte. Você precisou pagar um reparo ou transporte alternativo. 5% Custos de mobilidade  
+DI-004 Vazamento na Residência. Um encanamento exigiu reparo imediato. 10% Manutenção da moradia  
+DI-005 Equipamento Eletrônico Danificado. Um aparelho importante deixou de funcionar. 20% Depreciação e reposição  
+DI-006 Conta de Energia Acima do Previsto. O consumo aumentou inesperadamente neste período. 5% Controle do consumo  
+DI-007 Compra por Impulso. Você realizou uma compra não planejada antes de avaliar o orçamento. 10% Consumo consciente  
+DI-008 Reparo na Bicicleta. Sua bicicleta precisou de manutenção inesperada. 5% Custos de conservação  
+DI-009 Material de Estudo Extra. Você precisou adquirir materiais educacionais adicionais. 5% Planejamento educacional  
+DI-010 Serviço Doméstico Emergencial. Foi necessário contratar um reparo residencial. 10% Formação de reservas  
+DI-011 Deslocamento Inesperado. Uma situação familiar exigiu uma viagem curta. 20% Gastos de transporte  
+DI-012 Problema com o Celular. O aparelho precisou de conserto. 10% Necessidades e prioridades  
+DI-013 Desperdício de Alimentos. Parte das compras estragou e precisou ser substituída. 5% Planejamento de compras  
+DI-014 Despesa com Documentação. Você precisou atualizar documentos e pagar taxas. 5% Obrigações ocasionais  
+DI-015 Mudança de Residência. Uma situação imprevista exigiu gastos com transporte e organização. 20% Custos de mudanças  
+DI-016 Manutenção de Equipamento de Trabalho. Uma ferramenta precisou de reparo ou substituição. 10% Custos profissionais  
+DI-017 Taxa de Serviço Inesperada. Uma cobrança contratual previamente prevista passou despercebida no orçamento. 5% Leitura de contratos  
+DI-018 Tratamento Odontológico. Uma necessidade de atendimento gerou despesa extraordinária. 20% Proteção financeira  
+DI-019 Reparo Estrutural Urgente. Um problema significativo na moradia exigiu intervenção. 30% Risco excepcional e reserva  
+DI-020 Substituição de Equipamento Essencial. Um equipamento de uso necessário sofreu perda irreparável. 20% Reserva e reposição de bens
 
 Consequências das 20 cartas  
 Todas as cartas acima terão resolução obrigatória, sem opção de recusar uma despesa já ocorrida.
@@ -914,22 +914,22 @@ Na Pista de Alta Velocidade, os imprevistos serão mais relacionados à administ
 Para essa categoria, proponho combinar despesas proporcionais ao salário de referência com custos específicos de ativos que o jogador possui.
 
 Identificadores: DI-021 a DI-035  
-Código	Carta e situação	Impacto	Conceito educativo  
-DI-021	Manutenção Extraordinária de Imóvel. Um imóvel de investimento precisa de reparos não previstos.	R\$ 1.200, se possuir imóvel elegível	Reserva para manutenção  
-DI-022	Despesa Jurídica Empresarial. Um negócio do qual você é proprietário ou sócio precisa de assessoria para resolver uma questão contratual.	R\$ 1.500 para a empresa elegível	Responsabilidade empresarial  
-DI-023	Viagem Não Planejada. Uma situação pessoal exige deslocamento e hospedagem.	10% do salário de referência	Liquidez pessoal  
-DI-024	Reparo em Equipamento de Locação. Um equipamento alugado sofreu desgaste extraordinário.	R\$ 650, se possuir equipamento elegível	Depreciação  
-DI-025	Despesa Administrativa Extra. Um negócio precisa pagar serviços administrativos excepcionais.	R\$ 900 para a empresa elegível	Gestão de custos  
-DI-026	Despesa Familiar Importante. Um acontecimento inesperado exige reorganizar o orçamento pessoal.	20% do salário de referência	Planejamento financeiro  
-DI-027	Reforma Emergencial. Um imóvel de investimento necessita de intervenção urgente.	R\$ 2.000, se possuir imóvel elegível	Conservação patrimonial  
-DI-028	Cobrança Contratual Não Prevista no Orçamento. Uma obrigação contratual válida precisou ser paga fora do planejamento mensal.	10% do salário de referência	Gestão de contratos  
-DI-029	Problema com Fornecedor. Uma empresa enfrenta custos extraordinários para cumprir seus compromissos.	R\$ 1.800 para a empresa elegível	Risco operacional  
-DI-030	Emergência Pessoal Excepcional. Uma situação importante exige utilizar parte das reservas financeiras.	30% do salário de referência	Resiliência financeira  
-DI-031	Manutenção de Equipamento Empresarial. Uma máquina essencial de um negócio precisa de reparo.	R\$ 1.100 para a empresa elegível	Custos de produção  
-DI-032	Despesa com Documentação Patrimonial. Você precisa regularizar documentos relacionados a seus investimentos.	5% do salário de referência	Organização patrimonial  
-DI-033	Serviço de Segurança Emergencial. Uma situação exige medidas pontuais de proteção de bens pessoais.	10% do salário de referência	Prevenção de perdas  
-DI-034	Transporte e Logística Extraordinários. Um negócio enfrenta uma despesa de transporte fora do previsto.	R\$ 1.000 para a empresa elegível	Custos logísticos  
-DI-035	Despesa Pessoal Inesperada. Um compromisso pessoal inadiável exige um pagamento adicional.	20% do salário de referência	Proteção da reserva financeira
+Código Carta e situação Impacto Conceito educativo  
+DI-021 Manutenção Extraordinária de Imóvel. Um imóvel de investimento precisa de reparos não previstos. R\$ 1.200, se possuir imóvel elegível Reserva para manutenção  
+DI-022 Despesa Jurídica Empresarial. Um negócio do qual você é proprietário ou sócio precisa de assessoria para resolver uma questão contratual. R\$ 1.500 para a empresa elegível Responsabilidade empresarial  
+DI-023 Viagem Não Planejada. Uma situação pessoal exige deslocamento e hospedagem. 10% do salário de referência Liquidez pessoal  
+DI-024 Reparo em Equipamento de Locação. Um equipamento alugado sofreu desgaste extraordinário. R\$ 650, se possuir equipamento elegível Depreciação  
+DI-025 Despesa Administrativa Extra. Um negócio precisa pagar serviços administrativos excepcionais. R\$ 900 para a empresa elegível Gestão de custos  
+DI-026 Despesa Familiar Importante. Um acontecimento inesperado exige reorganizar o orçamento pessoal. 20% do salário de referência Planejamento financeiro  
+DI-027 Reforma Emergencial. Um imóvel de investimento necessita de intervenção urgente. R\$ 2.000, se possuir imóvel elegível Conservação patrimonial  
+DI-028 Cobrança Contratual Não Prevista no Orçamento. Uma obrigação contratual válida precisou ser paga fora do planejamento mensal. 10% do salário de referência Gestão de contratos  
+DI-029 Problema com Fornecedor. Uma empresa enfrenta custos extraordinários para cumprir seus compromissos. R\$ 1.800 para a empresa elegível Risco operacional  
+DI-030 Emergência Pessoal Excepcional. Uma situação importante exige utilizar parte das reservas financeiras. 30% do salário de referência Resiliência financeira  
+DI-031 Manutenção de Equipamento Empresarial. Uma máquina essencial de um negócio precisa de reparo. R\$ 1.100 para a empresa elegível Custos de produção  
+DI-032 Despesa com Documentação Patrimonial. Você precisa regularizar documentos relacionados a seus investimentos. 5% do salário de referência Organização patrimonial  
+DI-033 Serviço de Segurança Emergencial. Uma situação exige medidas pontuais de proteção de bens pessoais. 10% do salário de referência Prevenção de perdas  
+DI-034 Transporte e Logística Extraordinários. Um negócio enfrenta uma despesa de transporte fora do previsto. R\$ 1.000 para a empresa elegível Custos logísticos  
+DI-035 Despesa Pessoal Inesperada. Um compromisso pessoal inadiável exige um pagamento adicional. 20% do salário de referência Proteção da reserva financeira
 
 Regras específicas das cartas condicionais  
 As cartas vinculadas a imóveis, equipamentos ou empresas terão algumas diferenças importantes:
@@ -965,91 +965,91 @@ Aplicaremos as seguintes regras já estabelecidas:
 Para evitar confundir as cartas de Mercado com as Despesas Inesperadas, aqui o foco será oscilação de preços, demanda, juros, rendimentos e condições econômicas. Despesas extraordinárias diretas continuarão nas cartas de Despesas Inesperadas.  
 2\. Como interpretar os efeitos  
 Cada carta identificará seu alcance:  
-Alcance	Funcionamento  
-Individual	Afeta apenas o jogador que sorteou, caso seja elegível  
-Global	Afeta todos os jogadores elegíveis da sala  
-Setorial	Afeta somente ativos de determinado setor  
-Patrimonial	Altera o valor de mercado de um ativo  
-Renda	Altera o rendimento distribuído pelo ativo
+Alcance Funcionamento  
+Individual Afeta apenas o jogador que sorteou, caso seja elegível  
+Global Afeta todos os jogadores elegíveis da sala  
+Setorial Afeta somente ativos de determinado setor  
+Patrimonial Altera o valor de mercado de um ativo  
+Renda Altera o rendimento distribuído pelo ativo
 
 Os percentuais das cartas de Mercado Financeiro serão aplicados ao valor do ativo ou ao seu rendimento, não ao salário de referência, salvo indicação expressa em uma futura carta. São diferentes das intensidades proporcionais de despesas já aprovadas.
 
 3\. Corrida dos Ratos — 15 cartas  
 MF-001 a MF-015 · Mercado Financeiro do circuito inicial  
-Código	Evento e descrição	Efeito proposto	Alcance  
-MF-001	Alta nas Ações de Energia. A procura por ações do setor energético aumentou após a divulgação de resultados positivos.	Valorização de 8% das ações de energia.	Global  
-MF-002	Queda no Setor de Tecnologia. Investidores ficaram mais cautelosos com empresas de tecnologia.	Desvalorização de 10% das ações de tecnologia.	Global  
-MF-003	Mercado Imobiliário Aquecido. A demanda por imóveis aumentou.	Valorização de 6% dos imóveis de investimento.	Global  
-MF-004	Redução dos Dividendos. Uma empresa de comércio enfrenta diminuição de lucro.	Redução de 20% dos dividendos das ações de comércio.	Global  
-MF-005	Melhora nos Fundos Imobiliários. O aumento da ocupação favorece a receita dos fundos.	Aumento de 10% na distribuição por cota de fundos imobiliários.	Global  
-MF-006	Demanda por Locações de Equipamentos. A procura por equipamentos alugados cresceu na região.	Aumento de 10% na renda dos equipamentos de locação do jogador.	Individual  
-MF-007	Oscilação Geral da Bolsa. O mercado de ações enfrenta um período de incerteza.	Desvalorização de 5% das ações e fundos de ações.	Global  
-MF-008	Recuperação do Comércio. A melhora no consumo beneficia empresas comerciais.	Valorização de 7% das ações de comércio.	Global  
-MF-009	Juros de Novas Aplicações em Alta. Instituições passam a oferecer rendimentos maiores nos novos títulos.	Novas aplicações elegíveis passam a oferecer 0,1 ponto percentual adicional por fechamento, enquanto durar a condição.	Global  
-MF-010	Queda nos Preços de Equipamentos. Novos modelos tornam equipamentos usados menos procurados.	Desvalorização de 10% dos equipamentos para locação do jogador.	Individual  
-MF-011	Valorização de Fundos Diversificados. Resultados favoráveis elevam o preço das cotas.	Valorização de 6% das cotas de fundos diversificados.	Global  
-MF-012	Desocupação no Mercado de Aluguel. O aumento de imóveis disponíveis pressiona as receitas.	Redução de 15% da renda de aluguel de imóveis elegíveis do jogador.	Individual  
-MF-013	Crescimento do Setor Energético. Empresas de energia ampliaram a distribuição de resultados.	Aumento de 10% dos dividendos de ações de energia.	Global  
-MF-014	Crise de Confiança no Comércio. Expectativas de menor consumo reduzem o preço das ações comerciais.	Desvalorização de 8% das ações de comércio.	Global  
-MF-015	Recuperação dos Fundos Imobiliários. A melhora nas expectativas aumenta o valor negociado das cotas.	Valorização de 5% das cotas de fundos imobiliários.	Global
+Código Evento e descrição Efeito proposto Alcance  
+MF-001 Alta nas Ações de Energia. A procura por ações do setor energético aumentou após a divulgação de resultados positivos. Valorização de 8% das ações de energia. Global  
+MF-002 Queda no Setor de Tecnologia. Investidores ficaram mais cautelosos com empresas de tecnologia. Desvalorização de 10% das ações de tecnologia. Global  
+MF-003 Mercado Imobiliário Aquecido. A demanda por imóveis aumentou. Valorização de 6% dos imóveis de investimento. Global  
+MF-004 Redução dos Dividendos. Uma empresa de comércio enfrenta diminuição de lucro. Redução de 20% dos dividendos das ações de comércio. Global  
+MF-005 Melhora nos Fundos Imobiliários. O aumento da ocupação favorece a receita dos fundos. Aumento de 10% na distribuição por cota de fundos imobiliários. Global  
+MF-006 Demanda por Locações de Equipamentos. A procura por equipamentos alugados cresceu na região. Aumento de 10% na renda dos equipamentos de locação do jogador. Individual  
+MF-007 Oscilação Geral da Bolsa. O mercado de ações enfrenta um período de incerteza. Desvalorização de 5% das ações e fundos de ações. Global  
+MF-008 Recuperação do Comércio. A melhora no consumo beneficia empresas comerciais. Valorização de 7% das ações de comércio. Global  
+MF-009 Juros de Novas Aplicações em Alta. Instituições passam a oferecer rendimentos maiores nos novos títulos. Novas aplicações elegíveis passam a oferecer 0,1 ponto percentual adicional por fechamento, enquanto durar a condição. Global  
+MF-010 Queda nos Preços de Equipamentos. Novos modelos tornam equipamentos usados menos procurados. Desvalorização de 10% dos equipamentos para locação do jogador. Individual  
+MF-011 Valorização de Fundos Diversificados. Resultados favoráveis elevam o preço das cotas. Valorização de 6% das cotas de fundos diversificados. Global  
+MF-012 Desocupação no Mercado de Aluguel. O aumento de imóveis disponíveis pressiona as receitas. Redução de 15% da renda de aluguel de imóveis elegíveis do jogador. Individual  
+MF-013 Crescimento do Setor Energético. Empresas de energia ampliaram a distribuição de resultados. Aumento de 10% dos dividendos de ações de energia. Global  
+MF-014 Crise de Confiança no Comércio. Expectativas de menor consumo reduzem o preço das ações comerciais. Desvalorização de 8% das ações de comércio. Global  
+MF-015 Recuperação dos Fundos Imobiliários. A melhora nas expectativas aumenta o valor negociado das cotas. Valorização de 5% das cotas de fundos imobiliários. Global
 
 Explicações educativas das cartas MF-001 a MF-015  
-Carta	Aprendizagem  
-MF-001	A procura dos investidores pode elevar preços sem aumentar dividendos.  
-MF-002	Expectativas negativas podem provocar perdas patrimoniais.  
-MF-003	A valorização imobiliária não equivale ao recebimento de aluguel.  
-MF-004	Dividendos dependem dos resultados e das distribuições das empresas.  
-MF-005	O aumento de receitas de um fundo pode favorecer seus rendimentos distribuídos.  
-MF-006	A demanda influencia o resultado de atividades de locação.  
-MF-007	Diversos ativos podem cair ao mesmo tempo em movimentos gerais do mercado.  
-MF-008	O consumo influencia as expectativas sobre empresas comerciais.  
-MF-009	Taxas de novas aplicações podem mudar sem alterar contratos de taxa fixa existentes.  
-MF-010	A substituição tecnológica pode diminuir o valor de equipamentos usados.  
-MF-011	A diversificação não impede oscilações de mercado.  
-MF-012	Ter um imóvel não garante receber sempre o mesmo aluguel.  
-MF-013	Maior distribuição de dividendos não garante valorização das ações.  
-MF-014	O mercado pode reagir às expectativas antes de mudanças efetivas nas vendas.  
-MF-015	Preço das cotas e rendimentos distribuídos são variáveis distintas.
+Carta Aprendizagem  
+MF-001 A procura dos investidores pode elevar preços sem aumentar dividendos.  
+MF-002 Expectativas negativas podem provocar perdas patrimoniais.  
+MF-003 A valorização imobiliária não equivale ao recebimento de aluguel.  
+MF-004 Dividendos dependem dos resultados e das distribuições das empresas.  
+MF-005 O aumento de receitas de um fundo pode favorecer seus rendimentos distribuídos.  
+MF-006 A demanda influencia o resultado de atividades de locação.  
+MF-007 Diversos ativos podem cair ao mesmo tempo em movimentos gerais do mercado.  
+MF-008 O consumo influencia as expectativas sobre empresas comerciais.  
+MF-009 Taxas de novas aplicações podem mudar sem alterar contratos de taxa fixa existentes.  
+MF-010 A substituição tecnológica pode diminuir o valor de equipamentos usados.  
+MF-011 A diversificação não impede oscilações de mercado.  
+MF-012 Ter um imóvel não garante receber sempre o mesmo aluguel.  
+MF-013 Maior distribuição de dividendos não garante valorização das ações.  
+MF-014 O mercado pode reagir às expectativas antes de mudanças efetivas nas vendas.  
+MF-015 Preço das cotas e rendimentos distribuídos são variáveis distintas.
 
 Requisitos e decisões: as cartas de MF-001 a MF-015 são eventos automáticos. A elegibilidade depende de possuir ativos do setor afetado, exceto MF-009, que altera as condições de novas ofertas. O estudante não decide aceitar ou recusar um movimento do mercado que já ocorreu.  
 4\. Pista de Alta Velocidade — 15 cartas  
 MF-016 a MF-030 · Eventos de maior abrangência patrimonial e empresarial
 
 Na Pista de Alta Velocidade, os eventos envolverão empresas, imóveis, participações societárias e setores econômicos. Alguns poderão alcançar também os estudantes que ainda estiverem na Corrida dos Ratos.  
-Código	Evento e descrição	Efeito proposto	Alcance  
-MF-016	Expansão do Setor Imobiliário. A procura por imóveis de investimento cresce em diferentes regiões.	Valorização de 8% dos imóveis de investimento.	Global  
-MF-017	Retração Imobiliária. O mercado passa por redução na procura de compradores.	Desvalorização de 12% dos imóveis de investimento.	Global  
-MF-018	Crescimento do Setor de Tecnologia. Novas oportunidades aumentam o interesse dos investidores por empresas tecnológicas.	Valorização de 15% das empresas e participações do setor tecnológico.	Global  
-MF-019	Concorrência no Comércio. Novos concorrentes pressionam as margens dos estabelecimentos comerciais.	Redução de 15% do lucro distribuível das empresas comerciais elegíveis.	Global  
-MF-020	Recuperação da Logística. O aumento da demanda por transporte beneficia empresas de logística.	Aumento de 12% do lucro distribuível das empresas de logística.	Global  
-MF-021	Incerteza Econômica. Empresas e investidores tornam-se mais cautelosos diante de expectativas negativas.	Desvalorização de 8% das ações e cotas de fundos negociados.	Global  
-MF-022	Valorização de Imóveis Comerciais. A atividade empresarial amplia a procura por espaços comerciais.	Valorização de 10% dos imóveis comerciais de investimento.	Global  
-MF-023	Redução na Ocupação de Imóveis. A demanda por locações diminui temporariamente.	Redução de 20% da renda distribuível de imóveis alugados elegíveis.	Global  
-MF-024	Crescimento dos Negócios Sustentáveis. Empresas ligadas à reciclagem e soluções ambientais atraem investidores.	Valorização de 12% dessas empresas e participações.	Global  
-MF-025	Pressão sobre as Empresas de Alimentação. Alterações nos custos e na demanda reduzem os resultados do setor.	Redução de 15% do lucro distribuível de negócios de alimentação.	Global  
-MF-026	Melhora na Demanda por Serviços. Empresas de prestação de serviços registram resultados mais favoráveis.	Aumento de 10% do lucro distribuível das empresas elegíveis de serviços.	Global  
-MF-027	Queda no Mercado de Equipamentos. Equipamentos usados perdem valor com a chegada de novas alternativas.	Desvalorização de 15% dos equipamentos de locação e das máquinas de pequenos negócios do jogador.	Individual  
-MF-028	Revalorização de Negócios Locais. Pequenos empreendimentos passam a atrair maior interesse de compradores.	Valorização de 10% dos pequenos negócios elegíveis.	Global  
-MF-029	Expansão do Turismo. A procura por hospedagens de temporada aumenta.	Aumento de 15% da renda distribuível de imóveis de temporada elegíveis.	Global  
-MF-030	Recessão Setorial na Tecnologia. O setor enfrenta uma redução significativa das expectativas de crescimento.	Desvalorização de 18% das empresas e participações de tecnologia.	Global
+Código Evento e descrição Efeito proposto Alcance  
+MF-016 Expansão do Setor Imobiliário. A procura por imóveis de investimento cresce em diferentes regiões. Valorização de 8% dos imóveis de investimento. Global  
+MF-017 Retração Imobiliária. O mercado passa por redução na procura de compradores. Desvalorização de 12% dos imóveis de investimento. Global  
+MF-018 Crescimento do Setor de Tecnologia. Novas oportunidades aumentam o interesse dos investidores por empresas tecnológicas. Valorização de 15% das empresas e participações do setor tecnológico. Global  
+MF-019 Concorrência no Comércio. Novos concorrentes pressionam as margens dos estabelecimentos comerciais. Redução de 15% do lucro distribuível das empresas comerciais elegíveis. Global  
+MF-020 Recuperação da Logística. O aumento da demanda por transporte beneficia empresas de logística. Aumento de 12% do lucro distribuível das empresas de logística. Global  
+MF-021 Incerteza Econômica. Empresas e investidores tornam-se mais cautelosos diante de expectativas negativas. Desvalorização de 8% das ações e cotas de fundos negociados. Global  
+MF-022 Valorização de Imóveis Comerciais. A atividade empresarial amplia a procura por espaços comerciais. Valorização de 10% dos imóveis comerciais de investimento. Global  
+MF-023 Redução na Ocupação de Imóveis. A demanda por locações diminui temporariamente. Redução de 20% da renda distribuível de imóveis alugados elegíveis. Global  
+MF-024 Crescimento dos Negócios Sustentáveis. Empresas ligadas à reciclagem e soluções ambientais atraem investidores. Valorização de 12% dessas empresas e participações. Global  
+MF-025 Pressão sobre as Empresas de Alimentação. Alterações nos custos e na demanda reduzem os resultados do setor. Redução de 15% do lucro distribuível de negócios de alimentação. Global  
+MF-026 Melhora na Demanda por Serviços. Empresas de prestação de serviços registram resultados mais favoráveis. Aumento de 10% do lucro distribuível das empresas elegíveis de serviços. Global  
+MF-027 Queda no Mercado de Equipamentos. Equipamentos usados perdem valor com a chegada de novas alternativas. Desvalorização de 15% dos equipamentos de locação e das máquinas de pequenos negócios do jogador. Individual  
+MF-028 Revalorização de Negócios Locais. Pequenos empreendimentos passam a atrair maior interesse de compradores. Valorização de 10% dos pequenos negócios elegíveis. Global  
+MF-029 Expansão do Turismo. A procura por hospedagens de temporada aumenta. Aumento de 15% da renda distribuível de imóveis de temporada elegíveis. Global  
+MF-030 Recessão Setorial na Tecnologia. O setor enfrenta uma redução significativa das expectativas de crescimento. Desvalorização de 18% das empresas e participações de tecnologia. Global
 
 Explicações educativas das cartas MF-016 a MF-030  
-Carta	Aprendizagem  
-MF-016	A demanda por imóveis pode elevar seu valor patrimonial, sem gerar mais dinheiro imediatamente.  
-MF-017	Um investimento imobiliário também pode perder valor, mesmo quando continua recebendo aluguel.  
-MF-018	Expectativas de crescimento podem elevar a avaliação de uma empresa sem produzir lucro distribuído.  
-MF-019	Concorrência pode reduzir margens e distribuições aos proprietários.  
-MF-020	O aumento da demanda pode melhorar os resultados de uma empresa, mas não os garante permanentemente.  
-MF-021	Em períodos de incerteza, diferentes investimentos podem sofrer desvalorização simultaneamente.  
-MF-022	Imóveis comerciais dependem das condições econômicas e da procura por espaços.  
-MF-023	Oscilações na ocupação podem reduzir a receita recebida, sem necessariamente alterar o preço do imóvel.  
-MF-024	Atividades sustentáveis também possuem riscos e avaliações de mercado variáveis.  
-MF-025	Custos e demanda influenciam o lucro disponível para distribuição.  
-MF-026	Receitas de serviços dependem da contratação e permanência dos clientes.  
-MF-027	Máquinas e equipamentos podem perder valor por desgaste e evolução tecnológica.  
-MF-028	A valorização de uma empresa não significa dinheiro recebido por seus sócios.  
-MF-029	Setores sazonais podem apresentar mudanças expressivas de receita.  
-MF-030	Investimentos em setores de crescimento podem apresentar perdas significativas.
+Carta Aprendizagem  
+MF-016 A demanda por imóveis pode elevar seu valor patrimonial, sem gerar mais dinheiro imediatamente.  
+MF-017 Um investimento imobiliário também pode perder valor, mesmo quando continua recebendo aluguel.  
+MF-018 Expectativas de crescimento podem elevar a avaliação de uma empresa sem produzir lucro distribuído.  
+MF-019 Concorrência pode reduzir margens e distribuições aos proprietários.  
+MF-020 O aumento da demanda pode melhorar os resultados de uma empresa, mas não os garante permanentemente.  
+MF-021 Em períodos de incerteza, diferentes investimentos podem sofrer desvalorização simultaneamente.  
+MF-022 Imóveis comerciais dependem das condições econômicas e da procura por espaços.  
+MF-023 Oscilações na ocupação podem reduzir a receita recebida, sem necessariamente alterar o preço do imóvel.  
+MF-024 Atividades sustentáveis também possuem riscos e avaliações de mercado variáveis.  
+MF-025 Custos e demanda influenciam o lucro disponível para distribuição.  
+MF-026 Receitas de serviços dependem da contratação e permanência dos clientes.  
+MF-027 Máquinas e equipamentos podem perder valor por desgaste e evolução tecnológica.  
+MF-028 A valorização de uma empresa não significa dinheiro recebido por seus sócios.  
+MF-029 Setores sazonais podem apresentar mudanças expressivas de receita.  
+MF-030 Investimentos em setores de crescimento podem apresentar perdas significativas.
 
 Requisitos e decisões: MF-016 a MF-030 são eventos automáticos. Cada carta atinge apenas os ativos indicados em seu efeito. Cartas globais devem considerar os jogadores elegíveis dos dois circuitos, excluindo quem já concluiu o sonho.  
 Bloco 4 — Eventos da Vida  
@@ -1080,22 +1080,22 @@ Também manteremos uma distinção importante: na Pista de Alta Velocidade, o jo
 
 2\. Corrida dos Ratos — 15 cartas  
 EV-001 a EV-015 · Situações pessoais e profissionais  
-Código	Carta e situação	Decisões e consequências	Aprendizagem  
-EV-001	Promoção Profissional. Seu desempenho foi reconhecido e você recebeu uma proposta de promoção.	Automático: salário recorrente aumenta 8%. As despesas permanecem inicialmente inalteradas.	Aumento de renda não precisa provocar aumento imediato do padrão de vida.  
-EV-002	Curso de Qualificação. Uma formação pode ampliar suas possibilidades profissionais.	Participar: pagar R\$ 600 agora e receber aumento de 5% no salário a partir do segundo fechamento seguinte. Recusar: sem alteração.	Educação pode representar investimento no desenvolvimento profissional.  
-EV-003	Reorganização do Orçamento. Você percebeu despesas de lazer que não utiliza plenamente.	Reduzir gastos: diminuir em 10% a categoria de lazer, sujeito a um mínimo de R\$ 50 mensais. Manter: sem alteração.	Pequenos ajustes recorrentes podem liberar recursos para investir.  
-EV-004	Mudança para Moradia Econômica. Você encontrou uma opção de residência com despesas menores.	Mudar: pagar 10% do salário de referência como custo único e reduzir a moradia em 15%. Permanecer: manter as despesas atuais.	Economizar no longo prazo pode exigir gastos iniciais.  
-EV-005	Nova Responsabilidade Familiar. Sua família passa a ter uma necessidade financeira recorrente.	Automático: despesas mensais de alimentação aumentam 5% do salário de referência.	Mudanças familiares exigem revisão do orçamento.  
-EV-006	Trabalho Temporário. Você recebeu uma oportunidade de prestar um serviço adicional.	Aceitar: receber uma única vez 15% do salário de referência. Recusar: sem efeito.	Renda extraordinária não equivale a renda recorrente ou passiva.  
-EV-007	Transporte Compartilhado. Você encontrou uma alternativa para reduzir deslocamentos.	Adotar: reduzir despesas de transporte em 15%, sem custo inicial. Manter: sem alteração.	Planejar deslocamentos ajuda a reduzir despesas.  
-EV-008	Aumento do Custo de Vida. Alguns gastos domésticos se tornaram mais caros.	Automático: alimentação aumenta 5%, calculados sobre o valor vigente dessa categoria.	A inflação pode reduzir o dinheiro disponível mesmo sem novas compras.  
-EV-009	Bolsa de Estudos. Você foi selecionado para receber apoio educacional.	Automático: reduzir as despesas recorrentes de educação em 50% durante três fechamentos financeiros.	Benefícios temporários devem ser considerados no planejamento.  
-EV-010	Mudança de Jornada. Seu empregador oferece uma jornada diferente com remuneração maior e novos custos de transporte.	Aceitar: salário aumenta 10% e transporte aumenta 10%. Recusar: manter os valores.	Decisões profissionais devem considerar renda e despesas.  
-EV-011	Compra Planejada. Você deseja adquirir um bem de uso pessoal, mas também pode adiar a decisão.	Comprar: pagar 20% do salário de referência, sem geração de renda. Adiar: sem desembolso.	Desejos de consumo precisam ser comparados com objetivos financeiros.  
-EV-012	Revisão de Assinaturas. Você identificou serviços contratados que utiliza pouco.	Cancelar serviços: reduzir o lazer em 10%, respeitando o mínimo de R\$ 50\. Manter: sem mudança.	Acompanhamento das assinaturas evita gastos desnecessários.  
-EV-013	Bonificação Profissional. Sua empresa alcançou uma meta e concedeu uma bonificação extraordinária.	Automático: receber 20% do salário de referência uma única vez.	Bônus ocasionais devem ser diferenciados da renda habitual.  
-EV-014	Oportunidade de Educação Complementar. Um curso oferece conhecimentos úteis para sua carreira.	Matricular-se: pagar R\$ 400 e reduzir temporariamente o lazer em 10% por dois fechamentos. Recusar: sem alteração.	Aprender envolve escolhas, custos e organização do tempo.  
-EV-015	Revisão de Despesas Domésticas. Você identificou oportunidades de economizar energia e água.	Adotar medidas: pagar R\$ 200 e reduzir a despesa de moradia em 5%. Manter: sem alteração.	Investimentos em eficiência podem diminuir custos recorrentes.
+Código Carta e situação Decisões e consequências Aprendizagem  
+EV-001 Promoção Profissional. Seu desempenho foi reconhecido e você recebeu uma proposta de promoção. Automático: salário recorrente aumenta 8%. As despesas permanecem inicialmente inalteradas. Aumento de renda não precisa provocar aumento imediato do padrão de vida.  
+EV-002 Curso de Qualificação. Uma formação pode ampliar suas possibilidades profissionais. Participar: pagar R\$ 600 agora e receber aumento de 5% no salário a partir do segundo fechamento seguinte. Recusar: sem alteração. Educação pode representar investimento no desenvolvimento profissional.  
+EV-003 Reorganização do Orçamento. Você percebeu despesas de lazer que não utiliza plenamente. Reduzir gastos: diminuir em 10% a categoria de lazer, sujeito a um mínimo de R\$ 50 mensais. Manter: sem alteração. Pequenos ajustes recorrentes podem liberar recursos para investir.  
+EV-004 Mudança para Moradia Econômica. Você encontrou uma opção de residência com despesas menores. Mudar: pagar 10% do salário de referência como custo único e reduzir a moradia em 15%. Permanecer: manter as despesas atuais. Economizar no longo prazo pode exigir gastos iniciais.  
+EV-005 Nova Responsabilidade Familiar. Sua família passa a ter uma necessidade financeira recorrente. Automático: despesas mensais de alimentação aumentam 5% do salário de referência. Mudanças familiares exigem revisão do orçamento.  
+EV-006 Trabalho Temporário. Você recebeu uma oportunidade de prestar um serviço adicional. Aceitar: receber uma única vez 15% do salário de referência. Recusar: sem efeito. Renda extraordinária não equivale a renda recorrente ou passiva.  
+EV-007 Transporte Compartilhado. Você encontrou uma alternativa para reduzir deslocamentos. Adotar: reduzir despesas de transporte em 15%, sem custo inicial. Manter: sem alteração. Planejar deslocamentos ajuda a reduzir despesas.  
+EV-008 Aumento do Custo de Vida. Alguns gastos domésticos se tornaram mais caros. Automático: alimentação aumenta 5%, calculados sobre o valor vigente dessa categoria. A inflação pode reduzir o dinheiro disponível mesmo sem novas compras.  
+EV-009 Bolsa de Estudos. Você foi selecionado para receber apoio educacional. Automático: reduzir as despesas recorrentes de educação em 50% durante três fechamentos financeiros. Benefícios temporários devem ser considerados no planejamento.  
+EV-010 Mudança de Jornada. Seu empregador oferece uma jornada diferente com remuneração maior e novos custos de transporte. Aceitar: salário aumenta 10% e transporte aumenta 10%. Recusar: manter os valores. Decisões profissionais devem considerar renda e despesas.  
+EV-011 Compra Planejada. Você deseja adquirir um bem de uso pessoal, mas também pode adiar a decisão. Comprar: pagar 20% do salário de referência, sem geração de renda. Adiar: sem desembolso. Desejos de consumo precisam ser comparados com objetivos financeiros.  
+EV-012 Revisão de Assinaturas. Você identificou serviços contratados que utiliza pouco. Cancelar serviços: reduzir o lazer em 10%, respeitando o mínimo de R\$ 50\. Manter: sem mudança. Acompanhamento das assinaturas evita gastos desnecessários.  
+EV-013 Bonificação Profissional. Sua empresa alcançou uma meta e concedeu uma bonificação extraordinária. Automático: receber 20% do salário de referência uma única vez. Bônus ocasionais devem ser diferenciados da renda habitual.  
+EV-014 Oportunidade de Educação Complementar. Um curso oferece conhecimentos úteis para sua carreira. Matricular-se: pagar R\$ 400 e reduzir temporariamente o lazer em 10% por dois fechamentos. Recusar: sem alteração. Aprender envolve escolhas, custos e organização do tempo.  
+EV-015 Revisão de Despesas Domésticas. Você identificou oportunidades de economizar energia e água. Adotar medidas: pagar R\$ 200 e reduzir a despesa de moradia em 5%. Manter: sem alteração. Investimentos em eficiência podem diminuir custos recorrentes.
 
 Observações para as cartas EV-001 a EV-015  
 As cartas de mudança profissional afetarão o salário corrente, sem alterar o salário de referência original da profissão utilizado nas Despesas Inesperadas.
@@ -1107,22 +1107,22 @@ Os ajustes de despesas serão mantidos no histórico e não poderão reduzir val
 EV-016 a EV-030 · Patrimônio, estilo de vida, família e responsabilidade financeira
 
 Nesta etapa, os jogadores já conquistaram independência financeira. Portanto, as cartas abordarão principalmente a preservação do patrimônio, escolhas de consumo e novas responsabilidades.  
-Código	Carta e situação	Decisões e consequências	Aprendizagem  
-EV-016	Novo Estilo de Vida. Você considera aumentar seus gastos com conforto e lazer.	Aumentar: despesas de lazer sobem 15%. Manter: nenhuma alteração.	Independência financeira não significa ausência de limites orçamentários.  
-EV-017	Mudança de Residência. Você encontrou uma opção de moradia mais econômica.	Mudar: pagar R\$ 3.000 e reduzir a despesa mensal de moradia em 15%. Permanecer: sem alteração.	Economias recorrentes podem compensar custos iniciais.  
-EV-018	Apoio a um Familiar. Um familiar necessita de ajuda financeira por um período limitado.	Automático: acrescentar R\$ 500 às despesas mensais durante três fechamentos.	Responsabilidades familiares podem mudar o orçamento.  
-EV-019	Projeto Pessoal. Você deseja dedicar recursos a uma atividade de interesse pessoal.	Realizar: pagar R\$ 5.000 uma única vez. Adiar: manter o dinheiro disponível.	Escolhas de consumo competem com outros objetivos.  
-EV-020	Revisão Patrimonial. Você percebeu que está concentrando parte excessiva do patrimônio em um único tipo de ativo.	Reorganizar: abrir uma oportunidade de venda ou resgate conforme a liquidez dos ativos. Manter: nenhuma alteração.	Diversificação e liquidez ajudam a administrar riscos.  
-EV-021	Apoio à Formação Profissional. Você deseja financiar a educação de um familiar.	Contribuir: pagar R\$ 4.000. Não contribuir: sem desembolso.	Planejar despesas familiares sem comprometer a própria segurança financeira.  
-EV-022	Despesas com Viagens. Você considera aumentar seu orçamento mensal de lazer e viagens.	Aumentar: despesas de lazer sobem R\$ 300 por fechamento. Manter: nenhuma alteração.	Gastos recorrentes podem comprometer objetivos de longo prazo.  
-EV-023	Redução de Custos Residenciais. Você identifica melhorias de eficiência na residência.	Investir: pagar R\$ 2.000 e reduzir a despesa de moradia em R\$ 100 por fechamento. Recusar: sem alteração.	Avaliar o prazo de recuperação de um investimento em eficiência.  
-EV-024	Novo Compromisso Familiar. Uma mudança familiar exige reorganização das despesas.	Automático: alimentação aumenta R\$ 250 por fechamento durante quatro fechamentos.	Reservas e planejamento ajudam a lidar com mudanças temporárias.  
-EV-025	Reorganização de Investimentos. Você avalia vender um investimento que deixou de atender aos seus objetivos.	Reorganizar: acessar a venda de um ativo conforme as regras de liquidez. Manter: conservar a carteira.	Investimentos devem ser analisados conforme risco e objetivos, não apenas preço.  
-EV-026	Convite para Mentoria. Você é convidado a orientar novos empreendedores.	Participar: receber reconhecimento educativo pela atividade, sem renda financeira. Recusar: sem efeito.	Conhecimento e experiência também podem gerar valor social.  
-EV-027	Reforma para Maior Conforto. Você deseja melhorar sua residência de uso pessoal.	Reformar: pagar R\$ 8.000. Adiar: sem desembolso.	Diferenciar melhorias de qualidade de vida de investimentos geradores de renda.  
-EV-028	Revisão de Despesas Recorrentes. Você identificou contratos pessoais que podem ser renegociados.	Renegociar: pagar R\$ 500 de custo administrativo e reduzir despesas de lazer em R\$ 150 mensais. Manter: sem alteração.	Pequenas economias acumuladas podem representar valores expressivos.  
-EV-029	Apoio Comunitário. Um projeto local precisa de voluntários para uma atividade educativa.	Participar: registrar uma ação social não financeira. Não participar: sem consequência financeira.	Contribuições sociais não precisam envolver doações de dinheiro.  
-EV-030	Planejamento do Futuro. Você pode contratar um serviço de organização patrimonial.	Contratar: pagar R\$ 2.500 e receber um diagnóstico educativo de patrimônio, dívidas e liquidez. Recusar: sem alteração.	Preservar a independência financeira exige acompanhamento constante.
+Código Carta e situação Decisões e consequências Aprendizagem  
+EV-016 Novo Estilo de Vida. Você considera aumentar seus gastos com conforto e lazer. Aumentar: despesas de lazer sobem 15%. Manter: nenhuma alteração. Independência financeira não significa ausência de limites orçamentários.  
+EV-017 Mudança de Residência. Você encontrou uma opção de moradia mais econômica. Mudar: pagar R\$ 3.000 e reduzir a despesa mensal de moradia em 15%. Permanecer: sem alteração. Economias recorrentes podem compensar custos iniciais.  
+EV-018 Apoio a um Familiar. Um familiar necessita de ajuda financeira por um período limitado. Automático: acrescentar R\$ 500 às despesas mensais durante três fechamentos. Responsabilidades familiares podem mudar o orçamento.  
+EV-019 Projeto Pessoal. Você deseja dedicar recursos a uma atividade de interesse pessoal. Realizar: pagar R\$ 5.000 uma única vez. Adiar: manter o dinheiro disponível. Escolhas de consumo competem com outros objetivos.  
+EV-020 Revisão Patrimonial. Você percebeu que está concentrando parte excessiva do patrimônio em um único tipo de ativo. Reorganizar: abrir uma oportunidade de venda ou resgate conforme a liquidez dos ativos. Manter: nenhuma alteração. Diversificação e liquidez ajudam a administrar riscos.  
+EV-021 Apoio à Formação Profissional. Você deseja financiar a educação de um familiar. Contribuir: pagar R\$ 4.000. Não contribuir: sem desembolso. Planejar despesas familiares sem comprometer a própria segurança financeira.  
+EV-022 Despesas com Viagens. Você considera aumentar seu orçamento mensal de lazer e viagens. Aumentar: despesas de lazer sobem R\$ 300 por fechamento. Manter: nenhuma alteração. Gastos recorrentes podem comprometer objetivos de longo prazo.  
+EV-023 Redução de Custos Residenciais. Você identifica melhorias de eficiência na residência. Investir: pagar R\$ 2.000 e reduzir a despesa de moradia em R\$ 100 por fechamento. Recusar: sem alteração. Avaliar o prazo de recuperação de um investimento em eficiência.  
+EV-024 Novo Compromisso Familiar. Uma mudança familiar exige reorganização das despesas. Automático: alimentação aumenta R\$ 250 por fechamento durante quatro fechamentos. Reservas e planejamento ajudam a lidar com mudanças temporárias.  
+EV-025 Reorganização de Investimentos. Você avalia vender um investimento que deixou de atender aos seus objetivos. Reorganizar: acessar a venda de um ativo conforme as regras de liquidez. Manter: conservar a carteira. Investimentos devem ser analisados conforme risco e objetivos, não apenas preço.  
+EV-026 Convite para Mentoria. Você é convidado a orientar novos empreendedores. Participar: receber reconhecimento educativo pela atividade, sem renda financeira. Recusar: sem efeito. Conhecimento e experiência também podem gerar valor social.  
+EV-027 Reforma para Maior Conforto. Você deseja melhorar sua residência de uso pessoal. Reformar: pagar R\$ 8.000. Adiar: sem desembolso. Diferenciar melhorias de qualidade de vida de investimentos geradores de renda.  
+EV-028 Revisão de Despesas Recorrentes. Você identificou contratos pessoais que podem ser renegociados. Renegociar: pagar R\$ 500 de custo administrativo e reduzir despesas de lazer em R\$ 150 mensais. Manter: sem alteração. Pequenas economias acumuladas podem representar valores expressivos.  
+EV-029 Apoio Comunitário. Um projeto local precisa de voluntários para uma atividade educativa. Participar: registrar uma ação social não financeira. Não participar: sem consequência financeira. Contribuições sociais não precisam envolver doações de dinheiro.  
+EV-030 Planejamento do Futuro. Você pode contratar um serviço de organização patrimonial. Contratar: pagar R\$ 2.500 e receber um diagnóstico educativo de patrimônio, dívidas e liquidez. Recusar: sem alteração. Preservar a independência financeira exige acompanhamento constante.
 
 Cuidados específicos da Alta Velocidade  
 As despesas pessoais adicionais não se transformam em dívidas empresariais. Da mesma forma, decisões sobre venda de participações continuarão sujeitas ao direito de preferência dos sócios e à disponibilidade de compradores.
@@ -1149,9 +1149,9 @@ Total
 Conforme o que já aprovamos, cada carta terá quatro alternativas, uma resposta correta e explicação apresentada após a resposta, independentemente de acerto ou erro.
 
 Proponho as seguintes recompensas:  
-Circuito	Resposta correta	Resposta incorreta  
-Corrida dos Ratos	Recebe 5% do salário de referência	Sem recompensa e sem penalidade  
-Alta Velocidade	Recebe R\$ 300	Sem recompensa e sem penalidade
+Circuito Resposta correta Resposta incorreta  
+Corrida dos Ratos Recebe 5% do salário de referência Sem recompensa e sem penalidade  
+Alta Velocidade Recebe R\$ 300 Sem recompensa e sem penalidade
 
 Essas recompensas são propostas, ainda não aprovadas. Serão pagamentos pontuais, não renda passiva, e cada pergunta poderá gerar recompensa apenas uma vez por sorteio.
 
@@ -1808,17 +1808,17 @@ Os rendimentos propostos são distribuições líquidas iniciais por fechamento 
 As empresas adquiridas terão operação administrada, sem exigir que o personagem volte a trabalhar para gerar os resultados previstos.  
 2\. Investimentos imobiliários — 10 cartas  
 GI-001 a GI-010 · Propriedades com renda ou expectativa de valorização  
-Código e oportunidade	Aquisição	Rendimento inicial	Requisitos, riscos e aprendizagem  
-GI-001 — Edifício com Apartamentos. Um prédio residencial possui unidades alugadas.	R\$ 180.000	R\$ 1.500/mês	À vista ou entrada de 30% com financiamento aprovado. Riscos de vacância e reparos. Conceito: diversificação entre inquilinos.  
-GI-002 — Centro Comercial de Bairro. Pequenos estabelecimentos ocupam um conjunto de lojas.	R\$ 250.000	R\$ 2.200/mês	À vista ou entrada de 35% com crédito. Riscos de desocupação comercial e manutenção. Conceito: fluxo de aluguel e atividade econômica.  
-GI-003 — Galpão Logístico. Um imóvel está alugado para armazenamento de mercadorias.	R\$ 320.000	R\$ 2.800/mês	À vista ou entrada de 40% com crédito. Risco de dependência de um locatário. Conceito: concentração de receitas.  
-GI-004 — Residencial para Estudantes. Um edifício oferece quartos e espaços compartilhados.	R\$ 210.000	R\$ 1.850/mês	À vista ou entrada de 30% com crédito. Riscos de rotatividade e conservação. Conceito: ocupação e receita recorrente.  
-GI-005 — Pousada de Pequeno Porte. Um imóvel turístico tem gestão contratada e receitas de hospedagem.	R\$ 290.000	R\$ 2.400/mês	À vista ou entrada de 35% com crédito. Riscos de sazonalidade e custos de operação. Conceito: renda variável de hospedagem.  
-GI-006 — Imóvel Comercial em Região Valorizada. Uma propriedade com contrato de locação está disponível.	R\$ 400.000	R\$ 3.100/mês	À vista ou entrada de 40% com crédito. Riscos de vacância e desvalorização. Conceito: preço elevado não garante retorno proporcionalmente maior.  
-GI-007 — Conjunto de Casas para Aluguel. Quatro residências compõem um único investimento.	R\$ 240.000	R\$ 2.000/mês	À vista ou entrada de 35% com crédito. Riscos de manutenção simultânea. Conceito: diversificação de contratos.  
-GI-008 — Terreno para Valorização. Área em expansão com expectativa de desenvolvimento.	R\$ 150.000	R\$ 0	À vista ou entrada de 40% com crédito. Riscos de baixa liquidez e desvalorização. Conceito: valorização esperada não é renda passiva.  
-GI-009 — Centro de Armazenamento. Espaços individuais são alugados a clientes diferentes.	R\$ 350.000	R\$ 3.000/mês	À vista ou entrada de 40% com crédito. Riscos de ocupação e segurança. Conceito: despesas operacionais e taxa de utilização.  
-GI-010 — Complexo de Salas Profissionais. Um conjunto atende profissionais e pequenas empresas.	R\$ 450.000	R\$ 3.600/mês	À vista ou entrada de 40% com crédito. Riscos de inadimplência e conservação. Conceito: gestão de contratos e liquidez imobiliária.  
+Código e oportunidade Aquisição Rendimento inicial Requisitos, riscos e aprendizagem  
+GI-001 — Edifício com Apartamentos. Um prédio residencial possui unidades alugadas. R\$ 180.000 R\$ 1.500/mês À vista ou entrada de 30% com financiamento aprovado. Riscos de vacância e reparos. Conceito: diversificação entre inquilinos.  
+GI-002 — Centro Comercial de Bairro. Pequenos estabelecimentos ocupam um conjunto de lojas. R\$ 250.000 R\$ 2.200/mês À vista ou entrada de 35% com crédito. Riscos de desocupação comercial e manutenção. Conceito: fluxo de aluguel e atividade econômica.  
+GI-003 — Galpão Logístico. Um imóvel está alugado para armazenamento de mercadorias. R\$ 320.000 R\$ 2.800/mês À vista ou entrada de 40% com crédito. Risco de dependência de um locatário. Conceito: concentração de receitas.  
+GI-004 — Residencial para Estudantes. Um edifício oferece quartos e espaços compartilhados. R\$ 210.000 R\$ 1.850/mês À vista ou entrada de 30% com crédito. Riscos de rotatividade e conservação. Conceito: ocupação e receita recorrente.  
+GI-005 — Pousada de Pequeno Porte. Um imóvel turístico tem gestão contratada e receitas de hospedagem. R\$ 290.000 R\$ 2.400/mês À vista ou entrada de 35% com crédito. Riscos de sazonalidade e custos de operação. Conceito: renda variável de hospedagem.  
+GI-006 — Imóvel Comercial em Região Valorizada. Uma propriedade com contrato de locação está disponível. R\$ 400.000 R\$ 3.100/mês À vista ou entrada de 40% com crédito. Riscos de vacância e desvalorização. Conceito: preço elevado não garante retorno proporcionalmente maior.  
+GI-007 — Conjunto de Casas para Aluguel. Quatro residências compõem um único investimento. R\$ 240.000 R\$ 2.000/mês À vista ou entrada de 35% com crédito. Riscos de manutenção simultânea. Conceito: diversificação de contratos.  
+GI-008 — Terreno para Valorização. Área em expansão com expectativa de desenvolvimento. R\$ 150.000 R\$ 0 À vista ou entrada de 40% com crédito. Riscos de baixa liquidez e desvalorização. Conceito: valorização esperada não é renda passiva.  
+GI-009 — Centro de Armazenamento. Espaços individuais são alugados a clientes diferentes. R\$ 350.000 R\$ 3.000/mês À vista ou entrada de 40% com crédito. Riscos de ocupação e segurança. Conceito: despesas operacionais e taxa de utilização.  
+GI-010 — Complexo de Salas Profissionais. Um conjunto atende profissionais e pequenas empresas. R\$ 450.000 R\$ 3.600/mês À vista ou entrada de 40% com crédito. Riscos de inadimplência e conservação. Conceito: gestão de contratos e liquidez imobiliária.  
 Decisões e consequências das GI-001 a GI-010  
 Cada uma permite comprar à vista, solicitar financiamento ou recusar, respeitando a entrada mínima indicada.
 
@@ -1829,15 +1829,15 @@ Os imóveis alugados terão renda sujeita à ocupação e aos eventos de mercado
 Os financiamentos continuarão sujeitos às regras aprovadas de 1% por fechamento, prazos de 6, 12 ou 24 períodos, comprometimento máximo de 30% e reserva mínima de 10% da renda recorrente, além das demais verificações de crédito.  
 3\. Aquisição de empresas — 8 cartas  
 GI-011 a GI-018 · Negócios estabelecidos, com gestão contratada e distribuição de resultados  
-Código e oportunidade	Preço	Lucro líquido inicialmente distribuído	Requisitos, riscos e aprendizagem  
-GI-011 — Rede de Cafeterias. Três unidades operam com gestores contratados.	R\$ 160.000	R\$ 1.800/mês	À vista ou entrada de 35% com crédito. Riscos de insumos, concorrência e demanda. Conceito: administrar unidades diferentes exige controle dos custos.  
-GI-012 — Empresa de Desenvolvimento de Software. Uma equipe mantém sistemas de clientes corporativos.	R\$ 280.000	R\$ 2.600/mês	À vista ou entrada de 40% com crédito. Riscos de cancelamento de contratos e atualização tecnológica. Conceito: receita recorrente depende da permanência de clientes.  
-GI-013 — Indústria de Móveis. Uma fábrica produz móveis para estabelecimentos comerciais.	R\$ 350.000	R\$ 3.200/mês	À vista ou entrada de 40% com crédito. Riscos de matéria-prima, manutenção e queda nos pedidos. Conceito: produção exige capital de giro.  
-GI-014 — Empresa de Energia Renovável. Um empreendimento possui contratos de geração de energia.	R\$ 420.000	R\$ 3.700/mês	À vista ou entrada de 40% com crédito. Riscos de equipamentos, produção e mudanças contratuais. Conceito: ativos produtivos também exigem manutenção e reservas.  
-GI-015 — Rede de Lavanderias. Quatro unidades operam com equipamentos automatizados.	R\$ 230.000	R\$ 2.200/mês	À vista ou entrada de 35% com crédito. Riscos de consumo energético e reposição de máquinas. Conceito: expansão pode aumentar receitas e despesas ao mesmo tempo.  
-GI-016 — Empresa de Logística Regional. Uma transportadora atende diversos clientes empresariais.	R\$ 380.000	R\$ 3.400/mês	À vista ou entrada de 40% com crédito. Riscos de combustível, manutenção e inadimplência. Conceito: receitas devem sustentar custos operacionais elevados.  
-GI-017 — Plataforma de Ensino Digital. Uma empresa comercializa assinaturas educacionais.	R\$ 190.000	R\$ 1.500/mês	À vista ou entrada de 35% com crédito. Riscos de cancelamento de assinaturas e concorrência. Conceito: assinantes não representam receita garantida.  
-GI-018 — Empresa de Reciclagem Industrial. Uma organização processa resíduos de empresas.	R\$ 310.000	R\$ 2.750/mês	À vista ou entrada de 40% com crédito. Riscos de preços de materiais e logística. Conceito: sustentabilidade e viabilidade financeira precisam caminhar juntas.
+Código e oportunidade Preço Lucro líquido inicialmente distribuído Requisitos, riscos e aprendizagem  
+GI-011 — Rede de Cafeterias. Três unidades operam com gestores contratados. R\$ 160.000 R\$ 1.800/mês À vista ou entrada de 35% com crédito. Riscos de insumos, concorrência e demanda. Conceito: administrar unidades diferentes exige controle dos custos.  
+GI-012 — Empresa de Desenvolvimento de Software. Uma equipe mantém sistemas de clientes corporativos. R\$ 280.000 R\$ 2.600/mês À vista ou entrada de 40% com crédito. Riscos de cancelamento de contratos e atualização tecnológica. Conceito: receita recorrente depende da permanência de clientes.  
+GI-013 — Indústria de Móveis. Uma fábrica produz móveis para estabelecimentos comerciais. R\$ 350.000 R\$ 3.200/mês À vista ou entrada de 40% com crédito. Riscos de matéria-prima, manutenção e queda nos pedidos. Conceito: produção exige capital de giro.  
+GI-014 — Empresa de Energia Renovável. Um empreendimento possui contratos de geração de energia. R\$ 420.000 R\$ 3.700/mês À vista ou entrada de 40% com crédito. Riscos de equipamentos, produção e mudanças contratuais. Conceito: ativos produtivos também exigem manutenção e reservas.  
+GI-015 — Rede de Lavanderias. Quatro unidades operam com equipamentos automatizados. R\$ 230.000 R\$ 2.200/mês À vista ou entrada de 35% com crédito. Riscos de consumo energético e reposição de máquinas. Conceito: expansão pode aumentar receitas e despesas ao mesmo tempo.  
+GI-016 — Empresa de Logística Regional. Uma transportadora atende diversos clientes empresariais. R\$ 380.000 R\$ 3.400/mês À vista ou entrada de 40% com crédito. Riscos de combustível, manutenção e inadimplência. Conceito: receitas devem sustentar custos operacionais elevados.  
+GI-017 — Plataforma de Ensino Digital. Uma empresa comercializa assinaturas educacionais. R\$ 190.000 R\$ 1.500/mês À vista ou entrada de 35% com crédito. Riscos de cancelamento de assinaturas e concorrência. Conceito: assinantes não representam receita garantida.  
+GI-018 — Empresa de Reciclagem Industrial. Uma organização processa resíduos de empresas. R\$ 310.000 R\$ 2.750/mês À vista ou entrada de 40% com crédito. Riscos de preços de materiais e logística. Conceito: sustentabilidade e viabilidade financeira precisam caminhar juntas.
 
 Funcionamento das GI-011 a GI-018  
 Requisito: dinheiro suficiente para compra integral ou para entrada mínima, além da aprovação de crédito quando houver financiamento.
@@ -2405,10 +2405,10 @@ Educação para Todos
 Uma organização comunitária está arrecadando recursos para oferecer materiais didáticos e atividades de aprendizagem a jovens que enfrentam dificuldades de acesso à educação.
 
 Decisão: contribuir com uma das faixas abaixo ou não participar.  
-Contribuição	Impacto simulado  
-R\$ 500	5 estudantes apoiados  
-R\$ 1.000	10 estudantes apoiados  
-R\$ 2.000	20 estudantes apoiados
+Contribuição Impacto simulado  
+R\$ 500 5 estudantes apoiados  
+R\$ 1.000 10 estudantes apoiados  
+R\$ 2.000 20 estudantes apoiados
 
 Requisito: possuir o valor escolhido em caixa disponível.
 
@@ -2424,10 +2424,10 @@ Saúde na Comunidade
 Um projeto comunitário busca adquirir materiais e apoiar ações educativas de prevenção e promoção da saúde.
 
 Decisão: contribuir ou recusar.  
-Contribuição	Impacto simulado  
-R\$ 750	5 atendimentos ou participações apoiados  
-R\$ 1.500	10 atendimentos ou participações apoiados  
-R\$ 3.000	20 atendimentos ou participações apoiados
+Contribuição Impacto simulado  
+R\$ 750 5 atendimentos ou participações apoiados  
+R\$ 1.500 10 atendimentos ou participações apoiados  
+R\$ 3.000 20 atendimentos ou participações apoiados
 
 Requisito: possuir dinheiro disponível suficiente.
 
@@ -2443,10 +2443,10 @@ Preservação Ambiental
 Uma iniciativa ambiental precisa de recursos para plantar e manter árvores em áreas de recuperação.
 
 Decisão: escolher o valor da contribuição ou não participar.  
-Contribuição	Impacto simulado  
-R\$ 400	10 mudas apoiadas  
-R\$ 800	20 mudas apoiadas  
-R\$ 1.600	40 mudas apoiadas
+Contribuição Impacto simulado  
+R\$ 400 10 mudas apoiadas  
+R\$ 800 20 mudas apoiadas  
+R\$ 1.600 40 mudas apoiadas
 
 Requisito: caixa suficiente para o valor escolhido.
 
@@ -2462,10 +2462,10 @@ Empreendedorismo Social
 Um programa oferece oficinas de planejamento, organização financeira e desenvolvimento de pequenos negócios para jovens empreendedores.
 
 Decisão: apoiar o programa ou recusar.  
-Contribuição	Impacto simulado  
-R\$ 1.000	4 participantes apoiados  
-R\$ 2.000	8 participantes apoiados  
-R\$ 4.000	16 participantes apoiados
+Contribuição Impacto simulado  
+R\$ 1.000 4 participantes apoiados  
+R\$ 2.000 8 participantes apoiados  
+R\$ 4.000 16 participantes apoiados
 
 Requisito: possuir o valor escolhido.
 
@@ -2481,10 +2481,10 @@ Combate à Fome
 Uma organização local organiza a distribuição de refeições e kits alimentares para famílias em situação de necessidade.
 
 Decisão: contribuir com uma das quantias ou não participar.  
-Contribuição	Impacto simulado  
-R\$ 500	25 refeições apoiadas  
-R\$ 1.000	50 refeições apoiadas  
-R\$ 2.000	100 refeições apoiadas
+Contribuição Impacto simulado  
+R\$ 500 25 refeições apoiadas  
+R\$ 1.000 50 refeições apoiadas  
+R\$ 2.000 100 refeições apoiadas
 
 Requisito: dinheiro disponível suficiente.
 
@@ -2517,14 +2517,14 @@ estudantes apoiados
 Simulação para revisar os indicadores. Não realiza doações reais, não altera nenhuma partida e não representa resultados sociais verificados.  
 4\. Regras complementares de aplicação  
 Para que essas cartas sejam educativas e não se transformem em uma forma indireta de aumentar a pontuação financeira, proponho consolidar os seguintes comportamentos:  
-Situação	Regra  
-Estudante não deseja contribuir	Pode recusar, sem penalidade  
-Não possui recursos suficientes	Apenas contribuições compatíveis com o caixa ficam disponíveis  
-Contribuição confirmada	Descontar o dinheiro e registrar a doação uma única vez  
-Desconexão durante a decisão	Recuperar a escolha pendente, sem duplicar lançamentos  
-Repetição da mesma carta em outra rodada	Permitir nova contribuição e registrar separadamente  
-Impactos de projetos diferentes	Manter indicadores separados, sem somar unidades incompatíveis  
-Relatório do professor	Mostrar contribuições e impactos simulados, individualmente e por turma  
-Vitória e classificação	Não conceder pontos financeiros adicionais por filantropia
+Situação Regra  
+Estudante não deseja contribuir Pode recusar, sem penalidade  
+Não possui recursos suficientes Apenas contribuições compatíveis com o caixa ficam disponíveis  
+Contribuição confirmada Descontar o dinheiro e registrar a doação uma única vez  
+Desconexão durante a decisão Recuperar a escolha pendente, sem duplicar lançamentos  
+Repetição da mesma carta em outra rodada Permitir nova contribuição e registrar separadamente  
+Impactos de projetos diferentes Manter indicadores separados, sem somar unidades incompatíveis  
+Relatório do professor Mostrar contribuições e impactos simulados, individualmente e por turma  
+Vitória e classificação Não conceder pontos financeiros adicionais por filantropia
 
 A contribuição não estará condicionada ao patrimônio total: o critério financeiro será ter dinheiro disponível para o valor escolhido, respeitando as demais obrigações já registradas.

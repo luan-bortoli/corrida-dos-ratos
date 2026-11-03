@@ -1,13 +1,102 @@
-import test from 'node:test';
-import assert from 'node:assert/strict';
-import {createGame,enableOfficialPO,purchaseOfficialSecurity,finishTurn,rollTurn,auditCash,validateState} from '../src/engine.js';
-import {OFFICIAL_SECURITIES,ISSUE_UNITS,officialSecurityOffer} from '../src/official-securities.js';
-function pending(id,cash=20000){let s=enableOfficialPO(createGame(8));s.cash=cash;s.initialCash=cash;s.turn=1;s.pending=true;s.lastTile='PO';s.currentCard={id,category:'PO',status:'text_available',effectExecuted:false};s.cardEvents=[{id,turn:1,circuit:'inner',position:s.position,status:'text_available',resolution:'pending',financialEffect:false}];return s;}
-function close(s){s=finishTurn(s);s.position=32;return rollTurn(s,1);}
-test('cinco instrumentos possuem quantidades, preços e cupons oficiais',()=>{assert.deepEqual(OFFICIAL_SECURITIES.map(x=>[x.id,x.price,x.max,x.dividendCents]),[['PO-013',50,50,20],['PO-014',100,30,60],['PO-015',40,60,0],['PO-016',80,40,24],['PO-017',30,80,10]]);assert.equal(ISSUE_UNITS,10000);assert.equal(officialSecurityOffer({id:'PO-014',category:'PO'},'outer'),null);});
-test('compra de ações debita caixa, atribui titularidade e reconcilia extrato',()=>{const s=purchaseOfficialSecurity(pending('PO-013'),10);assert.equal(s.cash,19500);assert.equal(s.officialSecurities['PO-013'],10);assert.equal(s.cardEvents[0].resolution,'purchase');assert.equal(validateState(s),true);assert.equal(auditCash(s).ok,true);});
-test('dividendo distribuído entra no caixa e no resultado passivo',()=>{const s=close(purchaseOfficialSecurity(pending('PO-013'),10));assert.equal(s.ledger.filter(x=>x.kind==='official_security_dividend').at(-1).amount,2);assert.equal(auditCash(s).ok,true);});
-test('cotas de tecnologia sem distribuição não criam recebimento',()=>{const s=close(purchaseOfficialSecurity(pending('PO-015'),5));assert.equal(s.ledger.some(x=>x.kind==='official_security_dividend'),false);assert.equal(auditCash(s).ok,true);});
-test('dividendos fracionários acumulam centavos para pagamento futuro',()=>{let s=close(purchaseOfficialSecurity(pending('PO-016'),1));assert.equal(s.officialDividendRemainderCents,24);assert.equal(s.ledger.some(x=>x.kind==='official_security_dividend'),false);for(let i=0;i<4;i++)s=close(s);assert.equal(s.ledger.filter(x=>x.kind==='official_security_dividend').length,1);assert.equal(s.officialDividendRemainderCents,20);assert.equal(auditCash(s).ok,true);});
-test('rejeita quantidade inválida, caixa insuficiente e repetição da compra',()=>{assert.throws(()=>purchaseOfficialSecurity(pending('PO-013'),51),/Quantidade/);assert.throws(()=>purchaseOfficialSecurity(pending('PO-013',10),1),/Caixa/);const s=purchaseOfficialSecurity(pending('PO-017'),2);assert.throws(()=>purchaseOfficialSecurity(s,2),/disponível/);});
-test('não ultrapassa estoque da emissão e valida portfólio em salvamento',()=>{const s=pending('PO-013');s.officialSecurities={'PO-013':9999};assert.throws(()=>purchaseOfficialSecurity(s,2),/Estoque/);s.officialSecurities={'PO-013':10001};assert.equal(validateState(s),false);});
+import test from "node:test";
+import assert from "node:assert/strict";
+import {
+  createGame,
+  enableOfficialPO,
+  purchaseOfficialSecurity,
+  finishTurn,
+  rollTurn,
+  auditCash,
+  validateState,
+} from "../src/engine.js";
+import {
+  OFFICIAL_SECURITIES,
+  ISSUE_UNITS,
+  officialSecurityOffer,
+} from "../src/official-securities.js";
+function pending(id, cash = 20000) {
+  let s = enableOfficialPO(createGame(8));
+  s.cash = cash;
+  s.initialCash = cash;
+  s.turn = 1;
+  s.pending = true;
+  s.lastTile = "PO";
+  s.currentCard = { id, category: "PO", status: "text_available", effectExecuted: false };
+  s.cardEvents = [
+    {
+      id,
+      turn: 1,
+      circuit: "inner",
+      position: s.position,
+      status: "text_available",
+      resolution: "pending",
+      financialEffect: false,
+    },
+  ];
+  return s;
+}
+function close(s) {
+  s = finishTurn(s);
+  s.position = 32;
+  return rollTurn(s, 1);
+}
+test("cinco instrumentos possuem quantidades, preços e cupons oficiais", () => {
+  assert.deepEqual(
+    OFFICIAL_SECURITIES.map((x) => [x.id, x.price, x.max, x.dividendCents]),
+    [
+      ["PO-013", 50, 50, 20],
+      ["PO-014", 100, 30, 60],
+      ["PO-015", 40, 60, 0],
+      ["PO-016", 80, 40, 24],
+      ["PO-017", 30, 80, 10],
+    ],
+  );
+  assert.equal(ISSUE_UNITS, 10000);
+  assert.equal(officialSecurityOffer({ id: "PO-014", category: "PO" }, "outer"), null);
+});
+test("compra de ações debita caixa, atribui titularidade e reconcilia extrato", () => {
+  const s = purchaseOfficialSecurity(pending("PO-013"), 10);
+  assert.equal(s.cash, 19500);
+  assert.equal(s.officialSecurities["PO-013"], 10);
+  assert.equal(s.cardEvents[0].resolution, "purchase");
+  assert.equal(validateState(s), true);
+  assert.equal(auditCash(s).ok, true);
+});
+test("dividendo distribuído entra no caixa e no resultado passivo", () => {
+  const s = close(purchaseOfficialSecurity(pending("PO-013"), 10));
+  assert.equal(s.ledger.filter((x) => x.kind === "official_security_dividend").at(-1).amount, 2);
+  assert.equal(auditCash(s).ok, true);
+});
+test("cotas de tecnologia sem distribuição não criam recebimento", () => {
+  const s = close(purchaseOfficialSecurity(pending("PO-015"), 5));
+  assert.equal(
+    s.ledger.some((x) => x.kind === "official_security_dividend"),
+    false,
+  );
+  assert.equal(auditCash(s).ok, true);
+});
+test("dividendos fracionários acumulam centavos para pagamento futuro", () => {
+  let s = close(purchaseOfficialSecurity(pending("PO-016"), 1));
+  assert.equal(s.officialDividendRemainderCents, 24);
+  assert.equal(
+    s.ledger.some((x) => x.kind === "official_security_dividend"),
+    false,
+  );
+  for (let i = 0; i < 4; i++) s = close(s);
+  assert.equal(s.ledger.filter((x) => x.kind === "official_security_dividend").length, 1);
+  assert.equal(s.officialDividendRemainderCents, 20);
+  assert.equal(auditCash(s).ok, true);
+});
+test("rejeita quantidade inválida, caixa insuficiente e repetição da compra", () => {
+  assert.throws(() => purchaseOfficialSecurity(pending("PO-013"), 51), /Quantidade/);
+  assert.throws(() => purchaseOfficialSecurity(pending("PO-013", 10), 1), /Caixa/);
+  const s = purchaseOfficialSecurity(pending("PO-017"), 2);
+  assert.throws(() => purchaseOfficialSecurity(s, 2), /disponível/);
+});
+test("não ultrapassa estoque da emissão e valida portfólio em salvamento", () => {
+  const s = pending("PO-013");
+  s.officialSecurities = { "PO-013": 9999 };
+  assert.throws(() => purchaseOfficialSecurity(s, 2), /Estoque/);
+  s.officialSecurities = { "PO-013": 10001 };
+  assert.equal(validateState(s), false);
+});

@@ -1,0 +1,3323 @@
+{
+  "30299790": {
+    "code": "30299790",
+    "status": "finished",
+    "teacherToken": "2801a958a435916fce1a38680d283851f7bee22e4f1f813941171121a8f649f7",
+    "teacherRecoveryHash": "e67fa6b35e83ef8cc92e584d223d59af0ee071ee9d5b0464406c0f00d38d7fa2",
+    "players": [
+      {
+        "id": "4b255063a1a747d930",
+        "name": "Luan",
+        "game": {
+          "version": 1,
+          "id": "84dbbdb0-9198-4056-9a03-0d287a85f4bb",
+          "professionId": 0,
+          "dreamId": "CAFE",
+          "position": 1,
+          "circuit": "inner",
+          "cash": 2000,
+          "initialCash": 2000,
+          "debt": 3000,
+          "initialDebtCents": 300000,
+          "initialInstallmentCents": 30000,
+          "initialArrearsCents": 0,
+          "installment": 300,
+          "baseExpenses": 1500,
+          "initialAssets": 0,
+          "initialPassive": 0,
+          "assets": [],
+          "loans": [],
+          "turn": 0,
+          "closures": 0,
+          "streak": 0,
+          "won": false,
+          "lastRoll": null,
+          "lastTile": "PAY",
+          "pending": false,
+          "offerResolved": false,
+          "officialPOEnabled": true,
+          "demoDeck": ["PO-007", "PO-002", "PO-001"],
+          "demoDeckCycles": 0,
+          "currentOffer": null,
+          "currentCard": null,
+          "cardEvents": [],
+          "catalogDecks": {},
+          "catalogCycles": {},
+          "arrearsLiving": 0,
+          "arrearsLivingCents": 0,
+          "arrearsLoan": 0,
+          "ledger": [],
+          "history": [
+            {
+              "id": "d2ea0e82-783d-49dd-bd9c-95364d5c77ee",
+              "text": "Partida iniciada: Auxiliar Administrativo.",
+              "type": "info"
+            }
+          ]
+        },
+        "tokenHash": "5e27b6d72f5c471c84b18f0dbfefa291073bca36ad2328371d01377f12f0614a",
+        "recoveryHash": "38850baefdc447392c34efdb7ee6ac71f5995424dd249cded3c3082d82d05333",
+        "withdrawn": false
+      },
+      {
+        "id": "b0181ae2ece8387e7e",
+        "name": "Teste",
+        "game": {
+          "version": 1,
+          "id": "9f485301-05c4-4d7e-b759-c4dc2fa5b9b2",
+          "professionId": 0,
+          "dreamId": "TRAVEL",
+          "position": 1,
+          "circuit": "inner",
+          "cash": 2000,
+          "initialCash": 2000,
+          "debt": 3000,
+          "initialDebtCents": 300000,
+          "initialInstallmentCents": 30000,
+          "initialArrearsCents": 0,
+          "installment": 300,
+          "baseExpenses": 1500,
+          "initialAssets": 0,
+          "initialPassive": 0,
+          "assets": [],
+          "loans": [],
+          "turn": 0,
+          "closures": 0,
+          "streak": 0,
+          "won": false,
+          "lastRoll": null,
+          "lastTile": "PAY",
+          "pending": false,
+          "offerResolved": false,
+          "officialPOEnabled": true,
+          "demoDeck": ["PO-001", "PO-002", "PO-007"],
+          "demoDeckCycles": 0,
+          "currentOffer": null,
+          "currentCard": null,
+          "cardEvents": [],
+          "catalogDecks": {},
+          "catalogCycles": {},
+          "arrearsLiving": 0,
+          "arrearsLivingCents": 0,
+          "arrearsLoan": 0,
+          "ledger": [],
+          "history": [
+            {
+              "id": "26e74fa0-fe94-4a79-b58f-76bf886400f5",
+              "text": "Partida iniciada: Auxiliar Administrativo.",
+              "type": "info"
+            }
+          ]
+        },
+        "tokenHash": "a1f274bb6cf858f3029a2688bd0518324f0a76be83b91484015e1fe3e3cea735",
+        "recoveryHash": "a778645e55ce9abeb7b67eb1bf253ea1e69ef0518b8263a49aee0f165e52c438",
+        "withdrawn": false
+      }
+    ],
+    "order": [],
+    "winnerOrder": [],
+    "turnIndex": 0,
+    "round": 1,
+    "turnDeadline": null,
+    "pausedRemaining": null,
+    "companies": [
+      {
+        "id": "GO-016",
+        "name": "Cafeteria (participação)",
+        "valuation": 40000,
+        "referenceDistribution": 500,
+        "reserveRequired": 1000,
+        "cash": 1000,
+        "initialCapital": 1000,
+        "retainedProfit": 0,
+        "pendingExpenses": 0,
+        "shares": { "origin": 100 },
+        "offer": { "percent": 25, "price": 10000 },
+        "history": [],
+        "lastClosedRound": 0,
+        "distributions": [],
+        "operatingLedger": [],
+        "closedOperatingPeriods": []
+      },
+      {
+        "id": "GO-017",
+        "name": "Academia (participação)",
+        "valuation": 60000,
+        "referenceDistribution": 780,
+        "reserveRequired": 1560,
+        "cash": 1560,
+        "initialCapital": 1560,
+        "retainedProfit": 0,
+        "pendingExpenses": 0,
+        "shares": { "origin": 100 },
+        "offer": { "percent": 30, "price": 18000 },
+        "history": [],
+        "lastClosedRound": 0,
+        "distributions": [],
+        "operatingLedger": [],
+        "closedOperatingPeriods": []
+      },
+      {
+        "id": "GO-018",
+        "name": "Empresa de Aplicativos (participação)",
+        "valuation": 80000,
+        "referenceDistribution": 0,
+        "reserveRequired": 1000,
+        "cash": 1000,
+        "initialCapital": 1000,
+        "retainedProfit": 0,
+        "pendingExpenses": 0,
+        "shares": { "origin": 100 },
+        "offer": { "percent": 20, "price": 16000 },
+        "history": [],
+        "lastClosedRound": 0,
+        "distributions": [],
+        "operatingLedger": [],
+        "closedOperatingPeriods": []
+      },
+      {
+        "id": "GO-019",
+        "name": "Empresa de Reciclagem (participação)",
+        "valuation": 50000,
+        "referenceDistribution": 600,
+        "reserveRequired": 1200,
+        "cash": 1200,
+        "initialCapital": 1200,
+        "retainedProfit": 0,
+        "pendingExpenses": 0,
+        "shares": { "origin": 100 },
+        "offer": { "percent": 40, "price": 20000 },
+        "history": [],
+        "lastClosedRound": 0,
+        "distributions": [],
+        "operatingLedger": [],
+        "closedOperatingPeriods": []
+      },
+      {
+        "id": "GO-020",
+        "name": "Empresa de Logística (participação)",
+        "valuation": 120000,
+        "referenceDistribution": 1200,
+        "reserveRequired": 2400,
+        "cash": 2400,
+        "initialCapital": 2400,
+        "retainedProfit": 0,
+        "pendingExpenses": 0,
+        "shares": { "origin": 100 },
+        "offer": { "percent": 25, "price": 30000 },
+        "history": [],
+        "lastClosedRound": 0,
+        "distributions": [],
+        "operatingLedger": [],
+        "closedOperatingPeriods": []
+      }
+    ],
+    "shareOffers": [],
+    "proposals": [],
+    "jointInvestments": [],
+    "discountOffers": [],
+    "npcInvestors": [
+      { "id": "conservador", "label": "Conservador", "cash": 100000, "shares": {}, "ledger": [] },
+      { "id": "moderado", "label": "Moderado", "cash": 250000, "shares": {}, "ledger": [] },
+      { "id": "arrojado", "label": "Arrojado", "cash": 500000, "shares": {}, "ledger": [] }
+    ],
+    "securities": [],
+    "secondaryOffers": [],
+    "secondaryTrades": [],
+    "secondaryVolumes": {},
+    "externalSellerCash": 0,
+    "revision": 4,
+    "createdAt": 1793672635293,
+    "securityTrades": []
+  },
+  "08BB4AFA": {
+    "code": "08BB4AFA",
+    "status": "playing",
+    "teacherToken": "d9130fba2532354f381191cd68803b0da74d94d863ce059269e1bb3f9224360b",
+    "teacherRecoveryHash": "7c382576b6afee796381cc223e8a861347849044cc24d366fc656c763b980f47",
+    "players": [
+      {
+        "id": "01253d56d66332aacc",
+        "name": "Luan",
+        "game": {
+          "version": 1,
+          "id": "44ceec29-dd2a-4b50-b66f-692079aaf965",
+          "professionId": 0,
+          "dreamId": "CAFE",
+          "position": 3,
+          "circuit": "inner",
+          "cash": 1610,
+          "initialCash": 2000,
+          "debt": 2730,
+          "initialDebtCents": 273000,
+          "initialInstallmentCents": 30000,
+          "initialArrearsCents": 0,
+          "installment": 300,
+          "baseExpenses": 1500,
+          "initialAssets": 0,
+          "initialPassive": 0,
+          "assets": [],
+          "loans": [],
+          "turn": 11,
+          "closures": 1,
+          "streak": 0,
+          "won": false,
+          "lastRoll": 1,
+          "lastTile": "EF",
+          "pending": false,
+          "offerResolved": false,
+          "officialPOEnabled": true,
+          "demoDeck": ["PO-007", "PO-002", "PO-001"],
+          "demoDeckCycles": 0,
+          "currentOffer": null,
+          "currentCard": null,
+          "cardEvents": [
+            {
+              "id": "DI-011",
+              "turn": 1,
+              "circuit": "inner",
+              "position": 4,
+              "status": "text_available",
+              "resolution": "automatic",
+              "financialEffect": true
+            },
+            {
+              "id": "GO-018",
+              "turn": 2,
+              "circuit": "inner",
+              "position": 7,
+              "status": "text_available",
+              "resolution": "joint_proposal",
+              "financialEffect": false
+            },
+            {
+              "id": "BE-009",
+              "turn": 3,
+              "circuit": "inner",
+              "position": 11,
+              "status": "text_available",
+              "resolution": "automatic",
+              "financialEffect": true
+            },
+            {
+              "id": "EF-005",
+              "turn": 4,
+              "circuit": "inner",
+              "position": 12,
+              "status": "text_available",
+              "resolution": "answer",
+              "financialEffect": false,
+              "choice": "D",
+              "correct": false,
+              "correctAnswer": "B"
+            },
+            {
+              "id": "DI-006",
+              "turn": 5,
+              "circuit": "inner",
+              "position": 16,
+              "status": "text_available",
+              "resolution": "automatic",
+              "financialEffect": true
+            },
+            {
+              "id": "DI-004",
+              "turn": 6,
+              "circuit": "inner",
+              "position": 20,
+              "status": "text_available",
+              "resolution": "automatic",
+              "financialEffect": true
+            },
+            {
+              "id": "GO-003",
+              "turn": 7,
+              "circuit": "inner",
+              "position": 21,
+              "status": "text_available",
+              "resolution": "acknowledge",
+              "financialEffect": false
+            },
+            {
+              "id": "MF-005",
+              "turn": 8,
+              "circuit": "inner",
+              "position": 24,
+              "status": "text_available",
+              "resolution": "automatic",
+              "financialEffect": false
+            },
+            {
+              "id": "PO-004",
+              "turn": 9,
+              "circuit": "inner",
+              "position": 29,
+              "status": "text_available",
+              "resolution": "acknowledge",
+              "financialEffect": false
+            },
+            {
+              "id": "PO-020",
+              "turn": 10,
+              "circuit": "inner",
+              "position": 2,
+              "status": "text_available",
+              "resolution": "acknowledge",
+              "financialEffect": false
+            },
+            {
+              "id": "EF-006",
+              "turn": 11,
+              "circuit": "inner",
+              "position": 3,
+              "status": "text_available",
+              "resolution": "acknowledge",
+              "financialEffect": false
+            }
+          ],
+          "catalogDecks": {
+            "inner:DI": [
+              "DI-016",
+              "DI-015",
+              "DI-008",
+              "DI-009",
+              "DI-007",
+              "DI-010",
+              "DI-019",
+              "DI-001",
+              "DI-014",
+              "DI-005",
+              "DI-012",
+              "DI-002",
+              "DI-018",
+              "DI-017",
+              "DI-003",
+              "DI-013",
+              "DI-020"
+            ],
+            "inner:GO": [
+              "GO-014",
+              "GO-015",
+              "GO-007",
+              "GO-005",
+              "GO-013",
+              "GO-010",
+              "GO-011",
+              "GO-009",
+              "GO-017",
+              "GO-020",
+              "GO-006",
+              "GO-002",
+              "GO-012",
+              "GO-016",
+              "GO-008",
+              "GO-004",
+              "GO-019",
+              "GO-001"
+            ],
+            "inner:BE": [
+              "BE-002",
+              "BE-007",
+              "BE-010",
+              "BE-001",
+              "BE-003",
+              "BE-005",
+              "BE-004",
+              "BE-006",
+              "BE-008"
+            ],
+            "inner:EF": [
+              "EF-002",
+              "EF-009",
+              "EF-010",
+              "EF-007",
+              "EF-008",
+              "EF-001",
+              "EF-003",
+              "EF-011",
+              "EF-013",
+              "EF-015",
+              "EF-004",
+              "EF-014",
+              "EF-012"
+            ],
+            "inner:MF": [
+              "MF-014",
+              "MF-015",
+              "MF-003",
+              "MF-001",
+              "MF-013",
+              "MF-010",
+              "MF-006",
+              "MF-007",
+              "MF-012",
+              "MF-011",
+              "MF-009",
+              "MF-008",
+              "MF-002",
+              "MF-004"
+            ],
+            "inner:PO": [
+              "PO-014",
+              "PO-007",
+              "PO-011",
+              "PO-024",
+              "PO-015",
+              "PO-022",
+              "PO-016",
+              "PO-021",
+              "PO-018",
+              "PO-013",
+              "PO-002",
+              "PO-023",
+              "PO-003",
+              "PO-012",
+              "PO-017",
+              "PO-010",
+              "PO-008",
+              "PO-006",
+              "PO-025",
+              "PO-001",
+              "PO-005",
+              "PO-009",
+              "PO-019"
+            ]
+          },
+          "catalogCycles": {
+            "inner:DI": 0,
+            "inner:GO": 0,
+            "inner:BE": 0,
+            "inner:EF": 0,
+            "inner:MF": 0,
+            "inner:PO": 0
+          },
+          "arrearsLiving": 0,
+          "arrearsLivingCents": 0,
+          "arrearsLoan": 0,
+          "ledger": [
+            {
+              "id": "86b6ac83-0f9e-41c2-a596-0a24ca414612",
+              "turn": 1,
+              "closure": 0,
+              "kind": "unexpected_expense",
+              "amount": -440,
+              "description": "Despesa inesperada DI-011",
+              "cardId": "DI-011"
+            },
+            {
+              "id": "e5434676-98cb-4390-b938-43a292ae8f74",
+              "turn": 5,
+              "closure": 0,
+              "kind": "unexpected_expense",
+              "amount": -110,
+              "description": "Despesa inesperada DI-006",
+              "cardId": "DI-006"
+            },
+            {
+              "id": "58097a10-8e3c-42a4-9476-54608c20795a",
+              "turn": 6,
+              "closure": 0,
+              "kind": "unexpected_expense",
+              "amount": -220,
+              "description": "Despesa inesperada DI-004",
+              "cardId": "DI-004"
+            },
+            {
+              "id": "496a3be5-2d77-4805-b5b8-92c2c34f8a67",
+              "tradeId": "dbbbdf3e-e7cd-406f-b3a3-c5199b225d5c",
+              "kind": "secondary_security_buy",
+              "amount": -40,
+              "amountCents": -4000,
+              "turn": 8,
+              "closure": 0,
+              "description": "Mercado secundário PO-015 (1 unidades)",
+              "securityId": "PO-015"
+            },
+            {
+              "id": "543eccfe-5f38-46c3-9a91-813062fa061f",
+              "tradeId": "4397213e-74af-4c29-9f71-e43ddd6877a7",
+              "kind": "secondary_security_buy",
+              "amount": -50,
+              "amountCents": -5000,
+              "turn": 9,
+              "closure": 0,
+              "description": "Mercado secundário PO-013 (1 unidades)",
+              "securityId": "PO-013"
+            },
+            {
+              "id": "6c8f6080-0db1-409d-87e2-e780abe057a8",
+              "turn": 10,
+              "closure": 0,
+              "kind": "salary",
+              "amount": 2200,
+              "description": "Salário recebido"
+            },
+            {
+              "id": "eea2d98e-2259-4054-9f85-7f434f350481",
+              "turn": 10,
+              "closure": 0,
+              "kind": "expense",
+              "amount": -1430,
+              "description": "Despesas pessoais do período",
+              "amountCents": -143000
+            },
+            {
+              "id": "add3e650-9e31-45cb-86f4-0957fffec24c",
+              "turn": 10,
+              "closure": 0,
+              "kind": "loan_payment",
+              "amount": -300,
+              "description": "Prestação da dívida inicial",
+              "amountCents": -30000,
+              "loanId": "initial"
+            }
+          ],
+          "history": [
+            {
+              "id": "39ce1419-f2e8-4c3d-b599-385de755f2d7",
+              "text": "Carta EF-006 registrada; descrição original disponível, sem efeito financeiro automático.",
+              "type": "info"
+            },
+            {
+              "id": "6ad036d4-fb0b-49d1-8b81-a781a5a39244",
+              "text": "Turno 11: dado 1, casa 3 (EF).",
+              "type": "info"
+            },
+            {
+              "id": "ffef7a56-e133-4c65-8088-b8ccb65df638",
+              "text": "Carta PO-020 registrada; descrição original disponível, sem efeito financeiro automático.",
+              "type": "info"
+            },
+            {
+              "id": "93a7c98c-c081-4ff0-882e-d7bfef07db12",
+              "text": "Fechamento 1: receitas R$ 2200, obrigações do período R$ 1730, pagamentos R$ 1730, pendências R$ 0.",
+              "type": "pay"
+            },
+            {
+              "id": "a89f309e-9ac0-4319-aa19-9708866dfa4e",
+              "text": "Turno 10: dado 5, casa 2 (PO).",
+              "type": "info"
+            },
+            {
+              "id": "d11b5246-47ed-4e5a-9d3f-ce2ea24e08dd",
+              "text": "Carta PO-004 registrada; descrição original disponível, sem efeito financeiro automático.",
+              "type": "info"
+            },
+            {
+              "id": "d9d0e027-bb44-4828-bb8a-74a4634dfbdd",
+              "text": "Turno 9: dado 5, casa 29 (PO).",
+              "type": "info"
+            },
+            {
+              "id": "ffbbacdb-707d-44db-9ff3-0c4a582143e4",
+              "text": "Carta MF-005 registrada; descrição original disponível, sem efeito financeiro automático.",
+              "type": "info"
+            },
+            {
+              "id": "9a81b333-2a51-4f00-9c85-ac646693fd69",
+              "text": "Turno 8: dado 3, casa 24 (MF).",
+              "type": "info"
+            },
+            {
+              "id": "80df19c4-ed57-4c73-8e72-7e529b7856de",
+              "text": "Carta GO-003 registrada; descrição original disponível, sem efeito financeiro automático.",
+              "type": "info"
+            },
+            {
+              "id": "22097c91-e877-4311-a637-059c4694fd64",
+              "text": "Turno 7: dado 1, casa 21 (GO).",
+              "type": "info"
+            },
+            {
+              "id": "3c6c35fe-17f9-49c8-bf19-e4f7a7c322b1",
+              "text": "Despesa DI-004: R$ 220; pago R$ 220; pendente R$ 0.",
+              "type": "warning"
+            },
+            {
+              "id": "8406db1e-35bc-4140-aa31-2541e4a1618a",
+              "text": "Carta DI-004 registrada; descrição original disponível, sem efeito financeiro automático.",
+              "type": "info"
+            },
+            {
+              "id": "fe7f517c-15ef-48af-9701-e8904e8e56b0",
+              "text": "Turno 6: dado 4, casa 20 (DI).",
+              "type": "info"
+            },
+            {
+              "id": "5e29187d-d325-48da-babb-6ee27813fffa",
+              "text": "Despesa DI-006: R$ 110; pago R$ 110; pendente R$ 0.",
+              "type": "warning"
+            },
+            {
+              "id": "85802bd5-0db7-478f-9a97-d527acd5156a",
+              "text": "Carta DI-006 registrada; descrição original disponível, sem efeito financeiro automático.",
+              "type": "info"
+            },
+            {
+              "id": "027d84ce-694c-4aac-9fa6-dbd8cc3e8c2b",
+              "text": "Turno 5: dado 4, casa 16 (DI).",
+              "type": "info"
+            },
+            {
+              "id": "26929841-4f22-4851-a672-d65baef69645",
+              "text": "Pergunta EF-005: resposta D; gabarito B; erro; recompensa R$ 0.",
+              "type": "info"
+            },
+            {
+              "id": "b183fd4a-cf72-4d42-9d5d-8bdcf0ee96a9",
+              "text": "Carta EF-005 registrada; descrição original disponível, sem efeito financeiro automático.",
+              "type": "info"
+            },
+            {
+              "id": "71813b59-b544-4728-9e54-e75d22ffb0de",
+              "text": "Turno 4: dado 1, casa 12 (EF).",
+              "type": "info"
+            },
+            {
+              "id": "b014c58c-c18e-4a6c-a3cd-46e4d7048b39",
+              "text": "Benefício BE-009: recebidos R$ 0.",
+              "type": "success"
+            },
+            {
+              "id": "ef5e4f34-9d5d-4fec-8e5c-58b053668509",
+              "text": "Carta BE-009 registrada; descrição original disponível, sem efeito financeiro automático.",
+              "type": "info"
+            },
+            {
+              "id": "dbc3f7e9-b113-49bf-95e8-4937038ae68f",
+              "text": "Turno 3: dado 4, casa 11 (BE).",
+              "type": "info"
+            },
+            {
+              "id": "eec8cc3b-6760-44e2-a505-617047546ca9",
+              "text": "Carta GO-018 registrada; descrição original disponível, sem efeito financeiro automático.",
+              "type": "info"
+            },
+            {
+              "id": "ca5bb53c-7c3c-4228-bc8f-453da37c3c2e",
+              "text": "Turno 2: dado 3, casa 7 (GO).",
+              "type": "info"
+            },
+            {
+              "id": "97a5d5f9-4027-4dbf-98c3-47c3020f80f5",
+              "text": "Despesa DI-011: R$ 440; pago R$ 440; pendente R$ 0.",
+              "type": "warning"
+            },
+            {
+              "id": "7789a662-b429-499a-b00d-7624178c3d0f",
+              "text": "Carta DI-011 registrada; descrição original disponível, sem efeito financeiro automático.",
+              "type": "info"
+            },
+            {
+              "id": "7029c4a5-1d88-40f5-825b-b78af40d664c",
+              "text": "Turno 1: dado 3, casa 4 (DI).",
+              "type": "info"
+            },
+            {
+              "id": "7165d10d-de85-416b-b1cc-3cb5c730aa32",
+              "text": "Partida iniciada: Auxiliar Administrativo.",
+              "type": "info"
+            }
+          ],
+          "secondaryCashCents": 0,
+          "expenseCategories": {
+            "housing": 700,
+            "food": 400,
+            "transport": 200,
+            "leisure": 100,
+            "education": 100
+          },
+          "budgetModifiers": [{ "category": "housing", "percent": 10, "remaining": 1 }],
+          "officialSecurities": { "PO-015": 1, "PO-013": 1 },
+          "officialSecurityPricesCents": { "PO-015": 4000, "PO-013": 5000 },
+          "officialSecurityDividendCents": { "PO-015": 0, "PO-013": 20 },
+          "delayedSalaryBoosts": [],
+          "officialDividendRemainderCents": 20,
+          "officialSecuritiesPassivePaid": 0,
+          "fixedPassivePaid": 0,
+          "pendingCorporatePassive": 0
+        },
+        "tokenHash": "09adac734a705ea7f8c390985cf39de6057027dc35143b43b52d74ad1ef3c22a",
+        "recoveryHash": "db29607e44837a674d6935ce11ea00d72fe334909c6b4aeed3c288721964bf45",
+        "withdrawn": false
+      },
+      {
+        "id": "ec1296065aa30d053a",
+        "name": "Teste",
+        "game": {
+          "version": 1,
+          "id": "86ebf1aa-74e7-4c5d-b1d2-dd11a89e7c91",
+          "professionId": 0,
+          "dreamId": "TRAVEL",
+          "position": 30,
+          "circuit": "inner",
+          "cash": 1510,
+          "initialCash": 2000,
+          "debt": 3000,
+          "initialDebtCents": 300000,
+          "initialInstallmentCents": 30000,
+          "initialArrearsCents": 0,
+          "installment": 300,
+          "baseExpenses": 1500,
+          "initialAssets": 0,
+          "initialPassive": 0,
+          "assets": [],
+          "loans": [],
+          "turn": 11,
+          "closures": 0,
+          "streak": 0,
+          "won": false,
+          "lastRoll": 3,
+          "lastTile": "EV",
+          "pending": false,
+          "offerResolved": false,
+          "officialPOEnabled": true,
+          "demoDeck": ["PO-007", "PO-002", "PO-001"],
+          "demoDeckCycles": 0,
+          "currentOffer": null,
+          "currentCard": null,
+          "cardEvents": [
+            {
+              "id": "PO-015",
+              "turn": 1,
+              "circuit": "inner",
+              "position": 5,
+              "status": "text_available",
+              "resolution": "purchase",
+              "financialEffect": true
+            },
+            {
+              "id": "MF-014",
+              "turn": 2,
+              "circuit": "inner",
+              "position": 8,
+              "status": "text_available",
+              "resolution": "automatic",
+              "financialEffect": false
+            },
+            {
+              "id": "DI-020",
+              "turn": 3,
+              "circuit": "inner",
+              "position": 10,
+              "status": "text_available",
+              "resolution": "automatic",
+              "financialEffect": true
+            },
+            {
+              "id": "PO-013",
+              "turn": 4,
+              "circuit": "inner",
+              "position": 13,
+              "status": "text_available",
+              "resolution": "purchase",
+              "financialEffect": true
+            },
+            {
+              "id": "DI-018",
+              "turn": 5,
+              "circuit": "inner",
+              "position": 16,
+              "status": "text_available",
+              "resolution": "automatic",
+              "financialEffect": true
+            },
+            {
+              "id": "MF-006",
+              "turn": 6,
+              "circuit": "inner",
+              "position": 17,
+              "status": "text_available",
+              "resolution": "automatic",
+              "financialEffect": false
+            },
+            {
+              "id": "GO-006",
+              "turn": 7,
+              "circuit": "inner",
+              "position": 21,
+              "status": "text_available",
+              "resolution": "acknowledge",
+              "financialEffect": false
+            },
+            {
+              "id": "MF-008",
+              "turn": 8,
+              "circuit": "inner",
+              "position": 24,
+              "status": "text_available",
+              "resolution": "automatic",
+              "financialEffect": false
+            },
+            {
+              "id": "BE-006",
+              "turn": 9,
+              "circuit": "inner",
+              "position": 26,
+              "status": "text_available",
+              "resolution": "automatic",
+              "financialEffect": true
+            },
+            {
+              "id": "EF-009",
+              "turn": 10,
+              "circuit": "inner",
+              "position": 27,
+              "status": "text_available",
+              "resolution": "acknowledge",
+              "financialEffect": false
+            },
+            {
+              "id": "EV-012",
+              "turn": 11,
+              "circuit": "inner",
+              "position": 30,
+              "status": "text_available",
+              "resolution": "decision",
+              "financialEffect": false,
+              "choice": "reject"
+            }
+          ],
+          "catalogDecks": {
+            "inner:PO": [
+              "PO-020",
+              "PO-011",
+              "PO-005",
+              "PO-001",
+              "PO-008",
+              "PO-018",
+              "PO-009",
+              "PO-007",
+              "PO-012",
+              "PO-003",
+              "PO-002",
+              "PO-022",
+              "PO-021",
+              "PO-014",
+              "PO-025",
+              "PO-004",
+              "PO-023",
+              "PO-006",
+              "PO-010",
+              "PO-019",
+              "PO-024",
+              "PO-016",
+              "PO-017"
+            ],
+            "inner:MF": [
+              "MF-015",
+              "MF-012",
+              "MF-002",
+              "MF-009",
+              "MF-004",
+              "MF-001",
+              "MF-010",
+              "MF-005",
+              "MF-011",
+              "MF-003",
+              "MF-007",
+              "MF-013"
+            ],
+            "inner:DI": [
+              "DI-012",
+              "DI-010",
+              "DI-001",
+              "DI-008",
+              "DI-004",
+              "DI-017",
+              "DI-014",
+              "DI-009",
+              "DI-005",
+              "DI-011",
+              "DI-013",
+              "DI-006",
+              "DI-019",
+              "DI-003",
+              "DI-007",
+              "DI-002",
+              "DI-015",
+              "DI-016"
+            ],
+            "inner:GO": [
+              "GO-013",
+              "GO-009",
+              "GO-015",
+              "GO-010",
+              "GO-020",
+              "GO-016",
+              "GO-017",
+              "GO-001",
+              "GO-007",
+              "GO-008",
+              "GO-011",
+              "GO-004",
+              "GO-018",
+              "GO-002",
+              "GO-014",
+              "GO-012",
+              "GO-019",
+              "GO-005",
+              "GO-003"
+            ],
+            "inner:BE": [
+              "BE-007",
+              "BE-008",
+              "BE-003",
+              "BE-004",
+              "BE-005",
+              "BE-010",
+              "BE-001",
+              "BE-009",
+              "BE-002"
+            ],
+            "inner:EF": [
+              "EF-003",
+              "EF-002",
+              "EF-011",
+              "EF-005",
+              "EF-008",
+              "EF-010",
+              "EF-013",
+              "EF-006",
+              "EF-004",
+              "EF-001",
+              "EF-007",
+              "EF-015",
+              "EF-014",
+              "EF-012"
+            ],
+            "inner:EV": [
+              "EV-015",
+              "EV-013",
+              "EV-006",
+              "EV-008",
+              "EV-002",
+              "EV-007",
+              "EV-003",
+              "EV-010",
+              "EV-014",
+              "EV-005",
+              "EV-001",
+              "EV-011",
+              "EV-009",
+              "EV-004"
+            ]
+          },
+          "catalogCycles": {
+            "inner:PO": 0,
+            "inner:MF": 0,
+            "inner:DI": 0,
+            "inner:GO": 0,
+            "inner:BE": 0,
+            "inner:EF": 0,
+            "inner:EV": 0
+          },
+          "arrearsLiving": 0,
+          "arrearsLivingCents": 0,
+          "arrearsLoan": 0,
+          "ledger": [
+            {
+              "id": "9678a4dd-c1a0-47a2-97d2-e246d0e0ae1d",
+              "turn": 1,
+              "closure": 0,
+              "kind": "official_security_purchase",
+              "amount": -40,
+              "description": "Compra 1 unidade(s) de PO-015",
+              "cardId": "PO-015",
+              "quantity": 1
+            },
+            {
+              "id": "317ae6c5-cc87-4779-90a6-ff865a0834d6",
+              "turn": 3,
+              "closure": 0,
+              "kind": "unexpected_expense",
+              "amount": -440,
+              "description": "Despesa inesperada DI-020",
+              "cardId": "DI-020"
+            },
+            {
+              "id": "d6feab84-ddd9-481b-a4fd-4a0a1e3b89d8",
+              "turn": 4,
+              "closure": 0,
+              "kind": "official_security_purchase",
+              "amount": -100,
+              "description": "Compra 2 unidade(s) de PO-013",
+              "cardId": "PO-013",
+              "quantity": 2
+            },
+            {
+              "id": "e94552a5-e369-4dad-826a-aa461bdd1601",
+              "turn": 5,
+              "closure": 0,
+              "kind": "unexpected_expense",
+              "amount": -440,
+              "description": "Despesa inesperada DI-018",
+              "cardId": "DI-018"
+            },
+            {
+              "id": "4e268be1-40f9-477c-abca-4268ecd39e1d",
+              "tradeId": "dbbbdf3e-e7cd-406f-b3a3-c5199b225d5c",
+              "kind": "secondary_security_sell",
+              "amount": 40,
+              "amountCents": 4000,
+              "turn": 8,
+              "closure": 0,
+              "description": "Mercado secundário PO-015 (1 unidades)",
+              "securityId": "PO-015"
+            },
+            {
+              "id": "ea5d58bf-974d-4d9b-99c6-c345897997b4",
+              "turn": 9,
+              "closure": 0,
+              "kind": "benefit",
+              "amount": 440,
+              "description": "Benefício BE-006",
+              "cardId": "BE-006"
+            },
+            {
+              "id": "7547a026-e961-4f5a-9813-ad27e7b7686f",
+              "tradeId": "4397213e-74af-4c29-9f71-e43ddd6877a7",
+              "kind": "secondary_security_sell",
+              "amount": 50,
+              "amountCents": 5000,
+              "turn": 9,
+              "closure": 0,
+              "description": "Mercado secundário PO-013 (1 unidades)",
+              "securityId": "PO-013"
+            }
+          ],
+          "history": [
+            {
+              "id": "ca5dc694-79b5-44bc-a189-e839e2c51d23",
+              "text": "EV-012: Manter.",
+              "type": "info"
+            },
+            {
+              "id": "3b258737-1ad0-4e40-9c04-9d1e185b1e17",
+              "text": "Carta EV-012 registrada; descrição original disponível, sem efeito financeiro automático.",
+              "type": "info"
+            },
+            {
+              "id": "d6f8b66b-25e8-410f-9d55-1d618c66d746",
+              "text": "Turno 11: dado 3, casa 30 (EV).",
+              "type": "info"
+            },
+            {
+              "id": "88388451-a940-4ee8-a7f4-36ce26bd4468",
+              "text": "Carta EF-009 registrada; descrição original disponível, sem efeito financeiro automático.",
+              "type": "info"
+            },
+            {
+              "id": "0b73034d-dd54-42d1-80cd-dfdc89677261",
+              "text": "Turno 10: dado 1, casa 27 (EF).",
+              "type": "info"
+            },
+            {
+              "id": "e0d0ec5d-d9b8-40b3-8819-be0c9ebc9406",
+              "text": "Benefício BE-006: recebidos R$ 440.",
+              "type": "success"
+            },
+            {
+              "id": "6520cf4b-ebe0-45a5-b684-c0df05af00d6",
+              "text": "Carta BE-006 registrada; descrição original disponível, sem efeito financeiro automático.",
+              "type": "info"
+            },
+            {
+              "id": "ce13bc6a-aa8e-4981-9052-98b7292c5805",
+              "text": "Turno 9: dado 2, casa 26 (BE).",
+              "type": "info"
+            },
+            {
+              "id": "7a14e17e-ebcc-468f-b2ca-1c73a49080c6",
+              "text": "Carta MF-008 registrada; descrição original disponível, sem efeito financeiro automático.",
+              "type": "info"
+            },
+            {
+              "id": "12318ef3-01c3-49f6-8979-8aada909b551",
+              "text": "Turno 8: dado 3, casa 24 (MF).",
+              "type": "info"
+            },
+            {
+              "id": "6a754a81-b692-4879-845e-95951c7e5c9b",
+              "text": "Carta GO-006 registrada; descrição original disponível, sem efeito financeiro automático.",
+              "type": "info"
+            },
+            {
+              "id": "c1266755-f5fe-4bce-bb17-370f2fd4953d",
+              "text": "Turno 7: dado 4, casa 21 (GO).",
+              "type": "info"
+            },
+            {
+              "id": "95c78c9c-87ed-4cf4-8e45-c91f4d31ce17",
+              "text": "Mercado MF-006: 0 ativo(s) elegível(is); rendimento ajustado.",
+              "type": "asset"
+            },
+            {
+              "id": "e006bf46-c181-4b69-8e16-0d918577ac1f",
+              "text": "Carta MF-006 registrada; descrição original disponível, sem efeito financeiro automático.",
+              "type": "info"
+            },
+            {
+              "id": "be8b6a01-1e80-41b6-aa15-9425c5f7e55d",
+              "text": "Turno 6: dado 1, casa 17 (MF).",
+              "type": "info"
+            },
+            {
+              "id": "cb4fb323-7959-48e0-9888-1cdd3c965f3b",
+              "text": "Despesa DI-018: R$ 440; pago R$ 440; pendente R$ 0.",
+              "type": "warning"
+            },
+            {
+              "id": "ad3ac544-fc6e-45d4-beaa-950fb16f4a7b",
+              "text": "Carta DI-018 registrada; descrição original disponível, sem efeito financeiro automático.",
+              "type": "info"
+            },
+            {
+              "id": "4470b4f8-edfd-4d68-8c28-eeff246c1767",
+              "text": "Turno 5: dado 3, casa 16 (DI).",
+              "type": "info"
+            },
+            {
+              "id": "6fae9d47-f65e-4f2b-9189-2054765f188f",
+              "text": "Compra de 2 unidade(s) de PO-013, por R$ 100. Dividendos não garantidos.",
+              "type": "asset"
+            },
+            {
+              "id": "2249edb7-82d3-4233-865e-1c47e4c2bf46",
+              "text": "Carta PO-013 registrada; descrição original disponível, sem efeito financeiro automático.",
+              "type": "info"
+            },
+            {
+              "id": "d54a045a-ca73-4037-af56-21a3e7947bef",
+              "text": "Turno 4: dado 3, casa 13 (PO).",
+              "type": "info"
+            },
+            {
+              "id": "8f13bb6e-dee3-44ca-ac76-db7a430ea123",
+              "text": "Despesa DI-020: R$ 440; pago R$ 440; pendente R$ 0.",
+              "type": "warning"
+            },
+            {
+              "id": "f13759d0-6ee6-434e-b08a-9aeda18faf6f",
+              "text": "Carta DI-020 registrada; descrição original disponível, sem efeito financeiro automático.",
+              "type": "info"
+            },
+            {
+              "id": "de2682a0-6576-4d25-a1a5-15f7d4f77edc",
+              "text": "Turno 3: dado 2, casa 10 (DI).",
+              "type": "info"
+            },
+            {
+              "id": "ff3e5384-e9b4-4159-9258-28061b3edb51",
+              "text": "Carta MF-014 registrada; descrição original disponível, sem efeito financeiro automático.",
+              "type": "info"
+            },
+            {
+              "id": "4e937df3-8039-4668-b722-032f3e90be3e",
+              "text": "Turno 2: dado 3, casa 8 (MF).",
+              "type": "info"
+            },
+            {
+              "id": "7f3ebcbc-656b-4f60-ad58-126f4561d3e6",
+              "text": "Compra de 1 unidade(s) de PO-015, por R$ 40. Dividendos não garantidos.",
+              "type": "asset"
+            },
+            {
+              "id": "d0096600-25e5-4f76-939e-e828102e2b71",
+              "text": "Carta PO-015 registrada; descrição original disponível, sem efeito financeiro automático.",
+              "type": "info"
+            },
+            {
+              "id": "dfe110a1-573b-4764-b6c8-f9c32cf65200",
+              "text": "Turno 1: dado 4, casa 5 (PO).",
+              "type": "info"
+            },
+            {
+              "id": "26fab52a-e488-41d9-9ad7-c427b0b17daa",
+              "text": "Partida iniciada: Auxiliar Administrativo.",
+              "type": "info"
+            }
+          ],
+          "officialSecurities": { "PO-015": 0, "PO-013": 1 },
+          "secondaryCashCents": 0,
+          "officialSecurityPricesCents": { "PO-015": 4000, "PO-013": 5000 },
+          "officialSecurityDividendCents": { "PO-015": 0, "PO-013": 20 }
+        },
+        "tokenHash": "54042f385fbfc130ee99bf43f596dbbdeac938f4b62004b990a6ffe580add4cf",
+        "recoveryHash": "3a71f1e3468a2354a8574bf482265103a3bb356df25ea4c383ae7007f409d5c0",
+        "withdrawn": false
+      }
+    ],
+    "order": ["01253d56d66332aacc", "ec1296065aa30d053a"],
+    "winnerOrder": [],
+    "turnIndex": 1,
+    "round": 68,
+    "turnDeadline": 1793740421059,
+    "pausedRemaining": null,
+    "companies": [
+      {
+        "id": "GO-016",
+        "name": "Cafeteria (participação)",
+        "valuation": 40000,
+        "referenceDistribution": 500,
+        "reserveRequired": 1000,
+        "cash": 1000,
+        "initialCapital": 1000,
+        "retainedProfit": 0,
+        "pendingExpenses": 0,
+        "shares": { "origin": 100 },
+        "offer": { "percent": 25, "price": 10000 },
+        "history": [
+          {
+            "type": "closing",
+            "round": 9,
+            "income": 0,
+            "available": 0,
+            "paid": 0,
+            "settledPending": 0,
+            "loanSettlement": { "totalPaidCents": 0, "totalInterestCents": 0 },
+            "allocations": {}
+          },
+          {
+            "type": "closing",
+            "round": 18,
+            "income": 0,
+            "available": 0,
+            "paid": 0,
+            "settledPending": 0,
+            "loanSettlement": { "totalPaidCents": 0, "totalInterestCents": 0 },
+            "allocations": {}
+          },
+          {
+            "type": "closing",
+            "round": 27,
+            "income": 0,
+            "available": 0,
+            "paid": 0,
+            "settledPending": 0,
+            "loanSettlement": { "totalPaidCents": 0, "totalInterestCents": 0 },
+            "allocations": {}
+          },
+          {
+            "type": "closing",
+            "round": 36,
+            "income": 0,
+            "available": 0,
+            "paid": 0,
+            "settledPending": 0,
+            "loanSettlement": { "totalPaidCents": 0, "totalInterestCents": 0 },
+            "allocations": {}
+          },
+          {
+            "type": "closing",
+            "round": 45,
+            "income": 0,
+            "available": 0,
+            "paid": 0,
+            "settledPending": 0,
+            "loanSettlement": { "totalPaidCents": 0, "totalInterestCents": 0 },
+            "allocations": {}
+          },
+          {
+            "type": "closing",
+            "round": 54,
+            "income": 0,
+            "available": 0,
+            "paid": 0,
+            "settledPending": 0,
+            "loanSettlement": { "totalPaidCents": 0, "totalInterestCents": 0 },
+            "allocations": {}
+          },
+          {
+            "type": "closing",
+            "round": 63,
+            "income": 0,
+            "available": 0,
+            "paid": 0,
+            "settledPending": 0,
+            "loanSettlement": { "totalPaidCents": 0, "totalInterestCents": 0 },
+            "allocations": {}
+          }
+        ],
+        "lastClosedRound": 63,
+        "distributions": [],
+        "operatingLedger": [],
+        "closedOperatingPeriods": [
+          {
+            "round": 9,
+            "income": 0,
+            "available": 0,
+            "paid": 0,
+            "settledPending": 0,
+            "loanSettlement": { "totalPaidCents": 0, "totalInterestCents": 0 },
+            "allocations": {}
+          },
+          {
+            "round": 18,
+            "income": 0,
+            "available": 0,
+            "paid": 0,
+            "settledPending": 0,
+            "loanSettlement": { "totalPaidCents": 0, "totalInterestCents": 0 },
+            "allocations": {}
+          },
+          {
+            "round": 27,
+            "income": 0,
+            "available": 0,
+            "paid": 0,
+            "settledPending": 0,
+            "loanSettlement": { "totalPaidCents": 0, "totalInterestCents": 0 },
+            "allocations": {}
+          },
+          {
+            "round": 36,
+            "income": 0,
+            "available": 0,
+            "paid": 0,
+            "settledPending": 0,
+            "loanSettlement": { "totalPaidCents": 0, "totalInterestCents": 0 },
+            "allocations": {}
+          },
+          {
+            "round": 45,
+            "income": 0,
+            "available": 0,
+            "paid": 0,
+            "settledPending": 0,
+            "loanSettlement": { "totalPaidCents": 0, "totalInterestCents": 0 },
+            "allocations": {}
+          },
+          {
+            "round": 54,
+            "income": 0,
+            "available": 0,
+            "paid": 0,
+            "settledPending": 0,
+            "loanSettlement": { "totalPaidCents": 0, "totalInterestCents": 0 },
+            "allocations": {}
+          },
+          {
+            "round": 63,
+            "income": 0,
+            "available": 0,
+            "paid": 0,
+            "settledPending": 0,
+            "loanSettlement": { "totalPaidCents": 0, "totalInterestCents": 0 },
+            "allocations": {}
+          }
+        ],
+        "corporateInterestPendingCents": 0
+      },
+      {
+        "id": "GO-017",
+        "name": "Academia (participação)",
+        "valuation": 60000,
+        "referenceDistribution": 780,
+        "reserveRequired": 1560,
+        "cash": 1560,
+        "initialCapital": 1560,
+        "retainedProfit": 0,
+        "pendingExpenses": 0,
+        "shares": { "origin": 100 },
+        "offer": { "percent": 30, "price": 18000 },
+        "history": [
+          {
+            "type": "closing",
+            "round": 9,
+            "income": 0,
+            "available": 0,
+            "paid": 0,
+            "settledPending": 0,
+            "loanSettlement": { "totalPaidCents": 0, "totalInterestCents": 0 },
+            "allocations": {}
+          },
+          {
+            "type": "closing",
+            "round": 18,
+            "income": 0,
+            "available": 0,
+            "paid": 0,
+            "settledPending": 0,
+            "loanSettlement": { "totalPaidCents": 0, "totalInterestCents": 0 },
+            "allocations": {}
+          },
+          {
+            "type": "closing",
+            "round": 27,
+            "income": 0,
+            "available": 0,
+            "paid": 0,
+            "settledPending": 0,
+            "loanSettlement": { "totalPaidCents": 0, "totalInterestCents": 0 },
+            "allocations": {}
+          },
+          {
+            "type": "closing",
+            "round": 36,
+            "income": 0,
+            "available": 0,
+            "paid": 0,
+            "settledPending": 0,
+            "loanSettlement": { "totalPaidCents": 0, "totalInterestCents": 0 },
+            "allocations": {}
+          },
+          {
+            "type": "closing",
+            "round": 45,
+            "income": 0,
+            "available": 0,
+            "paid": 0,
+            "settledPending": 0,
+            "loanSettlement": { "totalPaidCents": 0, "totalInterestCents": 0 },
+            "allocations": {}
+          },
+          {
+            "type": "closing",
+            "round": 54,
+            "income": 0,
+            "available": 0,
+            "paid": 0,
+            "settledPending": 0,
+            "loanSettlement": { "totalPaidCents": 0, "totalInterestCents": 0 },
+            "allocations": {}
+          },
+          {
+            "type": "closing",
+            "round": 63,
+            "income": 0,
+            "available": 0,
+            "paid": 0,
+            "settledPending": 0,
+            "loanSettlement": { "totalPaidCents": 0, "totalInterestCents": 0 },
+            "allocations": {}
+          }
+        ],
+        "lastClosedRound": 63,
+        "distributions": [],
+        "operatingLedger": [],
+        "closedOperatingPeriods": [
+          {
+            "round": 9,
+            "income": 0,
+            "available": 0,
+            "paid": 0,
+            "settledPending": 0,
+            "loanSettlement": { "totalPaidCents": 0, "totalInterestCents": 0 },
+            "allocations": {}
+          },
+          {
+            "round": 18,
+            "income": 0,
+            "available": 0,
+            "paid": 0,
+            "settledPending": 0,
+            "loanSettlement": { "totalPaidCents": 0, "totalInterestCents": 0 },
+            "allocations": {}
+          },
+          {
+            "round": 27,
+            "income": 0,
+            "available": 0,
+            "paid": 0,
+            "settledPending": 0,
+            "loanSettlement": { "totalPaidCents": 0, "totalInterestCents": 0 },
+            "allocations": {}
+          },
+          {
+            "round": 36,
+            "income": 0,
+            "available": 0,
+            "paid": 0,
+            "settledPending": 0,
+            "loanSettlement": { "totalPaidCents": 0, "totalInterestCents": 0 },
+            "allocations": {}
+          },
+          {
+            "round": 45,
+            "income": 0,
+            "available": 0,
+            "paid": 0,
+            "settledPending": 0,
+            "loanSettlement": { "totalPaidCents": 0, "totalInterestCents": 0 },
+            "allocations": {}
+          },
+          {
+            "round": 54,
+            "income": 0,
+            "available": 0,
+            "paid": 0,
+            "settledPending": 0,
+            "loanSettlement": { "totalPaidCents": 0, "totalInterestCents": 0 },
+            "allocations": {}
+          },
+          {
+            "round": 63,
+            "income": 0,
+            "available": 0,
+            "paid": 0,
+            "settledPending": 0,
+            "loanSettlement": { "totalPaidCents": 0, "totalInterestCents": 0 },
+            "allocations": {}
+          }
+        ],
+        "corporateInterestPendingCents": 0
+      },
+      {
+        "id": "GO-018",
+        "name": "Empresa de Aplicativos (participação)",
+        "valuation": 80000,
+        "referenceDistribution": 0,
+        "reserveRequired": 1000,
+        "cash": 1000,
+        "initialCapital": 1000,
+        "retainedProfit": 0,
+        "pendingExpenses": 0,
+        "shares": { "origin": 100 },
+        "offer": { "percent": 20, "price": 16000 },
+        "history": [
+          {
+            "type": "closing",
+            "round": 9,
+            "income": 0,
+            "available": 0,
+            "paid": 0,
+            "settledPending": 0,
+            "loanSettlement": { "totalPaidCents": 0, "totalInterestCents": 0 },
+            "allocations": {}
+          },
+          {
+            "type": "closing",
+            "round": 18,
+            "income": 0,
+            "available": 0,
+            "paid": 0,
+            "settledPending": 0,
+            "loanSettlement": { "totalPaidCents": 0, "totalInterestCents": 0 },
+            "allocations": {}
+          },
+          {
+            "type": "closing",
+            "round": 27,
+            "income": 0,
+            "available": 0,
+            "paid": 0,
+            "settledPending": 0,
+            "loanSettlement": { "totalPaidCents": 0, "totalInterestCents": 0 },
+            "allocations": {}
+          },
+          {
+            "type": "closing",
+            "round": 36,
+            "income": 0,
+            "available": 0,
+            "paid": 0,
+            "settledPending": 0,
+            "loanSettlement": { "totalPaidCents": 0, "totalInterestCents": 0 },
+            "allocations": {}
+          },
+          {
+            "type": "closing",
+            "round": 45,
+            "income": 0,
+            "available": 0,
+            "paid": 0,
+            "settledPending": 0,
+            "loanSettlement": { "totalPaidCents": 0, "totalInterestCents": 0 },
+            "allocations": {}
+          },
+          {
+            "type": "closing",
+            "round": 54,
+            "income": 0,
+            "available": 0,
+            "paid": 0,
+            "settledPending": 0,
+            "loanSettlement": { "totalPaidCents": 0, "totalInterestCents": 0 },
+            "allocations": {}
+          },
+          {
+            "type": "closing",
+            "round": 63,
+            "income": 0,
+            "available": 0,
+            "paid": 0,
+            "settledPending": 0,
+            "loanSettlement": { "totalPaidCents": 0, "totalInterestCents": 0 },
+            "allocations": {}
+          }
+        ],
+        "lastClosedRound": 63,
+        "distributions": [],
+        "operatingLedger": [],
+        "closedOperatingPeriods": [
+          {
+            "round": 9,
+            "income": 0,
+            "available": 0,
+            "paid": 0,
+            "settledPending": 0,
+            "loanSettlement": { "totalPaidCents": 0, "totalInterestCents": 0 },
+            "allocations": {}
+          },
+          {
+            "round": 18,
+            "income": 0,
+            "available": 0,
+            "paid": 0,
+            "settledPending": 0,
+            "loanSettlement": { "totalPaidCents": 0, "totalInterestCents": 0 },
+            "allocations": {}
+          },
+          {
+            "round": 27,
+            "income": 0,
+            "available": 0,
+            "paid": 0,
+            "settledPending": 0,
+            "loanSettlement": { "totalPaidCents": 0, "totalInterestCents": 0 },
+            "allocations": {}
+          },
+          {
+            "round": 36,
+            "income": 0,
+            "available": 0,
+            "paid": 0,
+            "settledPending": 0,
+            "loanSettlement": { "totalPaidCents": 0, "totalInterestCents": 0 },
+            "allocations": {}
+          },
+          {
+            "round": 45,
+            "income": 0,
+            "available": 0,
+            "paid": 0,
+            "settledPending": 0,
+            "loanSettlement": { "totalPaidCents": 0, "totalInterestCents": 0 },
+            "allocations": {}
+          },
+          {
+            "round": 54,
+            "income": 0,
+            "available": 0,
+            "paid": 0,
+            "settledPending": 0,
+            "loanSettlement": { "totalPaidCents": 0, "totalInterestCents": 0 },
+            "allocations": {}
+          },
+          {
+            "round": 63,
+            "income": 0,
+            "available": 0,
+            "paid": 0,
+            "settledPending": 0,
+            "loanSettlement": { "totalPaidCents": 0, "totalInterestCents": 0 },
+            "allocations": {}
+          }
+        ],
+        "corporateInterestPendingCents": 0
+      },
+      {
+        "id": "GO-019",
+        "name": "Empresa de Reciclagem (participação)",
+        "valuation": 50000,
+        "referenceDistribution": 600,
+        "reserveRequired": 1200,
+        "cash": 1200,
+        "initialCapital": 1200,
+        "retainedProfit": 0,
+        "pendingExpenses": 0,
+        "shares": { "origin": 100 },
+        "offer": { "percent": 40, "price": 20000 },
+        "history": [
+          {
+            "type": "closing",
+            "round": 9,
+            "income": 0,
+            "available": 0,
+            "paid": 0,
+            "settledPending": 0,
+            "loanSettlement": { "totalPaidCents": 0, "totalInterestCents": 0 },
+            "allocations": {}
+          },
+          {
+            "type": "closing",
+            "round": 18,
+            "income": 0,
+            "available": 0,
+            "paid": 0,
+            "settledPending": 0,
+            "loanSettlement": { "totalPaidCents": 0, "totalInterestCents": 0 },
+            "allocations": {}
+          },
+          {
+            "type": "closing",
+            "round": 27,
+            "income": 0,
+            "available": 0,
+            "paid": 0,
+            "settledPending": 0,
+            "loanSettlement": { "totalPaidCents": 0, "totalInterestCents": 0 },
+            "allocations": {}
+          },
+          {
+            "type": "closing",
+            "round": 36,
+            "income": 0,
+            "available": 0,
+            "paid": 0,
+            "settledPending": 0,
+            "loanSettlement": { "totalPaidCents": 0, "totalInterestCents": 0 },
+            "allocations": {}
+          },
+          {
+            "type": "closing",
+            "round": 45,
+            "income": 0,
+            "available": 0,
+            "paid": 0,
+            "settledPending": 0,
+            "loanSettlement": { "totalPaidCents": 0, "totalInterestCents": 0 },
+            "allocations": {}
+          },
+          {
+            "type": "closing",
+            "round": 54,
+            "income": 0,
+            "available": 0,
+            "paid": 0,
+            "settledPending": 0,
+            "loanSettlement": { "totalPaidCents": 0, "totalInterestCents": 0 },
+            "allocations": {}
+          },
+          {
+            "type": "closing",
+            "round": 63,
+            "income": 0,
+            "available": 0,
+            "paid": 0,
+            "settledPending": 0,
+            "loanSettlement": { "totalPaidCents": 0, "totalInterestCents": 0 },
+            "allocations": {}
+          }
+        ],
+        "lastClosedRound": 63,
+        "distributions": [],
+        "operatingLedger": [],
+        "closedOperatingPeriods": [
+          {
+            "round": 9,
+            "income": 0,
+            "available": 0,
+            "paid": 0,
+            "settledPending": 0,
+            "loanSettlement": { "totalPaidCents": 0, "totalInterestCents": 0 },
+            "allocations": {}
+          },
+          {
+            "round": 18,
+            "income": 0,
+            "available": 0,
+            "paid": 0,
+            "settledPending": 0,
+            "loanSettlement": { "totalPaidCents": 0, "totalInterestCents": 0 },
+            "allocations": {}
+          },
+          {
+            "round": 27,
+            "income": 0,
+            "available": 0,
+            "paid": 0,
+            "settledPending": 0,
+            "loanSettlement": { "totalPaidCents": 0, "totalInterestCents": 0 },
+            "allocations": {}
+          },
+          {
+            "round": 36,
+            "income": 0,
+            "available": 0,
+            "paid": 0,
+            "settledPending": 0,
+            "loanSettlement": { "totalPaidCents": 0, "totalInterestCents": 0 },
+            "allocations": {}
+          },
+          {
+            "round": 45,
+            "income": 0,
+            "available": 0,
+            "paid": 0,
+            "settledPending": 0,
+            "loanSettlement": { "totalPaidCents": 0, "totalInterestCents": 0 },
+            "allocations": {}
+          },
+          {
+            "round": 54,
+            "income": 0,
+            "available": 0,
+            "paid": 0,
+            "settledPending": 0,
+            "loanSettlement": { "totalPaidCents": 0, "totalInterestCents": 0 },
+            "allocations": {}
+          },
+          {
+            "round": 63,
+            "income": 0,
+            "available": 0,
+            "paid": 0,
+            "settledPending": 0,
+            "loanSettlement": { "totalPaidCents": 0, "totalInterestCents": 0 },
+            "allocations": {}
+          }
+        ],
+        "corporateInterestPendingCents": 0
+      },
+      {
+        "id": "GO-020",
+        "name": "Empresa de Logística (participação)",
+        "valuation": 120000,
+        "referenceDistribution": 1200,
+        "reserveRequired": 2400,
+        "cash": 2400,
+        "initialCapital": 2400,
+        "retainedProfit": 0,
+        "pendingExpenses": 0,
+        "shares": { "origin": 100 },
+        "offer": { "percent": 25, "price": 30000 },
+        "history": [
+          {
+            "type": "closing",
+            "round": 9,
+            "income": 0,
+            "available": 0,
+            "paid": 0,
+            "settledPending": 0,
+            "loanSettlement": { "totalPaidCents": 0, "totalInterestCents": 0 },
+            "allocations": {}
+          },
+          {
+            "type": "closing",
+            "round": 18,
+            "income": 0,
+            "available": 0,
+            "paid": 0,
+            "settledPending": 0,
+            "loanSettlement": { "totalPaidCents": 0, "totalInterestCents": 0 },
+            "allocations": {}
+          },
+          {
+            "type": "closing",
+            "round": 27,
+            "income": 0,
+            "available": 0,
+            "paid": 0,
+            "settledPending": 0,
+            "loanSettlement": { "totalPaidCents": 0, "totalInterestCents": 0 },
+            "allocations": {}
+          },
+          {
+            "type": "closing",
+            "round": 36,
+            "income": 0,
+            "available": 0,
+            "paid": 0,
+            "settledPending": 0,
+            "loanSettlement": { "totalPaidCents": 0, "totalInterestCents": 0 },
+            "allocations": {}
+          },
+          {
+            "type": "closing",
+            "round": 45,
+            "income": 0,
+            "available": 0,
+            "paid": 0,
+            "settledPending": 0,
+            "loanSettlement": { "totalPaidCents": 0, "totalInterestCents": 0 },
+            "allocations": {}
+          },
+          {
+            "type": "closing",
+            "round": 54,
+            "income": 0,
+            "available": 0,
+            "paid": 0,
+            "settledPending": 0,
+            "loanSettlement": { "totalPaidCents": 0, "totalInterestCents": 0 },
+            "allocations": {}
+          },
+          {
+            "type": "closing",
+            "round": 63,
+            "income": 0,
+            "available": 0,
+            "paid": 0,
+            "settledPending": 0,
+            "loanSettlement": { "totalPaidCents": 0, "totalInterestCents": 0 },
+            "allocations": {}
+          }
+        ],
+        "lastClosedRound": 63,
+        "distributions": [],
+        "operatingLedger": [],
+        "closedOperatingPeriods": [
+          {
+            "round": 9,
+            "income": 0,
+            "available": 0,
+            "paid": 0,
+            "settledPending": 0,
+            "loanSettlement": { "totalPaidCents": 0, "totalInterestCents": 0 },
+            "allocations": {}
+          },
+          {
+            "round": 18,
+            "income": 0,
+            "available": 0,
+            "paid": 0,
+            "settledPending": 0,
+            "loanSettlement": { "totalPaidCents": 0, "totalInterestCents": 0 },
+            "allocations": {}
+          },
+          {
+            "round": 27,
+            "income": 0,
+            "available": 0,
+            "paid": 0,
+            "settledPending": 0,
+            "loanSettlement": { "totalPaidCents": 0, "totalInterestCents": 0 },
+            "allocations": {}
+          },
+          {
+            "round": 36,
+            "income": 0,
+            "available": 0,
+            "paid": 0,
+            "settledPending": 0,
+            "loanSettlement": { "totalPaidCents": 0, "totalInterestCents": 0 },
+            "allocations": {}
+          },
+          {
+            "round": 45,
+            "income": 0,
+            "available": 0,
+            "paid": 0,
+            "settledPending": 0,
+            "loanSettlement": { "totalPaidCents": 0, "totalInterestCents": 0 },
+            "allocations": {}
+          },
+          {
+            "round": 54,
+            "income": 0,
+            "available": 0,
+            "paid": 0,
+            "settledPending": 0,
+            "loanSettlement": { "totalPaidCents": 0, "totalInterestCents": 0 },
+            "allocations": {}
+          },
+          {
+            "round": 63,
+            "income": 0,
+            "available": 0,
+            "paid": 0,
+            "settledPending": 0,
+            "loanSettlement": { "totalPaidCents": 0, "totalInterestCents": 0 },
+            "allocations": {}
+          }
+        ],
+        "corporateInterestPendingCents": 0
+      }
+    ],
+    "shareOffers": [],
+    "proposals": [],
+    "jointInvestments": [
+      {
+        "id": "231c9c4f-f252-4b70-8c13-17fefbd97589",
+        "cardId": "GO-018",
+        "authorId": "01253d56d66332aacc",
+        "offerCost": 16000,
+        "percent": 20,
+        "companyName": "Empresa de Aplicativos (participação)",
+        "invitedIds": ["ec1296065aa30d053a"],
+        "commitments": { "01253d56d66332aacc": 1560 },
+        "declinedIds": [],
+        "createdRound": 2,
+        "expiresRound": 4,
+        "status": "expired",
+        "settledRound": null
+      }
+    ],
+    "discountOffers": [],
+    "npcInvestors": [
+      { "id": "conservador", "label": "Conservador", "cash": 100000, "shares": {}, "ledger": [] },
+      { "id": "moderado", "label": "Moderado", "cash": 250000, "shares": {}, "ledger": [] },
+      { "id": "arrojado", "label": "Arrojado", "cash": 500000, "shares": {}, "ledger": [] }
+    ],
+    "securities": [],
+    "secondaryOffers": [
+      {
+        "id": "60b9aa3b-35a2-4305-9da3-087db14c6cbb",
+        "securityId": "PO-015",
+        "sellerId": "ec1296065aa30d053a",
+        "units": 0,
+        "createdRound": 8,
+        "status": "filled"
+      },
+      {
+        "id": "28986c14-3cb9-4886-9674-952c4bbfd608",
+        "securityId": "PO-013",
+        "sellerId": "ec1296065aa30d053a",
+        "units": 0,
+        "createdRound": 9,
+        "status": "filled"
+      },
+      {
+        "id": "827d0740-59ba-4204-bbd4-c3a581769279",
+        "securityId": "PO-013",
+        "sellerId": "ec1296065aa30d053a",
+        "units": 1,
+        "createdRound": 10,
+        "status": "open"
+      }
+    ],
+    "secondaryTrades": [
+      {
+        "id": "dbbbdf3e-e7cd-406f-b3a3-c5199b225d5c",
+        "round": 9,
+        "securityId": "PO-015",
+        "buyerId": "01253d56d66332aacc",
+        "sellerId": "ec1296065aa30d053a",
+        "units": 1,
+        "priceCents": 4000,
+        "amountCents": 4000,
+        "amount": 40
+      },
+      {
+        "id": "4397213e-74af-4c29-9f71-e43ddd6877a7",
+        "round": 10,
+        "securityId": "PO-013",
+        "buyerId": "01253d56d66332aacc",
+        "sellerId": "ec1296065aa30d053a",
+        "units": 1,
+        "priceCents": 5000,
+        "amountCents": 5000,
+        "amount": 50
+      }
+    ],
+    "secondaryVolumes": { "9": { "PO-015": 1 }, "10": { "PO-013": 1 } },
+    "externalSellerCash": 0,
+    "revision": 171,
+    "createdAt": 1793673344199,
+    "securityTrades": [],
+    "marketOccurrences": [
+      {
+        "occurrence": "MF-014",
+        "cardId": "MF-014",
+        "round": 2,
+        "affected": 0,
+        "players": [],
+        "kind": "security_valuation"
+      },
+      {
+        "occurrence": "MF-005",
+        "cardId": "MF-005",
+        "round": 8,
+        "affected": 0,
+        "players": [],
+        "kind": "security_dividend"
+      },
+      {
+        "occurrence": "MF-008",
+        "cardId": "MF-008",
+        "round": 8,
+        "affected": 0,
+        "players": [],
+        "kind": "security_valuation"
+      }
+    ],
+    "officialMarket": { "pricesCents": { "PO-017": 2953 }, "dividendsCents": { "PO-014": 66 } }
+  },
+  "3BAC7D79": {
+    "code": "3BAC7D79",
+    "status": "finished",
+    "teacherToken": "3f2c97ace3552d8fc2a818bae15f631167e3bf39657437ae0604f892572bcf54",
+    "teacherRecoveryHash": "80de5c8f5622cd6196b5a5ce798b8a42f3faa6906fcf17907f4ec39bf302d97b",
+    "players": [
+      {
+        "id": "b06a84aaeb98ffe3d2",
+        "name": "Teste 1",
+        "game": {
+          "version": 1,
+          "id": "cf659ca9-4894-4071-8469-7f2954703833",
+          "professionId": 0,
+          "dreamId": "CAFE",
+          "position": 3,
+          "circuit": "inner",
+          "cash": 2560,
+          "initialCash": 2000,
+          "debt": 2730,
+          "initialDebtCents": 273000,
+          "initialInstallmentCents": 30000,
+          "initialArrearsCents": 0,
+          "installment": 300,
+          "baseExpenses": 1500,
+          "initialAssets": 0,
+          "initialPassive": 0,
+          "assets": [],
+          "loans": [],
+          "turn": 8,
+          "closures": 1,
+          "streak": 0,
+          "won": false,
+          "lastRoll": 2,
+          "lastTile": "EF",
+          "pending": false,
+          "offerResolved": false,
+          "officialPOEnabled": true,
+          "demoDeck": ["PO-007", "PO-002", "PO-001"],
+          "demoDeckCycles": 0,
+          "currentOffer": null,
+          "currentCard": null,
+          "cardEvents": [
+            {
+              "id": "EF-011",
+              "turn": 1,
+              "circuit": "inner",
+              "position": 3,
+              "status": "text_available",
+              "resolution": "answer",
+              "financialEffect": false,
+              "choice": "A",
+              "correct": false,
+              "correctAnswer": "C"
+            },
+            {
+              "id": "MF-001",
+              "turn": 2,
+              "circuit": "inner",
+              "position": 8,
+              "status": "text_available",
+              "resolution": "automatic",
+              "financialEffect": false
+            },
+            {
+              "id": "EV-009",
+              "turn": 3,
+              "circuit": "inner",
+              "position": 14,
+              "status": "text_available",
+              "resolution": "automatic",
+              "financialEffect": true
+            },
+            {
+              "id": "EF-013",
+              "turn": 4,
+              "circuit": "inner",
+              "position": 19,
+              "status": "text_available",
+              "resolution": "answer",
+              "financialEffect": true,
+              "choice": "B",
+              "correct": true,
+              "correctAnswer": "B"
+            },
+            {
+              "id": "MF-009",
+              "turn": 5,
+              "circuit": "inner",
+              "position": 24,
+              "status": "text_available",
+              "resolution": "automatic",
+              "financialEffect": true
+            },
+            {
+              "id": "GO-016",
+              "turn": 6,
+              "circuit": "inner",
+              "position": 28,
+              "status": "text_available",
+              "resolution": "joint_proposal",
+              "financialEffect": false
+            },
+            {
+              "id": "EF-006",
+              "turn": 8,
+              "circuit": "inner",
+              "position": 3,
+              "status": "text_available",
+              "resolution": "acknowledge",
+              "financialEffect": false
+            }
+          ],
+          "catalogDecks": {
+            "inner:EF": [
+              "EF-005",
+              "EF-014",
+              "EF-008",
+              "EF-010",
+              "EF-003",
+              "EF-007",
+              "EF-002",
+              "EF-001",
+              "EF-012",
+              "EF-015",
+              "EF-009",
+              "EF-004"
+            ],
+            "inner:MF": [
+              "MF-003",
+              "MF-004",
+              "MF-012",
+              "MF-011",
+              "MF-014",
+              "MF-007",
+              "MF-002",
+              "MF-015",
+              "MF-005",
+              "MF-008",
+              "MF-013",
+              "MF-006",
+              "MF-010"
+            ],
+            "inner:EV": [
+              "EV-006",
+              "EV-012",
+              "EV-001",
+              "EV-002",
+              "EV-011",
+              "EV-013",
+              "EV-014",
+              "EV-005",
+              "EV-008",
+              "EV-004",
+              "EV-007",
+              "EV-015",
+              "EV-003",
+              "EV-010"
+            ],
+            "inner:GO": [
+              "GO-012",
+              "GO-007",
+              "GO-017",
+              "GO-009",
+              "GO-019",
+              "GO-001",
+              "GO-003",
+              "GO-011",
+              "GO-018",
+              "GO-008",
+              "GO-005",
+              "GO-014",
+              "GO-004",
+              "GO-015",
+              "GO-010",
+              "GO-013",
+              "GO-006",
+              "GO-002",
+              "GO-020"
+            ]
+          },
+          "catalogCycles": { "inner:EF": 0, "inner:MF": 0, "inner:EV": 0, "inner:GO": 0 },
+          "arrearsLiving": 0,
+          "arrearsLivingCents": 0,
+          "arrearsLoan": 0,
+          "ledger": [
+            {
+              "id": "d2da917e-e63a-455d-b8ce-c7a89cddef15",
+              "turn": 4,
+              "closure": 0,
+              "kind": "education_reward",
+              "amount": 110,
+              "description": "Acerto da pergunta EF-013",
+              "cardId": "EF-013"
+            },
+            {
+              "id": "c7e2a82d-fd86-4c8d-aec7-708707c8a03b",
+              "turn": 7,
+              "closure": 0,
+              "kind": "salary",
+              "amount": 2200,
+              "description": "Salário recebido"
+            },
+            {
+              "id": "3ee66b18-453e-433a-bb3e-548b04d2f99c",
+              "turn": 7,
+              "closure": 0,
+              "kind": "expense",
+              "amount": -1450,
+              "description": "Despesas pessoais do período",
+              "amountCents": -145000
+            },
+            {
+              "id": "036de986-c656-41fe-841d-cd7246292960",
+              "turn": 7,
+              "closure": 0,
+              "kind": "loan_payment",
+              "amount": -300,
+              "description": "Prestação da dívida inicial",
+              "amountCents": -30000,
+              "loanId": "initial"
+            }
+          ],
+          "history": [
+            {
+              "id": "e08c6d94-87c3-4aab-badc-09d8e66dd39b",
+              "text": "Carta EF-006 registrada; descrição original disponível, sem efeito financeiro automático.",
+              "type": "info"
+            },
+            {
+              "id": "8440a9d6-ce3b-4290-9f64-f14894d7d555",
+              "text": "Turno 8: dado 2, casa 3 (EF).",
+              "type": "info"
+            },
+            {
+              "id": "215e0fde-72da-47c4-86f8-304e9bbfd3a2",
+              "text": "Fechamento 1: receitas R$ 2200, obrigações do período R$ 1750, pagamentos R$ 1750, pendências R$ 0.",
+              "type": "pay"
+            },
+            {
+              "id": "fc6c77fb-a69d-40bd-8303-7919c7682ec5",
+              "text": "Turno 7: dado 5, casa 1 (PAY).",
+              "type": "info"
+            },
+            {
+              "id": "95dd199a-d437-48d6-8958-fc8544d30b82",
+              "text": "Carta GO-016 registrada; descrição original disponível, sem efeito financeiro automático.",
+              "type": "info"
+            },
+            {
+              "id": "731c66ec-e64d-436e-b7c9-6d8f57638623",
+              "text": "Turno 6: dado 4, casa 28 (GO).",
+              "type": "info"
+            },
+            {
+              "id": "9e743b29-27b0-43a9-bd62-2bbd778b62f0",
+              "text": "Carta MF-009 registrada; descrição original disponível, sem efeito financeiro automático.",
+              "type": "info"
+            },
+            {
+              "id": "876ac361-861e-425f-bf52-5a47ecffb1a4",
+              "text": "Turno 5: dado 5, casa 24 (MF).",
+              "type": "info"
+            },
+            {
+              "id": "18391f85-a0ab-4a12-99c0-d775de581abd",
+              "text": "Pergunta EF-013: resposta B; gabarito B; acerto; recompensa R$ 110.",
+              "type": "info"
+            },
+            {
+              "id": "3d8526f6-722f-4640-8897-3584ed4629ef",
+              "text": "Carta EF-013 registrada; descrição original disponível, sem efeito financeiro automático.",
+              "type": "info"
+            },
+            {
+              "id": "37969eca-9933-4d00-9dca-c396a4cad556",
+              "text": "Turno 4: dado 5, casa 19 (EF).",
+              "type": "info"
+            },
+            {
+              "id": "6b8f1cf7-f507-4586-af6b-075980ad3248",
+              "text": "Evento da vida EV-009: education_scholarship; 0 R$.",
+              "type": "info"
+            },
+            {
+              "id": "ab261e8c-5211-419d-978c-dbd04920022f",
+              "text": "Carta EV-009 registrada; descrição original disponível, sem efeito financeiro automático.",
+              "type": "info"
+            },
+            {
+              "id": "6bd17258-1645-4bae-a22e-1651d5b465c2",
+              "text": "Turno 3: dado 6, casa 14 (EV).",
+              "type": "info"
+            },
+            {
+              "id": "df5eee4e-d561-4406-bdb6-777ebeaaf6a3",
+              "text": "Carta MF-001 registrada; descrição original disponível, sem efeito financeiro automático.",
+              "type": "info"
+            },
+            {
+              "id": "f95a90b4-f9a4-4db5-b43a-bb5e7cf933ef",
+              "text": "Turno 2: dado 5, casa 8 (MF).",
+              "type": "info"
+            },
+            {
+              "id": "03d96d10-6d21-408f-a585-41337f0b0132",
+              "text": "Pergunta EF-011: resposta A; gabarito C; erro; recompensa R$ 0.",
+              "type": "info"
+            },
+            {
+              "id": "0ac58d61-da62-40f8-9e11-9725e377dd93",
+              "text": "Carta EF-011 registrada; descrição original disponível, sem efeito financeiro automático.",
+              "type": "info"
+            },
+            {
+              "id": "b23c0481-0720-4ab6-b1a4-1cfeefda0f93",
+              "text": "Turno 1: dado 2, casa 3 (EF).",
+              "type": "info"
+            },
+            {
+              "id": "53ae1edb-5c48-4851-968c-d95894ac3602",
+              "text": "Partida iniciada: Auxiliar Administrativo.",
+              "type": "info"
+            }
+          ],
+          "expenseCategories": {
+            "housing": 700,
+            "food": 400,
+            "transport": 200,
+            "leisure": 100,
+            "education": 100
+          },
+          "budgetModifiers": [{ "category": "education", "percent": 50, "remaining": 2 }],
+          "secondaryCashCents": 0,
+          "delayedSalaryBoosts": [],
+          "officialDividendRemainderCents": 0,
+          "officialSecuritiesPassivePaid": 0,
+          "fixedPassivePaid": 0,
+          "pendingCorporatePassive": 0
+        },
+        "tokenHash": "2959d64db6c8847afc3837ad6334e84b395c16faba99592b5a6c3a18a1e729fa",
+        "recoveryHash": "6f9a9faab7fcb07ce740cd91278294ac18566128fa7dca27dd145980af400e37"
+      },
+      {
+        "id": "966666aa67d192e66f",
+        "name": "Local",
+        "game": {
+          "version": 1,
+          "id": "d226574b-268b-4428-9e33-78eed6305005",
+          "professionId": 0,
+          "dreamId": "TRAVEL",
+          "position": 28,
+          "circuit": "inner",
+          "cash": 1670,
+          "initialCash": 2000,
+          "debt": 3000,
+          "initialDebtCents": 300000,
+          "initialInstallmentCents": 30000,
+          "initialArrearsCents": 0,
+          "installment": 300,
+          "baseExpenses": 1365,
+          "initialAssets": 0,
+          "initialPassive": 0,
+          "assets": [],
+          "loans": [],
+          "turn": 6,
+          "closures": 0,
+          "streak": 0,
+          "won": false,
+          "lastRoll": 5,
+          "lastTile": "GO",
+          "pending": false,
+          "offerResolved": false,
+          "officialPOEnabled": true,
+          "demoDeck": ["PO-007", "PO-002", "PO-001"],
+          "demoDeckCycles": 0,
+          "currentOffer": null,
+          "currentCard": null,
+          "cardEvents": [
+            {
+              "id": "EV-007",
+              "turn": 1,
+              "circuit": "inner",
+              "position": 6,
+              "status": "text_available",
+              "resolution": "decision",
+              "financialEffect": false,
+              "choice": "accept"
+            },
+            {
+              "id": "PO-004",
+              "turn": 2,
+              "circuit": "inner",
+              "position": 9,
+              "status": "text_available",
+              "resolution": "acknowledge",
+              "financialEffect": false
+            },
+            {
+              "id": "EV-004",
+              "turn": 3,
+              "circuit": "inner",
+              "position": 14,
+              "status": "text_available",
+              "resolution": "decision",
+              "financialEffect": true,
+              "choice": "accept"
+            },
+            {
+              "id": "DI-014",
+              "turn": 4,
+              "circuit": "inner",
+              "position": 20,
+              "status": "text_available",
+              "resolution": "automatic",
+              "financialEffect": true
+            },
+            {
+              "id": "PO-019",
+              "turn": 5,
+              "circuit": "inner",
+              "position": 23,
+              "status": "text_available",
+              "resolution": "acknowledge",
+              "financialEffect": false
+            },
+            {
+              "id": "GO-002",
+              "turn": 6,
+              "circuit": "inner",
+              "position": 28,
+              "status": "text_available",
+              "resolution": "acknowledge",
+              "financialEffect": false
+            }
+          ],
+          "catalogDecks": {
+            "inner:EV": [
+              "EV-009",
+              "EV-008",
+              "EV-003",
+              "EV-001",
+              "EV-010",
+              "EV-015",
+              "EV-005",
+              "EV-002",
+              "EV-013",
+              "EV-014",
+              "EV-011",
+              "EV-006",
+              "EV-012"
+            ],
+            "inner:PO": [
+              "PO-013",
+              "PO-017",
+              "PO-025",
+              "PO-012",
+              "PO-002",
+              "PO-010",
+              "PO-005",
+              "PO-021",
+              "PO-003",
+              "PO-024",
+              "PO-001",
+              "PO-020",
+              "PO-008",
+              "PO-016",
+              "PO-018",
+              "PO-022",
+              "PO-009",
+              "PO-007",
+              "PO-011",
+              "PO-015",
+              "PO-023",
+              "PO-014",
+              "PO-006"
+            ],
+            "inner:DI": [
+              "DI-004",
+              "DI-015",
+              "DI-013",
+              "DI-005",
+              "DI-017",
+              "DI-016",
+              "DI-019",
+              "DI-012",
+              "DI-009",
+              "DI-011",
+              "DI-003",
+              "DI-010",
+              "DI-008",
+              "DI-006",
+              "DI-002",
+              "DI-018",
+              "DI-001",
+              "DI-020",
+              "DI-007"
+            ],
+            "inner:GO": [
+              "GO-020",
+              "GO-018",
+              "GO-010",
+              "GO-014",
+              "GO-008",
+              "GO-003",
+              "GO-001",
+              "GO-015",
+              "GO-016",
+              "GO-017",
+              "GO-007",
+              "GO-019",
+              "GO-004",
+              "GO-009",
+              "GO-013",
+              "GO-011",
+              "GO-006",
+              "GO-005",
+              "GO-012"
+            ]
+          },
+          "catalogCycles": { "inner:EV": 0, "inner:PO": 0, "inner:DI": 0, "inner:GO": 0 },
+          "arrearsLiving": 0,
+          "arrearsLivingCents": 0,
+          "arrearsLoan": 0,
+          "ledger": [
+            {
+              "id": "07079986-e6f5-46e6-bcd1-557651aa9903",
+              "turn": 3,
+              "closure": 0,
+              "kind": "life_decision",
+              "amount": -220,
+              "description": "Decisão EV-004: Mudar de residência",
+              "cardId": "EV-004"
+            },
+            {
+              "id": "e7afad00-759b-4eed-806f-afd8d213e0b5",
+              "turn": 4,
+              "closure": 0,
+              "kind": "unexpected_expense",
+              "amount": -110,
+              "description": "Despesa inesperada DI-014",
+              "cardId": "DI-014"
+            }
+          ],
+          "history": [
+            {
+              "id": "45213180-0d3c-4034-9ff5-aa7fb97018e5",
+              "text": "Carta GO-002 registrada; descrição original disponível, sem efeito financeiro automático.",
+              "type": "info"
+            },
+            {
+              "id": "cd2210e0-ba03-415a-aa24-e8ed9cd8e458",
+              "text": "Turno 6: dado 5, casa 28 (GO).",
+              "type": "info"
+            },
+            {
+              "id": "5c048b5c-f160-43c0-a80f-52e8cf1aaf74",
+              "text": "Carta PO-019 registrada; descrição original disponível, sem efeito financeiro automático.",
+              "type": "info"
+            },
+            {
+              "id": "06a02ff5-a688-4ecc-99b0-a173b1930ce3",
+              "text": "Turno 5: dado 3, casa 23 (PO).",
+              "type": "info"
+            },
+            {
+              "id": "b24ef4da-9d78-4a9d-bcc1-20bfd5d5a383",
+              "text": "Despesa DI-014: R$ 110; pago R$ 110; pendente R$ 0.",
+              "type": "warning"
+            },
+            {
+              "id": "867dcfdb-accd-419f-a859-52cf2456359f",
+              "text": "Carta DI-014 registrada; descrição original disponível, sem efeito financeiro automático.",
+              "type": "info"
+            },
+            {
+              "id": "9a028bcb-eaab-4186-9206-dacdfd1bb78c",
+              "text": "Turno 4: dado 6, casa 20 (DI).",
+              "type": "info"
+            },
+            {
+              "id": "6695899e-0052-428f-b2f0-83b1b300eceb",
+              "text": "EV-004: Mudar de residência (R$ -220).",
+              "type": "info"
+            },
+            {
+              "id": "426752bc-2bbd-423c-96fb-72478b284cf7",
+              "text": "Carta EV-004 registrada; descrição original disponível, sem efeito financeiro automático.",
+              "type": "info"
+            },
+            {
+              "id": "d2323e30-f664-491b-b72d-0f1ec0b08890",
+              "text": "Turno 3: dado 5, casa 14 (EV).",
+              "type": "info"
+            },
+            {
+              "id": "a4c8960e-a6a7-4473-bd7a-7c3433da83b4",
+              "text": "Carta PO-004 registrada; descrição original disponível, sem efeito financeiro automático.",
+              "type": "info"
+            },
+            {
+              "id": "ad5aa8a0-a794-462a-9d64-6cd71f66515d",
+              "text": "Turno 2: dado 3, casa 9 (PO).",
+              "type": "info"
+            },
+            {
+              "id": "5ff7bc96-8b3c-4061-bd7a-199376410487",
+              "text": "EV-007: Adotar transporte compartilhado.",
+              "type": "info"
+            },
+            {
+              "id": "9c62070b-2883-4104-b0e7-97647d0a7088",
+              "text": "Carta EV-007 registrada; descrição original disponível, sem efeito financeiro automático.",
+              "type": "info"
+            },
+            {
+              "id": "6b035eb9-4b53-4369-8c0d-1c081ba00c1a",
+              "text": "Turno 1: dado 5, casa 6 (EV).",
+              "type": "info"
+            },
+            {
+              "id": "fab61a92-92a8-432f-9a96-e382b1784cb2",
+              "text": "Partida iniciada: Auxiliar Administrativo.",
+              "type": "info"
+            }
+          ],
+          "expenseCategories": {
+            "housing": 595,
+            "food": 400,
+            "transport": 170,
+            "leisure": 100,
+            "education": 100
+          },
+          "secondaryCashCents": 0
+        },
+        "tokenHash": "91a96fc31b620c7226ce772f3ae96c690c3626cbf2c3b651f4121525901d45a8",
+        "recoveryHash": "0528445e8df73b6a5de791d57f1f5341225f7978cf204add005c846158f51476"
+      }
+    ],
+    "order": ["b06a84aaeb98ffe3d2", "966666aa67d192e66f"],
+    "winnerOrder": [],
+    "turnIndex": 1,
+    "round": 39,
+    "turnDeadline": null,
+    "pausedRemaining": null,
+    "companies": [
+      {
+        "id": "GO-016",
+        "name": "Cafeteria (participação)",
+        "valuation": 40000,
+        "referenceDistribution": 500,
+        "reserveRequired": 1000,
+        "cash": 1000,
+        "initialCapital": 1000,
+        "retainedProfit": 0,
+        "pendingExpenses": 0,
+        "shares": { "origin": 100 },
+        "offer": { "percent": 25, "price": 10000 },
+        "history": [
+          {
+            "type": "closing",
+            "round": 9,
+            "income": 0,
+            "available": 0,
+            "paid": 0,
+            "settledPending": 0,
+            "loanSettlement": { "totalPaidCents": 0, "totalInterestCents": 0 },
+            "allocations": {}
+          },
+          {
+            "type": "closing",
+            "round": 18,
+            "income": 0,
+            "available": 0,
+            "paid": 0,
+            "settledPending": 0,
+            "loanSettlement": { "totalPaidCents": 0, "totalInterestCents": 0 },
+            "allocations": {}
+          },
+          {
+            "type": "closing",
+            "round": 27,
+            "income": 0,
+            "available": 0,
+            "paid": 0,
+            "settledPending": 0,
+            "loanSettlement": { "totalPaidCents": 0, "totalInterestCents": 0 },
+            "allocations": {}
+          },
+          {
+            "type": "closing",
+            "round": 36,
+            "income": 0,
+            "available": 0,
+            "paid": 0,
+            "settledPending": 0,
+            "loanSettlement": { "totalPaidCents": 0, "totalInterestCents": 0 },
+            "allocations": {}
+          }
+        ],
+        "lastClosedRound": 36,
+        "distributions": [],
+        "operatingLedger": [],
+        "closedOperatingPeriods": [
+          {
+            "round": 9,
+            "income": 0,
+            "available": 0,
+            "paid": 0,
+            "settledPending": 0,
+            "loanSettlement": { "totalPaidCents": 0, "totalInterestCents": 0 },
+            "allocations": {}
+          },
+          {
+            "round": 18,
+            "income": 0,
+            "available": 0,
+            "paid": 0,
+            "settledPending": 0,
+            "loanSettlement": { "totalPaidCents": 0, "totalInterestCents": 0 },
+            "allocations": {}
+          },
+          {
+            "round": 27,
+            "income": 0,
+            "available": 0,
+            "paid": 0,
+            "settledPending": 0,
+            "loanSettlement": { "totalPaidCents": 0, "totalInterestCents": 0 },
+            "allocations": {}
+          },
+          {
+            "round": 36,
+            "income": 0,
+            "available": 0,
+            "paid": 0,
+            "settledPending": 0,
+            "loanSettlement": { "totalPaidCents": 0, "totalInterestCents": 0 },
+            "allocations": {}
+          }
+        ],
+        "corporateInterestPendingCents": 0
+      },
+      {
+        "id": "GO-017",
+        "name": "Academia (participação)",
+        "valuation": 60000,
+        "referenceDistribution": 780,
+        "reserveRequired": 1560,
+        "cash": 1560,
+        "initialCapital": 1560,
+        "retainedProfit": 0,
+        "pendingExpenses": 0,
+        "shares": { "origin": 100 },
+        "offer": { "percent": 30, "price": 18000 },
+        "history": [
+          {
+            "type": "closing",
+            "round": 9,
+            "income": 0,
+            "available": 0,
+            "paid": 0,
+            "settledPending": 0,
+            "loanSettlement": { "totalPaidCents": 0, "totalInterestCents": 0 },
+            "allocations": {}
+          },
+          {
+            "type": "closing",
+            "round": 18,
+            "income": 0,
+            "available": 0,
+            "paid": 0,
+            "settledPending": 0,
+            "loanSettlement": { "totalPaidCents": 0, "totalInterestCents": 0 },
+            "allocations": {}
+          },
+          {
+            "type": "closing",
+            "round": 27,
+            "income": 0,
+            "available": 0,
+            "paid": 0,
+            "settledPending": 0,
+            "loanSettlement": { "totalPaidCents": 0, "totalInterestCents": 0 },
+            "allocations": {}
+          },
+          {
+            "type": "closing",
+            "round": 36,
+            "income": 0,
+            "available": 0,
+            "paid": 0,
+            "settledPending": 0,
+            "loanSettlement": { "totalPaidCents": 0, "totalInterestCents": 0 },
+            "allocations": {}
+          }
+        ],
+        "lastClosedRound": 36,
+        "distributions": [],
+        "operatingLedger": [],
+        "closedOperatingPeriods": [
+          {
+            "round": 9,
+            "income": 0,
+            "available": 0,
+            "paid": 0,
+            "settledPending": 0,
+            "loanSettlement": { "totalPaidCents": 0, "totalInterestCents": 0 },
+            "allocations": {}
+          },
+          {
+            "round": 18,
+            "income": 0,
+            "available": 0,
+            "paid": 0,
+            "settledPending": 0,
+            "loanSettlement": { "totalPaidCents": 0, "totalInterestCents": 0 },
+            "allocations": {}
+          },
+          {
+            "round": 27,
+            "income": 0,
+            "available": 0,
+            "paid": 0,
+            "settledPending": 0,
+            "loanSettlement": { "totalPaidCents": 0, "totalInterestCents": 0 },
+            "allocations": {}
+          },
+          {
+            "round": 36,
+            "income": 0,
+            "available": 0,
+            "paid": 0,
+            "settledPending": 0,
+            "loanSettlement": { "totalPaidCents": 0, "totalInterestCents": 0 },
+            "allocations": {}
+          }
+        ],
+        "corporateInterestPendingCents": 0
+      },
+      {
+        "id": "GO-018",
+        "name": "Empresa de Aplicativos (participação)",
+        "valuation": 80000,
+        "referenceDistribution": 0,
+        "reserveRequired": 1000,
+        "cash": 1000,
+        "initialCapital": 1000,
+        "retainedProfit": 0,
+        "pendingExpenses": 0,
+        "shares": { "origin": 100 },
+        "offer": { "percent": 20, "price": 16000 },
+        "history": [
+          {
+            "type": "closing",
+            "round": 9,
+            "income": 0,
+            "available": 0,
+            "paid": 0,
+            "settledPending": 0,
+            "loanSettlement": { "totalPaidCents": 0, "totalInterestCents": 0 },
+            "allocations": {}
+          },
+          {
+            "type": "closing",
+            "round": 18,
+            "income": 0,
+            "available": 0,
+            "paid": 0,
+            "settledPending": 0,
+            "loanSettlement": { "totalPaidCents": 0, "totalInterestCents": 0 },
+            "allocations": {}
+          },
+          {
+            "type": "closing",
+            "round": 27,
+            "income": 0,
+            "available": 0,
+            "paid": 0,
+            "settledPending": 0,
+            "loanSettlement": { "totalPaidCents": 0, "totalInterestCents": 0 },
+            "allocations": {}
+          },
+          {
+            "type": "closing",
+            "round": 36,
+            "income": 0,
+            "available": 0,
+            "paid": 0,
+            "settledPending": 0,
+            "loanSettlement": { "totalPaidCents": 0, "totalInterestCents": 0 },
+            "allocations": {}
+          }
+        ],
+        "lastClosedRound": 36,
+        "distributions": [],
+        "operatingLedger": [],
+        "closedOperatingPeriods": [
+          {
+            "round": 9,
+            "income": 0,
+            "available": 0,
+            "paid": 0,
+            "settledPending": 0,
+            "loanSettlement": { "totalPaidCents": 0, "totalInterestCents": 0 },
+            "allocations": {}
+          },
+          {
+            "round": 18,
+            "income": 0,
+            "available": 0,
+            "paid": 0,
+            "settledPending": 0,
+            "loanSettlement": { "totalPaidCents": 0, "totalInterestCents": 0 },
+            "allocations": {}
+          },
+          {
+            "round": 27,
+            "income": 0,
+            "available": 0,
+            "paid": 0,
+            "settledPending": 0,
+            "loanSettlement": { "totalPaidCents": 0, "totalInterestCents": 0 },
+            "allocations": {}
+          },
+          {
+            "round": 36,
+            "income": 0,
+            "available": 0,
+            "paid": 0,
+            "settledPending": 0,
+            "loanSettlement": { "totalPaidCents": 0, "totalInterestCents": 0 },
+            "allocations": {}
+          }
+        ],
+        "corporateInterestPendingCents": 0
+      },
+      {
+        "id": "GO-019",
+        "name": "Empresa de Reciclagem (participação)",
+        "valuation": 50000,
+        "referenceDistribution": 600,
+        "reserveRequired": 1200,
+        "cash": 1200,
+        "initialCapital": 1200,
+        "retainedProfit": 0,
+        "pendingExpenses": 0,
+        "shares": { "origin": 100 },
+        "offer": { "percent": 40, "price": 20000 },
+        "history": [
+          {
+            "type": "closing",
+            "round": 9,
+            "income": 0,
+            "available": 0,
+            "paid": 0,
+            "settledPending": 0,
+            "loanSettlement": { "totalPaidCents": 0, "totalInterestCents": 0 },
+            "allocations": {}
+          },
+          {
+            "type": "closing",
+            "round": 18,
+            "income": 0,
+            "available": 0,
+            "paid": 0,
+            "settledPending": 0,
+            "loanSettlement": { "totalPaidCents": 0, "totalInterestCents": 0 },
+            "allocations": {}
+          },
+          {
+            "type": "closing",
+            "round": 27,
+            "income": 0,
+            "available": 0,
+            "paid": 0,
+            "settledPending": 0,
+            "loanSettlement": { "totalPaidCents": 0, "totalInterestCents": 0 },
+            "allocations": {}
+          },
+          {
+            "type": "closing",
+            "round": 36,
+            "income": 0,
+            "available": 0,
+            "paid": 0,
+            "settledPending": 0,
+            "loanSettlement": { "totalPaidCents": 0, "totalInterestCents": 0 },
+            "allocations": {}
+          }
+        ],
+        "lastClosedRound": 36,
+        "distributions": [],
+        "operatingLedger": [],
+        "closedOperatingPeriods": [
+          {
+            "round": 9,
+            "income": 0,
+            "available": 0,
+            "paid": 0,
+            "settledPending": 0,
+            "loanSettlement": { "totalPaidCents": 0, "totalInterestCents": 0 },
+            "allocations": {}
+          },
+          {
+            "round": 18,
+            "income": 0,
+            "available": 0,
+            "paid": 0,
+            "settledPending": 0,
+            "loanSettlement": { "totalPaidCents": 0, "totalInterestCents": 0 },
+            "allocations": {}
+          },
+          {
+            "round": 27,
+            "income": 0,
+            "available": 0,
+            "paid": 0,
+            "settledPending": 0,
+            "loanSettlement": { "totalPaidCents": 0, "totalInterestCents": 0 },
+            "allocations": {}
+          },
+          {
+            "round": 36,
+            "income": 0,
+            "available": 0,
+            "paid": 0,
+            "settledPending": 0,
+            "loanSettlement": { "totalPaidCents": 0, "totalInterestCents": 0 },
+            "allocations": {}
+          }
+        ],
+        "corporateInterestPendingCents": 0
+      },
+      {
+        "id": "GO-020",
+        "name": "Empresa de Logística (participação)",
+        "valuation": 120000,
+        "referenceDistribution": 1200,
+        "reserveRequired": 2400,
+        "cash": 2400,
+        "initialCapital": 2400,
+        "retainedProfit": 0,
+        "pendingExpenses": 0,
+        "shares": { "origin": 100 },
+        "offer": { "percent": 25, "price": 30000 },
+        "history": [
+          {
+            "type": "closing",
+            "round": 9,
+            "income": 0,
+            "available": 0,
+            "paid": 0,
+            "settledPending": 0,
+            "loanSettlement": { "totalPaidCents": 0, "totalInterestCents": 0 },
+            "allocations": {}
+          },
+          {
+            "type": "closing",
+            "round": 18,
+            "income": 0,
+            "available": 0,
+            "paid": 0,
+            "settledPending": 0,
+            "loanSettlement": { "totalPaidCents": 0, "totalInterestCents": 0 },
+            "allocations": {}
+          },
+          {
+            "type": "closing",
+            "round": 27,
+            "income": 0,
+            "available": 0,
+            "paid": 0,
+            "settledPending": 0,
+            "loanSettlement": { "totalPaidCents": 0, "totalInterestCents": 0 },
+            "allocations": {}
+          },
+          {
+            "type": "closing",
+            "round": 36,
+            "income": 0,
+            "available": 0,
+            "paid": 0,
+            "settledPending": 0,
+            "loanSettlement": { "totalPaidCents": 0, "totalInterestCents": 0 },
+            "allocations": {}
+          }
+        ],
+        "lastClosedRound": 36,
+        "distributions": [],
+        "operatingLedger": [],
+        "closedOperatingPeriods": [
+          {
+            "round": 9,
+            "income": 0,
+            "available": 0,
+            "paid": 0,
+            "settledPending": 0,
+            "loanSettlement": { "totalPaidCents": 0, "totalInterestCents": 0 },
+            "allocations": {}
+          },
+          {
+            "round": 18,
+            "income": 0,
+            "available": 0,
+            "paid": 0,
+            "settledPending": 0,
+            "loanSettlement": { "totalPaidCents": 0, "totalInterestCents": 0 },
+            "allocations": {}
+          },
+          {
+            "round": 27,
+            "income": 0,
+            "available": 0,
+            "paid": 0,
+            "settledPending": 0,
+            "loanSettlement": { "totalPaidCents": 0, "totalInterestCents": 0 },
+            "allocations": {}
+          },
+          {
+            "round": 36,
+            "income": 0,
+            "available": 0,
+            "paid": 0,
+            "settledPending": 0,
+            "loanSettlement": { "totalPaidCents": 0, "totalInterestCents": 0 },
+            "allocations": {}
+          }
+        ],
+        "corporateInterestPendingCents": 0
+      }
+    ],
+    "shareOffers": [],
+    "proposals": [],
+    "jointInvestments": [
+      {
+        "id": "69569a36-dd01-4631-9642-f51f1939b8e3",
+        "cardId": "GO-016",
+        "authorId": "b06a84aaeb98ffe3d2",
+        "offerCost": 10000,
+        "percent": 25,
+        "companyName": "Cafeteria (participação)",
+        "invitedIds": ["966666aa67d192e66f"],
+        "commitments": { "b06a84aaeb98ffe3d2": 1000, "966666aa67d192e66f": 1000 },
+        "declinedIds": [],
+        "createdRound": 9,
+        "expiresRound": 11,
+        "status": "expired",
+        "settledRound": null
+      }
+    ],
+    "discountOffers": [],
+    "npcInvestors": [
+      { "id": "conservador", "label": "Conservador", "cash": 100000, "shares": {}, "ledger": [] },
+      { "id": "moderado", "label": "Moderado", "cash": 250000, "shares": {}, "ledger": [] },
+      { "id": "arrojado", "label": "Arrojado", "cash": 500000, "shares": {}, "ledger": [] }
+    ],
+    "securities": [],
+    "secondaryOffers": [],
+    "secondaryTrades": [],
+    "secondaryVolumes": {},
+    "externalSellerCash": 0,
+    "revision": 102,
+    "createdAt": 1793725587250,
+    "securityTrades": [],
+    "marketOccurrences": [
+      {
+        "occurrence": "MF-001",
+        "cardId": "MF-001",
+        "round": 4,
+        "affected": 0,
+        "players": [],
+        "kind": "security_valuation"
+      },
+      {
+        "occurrence": "MF-009",
+        "cardId": "MF-009",
+        "round": 8,
+        "affected": 2,
+        "kind": "fixed_rate_offer"
+      }
+    ],
+    "officialMarket": { "pricesCents": { "PO-013": 5400 }, "dividendsCents": {} },
+    "fixedIncomeRateBonus": 1,
+    "endReason": "teacher"
+  }
+}

@@ -1,0 +1,41 @@
+# Dependências
+node_modules/
+
+# Arquivos de build
+dist/
+build/
+coverage/
+.cache/
+.next/
+
+# Dados persistidos do jogo
+data/
+storage/
+backups/
+
+# Arquivos de ambiente e credenciais
+.env
+.env.*
+!.env.example
+
+# Logs e arquivos temporários
+logs/
+*.log
+tmp/
+temp/
+
+# Arquivos compactados e backups
+*.zip
+*.tar
+*.gz
+*.bak
+
+# Arquivos minificados
+*.min.js
+*.min.css
+
+# Arquivos gerados automaticamente
+package-lock.json
+
+# Controle de versão
+.git/

@@ -1,6 +1,77 @@
-import test from 'node:test';
-import assert from 'node:assert/strict';
-import {createGame,quoteSpecialRefinancing,resolveSpecialRefinancing,validateState,auditCash} from '../src/engine.js';
-function fixture(){const s=createGame(1);s.circuit='outer';s.turn=4;s.lastTile='OE';s.pending=true;s.cash=50000;s.initialCash=50000;s.ledger=[];s.ledgerBaseline=50000;s.currentCard={id:'OE-014',category:'OE'};s.cardEvents=[{id:'OE-014',turn:4,circuit:'outer',position:1,status:'text_available',resolution:'pending',financialEffect:false}];s.initialDebtCents=0;s.initialArrearsCents=0;s.debt=0;s.arrearsLoan=0;s.installment=0;s.initialPassive=12000;s.loans=[{id:'old-1',balance:1000,balanceCents:100000,original:1000,originalCents:100000,installment:180,installmentCents:18000,term:6,arrears:0,arrearsCents:0,periodsElapsed:1}];return s;}
-test('OE-014: mantém o mesmo principal, não libera dinheiro e substitui o contrato',()=>{const s=fixture();const q=quoteSpecialRefinancing(s,'old-1',24);assert.equal(q.eligible,true);const next=resolveSpecialRefinancing(s,'old-1',24);assert.equal(next.loans.length,1);assert.notEqual(next.loans[0].id,'old-1');assert.equal(next.loans[0].balanceCents,100000);assert.equal(next.cash,50000);assert.equal(next.refinancingHistory[0].oldLoanId,'old-1');assert.equal(next.cardEvents[0].resolution,'refinance');assert.ok(validateState(next));assert.ok(auditCash(next).ok);});
-test('OE-014: prazo, contrato inválido, pendência e inadimplência não geram substituição',()=>{let s=fixture();assert.equal(quoteSpecialRefinancing(s,'old-1',5).eligible,false);assert.equal(quoteSpecialRefinancing(s,'invalid',24).eligible,false);s.loans[0].arrears=10;s.loans[0].arrearsCents=1000;assert.equal(quoteSpecialRefinancing(s,'old-1',24).eligible,false);assert.throws(()=>resolveSpecialRefinancing(s,'old-1',24));});
+import test from "node:test";
+import assert from "node:assert/strict";
+import {
+  createGame,
+  quoteSpecialRefinancing,
+  resolveSpecialRefinancing,
+  validateState,
+  auditCash,
+} from "../src/engine.js";
+function fixture() {
+  const s = createGame(1);
+  s.circuit = "outer";
+  s.turn = 4;
+  s.lastTile = "OE";
+  s.pending = true;
+  s.cash = 50000;
+  s.initialCash = 50000;
+  s.ledger = [];
+  s.ledgerBaseline = 50000;
+  s.currentCard = { id: "OE-014", category: "OE" };
+  s.cardEvents = [
+    {
+      id: "OE-014",
+      turn: 4,
+      circuit: "outer",
+      position: 1,
+      status: "text_available",
+      resolution: "pending",
+      financialEffect: false,
+    },
+  ];
+  s.initialDebtCents = 0;
+  s.initialArrearsCents = 0;
+  s.debt = 0;
+  s.arrearsLoan = 0;
+  s.installment = 0;
+  s.initialPassive = 12000;
+  s.loans = [
+    {
+      id: "old-1",
+      balance: 1000,
+      balanceCents: 100000,
+      original: 1000,
+      originalCents: 100000,
+      installment: 180,
+      installmentCents: 18000,
+      term: 6,
+      arrears: 0,
+      arrearsCents: 0,
+      periodsElapsed: 1,
+    },
+  ];
+  return s;
+}
+test("OE-014: mantém o mesmo principal, não libera dinheiro e substitui o contrato", () => {
+  const s = fixture();
+  const q = quoteSpecialRefinancing(s, "old-1", 24);
+  assert.equal(q.eligible, true);
+  const next = resolveSpecialRefinancing(s, "old-1", 24);
+  assert.equal(next.loans.length, 1);
+  assert.notEqual(next.loans[0].id, "old-1");
+  assert.equal(next.loans[0].balanceCents, 100000);
+  assert.equal(next.cash, 50000);
+  assert.equal(next.refinancingHistory[0].oldLoanId, "old-1");
+  assert.equal(next.cardEvents[0].resolution, "refinance");
+  assert.ok(validateState(next));
+  assert.ok(auditCash(next).ok);
+});
+test("OE-014: prazo, contrato inválido, pendência e inadimplência não geram substituição", () => {
+  let s = fixture();
+  assert.equal(quoteSpecialRefinancing(s, "old-1", 5).eligible, false);
+  assert.equal(quoteSpecialRefinancing(s, "invalid", 24).eligible, false);
+  s.loans[0].arrears = 10;
+  s.loans[0].arrearsCents = 1000;
+  assert.equal(quoteSpecialRefinancing(s, "old-1", 24).eligible, false);
+  assert.throws(() => resolveSpecialRefinancing(s, "old-1", 24));
+});

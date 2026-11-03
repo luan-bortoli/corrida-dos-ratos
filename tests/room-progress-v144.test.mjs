@@ -1,13 +1,85 @@
-import test from 'node:test';
-import assert from 'node:assert/strict';
-import {roomProgress} from '../src/room-progress.js';
-import {buildTeacherReport,reportCSV} from '../src/reports.js';
-import {createGame} from '../src/engine.js';
-const sample=()=>({code:'ABCD',status:'playing',round:7,players:[{id:'p1',name:'Ana',game:createGame(1,'TRAVEL')},{id:'p2',name:'Bia',game:createGame(2,'TRAVEL')}],companies:[]});
-test('progresso expõe a etapa e conta sonhos efetivamente concluídos',()=>{const r=sample();r.players[0].game.won=true;r.players[0].game.circuit='outer';const p=roomProgress(r);assert.equal(p.completedPlayers,1);assert.equal(p.activePlayers,1);assert.equal(p.allDreamsCompleted,false);assert.deepEqual(p.winners.map(x=>x.name),['Ana']);assert.equal(p.standings[0].stage,'sonho_realizado');assert.equal(p.standings[1].stage,'corrida_dos_ratos');});
-test('encerramento manual não transforma participantes em vencedores',()=>{const r=sample();r.status='finished';const p=roomProgress(r);assert.equal(p.endedByTeacher,true);assert.equal(p.winners.length,0);assert.equal(p.allDreamsCompleted,false);});
-test('todos os sonhos concluídos distingue fechamento natural',()=>{const r=sample();r.status='finished';for(const p of r.players)p.game.won=true;const status=roomProgress(r);assert.equal(status.allDreamsCompleted,true);assert.equal(status.endedByTeacher,false);});
-test('relatório pedagógico inclui progresso de encerramento sem revelar dados de sessão',()=>{const r=sample();const report=buildTeacherReport(r);assert.equal(report.schemaVersion,4);assert.equal(report.progress.totalPlayers,2);assert.equal(report.progress.round,7);assert.match(reportCSV(report),/name/);assert.ok(!('token' in report.progress));});
+import test from "node:test";
+import assert from "node:assert/strict";
+import { roomProgress } from "../src/room-progress.js";
+import { buildTeacherReport, reportCSV } from "../src/reports.js";
+import { createGame } from "../src/engine.js";
+const sample = () => ({
+  code: "ABCD",
+  status: "playing",
+  round: 7,
+  players: [
+    { id: "p1", name: "Ana", game: createGame(1, "TRAVEL") },
+    { id: "p2", name: "Bia", game: createGame(2, "TRAVEL") },
+  ],
+  companies: [],
+});
+test("progresso expõe a etapa e conta sonhos efetivamente concluídos", () => {
+  const r = sample();
+  r.players[0].game.won = true;
+  r.players[0].game.circuit = "outer";
+  const p = roomProgress(r);
+  assert.equal(p.completedPlayers, 1);
+  assert.equal(p.activePlayers, 1);
+  assert.equal(p.allDreamsCompleted, false);
+  assert.deepEqual(
+    p.winners.map((x) => x.name),
+    ["Ana"],
+  );
+  assert.equal(p.standings[0].stage, "sonho_realizado");
+  assert.equal(p.standings[1].stage, "corrida_dos_ratos");
+});
+test("encerramento manual não transforma participantes em vencedores", () => {
+  const r = sample();
+  r.status = "finished";
+  const p = roomProgress(r);
+  assert.equal(p.endedByTeacher, true);
+  assert.equal(p.winners.length, 0);
+  assert.equal(p.allDreamsCompleted, false);
+});
+test("todos os sonhos concluídos distingue fechamento natural", () => {
+  const r = sample();
+  r.status = "finished";
+  for (const p of r.players) p.game.won = true;
+  const status = roomProgress(r);
+  assert.equal(status.allDreamsCompleted, true);
+  assert.equal(status.endedByTeacher, false);
+});
+test("relatório pedagógico inclui progresso de encerramento sem revelar dados de sessão", () => {
+  const r = sample();
+  const report = buildTeacherReport(r);
+  assert.equal(report.schemaVersion, 4);
+  assert.equal(report.progress.totalPlayers, 2);
+  assert.equal(report.progress.round, 7);
+  assert.match(reportCSV(report), /name/);
+  assert.ok(!("token" in report.progress));
+});
 
-test('ordem de realização de sonhos é preservada no relatório',()=>{const r=sample();r.winnerOrder=['p2','p1'];for(const p of r.players)p.game.won=true;const progress=roomProgress(r);assert.deepEqual(progress.winners.map(w=>w.name),['Bia','Ana']);assert.deepEqual(progress.winners.map(w=>w.place),[1,2]);const report=buildTeacherReport(r);assert.equal(report.participants[0].rank,2);assert.equal(report.participants[1].rank,1);});
-test('indicadores pedagógicos derivam apenas dos eventos registrados',()=>{const r=sample();r.players[0].game.cardEvents=[{id:'EF-001',resolution:'answer',correct:true},{id:'EV-012',resolution:'decision'}];const report=buildTeacherReport(r);assert.equal(report.participants[0].cardDraws,2);assert.equal(report.participants[0].cardDecisions,1);assert.equal(report.participants[0].educationAnswers,1);assert.equal(report.participants[0].educationCorrect,1);});
+test("ordem de realização de sonhos é preservada no relatório", () => {
+  const r = sample();
+  r.winnerOrder = ["p2", "p1"];
+  for (const p of r.players) p.game.won = true;
+  const progress = roomProgress(r);
+  assert.deepEqual(
+    progress.winners.map((w) => w.name),
+    ["Bia", "Ana"],
+  );
+  assert.deepEqual(
+    progress.winners.map((w) => w.place),
+    [1, 2],
+  );
+  const report = buildTeacherReport(r);
+  assert.equal(report.participants[0].rank, 2);
+  assert.equal(report.participants[1].rank, 1);
+});
+test("indicadores pedagógicos derivam apenas dos eventos registrados", () => {
+  const r = sample();
+  r.players[0].game.cardEvents = [
+    { id: "EF-001", resolution: "answer", correct: true },
+    { id: "EV-012", resolution: "decision" },
+  ];
+  const report = buildTeacherReport(r);
+  assert.equal(report.participants[0].cardDraws, 2);
+  assert.equal(report.participants[0].cardDecisions, 1);
+  assert.equal(report.participants[0].educationAnswers, 1);
+  assert.equal(report.participants[0].educationCorrect, 1);
+});
