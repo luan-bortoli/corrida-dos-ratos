@@ -2257,6 +2257,36 @@ body:has(#room:not([hidden])) main {
   background: #0d192b;
   color: #e8eef8;
 }
+.login-card .password-field {
+  position: relative;
+}
+.login-card .password-field input {
+  padding-right: 54px;
+}
+.login-card .password-toggle {
+  position: absolute;
+  top: 50%;
+  right: 5px;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: #cbd7e8;
+}
+.login-card .password-toggle:hover,
+.login-card .password-toggle:focus-visible {
+  background: #243650;
+  color: #fff;
+}
+.login-card .password-toggle:focus-visible {
+  outline: 2px solid #e6b56c;
+  outline-offset: 1px;
+}
 .login-card input::placeholder {
   color: #8498b4;
 }
@@ -2306,3 +2336,86 @@ body:has(#room:not([hidden])) main {
     padding: 18px;
   }
 }
+
+/* Modo presencial: uma única tela para todos os participantes. */
+.shared-navigation {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin: 10px 0 14px;
+  padding: 12px 16px;
+  background: var(--surface, #192b39);
+  border: 1px solid rgba(140, 160, 180, 0.3);
+  border-radius: 12px;
+}
+.shared-navigation-actions {
+  display: flex;
+  gap: 8px;
+}
+.shared-navigation-actions button.selected {
+  border-color: #5fcab3;
+  box-shadow: 0 0 0 1px #5fcab3 inset;
+}
+.shared-registration {
+  padding: 12px 0 16px;
+}
+.shared-registration label {
+  display: block;
+  margin: 10px 0 4px;
+}
+.shared-registration input,
+.shared-registration select {
+  width: 100%;
+  max-width: 440px;
+}
+.shared-registration button {
+  display: block;
+  margin-top: 14px;
+}
+
+#sharedConsultLabel {
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+#sharedConsultLabel[hidden] {
+  display: none;
+}
+#sharedConsultPlayer {
+  max-width: 180px;
+  min-height: 36px;
+}
+
+/* Página inicial de modalidades e retorno seguro do professor */
+.mode-home {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: clamp(28px, 6vw, 78px) 22px;
+}
+.mode-home-heading { max-width: 720px; margin-bottom: 30px; }
+.mode-home-heading h1 { font-size: clamp(34px, 5vw, 62px); line-height: 1.12; letter-spacing: -.035em; margin: 12px 0 16px; }
+.mode-home-heading h1 em { color: #e0ad61; font-style: normal; }
+.mode-home-heading p { color: #aebcd1; line-height: 1.6; }
+.mode-cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+.mode-card {
+  display: flex; flex-direction: column; align-items: flex-start;
+  min-height: 260px; padding: 26px; border-radius: 16px;
+  border: 1px solid #39506e; background: #14243b;
+  color: #e9f0fa; text-decoration: none;
+  transition: border-color .15s, background-color .15s, transform .15s;
+}
+.mode-card:hover, .mode-card:focus-visible { border-color: #e0ad61; background: #1e304a; transform: translateY(-2px); }
+.mode-card-icon { color: #e0ad61; font-size: 32px; line-height: 1; margin-bottom: 18px; }
+.mode-card h2 { font-size: 19px; line-height: 1.3; margin: 0 0 12px; }
+.mode-card p { color: #acbad1; font-size: 14px; line-height: 1.55; margin: 0 0 24px; }
+.mode-card-link { color: #f5d5a2; font-weight: 700; margin-top: auto; }
+.mode-back-link { display: inline-block; margin-bottom: 18px; color: #f2c785; text-decoration: none; font-size: 14px; }
+.mode-back-link:hover { text-decoration: underline; }
+.teacher-exit-actions { margin-top: 20px; padding-top: 16px; border-top: 1px solid #40516b; }
+.teacher-exit-actions .helper-text { margin: 8px 0 0; }
+@media (max-width: 900px) { .mode-cards { grid-template-columns: 1fr; } .mode-card { min-height: 190px; } }
+
+.chosen-mode { background: #253752; color: #f3d3a3; border-radius: 8px; padding: 10px 12px; font-size: 13px; font-weight: 700; margin: 0 0 18px; }

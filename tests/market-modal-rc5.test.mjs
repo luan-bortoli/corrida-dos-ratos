@@ -28,9 +28,9 @@ test("mercado acessível pelo centro do tabuleiro sem abrir automaticamente", ()
   assert.match(js, /makeMarketHub\(r\)/);
   assert.match(
     js,
-    /button\.onclick=\(\)=>\{marketTab='assets';renderMarket\(r\);if\(!marketDialog\.open\)marketDialog\.showModal\(\)/,
+    /button\.onclick\s*=\s*\(\)\s*=>\s*\{\s*marketTab\s*=\s*["\']assets["\'];\s*renderMarket\(r\);\s*if\s*\(!marketDialog\.open\)\s*marketDialog\.showModal\(\)/,
   );
-  assert.match(js, /\$\('businessPanel'\)\.hidden=true/);
+  assert.match(js, /\$\(["\']businessPanel["\']\)\.hidden\s*=\s*true/);
 });
 test("compra, venda e cancelamento preservam endpoints financeiros", () => {
   for (const endpoint of [
@@ -42,7 +42,7 @@ test("compra, venda e cancelamento preservam endpoints financeiros", () => {
   ])
     assert.ok(js.includes(endpoint), endpoint);
   assert.match(js, /marketSeenKey\(r\)/);
-  assert.match(js, /marketMarkSeen\(r,info\)/);
-  assert.match(js, /const parking=\$\('businessPanel'\)/);
-  assert.match(js, /for\(const id of \['companies','proposals','npcOffers','shareOffers'\]\)/);
+  assert.match(js, /marketMarkSeen\(r,\s*info\)/);
+  assert.match(js, /const parking\s*=\s*\$\(["\']businessPanel["\']\)/);
+  assert.match(js, /for\s*\(const id of \[["\']companies["\'],\s*["\']proposals["\'],\s*["\']npcOffers["\'],\s*["\']shareOffers["\']\]\)/);
 });

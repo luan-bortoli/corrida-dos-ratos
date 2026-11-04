@@ -19,7 +19,7 @@ test("circuito 13 x 5 preserva as 32 casas em sequência, sem sobreposições", 
   assert.deepEqual(coords[16], [5, 13]);
   assert.deepEqual(coords[28], [5, 1]);
   assert.deepEqual(coords[31], [2, 1]);
-  assert.match(js, /const cols=13,rows=isCompactCircuit\?5:13/);
-  assert.match(js, /el\.style\.setProperty\('--board-side',String\(cols\)\)/);
-  assert.match(css, /\.board-visual\.board-rectangular\{/);
+  assert.match(js, /const cols\s*=\s*13,\s*rows\s*=\s*isCompactCircuit\s*\?\s*5\s*:\s*13/);
+  assert.match(js, /el\.style\.setProperty\(["\']--board-side["\'],\s*String\(cols\)\)/);
+  assert.match(css, /\.board-visual\.board-rectangular\s*\{/);
 });

@@ -90,7 +90,7 @@ test("modal usa resolução contextual e remove a orientação genérica", () =>
   const ui = readFileSync(new URL("../multiplayer.js", import.meta.url), "utf8");
   assert.match(
     ui,
-    /cardStatusFeedback\(\{card,event,game:g,hasChoices,expense,hasAnswerFeedback,hasLifeFeedback\}\)/,
+    /cardStatusFeedback\(\{\s*card,\s*event,\s*game:\s*g,\s*hasChoices,\s*expense,\s*hasAnswerFeedback,\s*hasLifeFeedback,?\s*\}\)/,
   );
   assert.doesNotMatch(ui, /Confira as condições da carta\. Se houver opções de decisão/);
 });

@@ -29,11 +29,28 @@ $("profession").innerHTML = PROFESSIONS.map(
 $("dream").innerHTML = Object.entries(DREAMS)
   .map(([id, d]) => `<option value="${id}">${d.name}</option>`)
   .join("");
+$("sharedProfession").innerHTML = $("profession").innerHTML;
+$("sharedDream").innerHTML = $("dream").innerHTML;
+let sharedView = "teacher";
+let sharedConsultPlayer = "";
+let currentRoomMode = "individual";
 let session = null;
 try {
   session = JSON.parse(sessionStorage.getItem("cr-room-session"));
 } catch {}
 const msg = (x) => ($("message").textContent = x);
+
+// Permite conferir a senha digitada sem expô-la por padrão.
+$("togglePassword").onclick = () => {
+  const field = $("password");
+  const button = $("togglePassword");
+  const visible = field.type === "password";
+  field.type = visible ? "text" : "password";
+  button.setAttribute("aria-label", visible ? "Ocultar senha" : "Mostrar senha");
+  button.setAttribute("title", visible ? "Ocultar senha" : "Mostrar senha");
+  button.setAttribute("aria-pressed", String(visible));
+  button.querySelector(".password-slash").hidden = !visible;
+};
 
 const gameDialog = $("gameCardDialog");
 const marketDialog = $("marketDialog");
@@ -93,6 +110,15 @@ function exitToWelcome() {
   if ($("quitDialog").open) $("quitDialog").close();
   msg("Você saiu da sala. Seu progresso permanece registrado.");
 }
+$("teacherExitHome").onclick = () => {
+  if (!session || session.role !== "teacher") return;
+  if (!window.confirm("Sair da sala atual e voltar às modalidades? A sala permanecerá salva para acesso posterior.")) return;
+  session = null;
+  sessionStorage.removeItem("cr-room-session");
+  sessionStorage.removeItem("cr-room-rejoin");
+  sessionStorage.removeItem("cr-pending-reconnect");
+  window.location.assign("/");
+};
 $("leaveRoom").onclick = async () => {
   if (!session) return;
   try {
@@ -128,6 +154,12 @@ async function req(path, method = "GET", body) {
     method,
     headers: {
       "content-type": "application/json",
+      ...(session?.role === "teacher" && currentRoomMode === "shared" && sharedView === "player"
+        ? {
+            "x-shared-view": "player",
+            ...(sharedConsultPlayer ? { "x-shared-player": sharedConsultPlayer } : {}),
+          }
+        : {}),
       ...(session ? { authorization: `Bearer ${session.token}` } : {}),
     },
     body: body ? JSON.stringify(body) : undefined,
@@ -164,8 +196,26 @@ function selectAdminMode(access) {
   $("adminCodeField").hidden = !access;
   $("adminLoginButton").hidden = !access;
   $("create").hidden = access;
+  $("roomModeField").hidden = access || ["shared", "individual"].includes(requestedMode);
   $("adminCreateMode").classList.toggle("selected", !access);
   $("adminAccessMode").classList.toggle("selected", access);
+}
+const requestedMode = new URLSearchParams(window.location.search).get("mode");
+if (requestedMode === "shared" || requestedMode === "individual") {
+  $("roomMode").value = requestedMode;
+  selectLoginRole("admin");
+  selectAdminMode(false);
+  if (requestedMode === "shared") {
+    // Os participantes do modo presencial são cadastrados pelo professor.
+    // Não há login independente de jogadores nessa modalidade.
+    $("loginRoles").hidden = true;
+    $("loginSubtitle").textContent = "Crie ou acesse uma sala para cadastrar os jogadores.";
+  }
+  $("chosenMode").hidden = false;
+  $("chosenMode").textContent =
+    requestedMode === "shared"
+      ? "Modalidade: Presencial — Tela compartilhada"
+      : "Modalidade: Multiplayer — Dispositivos individuais";
 }
 $("adminCreateMode").onclick = () => selectAdminMode(false);
 $("adminAccessMode").onclick = () => selectAdminMode(true);
@@ -185,11 +235,18 @@ $("rejoinRoom").onclick = async () => {
 };
 $("create").onclick = async () => {
   try {
-    const r = await req("/api/room/create", "POST", { password: $("password").value });
+    const mode = $("roomMode").value;
+    const r = await req("/api/room/create", "POST", { password: $("password").value, mode });
+    currentRoomMode = r.room.mode;
+    sharedView = "teacher";
     store({ code: r.code, token: r.token, role: "teacher" }, "administrator");
     $("password").value = "";
     render(r.room);
-    msg("Sala criada. Compartilhe o código com estudantes.");
+    msg(
+      r.room.mode === "shared"
+        ? "Sala presencial criada. Cadastre os participantes antes de iniciar."
+        : "Sala criada. Compartilhe o código com estudantes.",
+    );
   } catch (e) {
     msg(e.message);
   }
@@ -199,6 +256,8 @@ $("adminLoginButton").onclick = async () => {
     const code = $("adminRoomCode").value.trim().toUpperCase();
     if (!/^[A-F0-9]{8}$/.test(code)) throw Error("Informe o código de 8 caracteres da sala");
     const r = await req(`/api/room/${code}/admin-login`, "POST", { password: $("password").value });
+    currentRoomMode = r.room.mode;
+    sharedView = "teacher";
     store({ code, token: r.token, role: "teacher" }, "administrator");
     $("password").value = "";
     render(r.room);
@@ -289,12 +348,77 @@ setInterval(() => {
 async function perform(action, body) {
   if (!session) return;
   try {
-    render(await req(`/api/room/${session.code}/${action}`, "POST", body));
+    if (
+      session.role === "teacher" &&
+      currentRoomMode === "shared" &&
+      ["joint-accept", "joint-decline", "discount-accept"].includes(action)
+    ) {
+      body = { ...body, playerId: lastMarketRoom?.you };
+    }
+    const result = await req(`/api/room/${session.code}/${action}`, "POST", body);
+    if (action === "start" && result.mode === "shared" && session.role === "teacher") {
+      sharedView = "player";
+      sharedConsultPlayer = "";
+      render(await req(`/api/room/${session.code}`));
+    } else {
+      if (action === "end") {
+        sharedConsultPlayer = "";
+        if (currentRoomMode === "shared" && session.role === "teacher")
+          render(await req(`/api/room/${session.code}`));
+        else render(result);
+      } else render(result);
+    }
     msg("Operação registrada.");
   } catch (e) {
     msg(e.message);
   }
 }
+$("sharedGameView").onclick = async () => {
+  if (currentRoomMode !== "shared" || !session || session.role !== "teacher") return;
+  sharedView = "player";
+  try {
+    render(await req(`/api/room/${session.code}`));
+  } catch (e) {
+    msg(e.message);
+  }
+};
+$("sharedConsultPlayer").onchange = async () => {
+  sharedConsultPlayer = $("sharedConsultPlayer").value;
+  if (currentRoomMode !== "shared" || !session || session.role !== "teacher") return;
+  try {
+    render(await req(`/api/room/${session.code}`));
+  } catch (e) {
+    msg(e.message);
+  }
+};
+$("sharedTeacherView").onclick = async () => {
+  if (currentRoomMode !== "shared" || !session || session.role !== "teacher") return;
+  const password = window.prompt("Senha do professor para acessar a administração:");
+  if (password === null) return;
+  try {
+    await req(`/api/room/${session.code}/shared-teacher-unlock`, "POST", { password });
+    sharedView = "teacher";
+    render(await req(`/api/room/${session.code}`));
+  } catch (e) {
+    msg(e.message);
+  }
+};
+$("sharedAddPlayer").onclick = async () => {
+  const name = $("sharedPlayerName").value.trim();
+  if (!session || session.role !== "teacher") return;
+  try {
+    const r = await req(`/api/room/${session.code}/shared-add-player`, "POST", {
+      name,
+      professionId: Number($("sharedProfession").value),
+      dreamId: $("sharedDream").value,
+    });
+    $("sharedPlayerName").value = "";
+    render(r);
+    msg(`${name} foi adicionado à sala.`);
+  } catch (e) {
+    msg(e.message);
+  }
+};
 function renderReconnectRequests(r) {
   const area = $("teacherReconnectRequests"),
     panel = $("teacherReconnectPanel");
@@ -436,6 +560,23 @@ $("cardAudit").onclick = async () => {
 };
 
 function render(r) {
+  currentRoomMode = r.mode || "individual";
+  const shared = r.mode === "shared" && session?.role === "teacher";
+  $("sharedNavigation").hidden = !shared;
+  if (shared) {
+    const consult = $("sharedConsultPlayer");
+    const previous = sharedConsultPlayer;
+    consult.replaceChildren(
+      new Option("Jogador da vez", ""),
+      ...r.players.filter((p) => !p.withdrawn).map((p) => new Option(p.name, p.id)),
+    );
+    consult.value = previous && r.players.some((p) => p.id === previous) ? previous : "";
+    $("sharedConsultLabel").hidden = r.teacher || r.status !== "playing";
+    $("sharedGameView").classList.toggle("selected", !r.teacher);
+    $("sharedTeacherView").classList.toggle("selected", r.teacher);
+    $("sharedRegistration").hidden = !r.teacher || r.status !== "lobby";
+    $("sharedPlayerCount").textContent = `${r.players.length} de 6 jogadores cadastrados`;
+  } else $("sharedRegistration").hidden = true;
   $("room").hidden = false;
   document.querySelector(".setup").hidden = true;
   $("topbarRoomMeta").hidden = false;
@@ -450,7 +591,7 @@ function render(r) {
       paused: "Partida pausada",
       finished: "Partida encerrada",
     }[r.status] || "Sala";
-  $("roomMenu").hidden = !!r.teacher;
+  $("roomMenu").hidden = !!r.teacher || !!r.sharedAdmin;
   $("quitRoom").hidden = !!r.players.find((p) => p.id === r.you)?.withdrawn;
   renderReconnectRequests(r);
   $("progressSummary").textContent = r.progress
@@ -1840,7 +1981,7 @@ function drawBoard(r) {
   currentTurn.className = "board-turn-name";
   currentTurn.textContent = active
     ? canPlay
-      ? "Sua vez, " + active.name
+      ? (r.sharedAdmin ? "Vez de " : "Sua vez, ") + active.name
       : "Vez de " + active.name
     : "Aguardando jogadores";
   const clock = document.createElement("div");
@@ -2019,7 +2160,11 @@ function updateLayout(r) {
   $("room").classList.toggle("player-room", !r.teacher);
   $("teacherPanel").hidden = !r.teacher;
   $("turnPanel").hidden = !r.teacher && !(r.game?.pending && r.activePlayerId === r.you);
-  $("financeHeading").textContent = r.teacher ? "Acompanhamento da turma" : "Minhas finanças";
+  $("financeHeading").textContent = r.teacher
+    ? "Acompanhamento da turma"
+    : r.sharedAdmin
+      ? "Finanças do jogador da vez"
+      : "Minhas finanças";
   const active = r.players.find((p) => p.id === r.activePlayerId),
     g = r.game,
     me = r.players.find((p) => p.id === r.you);
@@ -2214,7 +2359,9 @@ function updateLayout(r) {
   else if (!me) hint.textContent = "Você está acompanhando a partida.";
   else if (r.status === "paused") hint.textContent = "A sala está pausada pelo professor.";
   else if (r.activePlayerId !== r.you)
-    hint.textContent = `Aguarde: agora é a vez de ${active?.name || "outro participante"}.`;
+    hint.textContent = r.sharedAdmin
+      ? `Consultando ${me?.name || "participante"}: responda convites, se houver. As jogadas continuam com ${active?.name || "o jogador da vez"}.`
+      : `Aguarde: agora é a vez de ${active?.name || "outro participante"}.`;
   else if (!pending) hint.textContent = "Lance o dado para avançar e descobrir a próxima casa.";
   else if (alreadyResolved)
     hint.textContent = "A decisão foi processada. Encerre o turno para continuar.";

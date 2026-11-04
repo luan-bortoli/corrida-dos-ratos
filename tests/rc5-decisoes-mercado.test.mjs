@@ -17,19 +17,19 @@ test("Educação Financeira dispõe as alternativas em coluna única em desktop 
   const end = css.slice(css.lastIndexOf("/* RC5 — padronização de escolhas nas cartas."));
   assert.match(
     end,
-    /\.game-card-dialog #educationQuestion\s*\{[^}]*grid-template-columns:minmax\(0,1fr\)!important/s,
+    /\.game-card-dialog #educationQuestion\s*\{[^}]*grid-template-columns:\s*minmax\(0,\s*1fr\)\s*!important/s,
   );
-  assert.match(end, /\.game-card-dialog #educationQuestion button\s*\{[^}]*width:100%/s);
-  assert.match(end, /gap:10px!important/);
+  assert.match(end, /\.game-card-dialog #educationQuestion button\s*\{[^}]*width:\s*100%/s);
+  assert.match(end, /gap:\s*10px\s*!important/);
 });
 
 test("decisões da modal ficam centralizadas com espaçamento e sem alterar ações", () => {
   const end = css.slice(css.lastIndexOf("/* RC5 — padronização de escolhas nas cartas."));
   for (const selector of ["#lifeDecision", "#companyOffer", "#realEstateOffer"])
     assert.ok(end.includes(selector));
-  assert.match(end, /justify-content:center/);
-  assert.match(js, /perform\('choose-life',\{choice\}\)/);
-  assert.match(js, /perform\('answer-education',\{choice:'ABCD'\[index\]\}\)/);
+  assert.match(end, /justify-content:\s*center/);
+  assert.match(js, /perform\(["\']choose-life["\'],\s*\{\s*choice\s*\}\)/);
+  assert.match(js, /perform\(["\']answer-education["\'],\s*\{\s*choice:\s*["\']ABCD["\']\[index\],?\s*\}\)/);
 });
 
 test("EV-012 padroniza os textos apresentados e preserva efeito de redução do lazer", () => {
@@ -37,9 +37,9 @@ test("EV-012 padroniza os textos apresentados e preserva efeito de redução do 
     accept: "Cancelar assinaturas",
     reject: "Manter assinaturas",
   });
-  assert.match(js, /card\.id==='EV-012'\)content\.fields/);
-  assert.match(js, /replace\('Cancelar serviços:','Cancelar assinaturas:'\)/);
-  assert.match(js, /replace\('Manter:','Manter assinaturas:'\)/);
+  assert.match(js, /card\.id\s*===\s*["\']EV-012["\']\)\s*content\.fields/);
+  assert.match(js, /replace\(["\']Cancelar serviços:["\'],\s*["\']Cancelar assinaturas:["\']\)/);
+  assert.match(js, /replace\(["\']Manter:["\'],\s*["\']Manter assinaturas:["\']\)/);
 });
 
 test("Mercado não oferece quantidade já anunciada e cancela anúncios liberando unidades", () => {
@@ -63,7 +63,7 @@ test("Mercado não oferece quantidade já anunciada e cancela anúncios liberand
     publicSecondary(room).offers.reduce((sum, o) => sum + o.units, 0),
     5,
   );
-  assert.match(js, /const reserved=info\.ownSec\.filter\(o=>o\.securityId===id\)/);
-  assert.match(js, /available===0\?'Todas anunciadas':'Anunciar venda'/);
-  assert.match(js, /!canTrade\|\|available===0/);
+  assert.match(js, /const reserved\s*=\s*info\.ownSec\s*\.filter\(\(?o\)?\s*=>\s*o\.securityId\s*===\s*id\)/);
+  assert.match(js, /available\s*===\s*0\s*\?\s*["\']Todas anunciadas["\']\s*:\s*["\']Anunciar venda["\']/);
+  assert.match(js, /!canTrade\s*\|\|\s*available\s*===\s*0/);
 });

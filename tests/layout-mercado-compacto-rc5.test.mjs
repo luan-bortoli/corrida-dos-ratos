@@ -16,9 +16,9 @@ test("painel do tabuleiro não repete títulos da partida", () => {
 test("Mercado segue nas duas colunas da direita e ocupa largura do conteúdo", () => {
   assert.match(
     css,
-    /#room \.board-rectangular \.board-market-hub\{\s*grid-column:2 \/ 4;\s*justify-self:center;\s*width:max-content;/,
+    /#room \.board-rectangular \.board-market-hub\s*\{\s*grid-column:\s*2\s*\/\s*4;\s*justify-self:\s*center;\s*width:\s*max-content;/,
   );
-  assert.match(css, /padding:5px 8px;/);
+  assert.match(css, /padding:\s*5px 8px;/);
   assert.match(js, /function makeMarketHub\(r\)/);
   assert.match(js, /Abrir Mercado →/);
 });

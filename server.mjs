@@ -200,6 +200,7 @@ const snapshot = (room, who) => ({
     room.status === "playing" &&
     Date.now() >= (room.turnDeadline ?? Infinity),
   code: room.code,
+  mode: room.mode || "individual",
   progress: roomProgress(room),
   status: room.status,
   paused: room.status === "paused",
@@ -235,6 +236,28 @@ const snapshot = (room, who) => ({
       ? publicGame(room.players.find((p) => p.id === who.playerId)?.game)
       : null,
 });
+// A visão presencial reutiliza a identidade administrativa, mas mostra apenas o
+// estado do participante ativo. Nenhum token de jogador é compartilhado.
+function visibleSnapshot(room, who, req) {
+  if (
+    room.mode === "shared" &&
+    who.role === "teacher" &&
+    req.headers["x-shared-view"] === "player"
+  ) {
+    const active = room.order[room.turnIndex];
+    const requested = req.headers["x-shared-player"];
+    // A consulta de outro participante serve para responder convites coletivos.
+    // Não transfere o direito de lançar dado ou movimentar finanças fora do turno.
+    const selected =
+      requested && room.players.some((p) => p.id === requested && !p.withdrawn)
+        ? requested
+        : active;
+    if (selected && room.players.some((p) => p.id === selected)) {
+      return { ...snapshot(room, { role: "player", playerId: selected }), sharedAdmin: true };
+    }
+  }
+  return { ...snapshot(room, who), sharedAdmin: room.mode === "shared" && who.role === "teacher" };
+}
 for (const room of Object.values(rooms)) {
   room.winnerOrder ??= [];
   room.players.forEach((p) => {
@@ -288,9 +311,10 @@ function current(r, who) {
   if (who.role === "player" && r.players.find((p) => p.id === who.playerId)?.withdrawn)
     fail(403, "Você desistiu desta partida");
   if (r.status !== "playing") fail(409, "A sala precisa estar em andamento e sem pausa");
-  if (who.role !== "player" || r.order[r.turnIndex] !== who.playerId)
+  const allowedShared = who.role === "teacher" && r.mode === "shared";
+  if (!allowedShared && (who.role !== "player" || r.order[r.turnIndex] !== who.playerId))
     fail(403, "Não é o seu turno");
-  return r.players.find((p) => p.id === who.playerId);
+  return r.players.find((p) => p.id === (allowedShared ? r.order[r.turnIndex] : who.playerId));
 }
 function bodyOf(req) {
   return new Promise((resolve, reject) => {
@@ -386,7 +410,7 @@ function nextActiveTurn(room) {
 function skipAbsentTurn(room) {
   if (room.status !== "playing" || !room.order.length) return false;
   const id = room.order[room.turnIndex];
-  if (!id || playerOnline(room, id)) return false;
+  if (!id || room.mode === "shared" || playerOnline(room, id)) return false;
   const p = room.players.find((x) => x.id === id);
   if (p) resolveAbsentPending(room, p);
   nextActiveTurn(room);
@@ -403,8 +427,11 @@ async function api(req, res, url) {
     const code = roomCode(),
       secret = token(),
       teacherRecovery = randomBytes(12).toString("hex").toUpperCase();
+    if (data.mode !== undefined && !["shared", "individual"].includes(data.mode))
+      fail(400, "Modo de jogo inválido");
     rooms[code] = {
       code,
+      mode: data.mode === "shared" ? "shared" : "individual",
       status: "lobby",
       teacherToken: hash(secret),
       teacherRecoveryHash: hash(teacherRecovery),
@@ -517,6 +544,7 @@ async function api(req, res, url) {
 
   if (req.method === "POST" && parts[3] === "join") {
     guardAuth(req, `join:${code}`, 20);
+    if (r.mode === "shared") fail(403, "No modo presencial, o professor cadastra os jogadores");
     if (r.status !== "lobby") fail(409, "Sala já iniciada");
     if (r.players.length >= 6) fail(409, "Sala cheia");
     const name = String(data.name || "").trim();
@@ -582,6 +610,32 @@ async function api(req, res, url) {
   }
   const who = authorize(req, r);
   if (parts[3] !== "leave" && parts[3] !== "withdraw") markPresent(r, who);
+  if (req.method === "POST" && parts[3] === "shared-teacher-unlock") {
+    teacher(who);
+    guardAuth(req, `shared-unlock:${code}`, 20);
+    if (r.mode !== "shared") fail(409, "Sala não presencial");
+    if (typeof data.password !== "string" || !equal(data.password, password))
+      fail(401, "Senha do professor incorreta");
+    return json(res, 200, { authorized: true });
+  }
+  if (req.method === "POST" && parts[3] === "shared-add-player") {
+    teacher(who);
+    if (r.mode !== "shared") fail(409, "Esta sala não utiliza tela compartilhada");
+    if (r.status !== "lobby") fail(409, "Adicione participantes antes de iniciar");
+    if (r.players.length >= 6) fail(409, "Sala cheia");
+    const name = String(data.name || "").trim();
+    if (name.length < 2 || name.length > 40) fail(400, "Nome deve ter 2 a 40 caracteres");
+    if (
+      r.players.some((p) => p.name.toLocaleLowerCase("pt-BR") === name.toLocaleLowerCase("pt-BR"))
+    )
+      fail(409, "Este nome já está em uso");
+    const game = createGame(data.professionId, data.dreamId);
+    const id = randomBytes(9).toString("hex");
+    r.players.push({ id, name, game, tokenHash: null, recoveryHash: null });
+    r.revision++;
+    await save();
+    return json(res, 201, visibleSnapshot(r, who, req));
+  }
   if (req.method === "POST" && parts[3] === "reconnect-review") {
     teacher(who);
     const request = pendingReconnects.get(String(data.requestId || ""));
@@ -595,7 +649,7 @@ async function api(req, res, url) {
     if (data.decision !== "approve" && data.decision !== "reject") fail(400, "Decisão inválida");
     request.status = data.decision === "approve" ? "approved" : "rejected";
     r.revision++;
-    return json(res, 200, snapshot(r, who));
+    return json(res, 200, visibleSnapshot(r, who, req));
   }
 
   if (req.method === "GET" && parts.length === 4 && parts[3] === "card-audit") {
@@ -627,7 +681,7 @@ async function api(req, res, url) {
     });
     r.revision++;
     await save();
-    return json(res, 200, { operation: result, room: snapshot(r, who) });
+    return json(res, 200, { operation: result, room: visibleSnapshot(r, who, req) });
   }
   if (req.method === "POST" && parts.length === 4 && parts[3] === "leave") {
     if (who.role !== "player") fail(403, "Ação exclusiva do estudante");
@@ -682,7 +736,8 @@ async function api(req, res, url) {
     await save();
     return json(res, 200, { withdrawn: true });
   }
-  if (req.method === "GET" && parts.length === 3) return json(res, 200, snapshot(r, who));
+  if (req.method === "GET" && parts.length === 3)
+    return json(res, 200, visibleSnapshot(r, who, req));
   if (req.method !== "POST") fail(405, "Método não permitido");
   const action = parts[3];
   // Convidados podem responder a propostas durante o turno de outro jogador.
@@ -690,19 +745,26 @@ async function api(req, res, url) {
     req.method === "POST" &&
     ["joint-accept", "joint-decline", "discount-accept"].includes(action)
   ) {
-    if (r.status !== "playing" || who.role !== "player") fail(403, "Participação indisponível");
+    if (
+      r.status !== "playing" ||
+      (who.role !== "player" && !(r.mode === "shared" && who.role === "teacher"))
+    )
+      fail(403, "Participação indisponível");
+    const actingPlayer = who.role === "teacher" ? String(data.playerId || "") : who.playerId;
+    if (!r.players.some((p) => p.id === actingPlayer && !p.withdrawn))
+      fail(403, "Participante inválido");
     if (action === "discount-accept")
-      acceptDiscountOffer(r, who.playerId, String(data.offerId || ""));
+      acceptDiscountOffer(r, actingPlayer, String(data.offerId || ""));
     else if (action === "joint-accept") {
-      acceptJointInvestment(r, who.playerId, String(data.proposalId || ""), Number(data.amount));
+      acceptJointInvestment(r, actingPlayer, String(data.proposalId || ""), Number(data.amount));
       registerAcquiredCompanyLedgers(r);
-    } else declineJointInvestment(r, who.playerId, String(data.proposalId || ""));
+    } else declineJointInvestment(r, actingPlayer, String(data.proposalId || ""));
     for (const player of r.players)
       if (!validateState(player.game) || !auditCash(player.game).ok)
         fail(500, "Liquidação coletiva inconsistente");
     r.revision++;
     await save();
-    return json(res, 200, snapshot(r, who));
+    return json(res, 200, visibleSnapshot(r, who, req));
   }
   if (["start", "pause", "resume", "finish", "advance"].includes(action)) {
     teacher(who);
@@ -1006,7 +1068,7 @@ async function api(req, res, url) {
   }
   r.revision++;
   await save();
-  return json(res, 200, snapshot(r, who));
+  return json(res, 200, visibleSnapshot(r, who, req));
 }
 const mime = {
   ".html": "text/html; charset=utf-8",
@@ -1032,7 +1094,7 @@ const server = http.createServer((req, res) => {
       if (url.pathname.startsWith("/api/")) return await api(req, res, url);
       if (req.method !== "GET") fail(405, "Método não permitido");
       let path = url.pathname === "/" ? "/index.html" : url.pathname;
-      const allowed = ["/index.html", "/styles.css", "/multiplayer.html", "/multiplayer.js"];
+      const allowed = ["/index.html", "/individual.html", "/styles.css", "/multiplayer.html", "/multiplayer.js"];
       const publicModule = /^\/src\/[a-z0-9-]+\.(?:js|json)$/i.test(path);
       if (!allowed.includes(path) && !publicModule) fail(404, "Arquivo não encontrado");
       const filePath = join(root, path);

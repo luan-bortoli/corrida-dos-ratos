@@ -36,8 +36,8 @@ try {
   await waitReady();
   await test("multiplayer carrega todos os módulos necessários para popular profissão e sonho", async () => {
     const html = await (await request("/multiplayer.html")).text();
-    assert.match(html, /<select id="profession"><\/select>/);
-    assert.match(html, /<select id="dream"><\/select>/);
+    assert.match(html, /<select id="profession">\s*<\/select\s*>/);
+    assert.match(html, /<select id="dream">\s*<\/select\s*>/);
     const stack = ["/multiplayer.js", "/src/app.js"],
       seen = new Set();
     while (stack.length) {

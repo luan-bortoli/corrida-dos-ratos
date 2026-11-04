@@ -8,7 +8,7 @@ test("renderização do feedback da carta usa elementos existentes no DOM, não 
   const js = readFileSync(new URL("../multiplayer.js", import.meta.url), "utf8");
   assert.match(
     js,
-    /const hasChoices=\['educationQuestion','lifeDecision','companyOffer','realEstateOffer'\]\.some\(id=>\{const area=\$\(id\);/,
+    /const hasChoices\s*=\s*\[["\']educationQuestion["\'],\s*["\']lifeDecision["\'],\s*["\']companyOffer["\'],\s*["\']realEstateOffer["\']\]\.some\(\(?id\)?\s*=>\s*\{\s*const area\s*=\s*\$\(id\);/,
   );
   assert.doesNotMatch(js, /const hasChoices=\[edu,life,cardOfferArea,realEstateArea\]/);
   for (const id of ["educationQuestion", "lifeDecision", "companyOffer", "realEstateOffer"]) {

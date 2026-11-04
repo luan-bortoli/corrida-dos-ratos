@@ -67,8 +67,8 @@ test("interface usa feedback automático antes de orientações de escolhas", ()
   const js = readFileSync(new URL("../multiplayer.js", import.meta.url), "utf8");
   assert.match(
     js,
-    /cardStatusFeedback\(\{card,event,game:g,hasChoices,expense,hasAnswerFeedback,hasLifeFeedback\}\)/,
+    /cardStatusFeedback\(\{\s*card,\s*event,\s*game:\s*g,\s*hasChoices,\s*expense,\s*hasAnswerFeedback,\s*hasLifeFeedback,?\s*\}\)/,
   );
-  assert.match(js, /eligibility\.hidden=!feedback/);
+  assert.match(js, /eligibility\.hidden\s*=\s*!feedback/);
   assert.match(js, /cardLearningDisplay\(learning\?\.\[1\]\)/);
 });

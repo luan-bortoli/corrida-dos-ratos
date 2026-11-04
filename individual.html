@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="theme-color" content="#0a1429" />
+    <title>Corrida dos Ratos | Sala Individual</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="brand">
+        <div class="brandmark">CR</div>
+        <div>
+          <strong>CORRIDA DOS RATOS</strong
+          ><span>Educação financeira • Núcleo v0.6 · multiplayer experimental</span>
+        </div>
+      </div>
+      <div class="top-actions">
+        <span class="status"><i></i> Salvamento local</span
+        ><a href="/" class="ghost">Voltar às modalidades</a
+        ><button id="reset" class="ghost">Nova partida</button>
+      </div>
+    </header>
+    <main>
+      <section id="setup" class="setup">
+        <div class="hero">
+          <div class="eyebrow">JOGO DE EDUCAÇÃO FINANCEIRA</div>
+          <h1>Decisões de hoje.<br /><em>Liberdade de amanhã.</em></h1>
+          <p>
+            Escolha uma profissão, defina um sonho e conheça o funcionamento inicial do jogo. Esta
+            versão de desenvolvimento contém somente investimentos com valores confirmados.
+          </p>
+        </div>
+        <div class="setup-card">
+          <h2>Iniciar partida individual</h2>
+          <label for="profession">Sua profissão</label
+          ><select id="profession"></select>
+          <div id="professionInfo" class="summary"></div>
+          <label for="dream">Seu objetivo</label
+          ><select id="dream"></select
+          ><button id="start" class="primary full">Começar jornada <span>→</span></button>
+          <p class="notice">
+            Protótipo de regras: sem salas online, com catálogo integrado e efeitos parciais e sem
+            resultados pedagógicos definitivos.
+          </p>
+        </div>
+      </section>
+      <section id="game" hidden>
+        <div class="game-heading">
+          <div>
+            <div id="stageName" class="eyebrow">CORRIDA DOS RATOS</div>
+            <h1 id="welcome">Seu painel</h1>
+            <p id="positionText"></p>
+          </div>
+          <div class="goal">
+            <span>SEU SONHO</span><strong id="dreamName"></strong><small id="dreamPrice"></small>
+          </div>
+        </div>
+        <section class="stats" aria-label="Indicadores financeiros">
+          <article class="stat"><span>Caixa disponível</span><strong id="cash"></strong></article>
+          <article class="stat"><span>Renda passiva</span><strong id="passive"></strong></article>
+          <article class="stat">
+            <span>Despesas exigíveis</span><strong id="expenses"></strong>
+          </article>
+          <article class="stat">
+            <span>Patrimônio líquido (custo)</span><strong id="netWorth"></strong>
+          </article>
+          <article class="stat">
+            <span>Base de custo dos ativos</span><strong id="invested"></strong>
+          </article>
+          <article class="stat">
+            <span>Dívida inicial restante</span><strong id="debt"></strong>
+          </article>
+          <article class="stat">
+            <span>Obrigações pendentes</span><strong id="arrears"></strong
+            ><small id="arrearsBreakdown"></small>
+          </article>
+        </section>
+        <div class="game-grid">
+          <div class="main-panel">
+            <div class="panel-heading">
+              <div>
+                <div class="eyebrow">TABULEIRO</div>
+                <h2 id="boardTitle">Corrida dos Ratos</h2>
+              </div>
+              <div id="progress" class="progress"></div>
+            </div>
+            <div id="board" class="board" aria-label="Casas do tabuleiro"></div>
+            <div class="action">
+              <div class="turn-info">
+                <span id="turnLabel">Turno 1</span
+                ><strong id="tileTitle">Prepare sua jogada</strong>
+                <p id="tileDescription">
+                  Os efeitos completos das cartas dependem do catálogo original.
+                </p>
+                <div id="soloQuiz"></div>
+                <div id="soloLife"></div>
+                <div id="companyOffer"></div>
+                <div id="realEstateOffer"></div>
+              </div>
+              <div class="roll-actions">
+                <button id="roll" class="primary">Lançar dado <span>⚄</span></button
+                ><button id="end" class="outline" hidden>Encerrar turno</button>
+              </div>
+            </div>
+            <div id="verifiedOffers" class="offers" hidden></div>
+          </div>
+          <aside class="side-panel">
+            <div class="panel">
+              <div class="eyebrow">SEU PATRIMÔNIO</div>
+              <h2>Meus investimentos</h2>
+              <div id="ownedAssets" class="empty">Nenhum investimento adquirido.</div>
+            </div>
+            <div class="panel">
+              <div class="eyebrow">CRÉDITO RESPONSÁVEL</div>
+              <h2>Empréstimos e quitação</h2>
+              <p class="notice">
+                Crédito com juros de 1% por fechamento, limite de 30% da renda e margem mínima de
+                10%. Disponível fora da resolução de uma casa.
+              </p>
+              <label for="creditAmount">Valor pretendido (R$)</label
+              ><input id="creditAmount" type="number" min="1" step="1" value="1000" /><label
+                for="creditTerm"
+                >Prazo</label
+              ><select id="creditTerm">
+                <option value="6">6 fechamentos</option>
+                <option value="12">12 fechamentos</option>
+                <option value="24">24 fechamentos</option>
+              </select>
+              <div id="creditQuote" class="event"></div>
+              <button id="contractCredit" class="outline">Contratar crédito</button>
+              <h3>Minhas dívidas</h3>
+              <div id="loanList"></div>
+            </div>
+            <div class="panel">
+              <div class="eyebrow">ÚLTIMAS ATIVIDADES</div>
+              <h2>Histórico financeiro</h2>
+              <div id="history" class="history"></div>
+              <button id="exportCSV" class="outline">Exportar extrato CSV</button>
+              <h3>Backup de partida</h3>
+              <button id="saveGame" class="outline">Exportar partida JSON</button
+              ><label for="loadGame">Importar partida salva</label
+              ><input id="loadGame" type="file" accept=".json,application/json" />
+              <p class="notice">
+                Arquivos importados substituem o progresso local após confirmação. Não compartilhe
+                backups com informações pessoais.
+              </p>
+              <h3>Extrato de caixa</h3>
+              <div id="cashAudit" class="history"></div>
+            </div>
+            <div class="panel warning">
+              <h3>Versão inicial de desenvolvimento</h3>
+              <p>
+                O catálogo original está integrado; muitos efeitos financeiros ainda estão
+                pendentes. Este protótipo não substitui a implementação completa nem pode validar o
+                balanceamento final.
+              </p>
+            </div>
+          </aside>
+        </div>
+      </section>
+    </main>
+    <footer>
+      Corrida dos Ratos · Protótipo individual local · Não representa a versão final aprovada
+    </footer>
+    <script type="module" src="./src/app.js"></script>
+  </body>
+</html>

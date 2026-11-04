@@ -1,3 +1,21 @@
+# Corrida dos Ratos — v2.0 RC5
+
+## Acesso ao jogo e modalidades (Mundo SENAI)
+
+Após iniciar o servidor, abra **http://localhost:3000/** e escolha uma destas modalidades:
+
+- **Presencial — Tela compartilhada:** sala com até seis participantes na mesma tela; professor cadastra os jogadores antes de começar.
+- **Multiplayer — Dispositivos individuais:** cada participante entra na sala pelo dispositivo e código correspondente.
+- **Salas Individuais:** partida local para um jogador, disponível em `/individual.html`.
+
+Para criar outra partida com outros jogadores, o professor pode usar **Sair e escolher outra modalidade** em seu painel. Essa ação volta à tela inicial, **sem excluir a sala anterior**. Se não quiser que ela continue ativa, use **Encerrar sala** antes.
+
+**Inicialização simplificada:** copie `.env.example` para `.env`, escolha uma senha própria com ao menos 10 caracteres, instale Node.js 22.9+ e execute `npm start`. O arquivo `.env` não deve ser versionado nem distribuído. O modo presencial pode operar sem conexão com a internet no computador local depois que o ambiente estiver preparado.
+
+Detalhes em `docs/entregas/RC5-SELECAO-DE-MODALIDADE-E-NOVA-PARTIDA.md`.
+
+---
+
 > **Versão atual de homologação: v2.0 RC5.** Consulte `docs/entregas/RC5-CONSOLIDACAO-LAYOUT-E-PARTICIPACAO.md` para ajustes da interface do jogador, abertura manual das cartas, saída/desistência e continuidade automática quando ausente.
 
 ## v2.0 RC4 — Baralho oficial automático

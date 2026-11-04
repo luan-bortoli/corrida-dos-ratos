@@ -6,13 +6,13 @@ const html = readFileSync(new URL("../multiplayer.html", import.meta.url), "utf8
 const js = readFileSync(new URL("../multiplayer.js", import.meta.url), "utf8");
 test("a carta e as decisões possuem janela modal reabrível", () => {
   assert.match(html, /id="gameCardDialog"/);
-  assert.match(js, /host\.append\(\$\('currentCardPanel'\)\)/);
+  assert.match(js, /host\.append\(\$\(["\']currentCardPanel["\']\)\)/);
   assert.doesNotMatch(js, /host\.append\(\$\('currentCardPanel'\),\$\('turnPanel'\)\)/);
   assert.doesNotMatch(js, /lastDialogCardKey/);
-  assert.match(js, /showCard\.onclick=openGameCard/);
+  assert.match(js, /showCard\.onclick\s*=\s*openGameCard/);
 });
 test("a visualização financeira oculta a dívida quando zerada e preserva receita no motor", () => {
-  assert.match(js, /if\(Number\(g\.debt\)>0\)/);
+  assert.match(js, /if\s*\(Number\(g\.debt\)\s*>\s*0\)/);
   assert.match(js, /formatCashBRL\(g\)/);
 });
 test("DI-006 cobra exatamente 5% do salário de referência", () => {
