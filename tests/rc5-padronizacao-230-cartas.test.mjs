@@ -30,7 +30,7 @@ test("catálogo inteiro (230) usa parser único com títulos e moeda válidos", 
 test("PO, GO, GI, OE, FI, DI, MF, EV, EF e BE exibem dados em campos distintos", () => {
   assert.equal(value("PO-001", "Preço"), "R$ 3.000");
   assert.equal(value("PO-003", "Investimento"), "R$ 1.800");
-  assert.equal(value("PO-017", "Compra"), "de 1 a 80 ações");
+  assert.equal(value("PO-017", "Compra"), "De 1 a 80 ações.");
   assert.equal(value("GO-015", "Preço"), "R$ 90.000");
   assert.equal(value("GO-015", "Lucro distribuído inicial"), "R$ 1.050/mês");
   assert.equal(value("GI-001", "Investimento"), "R$ 180.000");
@@ -45,7 +45,7 @@ test("PO, GO, GI, OE, FI, DI, MF, EV, EF e BE exibem dados em campos distintos",
   assert.equal(value("MF-001", "Abrangência"), "Global");
   assert.match(value("EV-012", "Decisão e efeito"), /Cancelar assinaturas/);
   assert.equal(parse("EF-001").title, "Reserva de emergência");
-  assert.equal(value("BE-001", "Benefício"), "receber 15% do salário de referência, uma única vez");
+  assert.equal(value("BE-001", "Benefício"), "Receber 15% do salário de referência, uma única vez");
   assert.equal(CARD_METRIC_LABEL.test("Renda inicial de referência"), true);
 });
 

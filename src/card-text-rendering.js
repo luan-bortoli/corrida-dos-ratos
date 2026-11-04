@@ -27,6 +27,16 @@ const FIELD_NAMES = [
   "Avaliação da empresa",
   "Rendimento da oferta",
   "Renda da participação",
+  "Renda da participação oferecida",
+  "Renda líquida total inicial",
+  "Renda líquida inicial estimada",
+  "Avaliação anterior",
+  "Preço oferecido",
+  "Valor de referência",
+  "Valor total do projeto",
+  "Valor de aquisição",
+  "Requisitos e decisão",
+  "Risco e liquidez",
   "Oferta",
   "Custo de compra",
   "Preço-alvo de revenda",
@@ -51,9 +61,11 @@ const FIELD_NAMES = [
   "Risco",
   "Risco e liquidez",
   "Conceito",
+  "Preço-alvo",
   "Preço",
   "Compra",
   "Renda inicial",
+  "Contribuição e impacto social",
 ];
 const fieldAlternation = FIELD_NAMES.map((name) =>
   name.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"),
@@ -77,7 +89,7 @@ const headingNames = new Set([
   "filantropia",
 ]);
 const canonical = (label) =>
-  ({ Requisitos: "Requisito", Decisões: "Decisão", Riscos: "Risco", Aprendizagem: "Aprendizado" })[
+  ({ Requisitos: "Requisito", Decisões: "Decisão", Riscos: "Risco", Aprendizagem: "Aprendizado", "Requisitos e decisão": "Requisito e decisão" })[
     label
   ] || label;
 function addField(fields, label, value) {
@@ -178,6 +190,9 @@ export function splitCardText(original, id) {
   const lines = normalizeCardText(text).split(/\n+/).map(flat).filter(Boolean);
   if (lines[0] === id) lines.shift();
   if (lines[0] && headingNames.has(lines[0].toLocaleLowerCase("pt-BR"))) lines.shift();
+  // As OE-010 a OE-013 trazem a categoria "Aquisição com desconto" antes do nome da oferta.
+  // O nome da oportunidade não pode ser apresentado como descrição nem substituído pela categoria.
+  if (/^OE-01[0-3]$/.test(id) && /^aquisição com desconto$/i.test(lines[0] || "")) lines.shift();
   let title = titleOf(lines.shift() || id, id);
   // Nas perguntas, a categoria temática é o título. "5% do salário" é a recompensa, não o título.
   if (id.startsWith("EF-")) {
@@ -203,7 +218,7 @@ export function splitCardText(original, id) {
       continue;
     }
     if (
-      /^(?:\d+\.\s*(?:Categoria|Como|Funcionamento)|Funcionamento das participações|As sete oportunidades acima|Nesta categoria,|Proponho que o jogo)/i.test(
+      /^(?:\d+\.\s*(?:Categoria|Como|Funcionamento|Reestruturação financeira|Oportunidades extraordinárias)|OE-0\d{2}\s+a\s+OE-0\d{2}|GO-0\d{2}\s+a\s+GO-0\d{2}|Funcionamento das participações|As sete oportunidades acima|Nesta categoria,|Proponho que o jogo)/i.test(
         line,
       )
     )
@@ -226,22 +241,64 @@ export function splitCardText(original, id) {
 
 // A estrutura de exibição é comum às páginas de revisão e de jogo.
 export const CARD_METRIC_LABEL =
-  /^(Investimento|Investimento necessário|Preço|Custo de compra|Preço-alvo de revenda|Rendimento mensal|Renda inicial|Renda líquida inicial|Renda inicial de referência|Rendimento da oferta|Renda da participação|Distribuição inicial prevista|Lucro distribuído inicial|Lucro total inicialmente distribuído|Lucro líquido total distribuído inicialmente|Participação oferecida|Valor total da empresa|Valor total do empreendimento|Avaliação da empresa|Oferta|Liquidez|Despesa extra|Efeito no mercado|Benefício|Recompensa por acerto)$/i;
-export function normalizePresentedCard(content, id) {
-  if (id === "EV-012") {
-    return {
-      ...content,
-      description: content.description.replace(
-        /serviços contratados que utiliza pouco/i,
-        "assinaturas que utiliza pouco",
-      ),
-      fields: content.fields.map(([label, v]) => [
-        label,
-        v
-          .replace(/Cancelar serviços:/gi, "Cancelar assinaturas:")
-          .replace(/\bManter:/gi, "Manter assinaturas:"),
-      ]),
-    };
+  /^(Investimento|Investimento necessário|Preço|Custo de compra|Preço-alvo de revenda|Rendimento mensal|Renda inicial|Renda líquida inicial|Renda inicial de referência|Rendimento da oferta|Renda da participação|Distribuição inicial prevista|Avaliação anterior|Preço oferecido|Valor de referência|Valor total do projeto|Valor de aquisição|Renda líquida inicial estimada|Renda líquida total inicial|Renda da participação oferecida|Lucro distribuído inicial|Lucro total inicialmente distribuído|Lucro líquido total distribuído inicialmente|Participação oferecida|Valor total da empresa|Valor total do empreendimento|Avaliação da empresa|Oferta|Liquidez|Despesa extra|Efeito no mercado|Benefício|Recompensa por acerto)$/i;
+// Esta camada edita apenas a apresentação, nunca a fonte aprovada ou os efeitos financeiros.
+const EDITORIAL_FIELD_LABELS = {
+  "Preço": "Preço de aquisição",
+  "Rendimento mensal": "Rendimento mensal inicial",
+  "Lucro distribuído inicial": "Lucro distribuído inicial (referência)",
+  "Conceito": "Conceito financeiro",
+};
+function capitalizeSentence(value) {
+  const text = String(value || "").trim();
+  if (!text || /^[Rr]\$|^[-+]?\d/.test(text)) return text;
+  // Capitaliza somente o começo do enunciado e o começo de frase após pontuação.
+  // Não modifica nomes próprios, códigos, siglas, percentuais ou valores no interior.
+  return text.replace(/(^|[.!?]\s+)([a-zà-ÿ])/gu, (_all, prefix, letter) =>
+    prefix + letter.toLocaleUpperCase("pt-BR"),
+  );
+}
+function editField(label, value, id) {
+  let text = normalizeCardText(value);
+  if (id === "EV-012" && label === "Decisão e efeito") {
+    text = "Cancelar assinaturas: suas despesas mensais com lazer diminuem 10%, sem ficar abaixo de R$ 50. Manter assinaturas: suas despesas mensais permanecem iguais.";
+  } else if (id === "EV-012" && label === "Aprendizado") {
+    text = "Revisar periodicamente as assinaturas pouco utilizadas ajuda a evitar gastos recorrentes desnecessários.";
   }
-  return content;
+  if (id === "PO-013" && label === "Distribuição inicial prevista")
+    text = text.replace(/\.\s*Requisitos e\s*$/i, ".");
+  if (/por fechamento(?:s)?\b/i.test(text))
+    text = text.replace(/por fechamento(s)?\b/gi, "por fechamento financeiro$1 (Dia do Pagamento)");
+  if (/\ba cada fechamento\b/i.test(text))
+    text = text.replace(/a cada fechamento\b/gi, "a cada fechamento financeiro (Dia do Pagamento)");
+  if (label === "Risco" && /^de (?:vacância|perdas|inadimplência)/i.test(text))
+    text = `Possibilidade ${text}`;
+  text = capitalizeSentence(text);
+  // Enunciados narrativos terminam com pontuação; medidas e métricas permanecem como valores.
+  if (!CARD_METRIC_LABEL.test(label) && !/^(?:Recompensa por acerto|Contribuição e impacto social|Abrangência|Liquidez)$/i.test(label)
+      && /[\p{L}]/u.test(text) && !/[.!?]$/.test(text)) text += ".";
+  return text;
+}
+export function normalizePresentedCard(content, id) {
+  const description = id === "EV-012"
+    ? "Você identificou assinaturas que utiliza pouco."
+    : content.description;
+  const seen = new Set();
+  const fields = [];
+  for (const [originalLabel, rawValue] of content.fields || []) {
+    let label = originalLabel;
+    if (id === "PO-013" && label.toLocaleLowerCase("pt-BR") === "decisão") label = "Requisito e decisão";
+    let value = editField(label, rawValue, id);
+    if (!value) continue;
+    const key = `${label.toLocaleLowerCase("pt-BR")}:${value.toLocaleLowerCase("pt-BR")}`;
+    if (seen.has(key)) continue;
+    seen.add(key);
+    fields.push([label, value]);
+  }
+  return {
+    ...content,
+    title: capitalizeSentence(content.title),
+    description: capitalizeSentence(description),
+    fields,
+  };
 }
