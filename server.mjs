@@ -1094,7 +1094,7 @@ const server = http.createServer((req, res) => {
       if (url.pathname.startsWith("/api/")) return await api(req, res, url);
       if (req.method !== "GET") fail(405, "Método não permitido");
       let path = url.pathname === "/" ? "/index.html" : url.pathname;
-      const allowed = ["/index.html", "/individual.html", "/styles.css", "/multiplayer.html", "/multiplayer.js"];
+      const allowed = ["/index.html", "/individual.html", "/styles.css", "/multiplayer.html", "/multiplayer.js", "/revisao-cartas.html", "/revisao-cartas.js", "/revisao-cartas.css"];
       const publicModule = /^\/src\/[a-z0-9-]+\.(?:js|json)$/i.test(path);
       if (!allowed.includes(path) && !publicModule) fail(404, "Arquivo não encontrado");
       const filePath = join(root, path);

@@ -38,7 +38,15 @@ let session = null;
 try {
   session = JSON.parse(sessionStorage.getItem("cr-room-session"));
 } catch {}
-const msg = (x) => ($("message").textContent = x);
+const msg = (x) => {
+  $("message").textContent = x;
+  // Exibe a resposta da operação dentro da carta enquanto ela estiver aberta.
+  const cardFeedback = $("gameCardFeedback");
+  if (cardFeedback && $("gameCardDialog")?.open) {
+    cardFeedback.textContent = x;
+    cardFeedback.hidden = false;
+  }
+};
 
 // Permite conferir a senha digitada sem expô-la por padrão.
 $("togglePassword").onclick = () => {
@@ -147,7 +155,11 @@ $("confirmQuit").onclick = async () => {
   }
 };
 function openGameCard() {
-  if (!$("currentCardPanel").hidden && !gameDialog.open) gameDialog.showModal();
+  if (!$("currentCardPanel").hidden && !gameDialog.open) {
+    $("gameCardFeedback").hidden = true;
+    $("gameCardFeedback").textContent = "";
+    gameDialog.showModal();
+  }
 }
 async function req(path, method = "GET", body) {
   const response = await fetch(path, {
@@ -446,7 +458,7 @@ function renderReconnectRequests(r) {
     area.append(row);
   }
 }
-for (const a of ["start", "pause", "resume", "finish", "advance", "roll", "end"])
+for (const a of ["start", "pause", "resume", "finish", "roll", "end"])
   $(a).onclick = () => perform(a);
 $("buy").onclick = () => perform("buy", { assetId: window.currentOffer });
 async function downloadTeacherReport(format) {
@@ -562,7 +574,7 @@ $("cardAudit").onclick = async () => {
 function render(r) {
   currentRoomMode = r.mode || "individual";
   const shared = r.mode === "shared" && session?.role === "teacher";
-  $("sharedNavigation").hidden = !shared;
+  $("sharedNavigation").hidden = true; // Navegação presencial fica no cabeçalho, sem faixa adicional.
   if (shared) {
     const consult = $("sharedConsultPlayer");
     const previous = sharedConsultPlayer;
@@ -576,6 +588,14 @@ function render(r) {
     $("sharedTeacherView").classList.toggle("selected", r.teacher);
     $("sharedRegistration").hidden = !r.teacher || r.status !== "lobby";
     $("sharedPlayerCount").textContent = `${r.players.length} de 6 jogadores cadastrados`;
+    const registrationFull = r.players.length >= 6;
+    // Evita interromper toda a renderização caso um arquivo HTML antigo permaneça
+    // em cache ou uma tela não contenha todos os controles de cadastro presencial.
+    for (const id of ["sharedPlayerName", "sharedProfession", "sharedDream", "sharedAddPlayer"]) {
+      const field = $(id);
+      if (field) field.disabled = registrationFull || r.status !== "lobby";
+    }
+    if (registrationFull) $("sharedPlayerCount").textContent += " · Limite atingido";
   } else $("sharedRegistration").hidden = true;
   $("room").hidden = false;
   document.querySelector(".setup").hidden = true;
@@ -918,7 +938,6 @@ function render(r) {
   $("pause").disabled = r.status !== "playing";
   $("resume").disabled = r.status !== "paused";
   $("finish").disabled = r.status === "finished";
-  $("advance").disabled = !r.canTeacherAdvance;
   const me = r.players.find((p) => p.id === r.you),
     active = r.players.find((p) => p.id === r.activePlayerId);
   $("timerInfo").textContent =
@@ -1336,8 +1355,17 @@ function render(r) {
       const b = document.createElement("button");
       b.textContent = "Comprar ações/cotas";
       b.onclick = () => {
-        const answer = prompt("Quantidade:", String(sec.min));
-        if (answer !== null) perform("official-security-buy", { quantity: Number(answer) });
+        const answer = prompt(
+          `Quantas ações/cotas deseja comprar? (mínimo ${sec.min}, máximo ${sec.max})`,
+          String(sec.min),
+        );
+        if (answer === null) return;
+        const quantity = Number(answer.trim());
+        if (!answer.trim() || !Number.isSafeInteger(quantity) || quantity < sec.min || quantity > sec.max) {
+          msg(`Quantidade inválida. Escolha de ${sec.min} a ${sec.max} ações/cotas.`);
+          return;
+        }
+        perform("official-security-buy", { quantity });
       };
       cardOfferArea.append(b);
     }
@@ -1646,7 +1674,7 @@ function marketInfo(r) {
     ownShares,
     incomingSec,
     incomingShares,
-    assets: owned.length + companies.length,
+    assets: owned.length + companies.length + (r.game?.assets || []).length + (r.game?.fixedIncome || []).filter((a) => a.status === "active").length,
     ads: ownSec.length + ownShares.length,
     offers: incomingSec.length + incomingShares.length,
     ids: [...incomingSec.map((o) => "sec:" + o.id), ...incomingShares.map((o) => "share:" + o.id)],
@@ -1734,7 +1762,7 @@ function renderMarket(r) {
   const info = marketInfo(r),
     body = $("marketSectionBody");
   const defs = {
-    assets: ["Meus investimentos", "Ações, fundos e participações que você possui."],
+    assets: ["Meus investimentos", "Seu patrimônio por categoria. Valor investido não significa dinheiro disponível para saque ou venda."],
     ads: ["Meus anúncios", "Acompanhe anúncios ativos e negociações com investidores."],
     offers: [
       "Ofertas disponíveis",
@@ -1767,6 +1795,57 @@ function renderMarket(r) {
     r.activePlayerId === r.you &&
     !r.players.find((p) => p.id === r.you)?.withdrawn;
   if (marketTab === "assets") {
+    // Carteira unificada: apresenta apenas posições pertencentes ao jogador atual.
+    // Os valores são informativos; compras, resgates e vendas continuam no servidor.
+    const section = (heading) => {
+      const title = document.createElement("h4");
+      title.className = "market-portfolio-heading";
+      title.textContent = heading;
+      body.append(title);
+    };
+    const ownedAssets = r.game?.assets || [];
+    const groups = [
+      ["Pequenos negócios", (a) => a.source === "official_small_business" || a.kind === "small_business"],
+      ["Imóveis e equipamentos de locação", (a) => ["official_real_estate", "official_rental"].includes(a.source) || ["real_estate", "rental"].includes(a.kind)],
+      ["Estoques para revenda", (a) => a.source === "official_resale_stock" || a.kind === "resale"],
+      ["Empresas e outros investimentos", (a) => true],
+    ];
+    const accounted = new Set();
+    for (const [heading, match] of groups) {
+      const positions = ownedAssets.filter((a, index) => !accounted.has(index) && match(a))
+        .map((asset) => ({ asset, index: ownedAssets.indexOf(asset) }));
+      if (!positions.length) continue;
+      section(heading);
+      for (const { asset, index } of positions) {
+        accounted.add(index);
+        const details = [`Valor de aquisição: ${money(asset.cost || 0)}`];
+        if (typeof asset.passive === "number" && asset.passive > 0) {
+          details.push(`Renda de referência: ${money(asset.passive)} por fechamento`);
+        } else {
+          details.push("Sem rendimento recorrente confirmado");
+        }
+        if (asset.targetPrice) details.push(`Preço-alvo para revenda: ${money(asset.targetPrice)} (não garantido)`);
+        if (asset.loanId) details.push("Aquisição com financiamento");
+        body.append(marketBox(`${asset.id || "Ativo"} — ${asset.name || "Investimento"}`, details.join(" · "), null, null, true,
+          "Registro patrimonial. Operações somente quando autorizadas pelas regras do jogo."));
+      }
+    }
+    const fixedContracts = (r.game?.fixedIncome || []).filter((c) => c.status === "active");
+    if (fixedContracts.length) {
+      section("Investimentos de renda fixa");
+      for (const contract of fixedContracts) {
+        const offer = FIXED_INCOME.find((a) => a.id === contract.cardId);
+        const details = [
+          `Aplicado: ${money(contract.principal)}`,
+          `Saldo contratado: ${money(contract.balance)}`,
+          `Períodos decorridos: ${contract.elapsed || 0}`,
+        ];
+        if (offer?.term) details.push(`Prazo: ${offer.term} fechamentos`);
+        body.append(marketBox(`${contract.cardId} — ${offer?.name || "Renda fixa"}`, details.join(" · "), null, null, true,
+          "Resgate sujeito às condições do contrato; consulte as ações disponíveis na partida."));
+      }
+    }
+    if (info.owned.length) section("Ações e fundos");
     for (const [id, units] of info.owned) {
       const sec = OFFICIAL_SECURITIES.find((x) => x.id === id),
         quote = r.officialMarket?.find((q) => q.id === id),
@@ -1890,6 +1969,63 @@ function renderMarket(r) {
     body.append(empty);
   }
 }
+// A tela administrativa presencial reutiliza os controles já existentes,
+// sem duplicar endpoints ou operações financeiras.
+const adminMainPanel = document.querySelector("#room .main-panel");
+const adminSidePanel = document.querySelector("#room .side-panel");
+const adminTeacherPanel = $("teacherPanel");
+const adminActionPanel = $("teacherActions");
+const adminActionOrder = Array.from(adminActionPanel.children);
+const adminExit = document.querySelector(".teacher-exit-actions");
+const sharedNavActions = document.querySelector(".shared-navigation-actions");
+const sharedNavContainer = $("sharedNavigation");
+const playerAvatarColors = ["#f0bd6b", "#5fcab3", "#9d96ec", "#ef848c", "#78baf4", "#e6d579"];
+function playerAvatarColor(room, player) {
+  return playerAvatarColors[Math.max(0, room.players.indexOf(player)) % playerAvatarColors.length];
+}
+function playerAvatarInitials(name) {
+  const parts = String(name || "").trim().split(/\s+/).filter(Boolean);
+  return parts.slice(0, 2).map((part) => part.charAt(0).toLocaleUpperCase("pt-BR")).join("");
+}
+
+function updateSharedAdminScreen(r) {
+  const sharedAdmin = r.mode === "shared" && !!r.teacher;
+  $("room").classList.toggle("shared-admin-room", sharedAdmin);
+  // Após começar, o cadastro deixa de ser necessário: o tabuleiro ocupa a área inteira.
+  $("room").classList.toggle("shared-admin-expanded", sharedAdmin && r.status !== "lobby");
+  // O cabeçalho está fora de #room; sua aparência precisa acompanhar a área ativa.
+  document.body.classList.toggle("shared-admin-header", sharedAdmin);
+  $("sharedAdminBoardHeader").hidden = !sharedAdmin;
+  if (r.mode === "shared") {
+    if (sharedNavActions.parentElement !== $("topbarRoomMeta")) $("topbarRoomMeta").append(sharedNavActions);
+  } else if (sharedNavActions.parentElement !== sharedNavContainer) {
+    sharedNavContainer.append(sharedNavActions);
+  }
+  if (sharedAdmin) {
+    if (adminTeacherPanel.parentElement !== adminSidePanel) adminSidePanel.append(adminTeacherPanel);
+    if (adminExit.parentElement !== document.querySelector(".topbar-room-meta")) {
+      $("topbarRoomMeta").append(adminExit);
+    }
+    const controls = $("sharedAdminBoardControls");
+    for (const id of ["start", "pause", "resume", "finish", "reportPrint"]) {
+      controls.append($(id));
+    }
+    $("teacherActions").hidden = true;
+    $("start").hidden = r.status !== "lobby";
+    $("start").disabled = r.status !== "lobby" || r.players.filter(p => !p.withdrawn).length < 2;
+    $("pause").hidden = r.status !== "playing";
+    $("resume").hidden = r.status !== "paused";
+    $("finish").hidden = r.status === "finished";
+    $("reportPrint").hidden = r.status === "lobby";
+    $("sharedAdminBoardSubtitle").textContent = `${r.round || 1}ª rodada · ${r.players.length} de 6 participantes`;
+  } else {
+    if (adminTeacherPanel.parentElement !== adminMainPanel) adminMainPanel.append(adminTeacherPanel);
+    if (adminExit.parentElement !== adminTeacherPanel) adminTeacherPanel.insertBefore(adminExit, adminActionPanel);
+    for (const element of adminActionOrder) adminActionPanel.append(element);
+    for (const id of ["start", "pause", "resume", "finish", "reportPrint"]) $(id).hidden = false;
+    adminActionPanel.hidden = !r.teacher;
+  }
+}
 function drawBoard(r) {
   const el = $("boardVisual");
   const current =
@@ -1941,10 +2077,8 @@ function drawBoard(r) {
       occupants.forEach((p, n) => {
         const dot = document.createElement("span");
         dot.className = "player-dot";
-        dot.style.background = ["#f0bd6b", "#5fcab3", "#9d96ec", "#ef848c", "#78baf4", "#e6d579"][
-          r.players.indexOf(p) % 6
-        ];
-        dot.textContent = p.name.slice(0, 1).toUpperCase();
+        dot.style.background = playerAvatarColor(r, p);
+        dot.textContent = playerAvatarInitials(p.name);
         dot.title = p.name;
         holder.append(dot);
       });
@@ -1967,12 +2101,46 @@ function drawBoard(r) {
     .forEach((p) => {
       const tag = document.createElement("span");
       tag.textContent = `● ${p.name}`;
-      tag.style.color = ["#f0bd6b", "#5fcab3", "#9d96ec", "#ef848c", "#78baf4", "#e6d579"][
-        r.players.indexOf(p) % 6
-      ];
+      tag.style.color = playerAvatarColor(r, p);
       legend.append(tag);
     });
   if (!isCompactCircuit) center.append(heading, sub);
+  if (r.teacher && r.mode === "shared") {
+    center.classList.add("shared-admin-board-center");
+    const wait = document.createElement("div");
+    wait.className = "shared-admin-board-wait";
+    const title = document.createElement("strong");
+    title.textContent = r.status === "lobby" ? "Aguardando jogadores" :
+      r.status === "paused" ? "Partida pausada" :
+      r.status === "finished" ? "Partida encerrada" : "Partida em andamento";
+    const description = document.createElement("span");
+    description.textContent = r.status === "lobby"
+      ? "Cadastre de 2 a 6 participantes para iniciar."
+      : r.status === "playing"
+        ? `Vez de ${r.players.find(p => p.id === r.activePlayerId)?.name || "um jogador"}`
+        : `Rodada ${r.round}`;
+    const names = document.createElement("div");
+    names.className = "shared-admin-board-names";
+    if (r.players.length) {
+      for (const player of r.players) {
+        const entry = document.createElement("span");
+        entry.className = "shared-admin-player-entry";
+        const avatar = document.createElement("span");
+        avatar.className = "shared-admin-player-avatar";
+        avatar.style.backgroundColor = playerAvatarColor(r, player);
+        avatar.textContent = playerAvatarInitials(player.name);
+        avatar.setAttribute("aria-hidden", "true");
+        const fullName = document.createElement("span");
+        fullName.textContent = player.name;
+        entry.append(avatar, fullName);
+        names.append(entry);
+      }
+    } else names.textContent = "Nenhum participante cadastrado";
+    wait.append(title, description, names);
+    center.append(wait);
+    el.append(center);
+    return;
+  }
   const active = r.players.find((p) => p.id === r.activePlayerId),
     me = r.players.find((p) => p.id === r.you),
     g = r.game;
@@ -2158,6 +2326,7 @@ function drawBoard(r) {
 }
 function updateLayout(r) {
   $("room").classList.toggle("player-room", !r.teacher);
+  updateSharedAdminScreen(r);
   $("teacherPanel").hidden = !r.teacher;
   $("turnPanel").hidden = !r.teacher && !(r.game?.pending && r.activePlayerId === r.you);
   $("financeHeading").textContent = r.teacher
@@ -2225,8 +2394,12 @@ function updateLayout(r) {
     $("cardIdentifier").textContent = card.id;
     $("cardCategory").textContent = CATEGORY_LABELS[card.category] || card.category;
     $("cardTitle").textContent = content.title;
-    $("cardDescription").textContent =
-      content.description || "Descrição detalhada indisponível para esta carta.";
+    const fixedCard = FIXED_INCOME.find((x) => x.id === card.id);
+    const cardIntroduction = fixedCard
+      ? `Você pode aplicar de ${money(fixedCard.min)} a ${money(fixedCard.max)}, em valores de ${money(fixedCard.step)}. Consulte as condições de rendimento, prazo e resgate antes de decidir.`
+      : "Leia as condições desta oportunidade e avalie os riscos antes de decidir.";
+    $("cardTitle").textContent = fixedCard ? fixedCard.name : content.title;
+    $("cardDescription").textContent = content.description || cardIntroduction;
     const isExpense = card.category === "DI";
     const expenseParts = isExpense ? String(approved?.text ?? "").split("\t") : [];
     const salary = PROFESSIONS[me?.professionId]?.salary;

@@ -143,8 +143,7 @@
           hidden
           aria-label="Áreas da partida presencial"
         >
-          <strong>Presencial — Tela compartilhada</strong>
-          <div class="shared-navigation-actions">
+                    <div class="shared-navigation-actions">
             <label id="sharedConsultLabel" for="sharedConsultPlayer" hidden>
               Consultar jogador
               <select id="sharedConsultPlayer" aria-label="Consultar convites de outro jogador">
@@ -152,13 +151,20 @@
               </select>
             </label>
             <button id="sharedGameView" type="button" class="outline">Jogo</button>
-            <button id="sharedTeacherView" type="button" class="outline">Professor</button>
+            <button id="sharedTeacherView" type="button" class="outline">Administrador</button>
           </div>
         </nav>
         <h1 id="roomTitle" hidden>Corrida dos Ratos</h1>
         <div class="game-grid">
           <div class="main-panel">
             <div class="panel board-panel">
+              <div id="sharedAdminBoardHeader" class="shared-admin-board-header" hidden>
+                <div>
+                  <h2>Tabuleiro — Corrida dos Ratos</h2>
+                  <span id="sharedAdminBoardSubtitle" class="helper-text">32 casas · Rodada 1</span>
+                </div>
+                <div id="sharedAdminBoardControls" class="shared-admin-board-controls"><a id="reviewCardsLink" class="outline review-cards-link" href="/revisao-cartas.html">Revisar cartas</a></div>
+              </div>
               <span id="boardCircuit" hidden></span>
               <div
                 id="boardVisual"
@@ -211,14 +217,14 @@
               <div id="players"></div>
             </details>
             <div class="panel teacher-panel" id="teacherPanel" hidden>
-              <h2>Controles do professor</h2>
-              <p class="helper-text">Gerencie a sala, acompanhe a turma e exporte os resultados.</p>
+              <h2 class="shared-admin-hide-heading">Controles do Administrador</h2>
+              <p class="helper-text shared-admin-hide-heading">Gerencie a sala, acompanhe a turma e exporte os resultados.</p>
               <div id="teacherReconnectPanel" class="teacher-reconnect-panel" hidden>
                 <h3>Solicitações de retorno</h3>
                 <div id="teacherReconnectRequests"></div>
               </div>
               <div id="sharedRegistration" class="shared-registration" hidden>
-                <h3>Participantes presenciais</h3>
+                <h3>Cadastrar participante</h3>
                 <p class="helper-text">
                   Cadastre de 2 a 6 visitantes antes de iniciar. O jogo alternará automaticamente a
                   vez de cada um.
@@ -236,19 +242,17 @@
               </div>
               <div class="teacher-exit-actions">
             <button id="teacherExitHome" type="button" class="outline">
-              Sair e escolher outra modalidade
+              Sair
             </button>
-            <p class="helper-text">Saia desta sala para criar uma nova partida com outros participantes. A sala atual continuará salva.</p>
           </div>
           <div id="teacherActions" hidden>
                 <button id="start" class="primary">Iniciar</button
                 ><button id="pause" class="outline">Pausar</button
                 ><button id="resume" class="outline">Retomar</button
                 ><button id="finish" class="outline">Encerrar sala</button
-                ><button id="advance" class="outline">Autorizar encerramento após 120s</button
                 ><button id="reportJson" class="outline">Relatório JSON</button
                 ><button id="reportCsv" class="outline">Relatório CSV</button
-                ><button id="reportPrint" class="outline">Relatório para imprimir / PDF</button
+                ><button id="reportPrint" class="outline">Relatório PDF</button
                 ><button id="cardAudit" class="outline">Auditoria das cartas</button
                 ><button id="corporateOperation" class="outline">
                   Registrar operação empresarial comprovada
@@ -398,10 +402,11 @@
             </button>
           </div>
           <div id="gameCardBody"></div>
+          <p id="gameCardFeedback" class="game-card-feedback" role="alert" aria-live="assertive" hidden></p>
         </div>
       </dialog>
       <div id="message" class="notice" role="status"></div>
     </main>
-    <script type="module" src="/multiplayer.js"></script>
+    <script type="module" src="/multiplayer.js?v=rc5-review-recovery-1"></script>
   </body>
 </html>

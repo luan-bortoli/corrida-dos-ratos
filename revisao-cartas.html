@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Corrida dos Ratos | Revisão das cartas</title>
+  <link rel="stylesheet" href="/styles.css" />
+  <link rel="stylesheet" href="/revisao-cartas.css" />
+</head>
+<body>
+<header class="topbar">
+ <div class="brand"><div class="brandmark">CR</div><div><strong>CORRIDA DOS RATOS</strong><span>Revisão das cartas oficiais</span></div></div>
+ <a class="outline review-back" href="/multiplayer.html?mode=shared">← Voltar ao jogo</a>
+</header>
+<main class="review-layout" id="reviewRoot" hidden>
+ <header class="review-heading"><div><h1>Revisão das cartas</h1><p>Consulte o conteúdo oficial, sem iniciar uma partida ou alterar os dados dos jogadores.</p></div><div id="reviewCount" aria-live="polite"></div></header>
+ <section class="review-examples panel" aria-label="Exemplos por comportamento">
+  <strong>Comece pelos tipos diferentes de carta</strong>
+  <div id="reviewExamples" class="review-example-buttons"></div>
+  <small>Esses atalhos ajudam a identificar diferenças de apresentação sem precisar conferir as 230 cartas uma a uma.</small>
+ </section>
+ <div class="review-workspace">
+  <aside class="review-sidebar panel" aria-label="Catálogo de cartas">
+   <label for="reviewSearch">Pesquisar</label><input id="reviewSearch" type="search" placeholder="Código, título ou texto" autocomplete="off" />
+   <label for="reviewCategory">Categoria</label><select id="reviewCategory"><option value="">Todas as categorias</option></select>
+   <label for="reviewCircuit">Circuito</label><select id="reviewCircuit"><option value="">Todos</option><option value="inner">Corrida dos Ratos</option><option value="outer">Alta Velocidade</option></select>
+   <label for="reviewFlag">Verificar</label><select id="reviewFlag"><option value="">Todas as cartas</option><option value="attention">Com observações de apresentação</option><option value="clean">Sem observações automáticas</option></select>
+   <div id="reviewList" class="review-list" role="listbox" aria-label="Cartas encontradas"></div>
+  </aside>
+  <section class="review-preview" aria-label="Prévia da carta como apresentada ao jogador">
+   <div class="game-card-dialog review-game-dialog" aria-label="Simulação visual da carta da jogada">
+    <div class="dialog-shell">
+     <div class="dialog-heading"><strong>Carta da jogada</strong><span class="review-simulation">Prévia · sem alterações na partida</span></div>
+     <div class="panel card-panel" id="reviewCardPanel">
+      <div class="card-topline"><span id="previewCategory" class="category-chip"></span><span id="previewId" class="card-id"></span></div>
+      <h2 id="previewTitle" class="card-title"></h2>
+      <p id="previewDescription" class="card-description"></p>
+      <div id="previewMetrics" class="card-metrics"></div>
+      <div id="previewFields" class="card-sections"></div>
+      <div id="previewEligibility" class="eligibility-hint" hidden></div>
+      <div id="previewLearning" class="card-learning" hidden></div>
+     </div>
+     <div class="review-actions" id="reviewActions"></div>
+    </div>
+   </div>
+   <details class="review-original"><summary>Conferir texto oficial integral e observações de revisão</summary><pre id="previewOriginal"></pre><div id="previewObservations" class="review-observations"></div></details>
+   <p class="review-disclaimer">A estrutura, a tipografia e os estilos são os mesmos da janela de carta utilizada no jogo. As ações são apenas uma representação visual; opções, elegibilidade, valores calculados e mensagens de resultado dependem do estado real da partida. Nenhuma operação é executada nesta página.</p>
+  </section>
+ </div>
+</main>
+<div class="review-login panel" id="reviewBlocked" hidden><h2>Acesso do Administrador necessário</h2><p id="reviewBlockReason">Entre como Administrador em uma sala para consultar o catálogo.</p><a href="/multiplayer.html?mode=shared" class="outline">Voltar à área de acesso</a></div>
+<script type="module" src="/revisao-cartas.js"></script>
+</body></html>
