@@ -21,6 +21,7 @@ const FIELD_NAMES = [
   "Lucro total inicialmente distribuído",
   "Distribuição inicial prevista",
   "Lucro distribuído inicial",
+  "Participação de investidores",
   "Participação oferecida",
   "Valor total da empresa",
   "Valor total do empreendimento",
@@ -87,11 +88,16 @@ const headingNames = new Set([
   "bonificação",
   "educação financeira",
   "filantropia",
+  "parcerias estratégicas",
 ]);
 const canonical = (label) =>
-  ({ Requisitos: "Requisito", Decisões: "Decisão", Riscos: "Risco", Aprendizagem: "Aprendizado", "Requisitos e decisão": "Requisito e decisão" })[
-    label
-  ] || label;
+  ({
+    Requisitos: "Requisito",
+    Decisões: "Decisão",
+    Riscos: "Risco",
+    Aprendizagem: "Aprendizado",
+    "Requisitos e decisão": "Requisito e decisão",
+  })[label] || label;
 function addField(fields, label, value) {
   const v = flat(value).replace(/[.;·\s]+$/, "");
   if (v && !fields.some(([l, x]) => l === canonical(label) && x === v))
@@ -244,26 +250,29 @@ export const CARD_METRIC_LABEL =
   /^(Investimento|Investimento necessário|Preço|Custo de compra|Preço-alvo de revenda|Rendimento mensal|Renda inicial|Renda líquida inicial|Renda inicial de referência|Rendimento da oferta|Renda da participação|Distribuição inicial prevista|Avaliação anterior|Preço oferecido|Valor de referência|Valor total do projeto|Valor de aquisição|Renda líquida inicial estimada|Renda líquida total inicial|Renda da participação oferecida|Lucro distribuído inicial|Lucro total inicialmente distribuído|Lucro líquido total distribuído inicialmente|Participação oferecida|Valor total da empresa|Valor total do empreendimento|Avaliação da empresa|Oferta|Liquidez|Despesa extra|Efeito no mercado|Benefício|Recompensa por acerto)$/i;
 // Esta camada edita apenas a apresentação, nunca a fonte aprovada ou os efeitos financeiros.
 const EDITORIAL_FIELD_LABELS = {
-  "Preço": "Preço de aquisição",
+  Preço: "Preço de aquisição",
   "Rendimento mensal": "Rendimento mensal inicial",
   "Lucro distribuído inicial": "Lucro distribuído inicial (referência)",
-  "Conceito": "Conceito financeiro",
+  Conceito: "Conceito financeiro",
 };
 function capitalizeSentence(value) {
   const text = String(value || "").trim();
   if (!text || /^[Rr]\$|^[-+]?\d/.test(text)) return text;
   // Capitaliza somente o começo do enunciado e o começo de frase após pontuação.
   // Não modifica nomes próprios, códigos, siglas, percentuais ou valores no interior.
-  return text.replace(/(^|[.!?]\s+)([a-zà-ÿ])/gu, (_all, prefix, letter) =>
-    prefix + letter.toLocaleUpperCase("pt-BR"),
+  return text.replace(
+    /(^|[.!?]\s+)([a-zà-ÿ])/gu,
+    (_all, prefix, letter) => prefix + letter.toLocaleUpperCase("pt-BR"),
   );
 }
 function editField(label, value, id) {
   let text = normalizeCardText(value);
   if (id === "EV-012" && label === "Decisão e efeito") {
-    text = "Cancelar assinaturas: suas despesas mensais com lazer diminuem 10%, sem ficar abaixo de R$ 50. Manter assinaturas: suas despesas mensais permanecem iguais.";
+    text =
+      "Cancelar assinaturas: suas despesas mensais com lazer diminuem 10%, sem ficar abaixo de R$ 50. Manter assinaturas: suas despesas mensais permanecem iguais.";
   } else if (id === "EV-012" && label === "Aprendizado") {
-    text = "Revisar periodicamente as assinaturas pouco utilizadas ajuda a evitar gastos recorrentes desnecessários.";
+    text =
+      "Revisar periodicamente as assinaturas pouco utilizadas ajuda a evitar gastos recorrentes desnecessários.";
   }
   if (id === "PO-013" && label === "Distribuição inicial prevista")
     text = text.replace(/\.\s*Requisitos e\s*$/i, ".");
@@ -275,19 +284,26 @@ function editField(label, value, id) {
     text = `Possibilidade ${text}`;
   text = capitalizeSentence(text);
   // Enunciados narrativos terminam com pontuação; medidas e métricas permanecem como valores.
-  if (!CARD_METRIC_LABEL.test(label) && !/^(?:Recompensa por acerto|Contribuição e impacto social|Abrangência|Liquidez)$/i.test(label)
-      && /[\p{L}]/u.test(text) && !/[.!?]$/.test(text)) text += ".";
+  if (
+    !CARD_METRIC_LABEL.test(label) &&
+    !/^(?:Recompensa por acerto|Contribuição e impacto social|Abrangência|Liquidez)$/i.test(
+      label,
+    ) &&
+    /[\p{L}]/u.test(text) &&
+    !/[.!?]$/.test(text)
+  )
+    text += ".";
   return text;
 }
 export function normalizePresentedCard(content, id) {
-  const description = id === "EV-012"
-    ? "Você identificou assinaturas que utiliza pouco."
-    : content.description;
+  const description =
+    id === "EV-012" ? "Você identificou assinaturas que utiliza pouco." : content.description;
   const seen = new Set();
   const fields = [];
   for (const [originalLabel, rawValue] of content.fields || []) {
     let label = originalLabel;
-    if (id === "PO-013" && label.toLocaleLowerCase("pt-BR") === "decisão") label = "Requisito e decisão";
+    if (id === "PO-013" && label.toLocaleLowerCase("pt-BR") === "decisão")
+      label = "Requisito e decisão";
     let value = editField(label, rawValue, id);
     if (!value) continue;
     const key = `${label.toLocaleLowerCase("pt-BR")}:${value.toLocaleLowerCase("pt-BR")}`;
