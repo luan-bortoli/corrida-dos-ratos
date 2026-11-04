@@ -2838,3 +2838,50 @@ body.shared-admin-header .topbar #teacherExitHome {
   background: #45282d;
   color: #ffd2d2;
 }
+
+/* Contagem da demonstração presencial: independente dos 120 s de cada turno. */
+.presencial-time-panel {
+  border: 1px solid var(--border, #40506a);
+  border-radius: 12px;
+  padding: 10px 14px;
+  margin-bottom: 12px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.presencial-time-panel[hidden],
+.presencial-time-decision[hidden],
+.presencial-ranking[hidden] {
+  display: none !important;
+}
+.presencial-time-panel > strong {
+  font-size: 20px;
+  font-variant-numeric: tabular-nums;
+}
+.presencial-time-panel .helper-text {
+  flex: 1 1 180px;
+}
+.presencial-time-decision {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  width: 100%;
+}
+.presencial-time-decision > strong {
+  flex: 1 1 230px;
+}
+.presencial-time-decision button {
+  margin: 0;
+}
+.presencial-ranking {
+  width: 100%;
+}
+.presencial-ranking ol {
+  padding-left: 23px;
+  margin: 6px 0 0;
+}
+.presencial-ranking li {
+  padding: 3px 0;
+}

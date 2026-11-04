@@ -48,6 +48,14 @@ import { publicQuestion } from "./src/financial-quiz.js";
 import { roomCardAudit } from "./src/card-audit.js";
 import { buildTeacherReport, reportCSV } from "./src/reports.js";
 import { roomProgress } from "./src/room-progress.js";
+import {
+  startPresentialTimer,
+  pausePresentialTimer,
+  resumePresentialTimer,
+  checkPresentialExpiry,
+  rankPresentialPlayers,
+  publicPresentialTimer,
+} from "./src/presential-timer.js";
 import { ensureSecurities, publicSecurities, checkSecurities } from "./src/securities.js";
 import { ensureNPC, publicNPC, quoteNPC, buyShareNPC, checkNPC } from "./src/npc-market.js";
 import http from "node:http";
@@ -202,6 +210,7 @@ const snapshot = (room, who) => ({
   code: room.code,
   mode: room.mode || "individual",
   progress: roomProgress(room),
+  presencial: publicPresentialTimer(room),
   status: room.status,
   paused: room.status === "paused",
   revision: room.revision,
@@ -440,6 +449,7 @@ async function api(req, res, url) {
       winnerOrder: [],
       turnIndex: 0,
       round: 1,
+      presencialTimer: null,
       turnDeadline: null,
       pausedRemaining: null,
       companies: createCompanies(),
@@ -766,7 +776,11 @@ async function api(req, res, url) {
     await save();
     return json(res, 200, visibleSnapshot(r, who, req));
   }
-  if (["start", "pause", "resume", "finish", "advance"].includes(action)) {
+  if (
+    ["start", "pause", "resume", "finish", "advance", "finish-time", "continue-time"].includes(
+      action,
+    )
+  ) {
     teacher(who);
     if (action === "start") {
       if (r.status !== "lobby" || r.players.filter((p) => !p.withdrawn).length < 2)
@@ -776,16 +790,27 @@ async function api(req, res, url) {
       r.turnIndex = 0;
       r.round = 1;
       r.turnDeadline = Date.now() + TURN_MS;
+      if (r.mode === "shared")
+        r.presencialTimer = startPresentialTimer(
+          Date.now(),
+          process.env.NODE_ENV === "test" && process.env.TEST_PRESENTIAL_MS
+            ? Number(process.env.TEST_PRESENTIAL_MS)
+            : undefined,
+        );
     }
     if (action === "pause") {
       if (r.status !== "playing") fail(409, "Sala não está em andamento");
+      pausePresentialTimer(r);
       r.pausedRemaining = Math.max(0, (r.turnDeadline ?? Date.now()) - Date.now());
       r.turnDeadline = null;
       r.status = "paused";
     }
     if (action === "resume") {
       if (r.status !== "paused") fail(409, "Sala não está pausada");
+      if (r.presencialTimer?.expired && !r.presencialTimer?.continued)
+        fail(409, "Escolha continuar a partida ou encerrar por tempo");
       r.status = "playing";
+      resumePresentialTimer(r);
       r.turnDeadline = Date.now() + (r.pausedRemaining ?? TURN_MS);
       r.pausedRemaining = null;
     }
@@ -815,6 +840,36 @@ async function api(req, res, url) {
         turnAdvance(r);
       }
       r.turnDeadline = r.status === "playing" ? Date.now() + TURN_MS : null;
+      checkPresentialExpiry(r);
+    }
+    if (action === "finish-time") {
+      if (
+        r.mode !== "shared" ||
+        r.status !== "paused" ||
+        !r.presencialTimer?.expired ||
+        r.presencialTimer.continued
+      )
+        fail(409, "Encerramento por tempo indisponível");
+      if (r.players.some((p) => !validateState(p.game) || !auditCash(p.game).ok))
+        fail(409, "Situação financeira inconsistente");
+      r.presencialTimer.ranking = rankPresentialPlayers(r);
+      r.endReason = "time_limit";
+      r.status = "finished";
+      r.turnDeadline = null;
+    }
+    if (action === "continue-time") {
+      if (
+        r.mode !== "shared" ||
+        r.status !== "paused" ||
+        !r.presencialTimer?.expired ||
+        r.presencialTimer.continued
+      )
+        fail(409, "Continuação por tempo indisponível");
+      r.presencialTimer.continued = true;
+      r.presencialTimer.deadline = null;
+      r.status = "playing";
+      r.turnDeadline = Date.now() + (r.pausedRemaining ?? TURN_MS);
+      r.pausedRemaining = null;
     }
     if (action === "finish") {
       if (r.status === "finished") fail(409, "Sala já encerrada");
@@ -1040,6 +1095,7 @@ async function api(req, res, url) {
           }
           turnAdvance(r);
           r.turnDeadline = r.status === "playing" ? Date.now() + TURN_MS : null;
+          checkPresentialExpiry(r);
           break;
         default:
           fail(404, "Ação inexistente");
@@ -1094,7 +1150,16 @@ const server = http.createServer((req, res) => {
       if (url.pathname.startsWith("/api/")) return await api(req, res, url);
       if (req.method !== "GET") fail(405, "Método não permitido");
       let path = url.pathname === "/" ? "/index.html" : url.pathname;
-      const allowed = ["/index.html", "/individual.html", "/styles.css", "/multiplayer.html", "/multiplayer.js", "/revisao-cartas.html", "/revisao-cartas.js", "/revisao-cartas.css"];
+      const allowed = [
+        "/index.html",
+        "/individual.html",
+        "/styles.css",
+        "/multiplayer.html",
+        "/multiplayer.js",
+        "/revisao-cartas.html",
+        "/revisao-cartas.js",
+        "/revisao-cartas.css",
+      ];
       const publicModule = /^\/src\/[a-z0-9-]+\.(?:js|json)$/i.test(path);
       if (!allowed.includes(path) && !publicModule) fail(404, "Arquivo não encontrado");
       const filePath = join(root, path);
@@ -1115,6 +1180,10 @@ const absenceSweep = setInterval(() => {
   queue(async () => {
     let changed = false;
     for (const room of Object.values(rooms)) {
+      if (checkPresentialExpiry(room)) {
+        room.revision++;
+        changed = true;
+      }
       if (room.status !== "playing" || !room.turnDeadline || Date.now() < room.turnDeadline)
         continue;
       if (skipAbsentTurn(room)) {

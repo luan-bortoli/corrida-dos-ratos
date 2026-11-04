@@ -471,6 +471,11 @@ function renderReconnectRequests(r) {
 for (const a of ["start", "pause", "resume", "finish", "roll", "end"])
   $(a).onclick = () => perform(a);
 $("buy").onclick = () => perform("buy", { assetId: window.currentOffer });
+$("presencialFinishTime").onclick = () => {
+  if (window.confirm("Encerrar a demonstração e apurar o vencedor por renda passiva?"))
+    perform("finish-time");
+};
+$("presencialContinueTime").onclick = () => perform("continue-time");
 async function downloadTeacherReport(format) {
   if (!session || session.role !== "teacher") return;
   try {
@@ -517,7 +522,11 @@ $("reportPrint").onclick = async () => {
       (report.progress?.winners || [])
         .map((w) => `<li>${Number(w.place) || 0}º — ${safe(w.name)}: ${safe(w.dream)}</li>`)
         .join("") || "<li>Nenhum sonho realizado até este relatório</li>";
-    const html = `<!doctype html><html lang="pt-BR"><head><meta charset="UTF-8"><title>Relatório da sala ${safe(report.roomCode)}</title><style>body{font:14px system-ui,Arial;max-width:1100px;margin:30px auto;padding:0 18px;color:#222}h1{font-size:26px}table{border-collapse:collapse;width:100%;font-size:12px}th,td{border:1px solid #aaa;padding:7px;text-align:left}th{background:#eee}footer{margin-top:26px;color:#555}button{padding:9px 15px;margin:10px 0}@media print{button{display:none}body{margin:0}table{font-size:10px}}</style></head><body><h1>Corrida dos Ratos — Relatório pedagógico</h1><p><strong>Sala:</strong> ${safe(report.roomCode)} · <strong>Rodada:</strong> ${Number(report.round) || 0} · <strong>Situação:</strong> ${safe(report.status)} · <strong>Participantes:</strong> ${Number(report.participantsCount) || 0}</p><h2>Ordem de realização dos sonhos</h2><ol>${winners}</ol><h2>Indicadores dos participantes</h2><table><thead><tr><th>Nome</th><th>Profissão</th><th>Sonho</th><th>Realizado</th><th>Posição</th><th>Fechamentos</th><th>Cartas</th><th>Educação financeira</th><th>Caixa (R$)</th></tr></thead><tbody>${rows}</tbody></table><footer><p>Os indicadores derivam dos eventos registrados. Não representam notas escolares, nem certificam a conciliação financeira integral.</p></footer><button onclick="window.print()">Imprimir / salvar como PDF</button></body></html>`;
+    const ranking = report.presencialRanking;
+    const rankingHtml = ranking
+      ? `<h2>Classificação por renda passiva — Encerramento aos 20 minutos</h2><ol>${ranking.map((p) => `<li>${Number(p.place)}º — ${safe(p.name)}: renda passiva ${safe(money(p.passive))}/mês financeiro; despesas ${safe(money(p.expenses))}/mês financeiro</li>`).join("")}</ol><p>Vencedor por tempo, não necessariamente por realização de sonho.</p>`
+      : "";
+    const html = `<!doctype html><html lang="pt-BR"><head><meta charset="UTF-8"><title>Relatório da sala ${safe(report.roomCode)}</title><style>body{font:14px system-ui,Arial;max-width:1100px;margin:30px auto;padding:0 18px;color:#222}h1{font-size:26px}table{border-collapse:collapse;width:100%;font-size:12px}th,td{border:1px solid #aaa;padding:7px;text-align:left}th{background:#eee}footer{margin-top:26px;color:#555}button{padding:9px 15px;margin:10px 0}@media print{button{display:none}body{margin:0}table{font-size:10px}}</style></head><body><h1>Corrida dos Ratos — Relatório pedagógico</h1><p><strong>Sala:</strong> ${safe(report.roomCode)} · <strong>Rodada:</strong> ${Number(report.round) || 0} · <strong>Situação:</strong> ${safe(report.status)} · <strong>Participantes:</strong> ${Number(report.participantsCount) || 0}</p>${rankingHtml}<h2>Ordem de realização dos sonhos</h2><ol>${winners}</ol><h2>Indicadores dos participantes</h2><table><thead><tr><th>Nome</th><th>Profissão</th><th>Sonho</th><th>Realizado</th><th>Posição</th><th>Fechamentos</th><th>Cartas</th><th>Educação financeira</th><th>Caixa (R$)</th></tr></thead><tbody>${rows}</tbody></table><footer><p>Os indicadores derivam dos eventos registrados. Não representam notas escolares, nem certificam a conciliação financeira integral.</p></footer><button onclick="window.print()">Imprimir / salvar como PDF</button></body></html>`;
     const blob = new Blob([html], { type: "text/html;charset=utf-8" }),
       link = URL.createObjectURL(blob);
     const a = document.createElement("a");
@@ -1982,7 +1991,43 @@ function playerAvatarInitials(name) {
     .join("");
 }
 
+function updatePresencialClock(r) {
+  const panel = $("presencialTimePanel");
+  const timer = r.presencial;
+  panel.hidden = r.mode !== "shared" || r.status === "lobby" || !timer;
+  if (panel.hidden) return;
+  const remaining = Math.max(0, timer.secondsRemaining ?? timer.durationSeconds);
+  $("presencialClock").textContent =
+    `${String(Math.floor(remaining / 60)).padStart(2, "0")}:${String(remaining % 60).padStart(2, "0")}`;
+  const help = $("presencialTimeHelp");
+  help.textContent = timer.continued
+    ? "Partida continuada pelo Administrador, sem novo limite obrigatório."
+    : timer.waitingForTurn
+      ? "Tempo esgotado. Conclua a jogada atual antes da decisão administrativa."
+      : timer.pendingDecision
+        ? "A partida está pausada para decisão do Administrador."
+        : r.status === "paused"
+          ? "Cronômetro pausado."
+          : "Limite sugerido de 20 minutos.";
+  $("presencialTimeDecision").hidden = !r.teacher || !timer.pendingDecision;
+  const ranking = $("presencialRanking");
+  ranking.hidden = !(r.teacher && timer.ranking?.length);
+  ranking.replaceChildren();
+  if (!ranking.hidden) {
+    const heading = document.createElement("strong");
+    heading.textContent = "Classificação final — maior renda passiva";
+    const list = document.createElement("ol");
+    for (const player of timer.ranking) {
+      const item = document.createElement("li");
+      item.textContent = `${player.name}: ${money(player.passive)} por mês financeiro (despesas: ${money(player.expenses)})`;
+      list.append(item);
+    }
+    ranking.append(heading, list);
+  }
+}
+
 function updateSharedAdminScreen(r) {
+  updatePresencialClock(r);
   const sharedAdmin = r.mode === "shared" && !!r.teacher;
   $("room").classList.toggle("shared-admin-room", sharedAdmin);
   // Após começar, o cadastro deixa de ser necessário: o tabuleiro ocupa a área inteira.
@@ -2010,7 +2055,7 @@ function updateSharedAdminScreen(r) {
     $("start").hidden = r.status !== "lobby";
     $("start").disabled = r.status !== "lobby" || r.players.filter((p) => !p.withdrawn).length < 2;
     $("pause").hidden = r.status !== "playing";
-    $("resume").hidden = r.status !== "paused";
+    $("resume").hidden = r.status !== "paused" || !!r.presencial?.pendingDecision;
     $("finish").hidden = r.status === "finished";
     $("reportPrint").hidden = r.status === "lobby";
     $("sharedAdminBoardSubtitle").textContent =

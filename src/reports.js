@@ -62,6 +62,12 @@ export function buildTeacherReport(room) {
   return {
     schemaVersion: 4,
     progress,
+    presencialRanking:
+      room.endReason === "time_limit" ? (room.presencialTimer?.ranking ?? null) : null,
+    endingType:
+      room.endReason === "time_limit"
+        ? "renda_passiva_por_tempo"
+        : room.endReason || "em_andamento",
     roomCode: room.code,
     status: room.status,
     round: finite(room.round),
