@@ -22,7 +22,7 @@ test("campos de cadastro ficam bloqueados quando há seis participantes", () => 
 
 test("avatares usam cores do tabuleiro e iniciais dos dois primeiros nomes", () => {
   assert.match(js, /function playerAvatarInitials\(name\)/);
-  assert.match(js, /parts\.slice\(0, 2\)/);
+  assert.match(js, /parts\s*\.slice\(0, 2\)/);
   assert.match(js, /avatar\.style\.backgroundColor = playerAvatarColor\(r, player\)/);
   assert.match(js, /dot\.textContent = playerAvatarInitials\(p\.name\)/);
   assert.match(css, /\.shared-admin-player-avatar/);

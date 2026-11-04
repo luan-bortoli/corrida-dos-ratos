@@ -41,7 +41,10 @@ test("layout novo preserva todos os pontos de integração da sala", () => {
 });
 test("apresentação retira o texto técnico bruto e utiliza o conteúdo oficial", () => {
   assert.match(js, /function splitCardText/);
-  assert.match(js, /cleanMarkdown/);
+  assert.match(
+    readFileSync(new URL("../src/card-text-rendering.js", import.meta.url), "utf8"),
+    /normalizeCardText/,
+  );
   assert.match(js, /getCard\(card\.id\)/);
   assert.match(js, /Recusar \/ encerrar turno/);
   assert.match(html, /class="card-panel"|class="panel card-panel"/);

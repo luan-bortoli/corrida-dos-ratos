@@ -20,6 +20,6 @@ test("sair fica alinhado ao cabeçalho administrativo sem criar borda ou segunda
 
 test("sair preserva confirmação e volta para seleção sem encerrar a sala", () => {
   assert.match(js, /\$\("teacherExitHome"\)\.onclick = \(\) => \{/);
-  assert.match(js, /window\.confirm\("Sair da sala atual/);
+  assert.match(js, /window\.confirm\(\s*"Sair da sala atual/);
   assert.match(js, /window\.location\.assign\("\/"\)/);
 });

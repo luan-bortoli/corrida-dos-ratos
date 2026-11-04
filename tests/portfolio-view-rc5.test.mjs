@@ -10,7 +10,7 @@ test("a carteira inclui pequenos negócios e equipamentos registrados no patrim�
   assert.match(ui, /official_small_business/);
   assert.match(ui, /official_rental/);
   assert.match(ui, /official_resale_stock/);
-  assert.match(ui, /marketBox\(`\$\{asset\.id \|\| "Ativo"\}/);
+  assert.match(ui, /marketBox\(\s*`\$\{asset\.id \|\| "Ativo"\}/);
 });
 
 test("renda fixa ativa e ações continuam na carteira sem criar novas operações financeiras", () => {

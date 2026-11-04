@@ -2416,30 +2416,109 @@ body:has(#room:not([hidden])) main {
   margin: 0 auto;
   padding: clamp(28px, 6vw, 78px) 22px;
 }
-.mode-home-heading { max-width: 720px; margin-bottom: 30px; }
-.mode-home-heading h1 { font-size: clamp(34px, 5vw, 62px); line-height: 1.12; letter-spacing: -.035em; margin: 12px 0 16px; }
-.mode-home-heading h1 em { color: #e0ad61; font-style: normal; }
-.mode-home-heading p { color: #aebcd1; line-height: 1.6; }
-.mode-cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
-.mode-card {
-  display: flex; flex-direction: column; align-items: flex-start;
-  min-height: 260px; padding: 26px; border-radius: 16px;
-  border: 1px solid #39506e; background: #14243b;
-  color: #e9f0fa; text-decoration: none;
-  transition: border-color .15s, background-color .15s, transform .15s;
+.mode-home-heading {
+  max-width: 720px;
+  margin-bottom: 30px;
 }
-.mode-card:hover, .mode-card:focus-visible { border-color: #e0ad61; background: #1e304a; transform: translateY(-2px); }
-.mode-card-icon { color: #e0ad61; font-size: 32px; line-height: 1; margin-bottom: 18px; }
-.mode-card h2 { font-size: 19px; line-height: 1.3; margin: 0 0 12px; }
-.mode-card p { color: #acbad1; font-size: 14px; line-height: 1.55; margin: 0 0 24px; }
-.mode-card-link { color: #f5d5a2; font-weight: 700; margin-top: auto; }
-.mode-back-link { display: inline-block; margin-bottom: 18px; color: #f2c785; text-decoration: none; font-size: 14px; }
-.mode-back-link:hover { text-decoration: underline; }
-.teacher-exit-actions { margin-top: 20px; padding-top: 16px; border-top: 1px solid #40516b; }
-.teacher-exit-actions .helper-text { margin: 8px 0 0; }
-@media (max-width: 900px) { .mode-cards { grid-template-columns: 1fr; } .mode-card { min-height: 190px; } }
+.mode-home-heading h1 {
+  font-size: clamp(34px, 5vw, 62px);
+  line-height: 1.12;
+  letter-spacing: -0.035em;
+  margin: 12px 0 16px;
+}
+.mode-home-heading h1 em {
+  color: #e0ad61;
+  font-style: normal;
+}
+.mode-home-heading p {
+  color: #aebcd1;
+  line-height: 1.6;
+}
+.mode-cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+.mode-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-height: 260px;
+  padding: 26px;
+  border-radius: 16px;
+  border: 1px solid #39506e;
+  background: #14243b;
+  color: #e9f0fa;
+  text-decoration: none;
+  transition:
+    border-color 0.15s,
+    background-color 0.15s,
+    transform 0.15s;
+}
+.mode-card:hover,
+.mode-card:focus-visible {
+  border-color: #e0ad61;
+  background: #1e304a;
+  transform: translateY(-2px);
+}
+.mode-card-icon {
+  color: #e0ad61;
+  font-size: 32px;
+  line-height: 1;
+  margin-bottom: 18px;
+}
+.mode-card h2 {
+  font-size: 19px;
+  line-height: 1.3;
+  margin: 0 0 12px;
+}
+.mode-card p {
+  color: #acbad1;
+  font-size: 14px;
+  line-height: 1.55;
+  margin: 0 0 24px;
+}
+.mode-card-link {
+  color: #f5d5a2;
+  font-weight: 700;
+  margin-top: auto;
+}
+.mode-back-link {
+  display: inline-block;
+  margin-bottom: 18px;
+  color: #f2c785;
+  text-decoration: none;
+  font-size: 14px;
+}
+.mode-back-link:hover {
+  text-decoration: underline;
+}
+.teacher-exit-actions {
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid #40516b;
+}
+.teacher-exit-actions .helper-text {
+  margin: 8px 0 0;
+}
+@media (max-width: 900px) {
+  .mode-cards {
+    grid-template-columns: 1fr;
+  }
+  .mode-card {
+    min-height: 190px;
+  }
+}
 
-.chosen-mode { background: #253752; color: #f3d3a3; border-radius: 8px; padding: 10px 12px; font-size: 13px; font-weight: 700; margin: 0 0 18px; }
+.chosen-mode {
+  background: #253752;
+  color: #f3d3a3;
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-size: 13px;
+  font-weight: 700;
+  margin: 0 0 18px;
+}
 
 /* Carteira unificada: agrupamento visual dos investimentos já registrados. */
 .market-portfolio-heading {
@@ -2450,7 +2529,6 @@ body:has(#room:not([hidden])) main {
   font-weight: 700;
 }
 
-
 /* RC5 — Tela compartilhada: painel do Administrador com duas colunas. */
 #room.shared-admin-room .game-grid {
   display: grid;
@@ -2458,26 +2536,45 @@ body:has(#room:not([hidden])) main {
   gap: 16px;
   align-items: start;
 }
-#room.shared-admin-room .main-panel { min-width: 0; }
-#room.shared-admin-room .side-panel { min-width: 0; display: block; }
+#room.shared-admin-room .main-panel {
+  min-width: 0;
+}
+#room.shared-admin-room .side-panel {
+  min-width: 0;
+  display: block;
+}
 #room.shared-admin-room #turnPanel,
 #room.shared-admin-room #financePanel,
 #room.shared-admin-room #businessPanel,
 #room.shared-admin-room #limitsPanel,
 #room.shared-admin-room .shared-admin-hide-heading,
-#room.shared-admin-room #teacherActions { display: none !important; }
+#room.shared-admin-room #teacherActions {
+  display: none !important;
+}
 #room.shared-admin-room #teacherPanel {
   display: block;
   margin: 0;
   padding: 20px;
 }
-#room.shared-admin-room #sharedRegistration { padding: 0; }
-#room.shared-admin-room #sharedRegistration h3 { margin-top: 0; }
+#room.shared-admin-room #sharedRegistration {
+  padding: 0;
+}
+#room.shared-admin-room #sharedRegistration h3 {
+  margin-top: 0;
+}
 #room.shared-admin-room #sharedRegistration input,
-#room.shared-admin-room #sharedRegistration select { max-width: none; }
-#room.shared-admin-room #sharedRegistration button { width: 100%; }
-#room.shared-admin-room .shared-navigation { margin-bottom: 12px; }
-#room.shared-admin-room .board-panel { padding: 16px; }
+#room.shared-admin-room #sharedRegistration select {
+  max-width: none;
+}
+#room.shared-admin-room #sharedRegistration button {
+  width: 100%;
+}
+#room.shared-admin-room .shared-navigation {
+  margin-bottom: 12px;
+}
+#room.shared-admin-room .board-panel {
+  padding: 16px;
+}
 #room.shared-admin-room .shared-admin-board-header {
   display: flex;
   justify-content: space-between;
@@ -2486,8 +2583,13 @@ body:has(#room:not([hidden])) main {
   flex-wrap: wrap;
   margin-bottom: 12px;
 }
-#room.shared-admin-room .shared-admin-board-header h2 { font-size: 17px; margin: 0 0 3px; }
-#room.shared-admin-room .shared-admin-board-header .helper-text { margin: 0; }
+#room.shared-admin-room .shared-admin-board-header h2 {
+  font-size: 17px;
+  margin: 0 0 3px;
+}
+#room.shared-admin-room .shared-admin-board-header .helper-text {
+  margin: 0;
+}
 #room.shared-admin-room .shared-admin-board-controls {
   display: flex;
   align-items: center;
@@ -2495,8 +2597,14 @@ body:has(#room:not([hidden])) main {
   flex-wrap: wrap;
   gap: 7px;
 }
-#room.shared-admin-room .shared-admin-board-controls button { margin: 0; padding: 8px 11px; font-size: 12px; }
-#room.shared-admin-room .shared-admin-board-controls button[hidden] { display: none !important; }
+#room.shared-admin-room .shared-admin-board-controls button {
+  margin: 0;
+  padding: 8px 11px;
+  font-size: 12px;
+}
+#room.shared-admin-room .shared-admin-board-controls button[hidden] {
+  display: none !important;
+}
 #room.shared-admin-room .shared-admin-board-center {
   display: flex !important;
   flex-direction: column;
@@ -2507,27 +2615,55 @@ body:has(#room:not([hidden])) main {
   padding: 8px;
 }
 #room.shared-admin-room .shared-admin-board-wait {
-  display: flex; flex-direction: column; gap: 7px; align-items: center;
-  width: 100%; min-width: 0; font-size: clamp(11px, 1.2vw, 15px);
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  align-items: center;
+  width: 100%;
+  min-width: 0;
+  font-size: clamp(11px, 1.2vw, 15px);
 }
-#room.shared-admin-room .shared-admin-board-wait strong { font-size: clamp(15px, 1.7vw, 22px); }
+#room.shared-admin-room .shared-admin-board-wait strong {
+  font-size: clamp(15px, 1.7vw, 22px);
+}
 #room.shared-admin-room .shared-admin-board-names {
-  width: 100%; max-width: 100%; overflow-wrap: anywhere;
-  padding-top: 6px; border-top: 1px solid rgba(150,170,190,.2);
+  width: 100%;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  padding-top: 6px;
+  border-top: 1px solid rgba(150, 170, 190, 0.2);
   font-size: clamp(10px, 1vw, 13px);
 }
-#room.shared-admin-room .teacher-exit-actions { margin: 0 0 0 12px; padding: 0; border: 0; }
-#room.shared-admin-room .teacher-exit-actions p { display: none; }
-#room.shared-admin-room #teacherExitHome { margin: 0; }
-#room.shared-admin-room .players-panel { margin-top: 0; }
-#room.shared-admin-room #playersPanel:not([open]) { min-height: 0; }
+#room.shared-admin-room .teacher-exit-actions {
+  margin: 0 0 0 12px;
+  padding: 0;
+  border: 0;
+}
+#room.shared-admin-room .teacher-exit-actions p {
+  display: none;
+}
+#room.shared-admin-room #teacherExitHome {
+  margin: 0;
+}
+#room.shared-admin-room .players-panel {
+  margin-top: 0;
+}
+#room.shared-admin-room #playersPanel:not([open]) {
+  min-height: 0;
+}
 @media (max-width: 940px) {
-  #room.shared-admin-room .game-grid { grid-template-columns: 1fr; }
-  #room.shared-admin-room .side-panel { width: 100%; }
+  #room.shared-admin-room .game-grid {
+    grid-template-columns: 1fr;
+  }
+  #room.shared-admin-room .side-panel {
+    width: 100%;
+  }
 }
 
 /* RC5 — acabamento do cabeçalho e identificação de jogadores no Administrador. */
-#room.shared-admin-room .shared-navigation { display: none !important; }
+#room.shared-admin-room .shared-navigation {
+  display: none !important;
+}
 body:has(#room:not([hidden])) .topbar .shared-navigation-actions {
   display: inline-flex;
   align-items: center;
@@ -2573,11 +2709,14 @@ body:has(#room:not([hidden])) .topbar .shared-navigation-actions button {
   cursor: not-allowed;
 }
 
-
 /* RC5 — Ajustes de homologação: saída alinhada e tabuleiro administrativo ampliado. */
 @media (min-width: 1110px) {
-  body.shared-admin-header .topbar { flex-wrap: nowrap; }
-  body.shared-admin-header .topbar .brand { flex-shrink: 0; }
+  body.shared-admin-header .topbar {
+    flex-wrap: nowrap;
+  }
+  body.shared-admin-header .topbar .brand {
+    flex-shrink: 0;
+  }
   body.shared-admin-header .topbar-room-meta {
     display: flex;
     flex-wrap: nowrap;
@@ -2588,7 +2727,9 @@ body:has(#room:not([hidden])) .topbar .shared-navigation-actions button {
     min-width: 0;
     margin-left: auto;
   }
-  body.shared-admin-header .topbar .shared-navigation-actions { flex-wrap: nowrap; }
+  body.shared-admin-header .topbar .shared-navigation-actions {
+    flex-wrap: nowrap;
+  }
 }
 body.shared-admin-header .topbar .teacher-exit-actions {
   display: inline-flex;
@@ -2598,20 +2739,102 @@ body.shared-admin-header .topbar .teacher-exit-actions {
   padding: 0;
   border: 0;
 }
-body.shared-admin-header .topbar .teacher-exit-actions .helper-text { display: none; }
-body.shared-admin-header .topbar #teacherExitHome { margin: 0; }
+body.shared-admin-header .topbar .teacher-exit-actions .helper-text {
+  display: none;
+}
+body.shared-admin-header .topbar #teacherExitHome {
+  margin: 0;
+}
 
 /* Apenas na preparação há cadastro: em andamento, pausa e encerramento o tabuleiro
    toma toda a largura, sem deixar a coluna lateral vazia. */
 #room.shared-admin-room.shared-admin-expanded .game-grid {
   grid-template-columns: minmax(0, 1fr);
 }
-#room.shared-admin-room.shared-admin-expanded .side-panel { display: none; }
+#room.shared-admin-room.shared-admin-expanded .side-panel {
+  display: none;
+}
 @media (max-width: 1109px) {
-  body.shared-admin-header .topbar-room-meta { gap: 8px; }
+  body.shared-admin-header .topbar-room-meta {
+    gap: 8px;
+  }
   body.shared-admin-header .topbar .teacher-exit-actions {
     margin: 0;
     border: 0;
     padding: 0;
   }
+}
+
+/* RC5 — identidade tipográfica comum às 230 cartas; sem alterar regras. */
+.game-card-dialog .card-title,
+.review-game-dialog .card-title {
+  font-size: clamp(22px, 2.2vw, 29px) !important;
+  line-height: 1.28 !important;
+  letter-spacing: -0.015em;
+  overflow-wrap: break-word;
+}
+.game-card-dialog .card-description,
+.review-game-dialog .card-description {
+  max-width: none;
+  font-size: 16px;
+  line-height: 1.55;
+}
+.game-card-dialog .card-field strong,
+.review-game-dialog .card-field strong {
+  font-size: 13px;
+}
+.game-card-dialog .card-field p,
+.review-game-dialog .card-field p,
+.game-card-dialog .metric strong,
+.review-game-dialog .metric strong {
+  font-size: 15px;
+  line-height: 1.5;
+  overflow-wrap: break-word;
+}
+.game-card-dialog .card-learning,
+.review-game-dialog .card-learning {
+  font-size: 14px;
+  line-height: 1.55;
+}
+.card-metrics > :only-child {
+  grid-column: 1/-1;
+}
+.card-metrics:empty,
+.card-sections:empty {
+  display: none;
+}
+@media (max-width: 600px) {
+  .card-metrics {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Feedback pedagógico após responder uma pergunta na partida. */
+.game-card-dialog #educationQuestion button.education-correct:disabled {
+  border: 2px solid #44c78c !important;
+  background: #163c31 !important;
+  color: #c9ffde !important;
+  opacity: 1;
+}
+.game-card-dialog #educationQuestion button.education-incorrect:disabled {
+  border: 2px solid #ec8585 !important;
+  background: #45282d !important;
+  color: #ffd2d2 !important;
+  opacity: 1;
+}
+.game-card-dialog #educationQuestion .education-result-success,
+.game-card-dialog #educationQuestion .education-result-error {
+  font-size: 14px;
+  font-weight: 650;
+  line-height: 1.5;
+  padding: 12px 14px;
+  border-radius: 9px;
+}
+.game-card-dialog #educationQuestion .education-result-success {
+  background: #163c31;
+  color: #c9ffde;
+}
+.game-card-dialog #educationQuestion .education-result-error {
+  background: #45282d;
+  color: #ffd2d2;
 }

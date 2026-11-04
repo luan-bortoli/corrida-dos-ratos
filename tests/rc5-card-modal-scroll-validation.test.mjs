@@ -20,7 +20,7 @@ test("erros de operações aparecem dentro da modal da carta", () => {
 });
 
 test("compra primária valida a quantidade conforme o limite da carta antes de enviar", () => {
-  assert.match(js, /quantity < sec\.min \|\| quantity > sec\.max/);
+  assert.match(js, /quantity < sec\.min\s*\|\|\s*quantity > sec\.max/);
   assert.match(js, /Quantidade inválida\. Escolha de \$\{sec\.min\} a \$\{sec\.max\}/);
   assert.match(js, /perform\("official-security-buy", \{ quantity \}\)/);
 });

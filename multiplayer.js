@@ -1,3 +1,8 @@
+import {
+  splitCardText as readOfficialCard,
+  CARD_METRIC_LABEL,
+  normalizePresentedCard,
+} from "./src/card-text-rendering.js";
 import { CORPORATE_EXPANSIONS } from "./src/corporate-expansion-catalog.js";
 import { specialAcquisitionOffer } from "./src/special-opportunities.js";
 import { grandInvestmentOffer } from "./src/grand-investments.js";
@@ -120,7 +125,12 @@ function exitToWelcome() {
 }
 $("teacherExitHome").onclick = () => {
   if (!session || session.role !== "teacher") return;
-  if (!window.confirm("Sair da sala atual e voltar às modalidades? A sala permanecerá salva para acesso posterior.")) return;
+  if (
+    !window.confirm(
+      "Sair da sala atual e voltar às modalidades? A sala permanecerá salva para acesso posterior.",
+    )
+  )
+    return;
   session = null;
   sessionStorage.removeItem("cr-room-session");
   sessionStorage.removeItem("cr-room-rejoin");
@@ -970,9 +980,29 @@ function render(r) {
         edu.append(btn);
       });
     else {
+      const quizFeedback = g.currentCard.quizFeedback;
+      if (q && quizFeedback) {
+        // As mesmas alternativas permanecem visíveis após responder; marca a escolha e o gabarito.
+        q.options.forEach((opt, index) => {
+          const btn = document.createElement("button");
+          btn.className = "outline";
+          btn.type = "button";
+          btn.disabled = true;
+          const letter = "ABCD"[index];
+          btn.textContent = `${letter}) ${opt}`;
+          if (letter === quizFeedback.correctAnswer) btn.classList.add("education-correct");
+          else if (letter === ev?.choice) btn.classList.add("education-incorrect");
+          edu.append(btn);
+        });
+      }
       const feedback = document.createElement("p");
-      feedback.textContent = g.currentCard.quizFeedback
-        ? `Resposta ${g.currentCard.quizFeedback.correct ? "correta" : "incorreta"}. Gabarito: ${g.currentCard.quizFeedback.correctAnswer}; recompensa ${money(g.currentCard.quizFeedback.reward)}.`
+      feedback.className = quizFeedback?.correct
+        ? "education-result-success"
+        : "education-result-error";
+      feedback.textContent = quizFeedback
+        ? quizFeedback.correct
+          ? `Resposta correta! Recompensa recebida: ${money(quizFeedback.reward)}.`
+          : `Resposta incorreta. A alternativa correta é ${quizFeedback.correctAnswer}. Recompensa: R$ 0,00.`
         : "Pergunta encerrada sem resposta.";
       edu.append(feedback);
     }
@@ -1361,7 +1391,12 @@ function render(r) {
         );
         if (answer === null) return;
         const quantity = Number(answer.trim());
-        if (!answer.trim() || !Number.isSafeInteger(quantity) || quantity < sec.min || quantity > sec.max) {
+        if (
+          !answer.trim() ||
+          !Number.isSafeInteger(quantity) ||
+          quantity < sec.min ||
+          quantity > sec.max
+        ) {
           msg(`Quantidade inválida. Escolha de ${sec.min} a ${sec.max} ações/cotas.`);
           return;
         }
@@ -1554,89 +1589,9 @@ const CATEGORY_LABELS = {
   MF: "Mercado Financeiro",
   FI: "Filantropia",
 };
-const cleanMarkdown = (value) =>
-  String(value ?? "")
-    .replace(/\\\$/g, "R$")
-    .replace(/\*\*/g, "")
-    .replace(/^\s*#{1,5}\s*/gm, "")
-    .replace(/\s+/g, " ")
-    .trim();
+// A modal e a revisão usam o mesmo parser e a mesma estrutura da carta.
 function splitCardText(original, id) {
-  const text = String(original ?? "")
-    .replace(/\\\$/g, "R$")
-    .replace(/\*\*/g, "")
-    .replace(/^\s*#{1,5}\s*/gm, "")
-    .replace(/\r/g, "");
-  if (text.includes("\t")) {
-    const columns = text
-      .split("\t")
-      .map((x) => cleanMarkdown(x))
-      .filter(Boolean);
-    if (columns[0] === id) columns.shift();
-    const headline = columns.shift() || id;
-    const parts = /^([^.!?]+)[.!?]\s*(.*)$/.exec(headline);
-    const title = parts?.[1] || headline,
-      description = parts?.[2] || "";
-    const fields = [];
-    if (columns[0]) fields.push(["Condição ou efeito descrito", columns[0]]);
-    if (columns[1]) fields.push(["Aprendizado", columns[1]]);
-    return { title, description, fields, raw: "" };
-  }
-  const lines = text
-    .split(/\n+/)
-    .map((x) => x.trim())
-    .filter(Boolean)
-    .filter((x) => x !== id);
-  const categoryLines = new Set([
-    "Pequeno negócio",
-    "Imóvel",
-    "Ações",
-    "Renda fixa",
-    "Grande investimento",
-    "Oportunidade especial",
-  ]);
-  const title =
-    lines.find((x, i) => i > 0 && !categoryLines.has(x) && !x.includes(":") && x.length < 100) ||
-    lines.find((x) => x.length < 95 && !x.includes(":")) ||
-    id;
-  const after = lines.slice(lines.indexOf(title) + 1);
-  const description =
-    after.find(
-      (x) =>
-        !/(?:^|\s)(?:Investimento|Preço|Requisito|Decisão|Consequência|Risco|Liquidez|Aprendizagem|Aprendizado):/i.test(
-          x,
-        ),
-    ) || "";
-  const fields = [];
-  const combined = after.filter((x) => x !== description).join(" ");
-  for (const name of [
-    "Investimento",
-    "Preço",
-    "Renda líquida inicial",
-    "Renda inicial",
-    "Requisito",
-    "Decisão",
-    "Consequência",
-    "Risco",
-    "Liquidez",
-    "Aprendizagem",
-    "Aprendizado",
-  ]) {
-    const re = new RegExp(
-      `(?:^|[.;]\\s*|\\s)(` +
-        name +
-        `):\\s*([\\s\\S]*?)(?=(?:\\.\\s+|;\\s+)(?:Investimento|Preço|Renda líquida inicial|Renda inicial|Requisito|Decisão|Consequência|Risco|Liquidez|Aprendizagem|Aprendizado):|$)`,
-      "i",
-    );
-    const m = combined.match(re);
-    if (m) fields.push([name, m[2].trim().replace(/[.;]$/, "")]);
-  }
-  return {
-    title: cleanMarkdown(title),
-    description: cleanMarkdown(description),
-    fields,
-    raw: cleanMarkdown(combined),
-  };
+  return normalizePresentedCard(readOfficialCard(original, id), id);
 }
 const displayLabel = (node, label, value) => {
   const block = document.createElement("div");
@@ -1674,7 +1629,11 @@ function marketInfo(r) {
     ownShares,
     incomingSec,
     incomingShares,
-    assets: owned.length + companies.length + (r.game?.assets || []).length + (r.game?.fixedIncome || []).filter((a) => a.status === "active").length,
+    assets:
+      owned.length +
+      companies.length +
+      (r.game?.assets || []).length +
+      (r.game?.fixedIncome || []).filter((a) => a.status === "active").length,
     ads: ownSec.length + ownShares.length,
     offers: incomingSec.length + incomingShares.length,
     ids: [...incomingSec.map((o) => "sec:" + o.id), ...incomingShares.map((o) => "share:" + o.id)],
@@ -1762,7 +1721,10 @@ function renderMarket(r) {
   const info = marketInfo(r),
     body = $("marketSectionBody");
   const defs = {
-    assets: ["Meus investimentos", "Seu patrimônio por categoria. Valor investido não significa dinheiro disponível para saque ou venda."],
+    assets: [
+      "Meus investimentos",
+      "Seu patrimônio por categoria. Valor investido não significa dinheiro disponível para saque ou venda.",
+    ],
     ads: ["Meus anúncios", "Acompanhe anúncios ativos e negociações com investidores."],
     offers: [
       "Ofertas disponíveis",
@@ -1805,14 +1767,23 @@ function renderMarket(r) {
     };
     const ownedAssets = r.game?.assets || [];
     const groups = [
-      ["Pequenos negócios", (a) => a.source === "official_small_business" || a.kind === "small_business"],
-      ["Imóveis e equipamentos de locação", (a) => ["official_real_estate", "official_rental"].includes(a.source) || ["real_estate", "rental"].includes(a.kind)],
+      [
+        "Pequenos negócios",
+        (a) => a.source === "official_small_business" || a.kind === "small_business",
+      ],
+      [
+        "Imóveis e equipamentos de locação",
+        (a) =>
+          ["official_real_estate", "official_rental"].includes(a.source) ||
+          ["real_estate", "rental"].includes(a.kind),
+      ],
       ["Estoques para revenda", (a) => a.source === "official_resale_stock" || a.kind === "resale"],
       ["Empresas e outros investimentos", (a) => true],
     ];
     const accounted = new Set();
     for (const [heading, match] of groups) {
-      const positions = ownedAssets.filter((a, index) => !accounted.has(index) && match(a))
+      const positions = ownedAssets
+        .filter((a, index) => !accounted.has(index) && match(a))
         .map((asset) => ({ asset, index: ownedAssets.indexOf(asset) }));
       if (!positions.length) continue;
       section(heading);
@@ -1824,10 +1795,19 @@ function renderMarket(r) {
         } else {
           details.push("Sem rendimento recorrente confirmado");
         }
-        if (asset.targetPrice) details.push(`Preço-alvo para revenda: ${money(asset.targetPrice)} (não garantido)`);
+        if (asset.targetPrice)
+          details.push(`Preço-alvo para revenda: ${money(asset.targetPrice)} (não garantido)`);
         if (asset.loanId) details.push("Aquisição com financiamento");
-        body.append(marketBox(`${asset.id || "Ativo"} — ${asset.name || "Investimento"}`, details.join(" · "), null, null, true,
-          "Registro patrimonial. Operações somente quando autorizadas pelas regras do jogo."));
+        body.append(
+          marketBox(
+            `${asset.id || "Ativo"} — ${asset.name || "Investimento"}`,
+            details.join(" · "),
+            null,
+            null,
+            true,
+            "Registro patrimonial. Operações somente quando autorizadas pelas regras do jogo.",
+          ),
+        );
       }
     }
     const fixedContracts = (r.game?.fixedIncome || []).filter((c) => c.status === "active");
@@ -1841,8 +1821,16 @@ function renderMarket(r) {
           `Períodos decorridos: ${contract.elapsed || 0}`,
         ];
         if (offer?.term) details.push(`Prazo: ${offer.term} fechamentos`);
-        body.append(marketBox(`${contract.cardId} — ${offer?.name || "Renda fixa"}`, details.join(" · "), null, null, true,
-          "Resgate sujeito às condições do contrato; consulte as ações disponíveis na partida."));
+        body.append(
+          marketBox(
+            `${contract.cardId} — ${offer?.name || "Renda fixa"}`,
+            details.join(" · "),
+            null,
+            null,
+            true,
+            "Resgate sujeito às condições do contrato; consulte as ações disponíveis na partida.",
+          ),
+        );
       }
     }
     if (info.owned.length) section("Ações e fundos");
@@ -1984,8 +1972,14 @@ function playerAvatarColor(room, player) {
   return playerAvatarColors[Math.max(0, room.players.indexOf(player)) % playerAvatarColors.length];
 }
 function playerAvatarInitials(name) {
-  const parts = String(name || "").trim().split(/\s+/).filter(Boolean);
-  return parts.slice(0, 2).map((part) => part.charAt(0).toLocaleUpperCase("pt-BR")).join("");
+  const parts = String(name || "")
+    .trim()
+    .split(/\s+/)
+    .filter(Boolean);
+  return parts
+    .slice(0, 2)
+    .map((part) => part.charAt(0).toLocaleUpperCase("pt-BR"))
+    .join("");
 }
 
 function updateSharedAdminScreen(r) {
@@ -1997,12 +1991,14 @@ function updateSharedAdminScreen(r) {
   document.body.classList.toggle("shared-admin-header", sharedAdmin);
   $("sharedAdminBoardHeader").hidden = !sharedAdmin;
   if (r.mode === "shared") {
-    if (sharedNavActions.parentElement !== $("topbarRoomMeta")) $("topbarRoomMeta").append(sharedNavActions);
+    if (sharedNavActions.parentElement !== $("topbarRoomMeta"))
+      $("topbarRoomMeta").append(sharedNavActions);
   } else if (sharedNavActions.parentElement !== sharedNavContainer) {
     sharedNavContainer.append(sharedNavActions);
   }
   if (sharedAdmin) {
-    if (adminTeacherPanel.parentElement !== adminSidePanel) adminSidePanel.append(adminTeacherPanel);
+    if (adminTeacherPanel.parentElement !== adminSidePanel)
+      adminSidePanel.append(adminTeacherPanel);
     if (adminExit.parentElement !== document.querySelector(".topbar-room-meta")) {
       $("topbarRoomMeta").append(adminExit);
     }
@@ -2012,15 +2008,18 @@ function updateSharedAdminScreen(r) {
     }
     $("teacherActions").hidden = true;
     $("start").hidden = r.status !== "lobby";
-    $("start").disabled = r.status !== "lobby" || r.players.filter(p => !p.withdrawn).length < 2;
+    $("start").disabled = r.status !== "lobby" || r.players.filter((p) => !p.withdrawn).length < 2;
     $("pause").hidden = r.status !== "playing";
     $("resume").hidden = r.status !== "paused";
     $("finish").hidden = r.status === "finished";
     $("reportPrint").hidden = r.status === "lobby";
-    $("sharedAdminBoardSubtitle").textContent = `${r.round || 1}ª rodada · ${r.players.length} de 6 participantes`;
+    $("sharedAdminBoardSubtitle").textContent =
+      `${r.round || 1}ª rodada · ${r.players.length} de 6 participantes`;
   } else {
-    if (adminTeacherPanel.parentElement !== adminMainPanel) adminMainPanel.append(adminTeacherPanel);
-    if (adminExit.parentElement !== adminTeacherPanel) adminTeacherPanel.insertBefore(adminExit, adminActionPanel);
+    if (adminTeacherPanel.parentElement !== adminMainPanel)
+      adminMainPanel.append(adminTeacherPanel);
+    if (adminExit.parentElement !== adminTeacherPanel)
+      adminTeacherPanel.insertBefore(adminExit, adminActionPanel);
     for (const element of adminActionOrder) adminActionPanel.append(element);
     for (const id of ["start", "pause", "resume", "finish", "reportPrint"]) $(id).hidden = false;
     adminActionPanel.hidden = !r.teacher;
@@ -2110,15 +2109,21 @@ function drawBoard(r) {
     const wait = document.createElement("div");
     wait.className = "shared-admin-board-wait";
     const title = document.createElement("strong");
-    title.textContent = r.status === "lobby" ? "Aguardando jogadores" :
-      r.status === "paused" ? "Partida pausada" :
-      r.status === "finished" ? "Partida encerrada" : "Partida em andamento";
+    title.textContent =
+      r.status === "lobby"
+        ? "Aguardando jogadores"
+        : r.status === "paused"
+          ? "Partida pausada"
+          : r.status === "finished"
+            ? "Partida encerrada"
+            : "Partida em andamento";
     const description = document.createElement("span");
-    description.textContent = r.status === "lobby"
-      ? "Cadastre de 2 a 6 participantes para iniciar."
-      : r.status === "playing"
-        ? `Vez de ${r.players.find(p => p.id === r.activePlayerId)?.name || "um jogador"}`
-        : `Rodada ${r.round}`;
+    description.textContent =
+      r.status === "lobby"
+        ? "Cadastre de 2 a 6 participantes para iniciar."
+        : r.status === "playing"
+          ? `Vez de ${r.players.find((p) => p.id === r.activePlayerId)?.name || "um jogador"}`
+          : `Rodada ${r.round}`;
     const names = document.createElement("div");
     names.className = "shared-admin-board-names";
     if (r.players.length) {
@@ -2383,14 +2388,6 @@ function updateLayout(r) {
   if (!cardPanel.hidden) {
     const approved = getCard(card.id);
     const content = splitCardText(approved?.text, card.id);
-    // Harmoniza os nomes das opções da EV-012 com os botões sem modificar o texto oficial arquivado.
-    if (card.id === "EV-012")
-      content.fields = content.fields.map(([label, value]) => [
-        label,
-        value
-          .replace("Cancelar serviços:", "Cancelar assinaturas:")
-          .replace("Manter:", "Manter assinaturas:"),
-      ]);
     $("cardIdentifier").textContent = card.id;
     $("cardCategory").textContent = CATEGORY_LABELS[card.category] || card.category;
     $("cardTitle").textContent = content.title;
@@ -2399,7 +2396,8 @@ function updateLayout(r) {
       ? `Você pode aplicar de ${money(fixedCard.min)} a ${money(fixedCard.max)}, em valores de ${money(fixedCard.step)}. Consulte as condições de rendimento, prazo e resgate antes de decidir.`
       : "Leia as condições desta oportunidade e avalie os riscos antes de decidir.";
     $("cardTitle").textContent = fixedCard ? fixedCard.name : content.title;
-    $("cardDescription").textContent = content.description || cardIntroduction;
+    $("cardDescription").textContent =
+      card.category === "EF" ? "" : content.description || cardIntroduction;
     const isExpense = card.category === "DI";
     const expenseParts = isExpense ? String(approved?.text ?? "").split("\t") : [];
     const salary = PROFESSIONS[me?.professionId]?.salary;
@@ -2447,17 +2445,15 @@ function updateLayout(r) {
     }
     const summary = expense
       ? []
-      : content.fields.filter(([label]) =>
-          /Investimento|Preço|Renda inicial|Renda líquida inicial|Liquidez/i.test(label),
-        );
-    summary.forEach(([label, value]) => displayLabel(metrics, label, value));
+      : content.fields.filter(([label]) => CARD_METRIC_LABEL.test(label));
+    summary
+      .filter(([label]) => !(card.category === "EF" && label === "Recompensa por acerto"))
+      .forEach(([label, value]) => displayLabel(metrics, label, value));
     for (const [label, value] of expense
       ? []
       : content.fields.filter(
           ([label]) =>
-            !/Investimento|Preço|Renda inicial|Renda líquida inicial|Liquidez|Aprendizagem|Aprendizado/i.test(
-              label,
-            ),
+            !CARD_METRIC_LABEL.test(label) && !/^(Aprendizagem|Aprendizado|Conceito)$/i.test(label),
         )) {
       const section = document.createElement("div");
       section.className = "card-field";
@@ -2474,7 +2470,9 @@ function updateLayout(r) {
       section.textContent = content.raw;
       sections.append(section);
     }
-    const learning = content.fields.find(([label]) => /Aprendizagem|Aprendizado/i.test(label));
+    const learning = content.fields.find(([label]) =>
+      /^(Aprendizagem|Aprendizado|Conceito|Abrangência)$/i.test(label),
+    );
     const learningInfo = cardLearningDisplay(learning?.[1]);
     $("cardLearning").hidden = !learningInfo;
     $("cardLearning").textContent = learningInfo
