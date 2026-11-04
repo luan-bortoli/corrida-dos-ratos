@@ -36,6 +36,7 @@ const FIELD_NAMES = [
   "Valor de referência",
   "Valor total do projeto",
   "Valor de aquisição",
+  "Preço de aquisição",
   "Requisitos e decisão",
   "Risco e liquidez",
   "Oferta",
@@ -169,15 +170,18 @@ export function splitCardText(original, id) {
     const title = separated?.[1] || headline;
     const description = separated?.[2] || "";
     const fields = [];
+    let descriptionText = "";
     if (cols[1]) {
       const intro = parseSegments(cols[1], fields);
-      if (intro) addField(fields, "Condições da oportunidade", intro);
+      // Present the already-approved description as the narrative, instead of
+      // hiding all context inside a metric-style block or duplicating it.
+      if (intro) descriptionText = intro;
     }
     if (cols[2]) {
       const rest = parseSegments(cols[2], fields);
       if (rest) fields.unshift(["Rendimento e resgate", rest]);
     }
-    return { title, description, fields, raw: "" };
+    return { title, description: description || descriptionText, fields, raw: "" };
   }
   // Apenas a linha inicial com tabulações é uma ficha; tabulações no corpo (FI) são tabelas.
   const firstLine = text.trim().split("\n")[0];
@@ -195,10 +199,14 @@ export function splitCardText(original, id) {
   }
   const lines = normalizeCardText(text).split(/\n+/).map(flat).filter(Boolean);
   if (lines[0] === id) lines.shift();
-  if (lines[0] && headingNames.has(lines[0].toLocaleLowerCase("pt-BR"))) lines.shift();
+  if (!id.startsWith("EF-") && lines[0] && headingNames.has(lines[0].toLocaleLowerCase("pt-BR"))) lines.shift();
   // As OE-010 a OE-013 trazem a categoria "Aquisição com desconto" antes do nome da oferta.
   // O nome da oportunidade não pode ser apresentado como descrição nem substituído pela categoria.
   if (/^OE-01[0-3]$/.test(id) && /^aquisição com desconto$/i.test(lines[0] || "")) lines.shift();
+  // Eight real-estate cards start with their segment (residential/commercial),
+  // followed by the actual property title. They must never show the segment as
+  // the name and the property name as the description.
+  if (/^GO-00[1-8]$/.test(id) && /^imóvel (?:residencial|comercial|de temporada|sem renda)$/i.test(lines[0] || "")) lines.shift();
   let title = titleOf(lines.shift() || id, id);
   // Nas perguntas, a categoria temática é o título. "5% do salário" é a recompensa, não o título.
   if (id.startsWith("EF-")) {
@@ -247,14 +255,8 @@ export function splitCardText(original, id) {
 
 // A estrutura de exibição é comum às páginas de revisão e de jogo.
 export const CARD_METRIC_LABEL =
-  /^(Investimento|Investimento necessário|Preço|Custo de compra|Preço-alvo de revenda|Rendimento mensal|Renda inicial|Renda líquida inicial|Renda inicial de referência|Rendimento da oferta|Renda da participação|Distribuição inicial prevista|Avaliação anterior|Preço oferecido|Valor de referência|Valor total do projeto|Valor de aquisição|Renda líquida inicial estimada|Renda líquida total inicial|Renda da participação oferecida|Lucro distribuído inicial|Lucro total inicialmente distribuído|Lucro líquido total distribuído inicialmente|Participação oferecida|Valor total da empresa|Valor total do empreendimento|Avaliação da empresa|Oferta|Liquidez|Despesa extra|Efeito no mercado|Benefício|Recompensa por acerto)$/i;
+  /^(Investimento|Investimento necessário|Preço|Custo de compra|Preço-alvo de revenda|Rendimento mensal|Renda inicial|Renda líquida inicial|Renda inicial de referência|Rendimento da oferta|Renda da participação|Distribuição inicial prevista|Avaliação anterior|Preço oferecido|Valor de referência|Valor total do projeto|Valor de aquisição|Preço de aquisição|Renda líquida inicial estimada|Renda líquida total inicial|Renda da participação oferecida|Lucro distribuído inicial|Lucro total inicialmente distribuído|Lucro líquido total distribuído inicialmente|Participação oferecida|Valor total da empresa|Valor total do empreendimento|Avaliação da empresa|Oferta|Liquidez|Despesa extra|Efeito no mercado|Benefício|Recompensa por acerto)$/i;
 // Esta camada edita apenas a apresentação, nunca a fonte aprovada ou os efeitos financeiros.
-const EDITORIAL_FIELD_LABELS = {
-  Preço: "Preço de aquisição",
-  "Rendimento mensal": "Rendimento mensal inicial",
-  "Lucro distribuído inicial": "Lucro distribuído inicial (referência)",
-  Conceito: "Conceito financeiro",
-};
 function capitalizeSentence(value) {
   const text = String(value || "").trim();
   if (!text || /^[Rr]\$|^[-+]?\d/.test(text)) return text;
@@ -276,10 +278,10 @@ function editField(label, value, id) {
   }
   if (id === "PO-013" && label === "Distribuição inicial prevista")
     text = text.replace(/\.\s*Requisitos e\s*$/i, ".");
-  if (/por fechamento(?:s)?\b/i.test(text))
-    text = text.replace(/por fechamento(s)?\b/gi, "por fechamento financeiro$1 (Dia do Pagamento)");
-  if (/\ba cada fechamento\b/i.test(text))
-    text = text.replace(/a cada fechamento\b/gi, "a cada fechamento financeiro (Dia do Pagamento)");
+  if (/por fechamento(?:s)?\b(?!\s+financeiro)/i.test(text))
+    text = text.replace(/por fechamento(s)?\b(?!\s+financeiro)/gi, "por fechamento financeiro$1 (Dia do Pagamento)");
+  if (/\ba cada fechamento\b(?!\s+financeiro)/i.test(text))
+    text = text.replace(/a cada fechamento\b(?!\s+financeiro)/gi, "a cada fechamento financeiro (Dia do Pagamento)");
   if (label === "Risco" && /^de (?:vacância|perdas|inadimplência)/i.test(text))
     text = `Possibilidade ${text}`;
   text = capitalizeSentence(text);
