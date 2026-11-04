@@ -66,8 +66,8 @@
     "reward": null
   },
   "EF-007": {
-    "question": "Uma pequena loja vende R\\$ 2.000 e tem R\\$ 1.500 em custos. Qual é o lucro?",
-    "options": ["R\\$ 3.500.", "R\\$ 2.000.", "R\\$ 500\\.", "R\\$ 1.500."],
+    "question": "Uma pequena loja vende R$ 2.000 e tem R$ 1.500 em custos. Qual é o lucro?",
+    "options": ["R$ 3.500.", "R$ 2.000.", "R$ 500.", "R$ 1.500."],
     "correct": "C",
     "reward": null
   },
@@ -160,19 +160,19 @@
     "reward": null
   },
   "EF-016": {
-    "question": "Uma empresa vale R\\$ 50.000 e valoriza 10%. O que acontece imediatamente?",
+    "question": "Uma empresa vale R$ 50.000 e valoriza 10%. O que acontece imediatamente?",
     "options": [
-      "O proprietário recebe R\\$ 5.000 em dinheiro.",
-      "O valor estimado da empresa passa a R\\$ 55.000, sem depósito automático no caixa.",
-      "A renda passiva aumenta obrigatoriamente R\\$ 5.000.",
+      "O proprietário recebe R$ 5.000 em dinheiro.",
+      "O valor estimado da empresa passa a R$ 55.000, sem depósito automático no caixa.",
+      "A renda passiva aumenta obrigatoriamente R$ 5.000.",
       "Todas as dívidas da empresa são quitadas."
     ],
     "correct": "B",
     "reward": null
   },
   "EF-017": {
-    "question": "Uma empresa distribui R\\$ 2.000 de lucro e Ana possui 25% dela. Quanto Ana recebe?",
-    "options": ["R\\$ 500\\.", "R\\$ 250\\.", "R\\$ 1.000.", "R\\$ 2.000."],
+    "question": "Uma empresa distribui R$ 2.000 de lucro e Ana possui 25% dela. Quanto Ana recebe?",
+    "options": ["R$ 500.", "R$ 250.", "R$ 1.000.", "R$ 2.000."],
     "correct": "A",
     "reward": null
   },
@@ -199,7 +199,7 @@
     "reward": null
   },
   "EF-020": {
-    "question": "Uma empresa está avaliada em R\\$ 100.000. Por que seu proprietário pode não conseguir R\\$ 100.000 imediatamente?",
+    "question": "Uma empresa está avaliada em R$ 100.000. Por que seu proprietário pode não conseguir R$ 100.000 imediatamente?",
     "options": [
       "Porque a avaliação representa dinheiro depositado em conta.",
       "Porque pode ser necessário encontrar comprador e negociar o preço.",
@@ -210,8 +210,8 @@
     "reward": null
   },
   "EF-021": {
-    "question": "Uma empresa recebeu R\\$ 12.000 e pagou R\\$ 9.000 em custos operacionais no período. Qual foi o resultado operacional simplificado?",
-    "options": ["R\\$ 3.000.", "R\\$ 9.000.", "R\\$ 12.000.", "R\\$ 21.000."],
+    "question": "Uma empresa recebeu R$ 12.000 e pagou R$ 9.000 em custos operacionais no período. Qual foi o resultado operacional simplificado?",
+    "options": ["R$ 3.000.", "R$ 9.000.", "R$ 12.000.", "R$ 21.000."],
     "correct": "A",
     "reward": null
   },
@@ -304,7 +304,7 @@
     "reward": null
   },
   "EF-030": {
-    "question": "Você investiu R\\$ 5.000 e recebeu R\\$ 250 líquidos em um período, sem mudança no valor do ativo. Qual foi o retorno do período?",
+    "question": "Você investiu R$ 5.000 e recebeu R$ 250 líquidos em um período, sem mudança no valor do ativo. Qual foi o retorno do período?",
     "options": ["2%.", "10%.", "5%.", "25%."],
     "correct": "C",
     "reward": null
