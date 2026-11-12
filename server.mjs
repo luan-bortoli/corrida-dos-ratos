@@ -1131,6 +1131,7 @@ const mime = {
   ".js": "text/javascript; charset=utf-8",
   ".css": "text/css; charset=utf-8",
   ".json": "application/json",
+  ".png": "image/png",
 };
 const server = http.createServer((req, res) => {
   queue(async () => {
@@ -1159,6 +1160,7 @@ const server = http.createServer((req, res) => {
         "/revisao-cartas.html",
         "/revisao-cartas.js",
         "/revisao-cartas.css",
+        "/senai-logo.png",
       ];
       const publicModule = /^\/src\/[a-z0-9-]+\.(?:js|json)$/i.test(path);
       if (!allowed.includes(path) && !publicModule) fail(404, "Arquivo não encontrado");
