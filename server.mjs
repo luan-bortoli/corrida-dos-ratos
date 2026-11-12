@@ -53,6 +53,8 @@ import {
   pausePresentialTimer,
   resumePresentialTimer,
   checkPresentialExpiry,
+  completePresentialRound,
+  continuePresentialRound,
   rankPresentialPlayers,
   publicPresentialTimer,
 } from "./src/presential-timer.js";
@@ -620,6 +622,8 @@ async function api(req, res, url) {
   }
   const who = authorize(req, r);
   if (parts[3] !== "leave" && parts[3] !== "withdraw") markPresent(r, who);
+  if (req.method === "POST" && r.mode === "shared" && r.presencialTimer?.pendingDecision && !["finish-time", "continue-time", "shared-teacher-unlock"].includes(parts[3]))
+    fail(409, "Rodada concluída. Informe a senha na modal do Administrador para prosseguir");
   if (req.method === "POST" && parts[3] === "shared-teacher-unlock") {
     teacher(who);
     guardAuth(req, `shared-unlock:${code}`, 20);
@@ -793,9 +797,10 @@ async function api(req, res, url) {
       if (r.mode === "shared")
         r.presencialTimer = startPresentialTimer(
           Date.now(),
+          r.order.length,
           process.env.NODE_ENV === "test" && process.env.TEST_PRESENTIAL_MS
             ? Number(process.env.TEST_PRESENTIAL_MS)
-            : undefined,
+            : null,
         );
     }
     if (action === "pause") {
@@ -807,8 +812,8 @@ async function api(req, res, url) {
     }
     if (action === "resume") {
       if (r.status !== "paused") fail(409, "Sala não está pausada");
-      if (r.presencialTimer?.expired && !r.presencialTimer?.continued)
-        fail(409, "Escolha continuar a partida ou encerrar por tempo");
+      if (r.presencialTimer?.pendingDecision)
+        fail(409, "Aguardando senha e decisão do Administrador");
       r.status = "playing";
       resumePresentialTimer(r);
       r.turnDeadline = Date.now() + (r.pausedRemaining ?? TURN_MS);
@@ -817,6 +822,7 @@ async function api(req, res, url) {
     if (action === "advance") {
       if (r.status !== "playing") fail(409, "Sala não está em andamento");
       if (!r.order.length) fail(409, "Não existem jogadores ativos");
+      if (r.mode === "shared") fail(409, "Na demonstração presencial, cada participante deve encerrar seu turno pelo botão Encerrar turno");
       if (Date.now() < (r.turnDeadline ?? Infinity))
         fail(409, "O turno ainda está dentro do prazo");
       const id = r.order[r.turnIndex];
@@ -846,10 +852,12 @@ async function api(req, res, url) {
       if (
         r.mode !== "shared" ||
         r.status !== "paused" ||
-        !r.presencialTimer?.expired ||
-        r.presencialTimer.continued
+        !r.presencialTimer?.pendingDecision
       )
         fail(409, "Encerramento por tempo indisponível");
+      guardAuth(req, `round-decision:${code}`, 20);
+      if (typeof data.password !== "string" || !equal(data.password, password))
+        fail(401, "Senha do Administrador incorreta");
       if (r.players.some((p) => !validateState(p.game) || !auditCash(p.game).ok))
         fail(409, "Situação financeira inconsistente");
       r.presencialTimer.ranking = rankPresentialPlayers(r);
@@ -861,17 +869,20 @@ async function api(req, res, url) {
       if (
         r.mode !== "shared" ||
         r.status !== "paused" ||
-        !r.presencialTimer?.expired ||
-        r.presencialTimer.continued
+        !r.presencialTimer?.pendingDecision
       )
         fail(409, "Continuação por tempo indisponível");
-      r.presencialTimer.continued = true;
-      r.presencialTimer.deadline = null;
+      guardAuth(req, `round-decision:${code}`, 20);
+      if (typeof data.password !== "string" || !equal(data.password, password))
+        fail(401, "Senha do Administrador incorreta");
       r.status = "playing";
+      continuePresentialRound(r);
       r.turnDeadline = Date.now() + (r.pausedRemaining ?? TURN_MS);
       r.pausedRemaining = null;
     }
     if (action === "finish") {
+      if (r.mode === "shared" && r.status !== "lobby")
+        fail(409, "No modo presencial, encerre pelo ranking ao final de uma rodada completa");
       if (r.status === "finished") fail(409, "Sala já encerrada");
       r.status = "finished";
       r.endReason = "teacher";
@@ -1095,7 +1106,7 @@ async function api(req, res, url) {
           }
           turnAdvance(r);
           r.turnDeadline = r.status === "playing" ? Date.now() + TURN_MS : null;
-          checkPresentialExpiry(r);
+          if (r.mode === "shared" && r.turnIndex === 0) completePresentialRound(r);
           break;
         default:
           fail(404, "Ação inexistente");
@@ -1104,7 +1115,7 @@ async function api(req, res, url) {
       if (!e.status) e.status = 409;
       throw e;
     }
-    if (p.game.won) {
+    if (p.game.won && r.mode !== "shared") {
       r.winnerOrder ??= [];
       if (!r.winnerOrder.includes(p.id)) r.winnerOrder.push(p.id);
       const idx = r.order.indexOf(p.id);

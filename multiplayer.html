@@ -185,18 +185,9 @@
                 </div>
               </div>
               <div id="presencialTimePanel" class="presencial-time-panel" hidden aria-live="polite">
-                <span id="presencialClockLabel">Tempo da demonstração</span>
-                <strong id="presencialClock">20:00</strong>
+                <span id="presencialClockLabel">Tempo desta rodada</span>
+                <strong id="presencialClock">00:00</strong>
                 <span id="presencialTimeHelp" class="helper-text"></span>
-                <div id="presencialTimeDecision" class="presencial-time-decision" hidden>
-                  <strong>Os 20 minutos terminaram. Como deseja prosseguir?</strong>
-                  <button id="presencialFinishTime" type="button" class="primary">
-                    Encerrar e apurar
-                  </button>
-                  <button id="presencialContinueTime" type="button" class="outline">
-                    Continuar partida
-                  </button>
-                </div>
                 <div id="presencialRanking" class="presencial-ranking" hidden></div>
               </div>
               <span id="boardCircuit" hidden></span>
@@ -427,6 +418,22 @@
           </div>
         </div>
       </dialog>
+      <dialog id="presencialRoundDialog" class="game-card-dialog presential-round-dialog" aria-label="Decisão do Administrador ao final da rodada" aria-modal="true">
+        <div class="dialog-shell">
+          <div class="dialog-heading"><strong>Rodada concluída</strong></div>
+          <div class="card-description">
+            Todos os jogadores encerraram seu turno. A demonstração está bloqueada até o Administrador autorizar a próxima etapa.
+          </div>
+          <p id="presencialRoundSummary" class="helper-text"></p>
+          <label for="presencialRoundPassword">Senha do Administrador</label>
+          <input id="presencialRoundPassword" type="password" autocomplete="off" placeholder="Digite a senha" />
+          <div class="presential-round-actions">
+            <button id="presencialFinishTime" type="button" class="primary">Encerrar e mostrar ranking</button>
+            <button id="presencialContinueTime" type="button" class="outline">Liberar mais uma rodada</button>
+          </div>
+          <p id="presencialRoundError" class="game-card-feedback" role="alert" aria-live="assertive" hidden></p>
+        </div>
+      </dialog>
       <dialog id="gameCardDialog" class="game-card-dialog" aria-label="Carta e decisões da partida">
         <div class="dialog-shell">
           <div class="dialog-heading">
@@ -447,6 +454,6 @@
       </dialog>
       <div id="message" class="notice" role="status"></div>
     </main>
-    <script type="module" src="/multiplayer.js?v=rc5-review-recovery-1"></script>
+    <script type="module" src="/multiplayer.js?v=rc5-presencial-rodadas-1"></script>
   </body>
 </html>

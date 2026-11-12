@@ -19,7 +19,7 @@ test('controles da sala presencial dependem do estado e PDF fica fora da prepara
   assert.match(js, /\$\("start"\)\.hidden = r\.status !== "lobby"/);
   assert.match(js, /\$\("pause"\)\.hidden = r\.status !== "playing"/);
   assert.match(js, /\$\("resume"\)\.hidden = r\.status !== "paused"/);
-  assert.match(js, /\$\("finish"\)\.hidden = r\.status === "finished"/);
+  assert.match(js, /\$\("finish"\)\.hidden = r\.status !== "lobby"/);
   assert.match(js, /\$\("reportPrint"\)\.hidden = r\.status === "lobby"/);
   assert.match(js, /controls\.append\(\$\(id\)\)/);
 });

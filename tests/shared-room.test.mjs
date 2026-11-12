@@ -114,7 +114,7 @@ try {
     assert.equal((await api(room + "/pause", "POST", {}, token)).status, 200);
     assert.equal((await api(room + "/roll", "POST", {}, token, "player")).status, 409);
     assert.equal((await api(room + "/resume", "POST", {}, token)).status, 200);
-    assert.equal((await api(room + "/finish", "POST", {}, token)).status, 200);
+    assert.equal((await api(room + "/finish", "POST", {}, token)).status, 409);
   });
   await test("interface presencial possui cadastro, navegação e modos independentes", async () => {
     const html = await readFile("multiplayer.html", "utf8");

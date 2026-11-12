@@ -471,11 +471,30 @@ function renderReconnectRequests(r) {
 for (const a of ["start", "pause", "resume", "finish", "roll", "end"])
   $(a).onclick = () => perform(a);
 $("buy").onclick = () => perform("buy", { assetId: window.currentOffer });
-$("presencialFinishTime").onclick = () => {
-  if (window.confirm("Encerrar a demonstração e apurar o vencedor por renda passiva?"))
-    perform("finish-time");
-};
-$("presencialContinueTime").onclick = () => perform("continue-time");
+const roundDialog = $("presencialRoundDialog");
+roundDialog.addEventListener("cancel", (event) => event.preventDefault());
+async function chooseRoundAction(action) {
+  const password = $("presencialRoundPassword").value;
+  if (!password) {
+    $("presencialRoundError").textContent = "Digite a senha do Administrador.";
+    $("presencialRoundError").hidden = false;
+    return;
+  }
+  for (const id of ["presencialFinishTime", "presencialContinueTime"]) $(id).disabled = true;
+  try {
+    const result = await req(`/api/room/${session.code}/${action}`, "POST", { password });
+    $("presencialRoundPassword").value = "";
+    $("presencialRoundError").hidden = true;
+    render(result);
+  } catch (e) {
+    $("presencialRoundError").textContent = e.message;
+    $("presencialRoundError").hidden = false;
+  } finally {
+    for (const id of ["presencialFinishTime", "presencialContinueTime"]) $(id).disabled = false;
+  }
+}
+$("presencialFinishTime").onclick = () => chooseRoundAction("finish-time");
+$("presencialContinueTime").onclick = () => chooseRoundAction("continue-time");
 async function downloadTeacherReport(format) {
   if (!session || session.role !== "teacher") return;
   try {
@@ -1566,10 +1585,17 @@ if (session) {
     });
 }
 setInterval(() => {
-  if (session && document.visibilityState === "visible")
-    req(`/api/room/${session.code}`)
-      .then(render)
+  if (session && document.visibilityState === "visible") {
+    // Uma resposta iniciada na visão do jogador não pode sobrepor a tela do
+    // Administrador após a validação de senha (nem o contrário).
+    const requestedView = sharedView;
+    const requestedCode = session.code;
+    req(`/api/room/${requestedCode}`)
+      .then((room) => {
+        if (session?.code === requestedCode && sharedView === requestedView) render(room);
+      })
       .catch((e) => msg(e.message));
+  }
 }, 2500);
 
 // Interface de homologação v2.0: toda a apresentação é derivada do estado já retornado pelo servidor.
@@ -1995,31 +2021,48 @@ function updatePresencialClock(r) {
   const panel = $("presencialTimePanel");
   const timer = r.presencial;
   panel.hidden = r.mode !== "shared" || r.status === "lobby" || !timer;
+  const requiresDecision = r.mode === "shared" && !!r.sharedAdmin && !!timer?.pendingDecision;
+  if (requiresDecision) {
+    if (gameDialog.open) gameDialog.close();
+    if (marketDialog.open) marketDialog.close();
+    if (!roundDialog.open) {
+      $("presencialRoundPassword").value = "";
+      $("presencialRoundError").hidden = true;
+      roundDialog.showModal();
+      $("presencialRoundPassword").focus();
+    }
+    $("presencialRoundSummary").textContent = `${timer.roundsCompleted} rodada(s) concluída(s) · ${r.players.filter((p) => !p.withdrawn).length} jogadores`;
+  } else if (roundDialog.open) roundDialog.close();
   if (panel.hidden) return;
-  const remaining = Math.max(0, timer.secondsRemaining ?? timer.durationSeconds);
+  const completed = !!timer.pendingDecision || r.status === "finished";
+  const seconds = completed
+    ? Math.max(0, timer.secondsElapsed ?? (timer.durationSeconds - timer.secondsRemaining))
+    : Math.max(0, timer.secondsRemaining ?? timer.durationSeconds);
   $("presencialClock").textContent =
-    `${String(Math.floor(remaining / 60)).padStart(2, "0")}:${String(remaining % 60).padStart(2, "0")}`;
+    `${String(Math.floor(seconds / 60)).padStart(2, "0")}:${String(seconds % 60).padStart(2, "0")}`;
+  $("presencialClockLabel").textContent = completed
+    ? `Tempo utilizado na rodada ${r.round || 1}`
+    : `Tempo da rodada ${r.round || 1}`;
   const help = $("presencialTimeHelp");
-  help.textContent = timer.continued
-    ? "Partida continuada pelo Administrador, sem novo limite obrigatório."
+  help.textContent = r.status === "finished"
+    ? "Partida encerrada. Tempo efetivamente utilizado pelos participantes."
+    : timer.pendingDecision
+    ? "Rodada encerrada. Decisão obrigatória do Administrador."
     : timer.waitingForTurn
-      ? "Tempo esgotado. Conclua a jogada atual antes da decisão administrativa."
-      : timer.pendingDecision
-        ? "A partida está pausada para decisão do Administrador."
-        : r.status === "paused"
-          ? "Cronômetro pausado."
-          : "Limite sugerido de 20 minutos.";
-  $("presencialTimeDecision").hidden = !r.teacher || !timer.pendingDecision;
+      ? "Tempo esgotado. Aguarde todos os jogadores encerrarem seus turnos."
+      : r.status === "paused"
+        ? "Cronômetro pausado."
+        : `${r.players.filter((p) => !p.withdrawn).length} jogadores · 2 minutos por participante. A decisão aparece após o último turno.`;
   const ranking = $("presencialRanking");
-  ranking.hidden = !(r.teacher && timer.ranking?.length);
+  ranking.hidden = !(r.sharedAdmin && timer.ranking?.length);
   ranking.replaceChildren();
   if (!ranking.hidden) {
     const heading = document.createElement("strong");
-    heading.textContent = "Classificação final — maior renda passiva";
+    heading.textContent = "Ranking final — maior renda passiva";
     const list = document.createElement("ol");
     for (const player of timer.ranking) {
       const item = document.createElement("li");
-      item.textContent = `${player.name}: ${money(player.passive)} por mês financeiro (despesas: ${money(player.expenses)})`;
+      item.textContent = `${player.place}º ${player.name}: ${money(player.passive)} por mês financeiro (despesas: ${money(player.expenses)})`;
       list.append(item);
     }
     ranking.append(heading, list);
@@ -2056,7 +2099,7 @@ function updateSharedAdminScreen(r) {
     $("start").disabled = r.status !== "lobby" || r.players.filter((p) => !p.withdrawn).length < 2;
     $("pause").hidden = r.status !== "playing";
     $("resume").hidden = r.status !== "paused" || !!r.presencial?.pendingDecision;
-    $("finish").hidden = r.status === "finished";
+    $("finish").hidden = r.status !== "lobby";
     $("reportPrint").hidden = r.status === "lobby";
     $("sharedAdminBoardSubtitle").textContent =
       `${r.round || 1}ª rodada · ${r.players.length} de 6 participantes`;
